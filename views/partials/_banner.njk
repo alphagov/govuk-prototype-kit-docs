@@ -2,13 +2,7 @@
 <div class="app-phase-banner__wrapper">
 {% if PULL_REQUEST %}
   {% set phaseBannerText %}
-    This is a preview of
-    {% if REVIEW_ID %}
-      a <a class="govuk-link" href="https://github.com/alphagov/govuk-design-system/pull/{{ REVIEW_ID  }}">proposed change</a> to the
-    {% else %}
-      the <a class="govuk-link" href="https://github.com/alphagov/govuk-design-system/tree/{{ BRANCH }}">{{ BRANCH }}</a> branch for the
-    {% endif %}
-    <a class="govuk-link" href="https://design-system.service.gov.uk">Design System</a>.
+    [[PHASE BANNER TEXT]]
   {% endset %}
 
   {{ govukPhaseBanner({

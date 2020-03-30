@@ -28,21 +28,6 @@ describe('Site search', () => {
 
     expect(optionResult).toBe('No results found')
   })
-  it('returns results where a word in the title begins with the letter "d"', async () => {
-    await page.goto(baseUrl, { waitUntil: 'load' })
-
-    await page.waitForSelector('.app-site-search__input')
-    await page.type('.app-site-search__input', 'd')
-    const resultsArray = await page.evaluate(
-      () => [...document.querySelectorAll('.app-site-search__option')]
-      // ignore any results where a match was found in the alias
-        .filter(elem => !elem.querySelector('.app-site-search__aliases'))
-      // only get text, ignore child nodes
-        .map(elem => elem.firstChild.textContent.toLowerCase())
-    )
-    // regex with word boundry, in our case words that begin with 'd'
-    expect(resultsArray.every(item => (/\b[d]\w*/).test(item))).toBeTruthy()
-  })
   it('returns results that contain aliases that start with the letter "d"', async () => {
     await page.goto(baseUrl, { waitUntil: 'load' })
 
@@ -68,20 +53,6 @@ describe('Site search', () => {
         .map(elem => elem.querySelector('.app-site-search__aliases'))
     )
     expect(resultsArray).toHaveLength(0)
-  })
-  it('selecting "details" as the result takes you to the the "details" page', async () => {
-    await page.goto(baseUrl, { waitUntil: 'load' })
-
-    await page.waitForSelector('.app-site-search__input')
-    await page.click('.app-site-search__input')
-    await page.type('.app-site-search__input', 'details')
-    await Promise.all([
-      page.waitForNavigation(),
-      page.keyboard.press('Enter')
-    ])
-    let url = await page.url()
-
-    expect(url).toBe(baseUrl + '/components/details/')
   })
   it('shows user a message that the index has failed to download', async () => {
     await page.setRequestInterception(true)

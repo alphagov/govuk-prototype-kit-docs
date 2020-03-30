@@ -1,17 +1,9 @@
 {
-  "name": "govuk_design_system",
+  "name": "govuk-design-system-base",
   "private": true,
-  "description": "GOV.UK Design System",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/alphagov/govuk-design-system.git"
-  },
+  "description": "",
   "author": "Government Digital Service developers",
   "license": "MIT",
-  "bugs": {
-    "url": "https://github.com/alphagov/govuk-design-system/issues"
-  },
-  "homepage": "https://github.com/alphagov/govuk-design-system#readme",
   "scripts": {
     "preinstall": "node bin/check-nvmrc.js",
     "prestart": "node bin/check-nvmrc.js",

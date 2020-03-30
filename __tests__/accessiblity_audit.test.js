@@ -36,45 +36,6 @@ describe('Accessibility Audit', () => {
     })
   })
 
-  describe('Component page - layout-pane.njk', () => {
-    it('validates', async () => {
-      await page.goto(baseUrl + '/components/radios/', { waitUntil: 'load' })
-      const results =
-        await new AxePuppeteer(page)
-          .include(['body'])
-          .exclude(...thingsToExclude)
-          .analyze()
-
-      expect(results.violations).toEqual([])
-    })
-  })
-
-  describe('Patterns page - layout-pane.njk', () => {
-    it('validates', async () => {
-      await page.goto(baseUrl + '/patterns/gender-or-sex/', { waitUntil: 'load' })
-      const results =
-        await new AxePuppeteer(page)
-          .include(['body'])
-          .exclude(...thingsToExclude)
-          .analyze()
-
-      expect(results.violations).toEqual([])
-    })
-  })
-
-  describe('Get in touch page - layout-single-page.njk', () => {
-    it('validates', async () => {
-      await page.goto(baseUrl + '/get-in-touch/', { waitUntil: 'load' })
-      const results =
-        await new AxePuppeteer(page)
-          .include(['body'])
-          .exclude(...thingsToExclude)
-          .analyze()
-
-      expect(results.violations).toEqual([])
-    })
-  })
-
   describe('Site Map page - layout-sitemap.njk', () => {
     it('validates', async () => {
       await page.goto(baseUrl + '/sitemap/', { waitUntil: 'load' })

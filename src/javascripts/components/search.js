@@ -137,7 +137,7 @@ Search.prototype.init = function () {
     id: 'app-site-search__input',
     cssNamespace: 'app-site-search',
     displayMenu: 'overlay',
-    placeholder: 'Search Design System',
+    placeholder: 'Search',
     confirmOnBlur: false,
     autoselect: true,
     source: this.handleSearchQuery.bind(this),

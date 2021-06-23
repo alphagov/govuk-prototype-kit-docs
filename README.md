@@ -1,5 +1,7 @@
 # GOV.UK Prototype Kit Docs
 
+> Development on this project is paused at the moment and this repo is currently not maintained
+
 Base package for building GOV.UK Prototype Kit documentation.
 
 Under construction!

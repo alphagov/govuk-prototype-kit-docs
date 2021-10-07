@@ -1,0 +1,47 @@
+---
+layout: layout-pane.njk
+section: Get started
+title: Install the Prototype Kit
+description:
+show_subnav: true
+theme: Install on Mac
+order: 2
+---
+
+This guide explains how to download and install the Prototype Kit.
+
+You need a few things set up before you can install the Prototype Kit, like Terminal and Node.js.
+
+> If you haven’t already, start by reading [what to do before installing the Prototype Kit](/get-started/mac-before-you-install).
+
+When you are ready to install it, [download the Prototype Kit as a zip (the download will start straight away when you select this link)](#).
+
+Do not open it straight away, as you need to create a folder to put it in.
+
+Go to your Home folder by opening Finder, and selecting “Go” and then “Home” from the menu at the top of your screen.
+
+<img class="bordered" src="../mac-go-home-menu.png" alt="The Go menu on Mac including the Home folder">
+
+Create a folder called “projects” in your Home folder.
+
+You can now open the Prototype Kit zip file you downloaded. When you’ve done this, you should see a folder called govuk-prototype-kit-for-upload.
+
+Rename the folder to something that describes your prototype. If your name consists of more than one word, separate words with hyphens. Move it into your projects folder.
+
+Open Terminal and go to your prototype folder by entering `cd ~/projects/` followed by the name of your prototype, like this.
+
+`cd ~/projects/name-of-your-prototype`.
+
+Now, enter the following command to install the Prototype Kit.
+
+`npm install`
+
+The install can take up to a minute. Whilst it’s installing, you may see some warnings.
+
+![npm install warnings in the terminal](../npm-install-warnings-terminal.png)
+
+This is OK, and you do not need to do anything unless you also get an error, which looks something like this.
+
+![npm install errors in the terminal](../npm-install-terminal-error.png)
+
+**[Next start running the Prototype Kit](/get-started/mac-start-and-stop-the-prototype-kit)**

@@ -1,4 +1,4 @@
-import 'govuk-frontend/govuk/vendor/polyfills/Element/prototype/classList'
+import 'govuk-frontend/vendor/polyfills/Element/prototype/classList'
 
 var OptionsTable = {
   init: function () {
@@ -11,7 +11,7 @@ var OptionsTable = {
     if (hash.match('^#options-')) {
       var exampleName = hash.split('#options-')[1]
 
-      // Is hash for a specific options table? eg. #options-checkboxes-example--hint
+      // Is hash for a specific options table? eg. #options-example-default--hint
       var isLinkToTable = hash.indexOf('--') > -1
       if (isLinkToTable) {
         exampleName = exampleName.split('--')[0]

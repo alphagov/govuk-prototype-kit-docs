@@ -1,0 +1,87 @@
+---
+layout: layout-pane.njk
+section: Guides
+title: Tips and tricks
+show_subnav: true
+---
+
+A few useful things to help you get started.
+
+## Update the Service name
+
+You can change the service name by editing the file '/app/config.js'.
+
+```
+module.exports = {
+
+  // Service name used in header. Eg: 'Renew your passport'
+  serviceName: "Service name goes here",
+
+};
+```
+
+## Show navigation in the header
+
+Import the header component macro place it in the `{%raw%}{% block header %}{%endraw%}`and provide `navigation` items as shown below.
+
+```
+{%raw%}
+{% from 'header/macro.njk' import govukHeader %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    serviceName: "Service Name",
+    serviceUrl: "#",
+    containerClasses: "govuk-width-container",
+    navigation: [
+      {
+        href: "#1",
+        text: "Navigation item 1",
+        active: true
+      },
+      {
+        href: "#2",
+        text: "Navigation item 2"
+      }
+    ]
+  }) }}
+{% endblock %}
+{%endraw%}
+```
+
+
+An example of this can be seen in the [blank question page](#).
+
+## Add a phase banner
+
+Import the phase-banner component and supply tag and feedback text. The phase banner must be inside a `{%raw%}{% block beforeContent %}{%endraw%}`.
+
+### How to include an Alpha banner
+
+```
+{%raw%}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "alpha"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{%endraw%}
+```
+### How to include a Beta banner
+
+```
+{%raw%}
+{% from 'phase-banner/macro.njk' import govukPhaseBanner %}
+
+{{ govukPhaseBanner({
+  tag: {
+    text: "beta"
+  },
+  html: 'This is a new service - your <a href="#" class="govuk-link">feedback</a> will help us to improve it.'
+}) }}
+{%endraw%}
+```

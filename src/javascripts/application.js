@@ -1,5 +1,6 @@
 import BackToTop from './components/back-to-top.js'
-import common from 'govuk-frontend/govuk/common'
+import common from 'govuk-frontend/common'
+import CookieBanner from './components/cookie-banner.js'
 import Example from './components/example.js'
 import AppTabs from './components/tabs.js'
 import Copy from './components/copy.js'
@@ -8,6 +9,9 @@ import Search from './components/search.js'
 import OptionsTable from './components/options-table.js'
 
 var nodeListForEach = common.nodeListForEach
+
+// Add cookie message
+CookieBanner.addCookieMessage()
 
 // Initialise example frames
 var $examples = document.querySelectorAll('[data-module="app-example-frame"]')
@@ -39,4 +43,5 @@ new Search($searchContainer).init()
 
 // Initialise back to top
 var $backToTop = document.querySelector('[data-module="app-back-to-top"]')
-new BackToTop($backToTop).init()
+var $observedElement = document.querySelector('.app-subnav')
+new BackToTop($backToTop, { $observedElement: $observedElement }).init()

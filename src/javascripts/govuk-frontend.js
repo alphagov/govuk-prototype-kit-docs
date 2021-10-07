@@ -1,33 +1,27 @@
-import common from 'govuk-frontend/govuk/common'
-import Accordion from 'govuk-frontend/govuk/components/accordion/accordion'
-import Button from 'govuk-frontend/govuk/components/button/button'
-import Details from 'govuk-frontend/govuk/components/details/details'
-import CharacterCount from 'govuk-frontend/govuk/components/character-count/character-count'
-import Checkboxes from 'govuk-frontend/govuk/components/checkboxes/checkboxes'
-import ErrorSummary from 'govuk-frontend/govuk/components/error-summary/error-summary'
-import Radios from 'govuk-frontend/govuk/components/radios/radios'
-import Header from 'govuk-frontend/govuk/components/header/header'
-import Tabs from 'govuk-frontend/govuk/components/tabs/tabs'
+import Accordion from 'govuk-frontend/components/accordion/accordion'
+import Button from 'govuk-frontend/components/button/button'
+import Details from 'govuk-frontend/components/details/details'
+import CharacterCount from 'govuk-frontend/components/character-count/character-count'
+import Checkboxes from 'govuk-frontend/components/checkboxes/checkboxes'
+import ErrorSummary from 'govuk-frontend/components/error-summary/error-summary'
+import Radios from 'govuk-frontend/components/radios/radios'
+import Header from 'govuk-frontend/components/header/header'
+import Tabs from 'govuk-frontend/components/tabs/tabs'
 
-var nodeListForEach = common.nodeListForEach
+new Button(document).init()
 
-var $buttons = document.querySelectorAll('[data-module="govuk-button"]')
-nodeListForEach($buttons, function ($button) {
-  new Button($button).init()
-})
-
-var $accordions = document.querySelectorAll('[data-module="govuk-accordion"]')
-nodeListForEach($accordions, function ($accordion) {
+var $accordion = document.querySelector('[data-module="accordion"]')
+if ($accordion) {
   new Accordion($accordion).init()
-})
+}
 
-var $details = document.querySelectorAll('[data-module="govuk-details"]')
-nodeListForEach($details, function ($detail) {
-  new Details($detail).init()
-})
+var $details = document.querySelector('details')
+if ($details) {
+  new Details($details).init()
+}
 
-var $errorSummaries = document.querySelectorAll('[data-module="govuk-error-summary"]')
-nodeListForEach($errorSummaries, function ($errorSummary) {
+var $errorSummary = document.querySelector('[data-module="error-summary"]')
+if ($errorSummary) {
   var errorSummary = new ErrorSummary($errorSummary)
   // Override the `init` method since it automatically focuses the ErrorSummary.
   // This is not ideal when showing examples for this component
@@ -36,29 +30,29 @@ nodeListForEach($errorSummaries, function ($errorSummary) {
     this.$module.addEventListener('click', ErrorSummary.prototype.handleClick.bind(this))
   }
   errorSummary.init()
-})
+}
 
-var $characterCounts = document.querySelectorAll('[data-module="govuk-character-count"]')
-nodeListForEach($characterCounts, function ($characterCount) {
+var $characterCount = document.querySelector('[data-module="character-count"]')
+if ($characterCount) {
   new CharacterCount($characterCount).init()
-})
+}
 
-var $checkboxes = document.querySelectorAll('[data-module="govuk-checkboxes"]')
-nodeListForEach($checkboxes, function ($checkbox) {
+var $checkbox = document.querySelector('[data-module="checkboxes"]')
+if ($checkbox) {
   new Checkboxes($checkbox).init()
-})
+}
 
-var $radios = document.querySelectorAll('[data-module="govuk-radios"]')
-nodeListForEach($radios, function ($radio) {
+var $radio = document.querySelector('[data-module="radios"]')
+if ($radio) {
   new Radios($radio).init()
-})
+}
 
-var $headers = document.querySelectorAll('[data-module="govuk-header"]')
-nodeListForEach($headers, function ($header) {
+var $header = document.querySelector('[data-module="header"]')
+if ($header) {
   new Header($header).init()
-})
+}
 
-var $tabs = document.querySelectorAll('[data-module="govuk-tabs"]')
-nodeListForEach($tabs, function ($tab) {
-  new Tabs($tab).init()
-})
+var $tabs = document.querySelector('[data-module="tabs"]')
+if ($tabs) {
+  new Tabs($tabs).init()
+}

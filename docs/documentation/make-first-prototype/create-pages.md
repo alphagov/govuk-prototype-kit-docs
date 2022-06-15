@@ -1,8 +1,7 @@
 ---
-title: Create pages
+heading: Create pages
 caption: Build a basic prototype
 ---
-# Create pages
 
 Create pages by copying template files that come with the Prototype Kit.
 

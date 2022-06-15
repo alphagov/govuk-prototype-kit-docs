@@ -1,7 +1,6 @@
 ---
-title: Accessibility
+heading: Accessibility
 ---
-# Accessibility
 
 The GOV.UK Prototype Kit website is maintained by a team at the Government Digital Service (GDS).
 

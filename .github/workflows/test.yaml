@@ -23,9 +23,6 @@ jobs:
       run:
         shell: bash
 
-    env:
-      CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
-
     steps:
     - uses: actions/checkout@v2
 
@@ -35,17 +32,9 @@ jobs:
         cache: 'npm'
         node-version: ${{ matrix.node-version }}
 
-    - name: Cache Cypress binary
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/Cypress
-        key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
-
     - run: npm ci
 
     - run: npx jest
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - run: npm run test:integration

@@ -12,11 +12,7 @@
     "serve": "node listen-on-port",
     "lint": "standard",
     "rapidtest": "jest --bail",
-    "cypress:open": "cypress open",
-    "test:heroku": "start-server-and-test 'npx --yes heroku local --port 3000' 3000 test:smoke",
-    "test:integration": "KIT_TEST_DIR=tmp/test-prototype start-server-and-test 'node cypress/scripts/run-from-release' 3000 'cypress run'",
-    "test:integration:package": "KIT_TEST_DIR=tmp/test-prototype-package start-server-and-test 'node cypress/scripts/run-as-package' 3000 'cypress run'",
-    "test:smoke": "cypress run --spec \"cypress/integration/0-smoke-tests/*\"",
+    "test:heroku": "start-server-and-test 'npx --yes heroku local --port 3000' 3000 'curl localhost:3000'",
     "test": "jest && npm run lint"
   },
   "dependencies": {
@@ -53,8 +49,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "cypress": "^9.6.0",
-    "eslint-plugin-cypress": "^2.12.1",
     "glob": "^7.1.4",
     "jest": "^28.1.1",
     "standard": "^14.3.3",
@@ -62,14 +56,6 @@
     "supertest": "^6.2.3",
     "tar": "^6.1.11",
     "wait-on": "^6.0.1"
-  },
-  "standard": {
-    "plugins": [
-      "cypress"
-    ],
-    "env": {
-      "cypress/globals": true
-    }
   },
   "jest": {
     "testPathIgnorePatterns": [

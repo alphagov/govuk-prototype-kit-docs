@@ -1,6 +1,6 @@
 {
-  "name": "govuk-prototype-kit",
-  "description": "Rapidly create HTML prototypes of GOV.UK services",
+  "name": "govuk-prototype-kit-docs",
+  "description": "Site for the GOV.UK Prototype Kit",
   "version": "12.1.1",
   "private": true,
   "engines": {

@@ -9,7 +9,7 @@ on:
 jobs:
   test-heroku:
 
-    name: Test kit on Heroku
+    name: Test on Heroku
     runs-on: ubuntu-latest
 
     steps:

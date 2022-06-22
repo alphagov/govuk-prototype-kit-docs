@@ -9,37 +9,21 @@ on:
 jobs:
   tests:
 
-    strategy:
-      fail-fast: false  # continue other tests if one test in matrix fails
-      matrix:
-        node-version: [12.x, 14.x, 16.x]
-        os: [macos-latest, windows-latest, ubuntu-latest]
-
-    name: Test kit on Node v${{ matrix.node-version }} (${{ matrix.os }})
-    runs-on: ${{ matrix.os }}
+    name: Test
+    runs-on: ubuntu-latest
     timeout-minutes: 15
 
     defaults:
       run:
         shell: bash
 
-    env:
-      CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
-
     steps:
     - uses: actions/checkout@v2
 
-    - name: Use Node v${{ matrix.node-version }}
-      uses: actions/setup-node@v3
+    - uses: actions/setup-node@v3
       with:
         cache: 'npm'
-        node-version: ${{ matrix.node-version }}
-
-    - name: Cache Cypress binary
-      uses: actions/cache@v3
-      with:
-        path: ~/.cache/Cypress
-        key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
+        node-version-file: '.nvmrc'
 
     - run: npm ci
 
@@ -47,5 +31,3 @@ jobs:
       env:
         CI: true
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-    - run: npm run test:integration

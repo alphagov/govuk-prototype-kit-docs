@@ -54,9 +54,17 @@ router.get('/download', function (req, res) {
 })
 
 router.get('/update.sh', function (req, res) {
-  res.redirect(
-    'https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/main/update.sh'
-  )
+  if (req.app.locals.promoMode === 'true') {
+    const version = require('../package.json').version
+
+    res.redirect(
+      `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/${version}/update.sh`
+    )
+  } else {
+    res.redirect(
+      'https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/main/update.sh'
+    )
+  }
 })
 
 // Examples - examples post here

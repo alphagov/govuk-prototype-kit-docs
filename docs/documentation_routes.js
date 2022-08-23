@@ -51,7 +51,7 @@ router.get('/update.sh', function (req, res) {
   const version = require('../package.json').version
 
   res.redirect(
-    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/${version}/update.sh`
+    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v${version}/update.sh`
   )
 })
 

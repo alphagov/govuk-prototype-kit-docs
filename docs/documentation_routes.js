@@ -40,31 +40,19 @@ router.get('/install/:page', function (req, res) {
 // linking to the same version being run by someone referring to the copy of the
 // docs running in their kit
 router.get('/download', function (req, res) {
-  if (req.app.locals.promoMode === 'true') {
-    const version = require('../package.json').version
+  const version = require('../package.json').version
 
-    res.redirect(
-      `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${version}/govuk-prototype-kit-${version}.zip`
-    )
-  } else {
-    res.redirect(
-      'https://github.com/alphagov/govuk-prototype-kit/releases/latest'
-    )
-  }
+  res.redirect(
+    `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${version}/govuk-prototype-kit-${version}.zip`
+  )
 })
 
 router.get('/update.sh', function (req, res) {
-  if (req.app.locals.promoMode === 'true') {
-    const version = require('../package.json').version
+  const version = require('../package.json').version
 
-    res.redirect(
-      `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/${version}/update.sh`
-    )
-  } else {
-    res.redirect(
-      'https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/main/update.sh'
-    )
-  }
+  res.redirect(
+    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/${version}/update.sh`
+  )
 })
 
 // Examples - examples post here

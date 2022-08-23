@@ -61,7 +61,7 @@ describe('The Prototype Kit', () => {
     it('should redirect to GitHub', async () => {
       const response = await request(app).get('/docs/update.sh')
       expect(response.statusCode).toBe(302)
-      expect(response.get('location')).toBe('https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/main/update.sh')
+      expect(response.get('location')).toMatch(new RegExp('https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v[0-9]+.[0-9]+.[0-9]+/update.sh'))
     })
 
     it('should send a well formed response', async () => {

@@ -40,40 +40,19 @@ router.get('/install/:page', function (req, res) {
 // linking to the same version being run by someone referring to the copy of the
 // docs running in their kit
 router.get('/download', function (req, res) {
-  if (req.app.locals.promoMode === 'true') {
-    const version = require('../package.json').version
+  const version = require('../package.json').version
 
-    res.redirect(
-      `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${version}/govuk-prototype-kit-${version}.zip`
-    )
-  } else {
-    res.redirect(
-      'https://github.com/alphagov/govuk-prototype-kit/releases/latest'
-    )
-  }
+  res.redirect(
+    `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${version}/govuk-prototype-kit-${version}.zip`
+  )
 })
 
 router.get('/update.sh', function (req, res) {
-  if (req.app.locals.promoMode === 'true') {
-    const version = require('../package.json').version
+  const version = require('../package.json').version
 
-    if (version <= 'v12.1.1') {
-      // We only started pinning the version of the kit to upgrade to after we
-      // released the current version, so we have to have this workaround until
-      // we release the next version.
-      res.redirect(
-        'https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/49fb439e56c5c7200530715176677b5e02a1ead9/update.sh'
-      )
-    } else {
-      res.redirect(
-        `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/${version}/update.sh`
-      )
-    }
-  } else {
-    res.redirect(
-      'https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/main/update.sh'
-    )
-  }
+  res.redirect(
+    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v${version}/update.sh`
+  )
 })
 
 // Examples - examples post here

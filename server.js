@@ -21,7 +21,6 @@ const middleware = [
 ]
 const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
-const prototypeAdminRoutes = require('./lib/prototype-admin-routes.js')
 const packageJson = require('./package.json')
 const routes = require(`${process.cwd()}/app/routes.js`)
 const utils = require('./lib/utils.js')
@@ -164,9 +163,6 @@ if (useAutoStoreData === 'true') {
     utils.addCheckedFunction(nunjucksDocumentationEnv)
   }
 }
-
-// Load prototype admin routes
-app.use('/prototype-admin', prototypeAdminRoutes)
 
 // Redirect root to /docs when in promo mode.
 if (promoMode === 'true') {

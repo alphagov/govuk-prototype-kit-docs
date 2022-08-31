@@ -18,7 +18,6 @@ dotenv.config()
 const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
 const packageJson = require('./package.json')
-const routes = require(`${process.cwd()}/app/routes.js`)
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const { projectDir } = require('./lib/path-utils')
@@ -157,15 +156,6 @@ app.get('/robots.txt', function (req, res) {
   res.type('text/plain')
   res.send('User-agent: *\nAllow: /')
 })
-
-// Load routes (found in app/routes.js)
-if (typeof (routes) !== 'function') {
-  console.log(routes.bind)
-  console.log('Warning: the use of bind in routes is deprecated - please check the Prototype Kit documentation for writing routes.')
-  routes.bind(app)
-} else {
-  app.use('/', routes)
-}
 
 // Clone app locals to documentation app locals
 // Use Object.assign to ensure app.locals is cloned to prevent additions from

@@ -43,6 +43,8 @@ jobs:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
 
+      - run: npm install -g npm@latest
+
       - run: npm ci
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

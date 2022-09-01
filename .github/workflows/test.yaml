@@ -45,7 +45,7 @@ jobs:
 
       - run: npm ci
 
-      - run: npx jest
+      - run: npm test
         env:
           CI: true
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

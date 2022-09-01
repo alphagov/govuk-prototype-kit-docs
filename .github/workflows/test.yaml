@@ -44,6 +44,8 @@ jobs:
           key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
 
       - run: npm ci
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - run: npm test
         env:
@@ -56,3 +58,4 @@ jobs:
           CYPRESS_DEFAULT_COMMAND_TIMEOUT: 40000
           CYPRESS_PAGE_LOAD_TIMEOUT: 120000
           CYPRESS_RETRIES: 3
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}

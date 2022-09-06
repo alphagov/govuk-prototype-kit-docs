@@ -38,12 +38,11 @@ GDS is committed to making its websites accessible, in accordance with the Publi
 
 The Prototype Kit website at [https://govuk-prototype-kit.herokuapp.com](/) is fully compliant with the Web Content Accessibility Guidelines (WCAG) version 2.1 AA standard.
 
-
 ### How this website has been tested for accessibility
 
 The GOV.UK Prototype Kit website was last tested on 5 October 2021. 
 
-The test was carried out by the GOV.UK Prototype Kit team.
+The test was carried out by the GOV.UK Prototype team.
 
 The GOV.UK Prototype Kit team tested a sample of pages to cover the different content types in the Prototype Kit website. They were:
 
@@ -55,7 +54,7 @@ The GOV.UK Prototype Kit team tested a sample of pages to cover the different co
 
 ### How the GOV.UK Prototype Kit team makes this website accessible
 
-The GOV.UK Prototype Kit team works to ensure that the Prototype Kit website is accessible.
+The GOV.UK Prototype team works to ensure that the Prototype Kit website is accessible.
 
 The team aims to research the Prototype Kit website with a representative range of users including those with disabilities.
 

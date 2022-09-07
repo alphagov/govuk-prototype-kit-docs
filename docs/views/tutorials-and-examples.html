@@ -144,8 +144,19 @@
     <div class="govuk-grid-column-two-thirds">
       <h2 class="govuk-heading-m">Page templates</h2>
       <p>
-        You can find them in your prototype folder, in /docs/views/templates
+        You can download any of the following templates by clicking the links below:
       </p>
+
+      <ul class="govuk-list govuk-list--bullet">
+        {% for template in templates %}
+        <li>
+          <a href="/docs/templates/download/{{ template }}" download>
+            {{ template }}
+          </a>
+        </li>
+        {% endfor %}
+      </ul>
+
       <p>
         Copy and paste the pages you need to your /app/views folder to make your prototypes.
       </p>

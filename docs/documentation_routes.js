@@ -55,6 +55,12 @@ router.get('/update.sh', function (req, res) {
   )
 })
 
+// Examples - examples get here
+router.get('/tutorials-and-examples', function (req, res) {
+  const templates = fs.readdirSync(path.join(__dirname, 'views', 'templates'))
+  res.render('tutorials-and-examples', { templates })
+})
+
 // Examples - examples post here
 router.post('/tutorials-and-examples', function (req, res) {
   res.redirect('tutorials-and-examples')
@@ -83,6 +89,12 @@ router.get('/make-first-prototype/add-questions', function (req, res) {
 
 router.get('/templates/check-your-answers', function (req, res) {
   res.redirect('/docs/templates/check-answers')
+})
+
+// Link to download the template
+router.get('/templates/download/:template', function (req, res) {
+  const file = `${__dirname}/views/templates/${req.params.template}`
+  res.download(file)
 })
 
 module.exports = router

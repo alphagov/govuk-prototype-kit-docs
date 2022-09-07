@@ -10,7 +10,7 @@ This page explains how the team works to ensure the Prototype Kit website is acc
 
 This accessibility statement applies to the GOV.UK Prototype Kit documentation website at https://govuk-prototype-kit.herokuapp.com
 
-The GOV.UK Prototype Kit team wants as many people as possible to be able to use this website. For example, that means you should be able to:
+The GOV.UK Prototype team wants as many people as possible to be able to use this website. For example, that means you should be able to:
 
 - change colours, contrast levels and fonts
 - zoom in up to 300% without the text spilling off the screen
@@ -24,9 +24,9 @@ The team has also made the website text as simple as possible to understand.
 
 ### Feedback and contact information
 
-The GOV.UK Prototype Kit team is always looking to improve the accessibility of this website. If you find any problems that are not listed on this page or think this website is not meeting accessibility requirements, email the GOV.UK Prototype Kit team at govuk-design-system-support@digital.cabinet-office.gov.uk
+The GOV.UK Prototype team is always looking to improve the accessibility of this website. If you find any problems that are not listed on this page or think this website is not meeting accessibility requirements, email the GOV.UK Prototype team at govuk-design-system-support@digital.cabinet-office.gov.uk
 
-The GOV.UK Prototype Kit team will review your request and get back to you in 2 working days.
+The GOV.UK Prototype team will review your request and get back to you in 2 working days.
 
 ### Enforcement procedure
 
@@ -36,17 +36,8 @@ GDS is committed to making its websites accessible, in accordance with the Publi
 
 ### Compliance status
 
-The Prototype Kit website at [https://govuk-prototype-kit.herokuapp.com](/) is partially compliant with the Web Content Accessibility Guidelines (WCAG) version 2.1 AA standard, due to the non-compliances listed below.
+The Prototype Kit website at [https://govuk-prototype-kit.herokuapp.com](/) is fully compliant with the Web Content Accessibility Guidelines (WCAG) version 2.1 AA standard.
 
-### Non-accessible content
-
-The content listed below is non-accessible for the following reasons.
-
-#### Non-compliance with the accessibility regulations
-
-The kit uses an old version of the step by step pattern, in which it is not clear if elements are buttons or links. This fails WCAG 2.1 criterion 1.3.1 (info and relationships).
-
-We plan to fix these issues by 31 August 2022.
 
 ### How this website has been tested for accessibility
 
@@ -75,5 +66,5 @@ When we publish new content, we’ll continue to make sure that it meets accessi
 
 ### Preparation of this accessibility statement
 
-This statement was prepared on 5 November 2021. It was last reviewed on 20 April 2022.
+This statement was prepared on 5 November 2021. It was last reviewed on 6 September 2022.
 

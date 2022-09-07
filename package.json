@@ -51,7 +51,7 @@
     "cypress": "^10.6.0",
     "eslint-plugin-cypress": "^2.12.1",
     "glob": "^7.1.4",
-    "govuk-prototype-kit": "alphagov/govuk-prototype-kit#v13",
+    "govuk-prototype-kit": "^0.0.1-alpha.3",
     "jest": "^28.1.1",
     "standard": "^14.3.3",
     "start-server-and-test": "^1.14.0",

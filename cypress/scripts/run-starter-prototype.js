@@ -10,7 +10,7 @@ const defaultKitPath = path.join(os.tmpdir(), 'cypress/temp/test-project')
 
 const testDir = path.resolve(process.env.KIT_TEST_DIR || defaultKitPath)
 
-const kitModule = 'github:alphagov/govuk-prototype-kit#v13'
+const kitModule = 'govuk-prototype-kit@0.0.1-alpha.3'
 
 const npmInstall = (module) => execPromise(`cd ${testDir} && npm install ${module}`, { inherit: true })
 

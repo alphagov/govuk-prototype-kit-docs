@@ -23,7 +23,7 @@ Some hosting services automatically publish every time you [push to GitHub](/doc
 
 ## Setting a password
 
-When running the GOV.UK Prototype Kit online, you need to set a password. This is to stop anyone finding your prototype accidentally and mistaking it for a real service.
+When running the Prototype Kit online, you need to set a password. This is to stop anyone finding your prototype accidentally and mistaking it for a real service.
 
 Check your hosting services documentation on how to set 'environment variables' (it may have a slightly different name like 'config vars' or 'variables').
 

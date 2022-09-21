@@ -15,6 +15,7 @@ const npx = (command) => child_process.execSync(`npx ${kitModule} ${command}`, {
 
 fs.removeSync(testDir)
 fs.ensureDirSync(testDir)
+fs.writeJsonSync(path.join(testDir, 'usage-data-config.json'), { collectUsageData: false })
 npx('install')
 npmInstall('@govuk-prototype-kit/step-by-step@2')
 npx('start')

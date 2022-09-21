@@ -85,6 +85,14 @@ router.get('/templates/check-your-answers', function (req, res) {
   res.redirect('/docs/templates/check-answers')
 })
 
+router.get('/publishing-on-heroku', function (req, res) {
+  res.redirect('/docs/publishing')
+})
+
+router.get('/publishing-on-heroku-terminal', function (req, res) {
+  res.redirect('/docs/publishing')
+})
+
 module.exports = router
 
 // Strip off markdown extensions if present and redirect

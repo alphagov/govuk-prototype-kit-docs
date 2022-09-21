@@ -11,7 +11,7 @@ You'll need a hosting service to publish prototypes online.
 
 ## Hosting services
 
-The Prototype Kit runs on any hosting service that supports Node.js.
+The GOV.UK Prototype Kit runs on any hosting service that supports Node.js.
 
 Your organisation may already use a hosting service for the Prototype Kit. Check with your IT or digital team about which platform to use.
 

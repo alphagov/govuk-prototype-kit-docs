@@ -27,4 +27,6 @@ When running the Prototype Kit online, you need to set a password. This is to st
 
 Check your hosting services documentation on how to set 'environment variables' (it may have a slightly different name like 'config vars' or 'variables').
 
-Add an environment variable where the 'name' is PASSWORD, and the 'value' is whatever password you would like to use.
+Add an environment variable where the 'name' is NODE_ENV, and the 'value' is 'production'.
+
+Add another environment variable where the 'name' is PASSWORD, and the 'value' is whatever password you would like to use.

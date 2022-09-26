@@ -8,6 +8,7 @@
   },
   "scripts": {
     "build": "node lib/build/generate-assets",
+    "dev": "node lib/build/build-watch-and-serve",
     "serve": "node listen-on-port",
     "lint": "standard",
     "rapidtest": "jest --bail",

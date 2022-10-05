@@ -15,13 +15,8 @@ const sessionInMemory = require('express-session')
 dotenv.config()
 
 // Local dependencies
-const middleware = [
-  require('./lib/middleware/authentication/authentication.js')(),
-  require('./lib/middleware/extensions/extensions.js')
-]
 const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
-const prototypeAdminRoutes = require('./lib/prototype-admin-routes.js')
 const packageJson = require('./package.json')
 const routes = require(`${process.cwd()}/app/routes.js`)
 const utils = require('./lib/utils.js')
@@ -96,9 +91,8 @@ if (useCookieSessionStore === 'true') {
   })))
 }
 
-// Authentication middleware must be loaded before other middleware such as
-// static assets to prevent unauthorised access
-middleware.forEach(func => app.use(func))
+// Middleware
+app.use(require('./lib/middleware/extensions/extensions.js'))
 
 // Set up App
 var appViews = extensions.getAppViews([
@@ -164,9 +158,6 @@ if (useAutoStoreData === 'true') {
     utils.addCheckedFunction(nunjucksDocumentationEnv)
   }
 }
-
-// Load prototype admin routes
-app.use('/prototype-admin', prototypeAdminRoutes)
 
 // Redirect root to /docs when in promo mode.
 if (promoMode === 'true') {

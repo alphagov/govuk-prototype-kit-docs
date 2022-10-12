@@ -30,3 +30,9 @@ Check your hosting services documentation on how to set 'environment variables' 
 Add an environment variable where the 'name' is NODE_ENV, and the 'value' is 'production'.
 
 Add another environment variable where the 'name' is PASSWORD, and the 'value' is whatever password you would like to use.
+
+### If you get an error about username
+
+Older versions of the Prototype Kit require a username - you can [update your Prototype Kit](/docs/updating-the-kit) or set a username:
+
+Add another environment variable where the 'name' is USERNAME, and the 'value' is whatever username you would like to use.

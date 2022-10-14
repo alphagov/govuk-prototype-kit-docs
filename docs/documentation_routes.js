@@ -93,6 +93,10 @@ router.get('/publishing-on-heroku-terminal', function (req, res) {
   res.redirect('/docs/publishing')
 })
 
+router.get('/privacy-policy', function (req, res) {
+  res.redirect('/docs/privacy-notice')
+})
+
 module.exports = router
 
 // Strip off markdown extensions if present and redirect

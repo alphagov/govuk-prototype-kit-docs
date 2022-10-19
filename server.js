@@ -35,10 +35,6 @@ var useHttps = process.env.USE_HTTPS || config.useHttps
 
 useHttps = useHttps.toLowerCase()
 
-// Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
-var promoMode = process.env.PROMO_MODE || 'false'
-promoMode = promoMode.toLowerCase()
-
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
 var isSecure = (env === 'production' && useHttps === 'true')
@@ -51,7 +47,6 @@ if (isSecure) {
 app.locals.asset_path = '/public/'
 app.locals.useAutoStoreData = (useAutoStoreData === 'true')
 app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
-app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
@@ -62,7 +57,7 @@ app.use(cookieParser())
 
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
-const sessionHours = (promoMode === 'true') ? 20 : 4
+const sessionHours = 20
 const sessionOptions = {
   secret: sessionName,
   cookie: {
@@ -150,32 +145,18 @@ if (useAutoStoreData === 'true') {
   utils.addCheckedFunction(nunjucksDocumentationEnv)
 }
 
-// Redirect root to /docs when in promo mode.
-if (promoMode === 'true') {
-  console.log('Prototype Kit running in promo mode')
+// Redirect root to /docs
+console.log('Running Prototype Kit website')
 
-  app.get('/', function (req, res) {
-    res.redirect('/docs')
-  })
+app.get('/', function (req, res) {
+  res.redirect('/docs')
+})
 
-  // Allow search engines to index the Prototype Kit promo site
-  app.get('/robots.txt', function (req, res) {
-    res.type('text/plain')
-    res.send('User-agent: *\nAllow: /')
-  })
-} else {
-  // Prevent search indexing
-  app.use(function (req, res, next) {
-    // Setting headers stops pages being indexed even if indexed pages link to them.
-    res.setHeader('X-Robots-Tag', 'noindex')
-    next()
-  })
-
-  app.get('/robots.txt', function (req, res) {
-    res.type('text/plain')
-    res.send('User-agent: *\nDisallow: /')
-  })
-}
+// Allow search engines to index the Prototype Kit promo site
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain')
+  res.send('User-agent: *\nAllow: /')
+})
 
 // Load routes (found in app/routes.js)
 if (typeof (routes) !== 'function') {

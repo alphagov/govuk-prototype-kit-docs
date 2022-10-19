@@ -35,12 +35,12 @@ describe('The Prototype Kit', () => {
 
   describe('index page', () => {
     it('should send a well formed response', async () => {
-      const response = await request(app).get('/')
+      const response = await request(app).get('/docs')
       expect(response.statusCode).toBe(200)
     })
 
     it('should return html file', async () => {
-      const response = await request(app).get('/')
+      const response = await request(app).get('/docs')
       expect(response.type).toBe('text/html')
     })
   })

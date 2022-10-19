@@ -35,14 +35,9 @@ var useHttps = process.env.USE_HTTPS || config.useHttps
 
 useHttps = useHttps.toLowerCase()
 
-var useDocumentation = (config.useDocumentation === 'true')
-
 // Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
 var promoMode = process.env.PROMO_MODE || 'false'
 promoMode = promoMode.toLowerCase()
-
-// Disable promo mode if docs aren't enabled
-if (!useDocumentation) promoMode = 'false'
 
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
@@ -127,22 +122,20 @@ app.use('/public', express.static(path.join(projectDir, '/public')))
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
 
 // Set up documentation app
-if (useDocumentation) {
-  var documentationViews = [
-    path.join(__dirname, '/node_modules/govuk-frontend/'),
-    path.join(__dirname, '/node_modules/govuk-frontend/components'),
-    path.join(__dirname, '/docs/views/'),
-    path.join(__dirname, '/lib/')
-  ]
+var documentationViews = [
+  path.join(__dirname, '/node_modules/govuk-frontend/'),
+  path.join(__dirname, '/node_modules/govuk-frontend/components'),
+  path.join(__dirname, '/docs/views/'),
+  path.join(__dirname, '/lib/')
+]
 
-  nunjucksConfig.express = documentationApp
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
-  // Nunjucks filters
-  utils.addNunjucksFilters(nunjucksDocumentationEnv)
+nunjucksConfig.express = documentationApp
+var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
+// Nunjucks filters
+utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
-  // Set views engine
-  documentationApp.set('view engine', 'html')
-}
+// Set views engine
+documentationApp.set('view engine', 'html')
 
 // Support for parsing data in POSTs
 app.use(bodyParser.json())
@@ -154,9 +147,7 @@ app.use(bodyParser.urlencoded({
 if (useAutoStoreData === 'true') {
   app.use(utils.autoStoreData)
   utils.addCheckedFunction(nunjucksAppEnv)
-  if (useDocumentation) {
-    utils.addCheckedFunction(nunjucksDocumentationEnv)
-  }
+  utils.addCheckedFunction(nunjucksDocumentationEnv)
 }
 
 // Redirect root to /docs when in promo mode.
@@ -195,19 +186,17 @@ if (typeof (routes) !== 'function') {
   app.use('/', routes)
 }
 
-if (useDocumentation) {
-  // Clone app locals to documentation app locals
-  // Use Object.assign to ensure app.locals is cloned to prevent additions from
-  // updating the original app.locals
-  documentationApp.locals = Object.assign({}, app.locals)
-  documentationApp.locals.serviceName = 'Prototype Kit'
+// Clone app locals to documentation app locals
+// Use Object.assign to ensure app.locals is cloned to prevent additions from
+// updating the original app.locals
+documentationApp.locals = Object.assign({}, app.locals)
+documentationApp.locals.serviceName = 'Prototype Kit'
 
-  // Create separate router for docs
-  app.use('/docs', documentationApp)
+// Create separate router for docs
+app.use('/docs', documentationApp)
 
-  // Docs under the /docs namespace
-  documentationApp.use('/', documentationRoutes)
-}
+// Docs under the /docs namespace
+documentationApp.use('/', documentationRoutes)
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {
@@ -225,14 +214,12 @@ app.get(/^([^.]+)$/, function (req, res, next) {
   utils.matchRoutes(req, res, next)
 })
 
-if (useDocumentation) {
-  // Documentation  routes
-  documentationApp.get(/^([^.]+)$/, function (req, res, next) {
-    if (!utils.matchMdRoutes(req, res)) {
-      utils.matchRoutes(req, res, next)
-    }
-  })
-}
+// Documentation  routes
+documentationApp.get(/^([^.]+)$/, function (req, res, next) {
+  if (!utils.matchMdRoutes(req, res)) {
+    utils.matchRoutes(req, res, next)
+  }
+})
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {

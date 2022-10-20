@@ -18,7 +18,6 @@ dotenv.config()
 const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
 const packageJson = require('./package.json')
-const routes = require(`${process.cwd()}/app/routes.js`)
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const { projectDir } = require('./lib/path-utils')
@@ -35,15 +34,6 @@ var useHttps = process.env.USE_HTTPS || config.useHttps
 
 useHttps = useHttps.toLowerCase()
 
-var useDocumentation = (config.useDocumentation === 'true')
-
-// Promo mode redirects the root to /docs - so our landing page is docs when published on heroku
-var promoMode = process.env.PROMO_MODE || 'false'
-promoMode = promoMode.toLowerCase()
-
-// Disable promo mode if docs aren't enabled
-if (!useDocumentation) promoMode = 'false'
-
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
 var isSecure = (env === 'production' && useHttps === 'true')
@@ -56,7 +46,6 @@ if (isSecure) {
 app.locals.asset_path = '/public/'
 app.locals.useAutoStoreData = (useAutoStoreData === 'true')
 app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
-app.locals.promoMode = promoMode
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
@@ -67,7 +56,7 @@ app.use(cookieParser())
 
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
-const sessionHours = (promoMode === 'true') ? 20 : 4
+const sessionHours = 20
 const sessionOptions = {
   secret: sessionName,
   cookie: {
@@ -127,22 +116,20 @@ app.use('/public', express.static(path.join(projectDir, '/public')))
 app.use('/node_modules/govuk-frontend', express.static(path.join(__dirname, '/node_modules/govuk-frontend')))
 
 // Set up documentation app
-if (useDocumentation) {
-  var documentationViews = [
-    path.join(__dirname, '/node_modules/govuk-frontend/'),
-    path.join(__dirname, '/node_modules/govuk-frontend/components'),
-    path.join(__dirname, '/docs/views/'),
-    path.join(__dirname, '/lib/')
-  ]
+var documentationViews = [
+  path.join(__dirname, '/node_modules/govuk-frontend/'),
+  path.join(__dirname, '/node_modules/govuk-frontend/components'),
+  path.join(__dirname, '/docs/views/'),
+  path.join(__dirname, '/lib/')
+]
 
-  nunjucksConfig.express = documentationApp
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
-  // Nunjucks filters
-  utils.addNunjucksFilters(nunjucksDocumentationEnv)
+nunjucksConfig.express = documentationApp
+var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
+// Nunjucks filters
+utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
-  // Set views engine
-  documentationApp.set('view engine', 'html')
-}
+// Set views engine
+documentationApp.set('view engine', 'html')
 
 // Support for parsing data in POSTs
 app.use(bodyParser.json())
@@ -154,60 +141,33 @@ app.use(bodyParser.urlencoded({
 if (useAutoStoreData === 'true') {
   app.use(utils.autoStoreData)
   utils.addCheckedFunction(nunjucksAppEnv)
-  if (useDocumentation) {
-    utils.addCheckedFunction(nunjucksDocumentationEnv)
-  }
+  utils.addCheckedFunction(nunjucksDocumentationEnv)
 }
 
-// Redirect root to /docs when in promo mode.
-if (promoMode === 'true') {
-  console.log('Prototype Kit running in promo mode')
+// Redirect root to /docs
+console.log('Running Prototype Kit website')
 
-  app.get('/', function (req, res) {
-    res.redirect('/docs')
-  })
+app.get('/', function (req, res) {
+  res.redirect('/docs')
+})
 
-  // Allow search engines to index the Prototype Kit promo site
-  app.get('/robots.txt', function (req, res) {
-    res.type('text/plain')
-    res.send('User-agent: *\nAllow: /')
-  })
-} else {
-  // Prevent search indexing
-  app.use(function (req, res, next) {
-    // Setting headers stops pages being indexed even if indexed pages link to them.
-    res.setHeader('X-Robots-Tag', 'noindex')
-    next()
-  })
+// Allow search engines to index the Prototype Kit promo site
+app.get('/robots.txt', function (req, res) {
+  res.type('text/plain')
+  res.send('User-agent: *\nAllow: /')
+})
 
-  app.get('/robots.txt', function (req, res) {
-    res.type('text/plain')
-    res.send('User-agent: *\nDisallow: /')
-  })
-}
+// Clone app locals to documentation app locals
+// Use Object.assign to ensure app.locals is cloned to prevent additions from
+// updating the original app.locals
+documentationApp.locals = Object.assign({}, app.locals)
+documentationApp.locals.serviceName = 'Prototype Kit'
 
-// Load routes (found in app/routes.js)
-if (typeof (routes) !== 'function') {
-  console.log(routes.bind)
-  console.log('Warning: the use of bind in routes is deprecated - please check the Prototype Kit documentation for writing routes.')
-  routes.bind(app)
-} else {
-  app.use('/', routes)
-}
+// Create separate router for docs
+app.use('/docs', documentationApp)
 
-if (useDocumentation) {
-  // Clone app locals to documentation app locals
-  // Use Object.assign to ensure app.locals is cloned to prevent additions from
-  // updating the original app.locals
-  documentationApp.locals = Object.assign({}, app.locals)
-  documentationApp.locals.serviceName = 'Prototype Kit'
-
-  // Create separate router for docs
-  app.use('/docs', documentationApp)
-
-  // Docs under the /docs namespace
-  documentationApp.use('/', documentationRoutes)
-}
+// Docs under the /docs namespace
+documentationApp.use('/', documentationRoutes)
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {
@@ -225,14 +185,12 @@ app.get(/^([^.]+)$/, function (req, res, next) {
   utils.matchRoutes(req, res, next)
 })
 
-if (useDocumentation) {
-  // Documentation  routes
-  documentationApp.get(/^([^.]+)$/, function (req, res, next) {
-    if (!utils.matchMdRoutes(req, res)) {
-      utils.matchRoutes(req, res, next)
-    }
-  })
-}
+// Documentation  routes
+documentationApp.get(/^([^.]+)$/, function (req, res, next) {
+  if (!utils.matchMdRoutes(req, res)) {
+    utils.matchRoutes(req, res, next)
+  }
+})
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
 app.post(/^\/([^.]+)$/, function (req, res) {

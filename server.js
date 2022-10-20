@@ -8,7 +8,6 @@ const cookieParser = require('cookie-parser')
 const dotenv = require('dotenv')
 const express = require('express')
 const nunjucks = require('nunjucks')
-const sessionInCookie = require('client-sessions')
 const sessionInMemory = require('express-session')
 
 // Run before other code to make sure variables from .env are available
@@ -29,7 +28,6 @@ const documentationApp = express()
 var releaseVersion = packageJson.version
 var env = utils.getNodeEnv()
 var useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData
-var useCookieSessionStore = process.env.USE_COOKIE_SESSION_STORE || config.useCookieSessionStore
 var useHttps = process.env.USE_HTTPS || config.useHttps
 
 useHttps = useHttps.toLowerCase()
@@ -45,7 +43,6 @@ if (isSecure) {
 // Add variables that are available in all views
 app.locals.asset_path = '/public/'
 app.locals.useAutoStoreData = (useAutoStoreData === 'true')
-app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
 app.locals.releaseVersion = 'v' + releaseVersion
 app.locals.serviceName = config.serviceName
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
@@ -65,20 +62,12 @@ const sessionOptions = {
   }
 }
 
-// Support session data in cookie or memory
-if (useCookieSessionStore === 'true') {
-  app.use(sessionInCookie(Object.assign(sessionOptions, {
-    cookieName: sessionName,
-    proxy: true,
-    requestKey: 'session'
-  })))
-} else {
-  app.use(sessionInMemory(Object.assign(sessionOptions, {
-    name: sessionName,
-    resave: false,
-    saveUninitialized: false
-  })))
-}
+// Save session data in memory
+app.use(sessionInMemory(Object.assign(sessionOptions, {
+  name: sessionName,
+  resave: false,
+  saveUninitialized: false
+})))
 
 // Middleware
 app.use(require('./lib/middleware/extensions/extensions.js'))

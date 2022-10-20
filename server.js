@@ -8,7 +8,8 @@ const cookieParser = require('cookie-parser')
 const dotenv = require('dotenv')
 const express = require('express')
 const nunjucks = require('nunjucks')
-const sessionInMemory = require('express-session')
+const session = require('express-session')
+const MemoryStore = require('memorystore')(session)
 
 // Run before other code to make sure variables from .env are available
 dotenv.config()
@@ -54,20 +55,23 @@ app.use(cookieParser())
 // Session uses service name to avoid clashes with other prototypes
 const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
 const sessionHours = 20
+const sessionMaxAge = 1000 * 60 * 60 * sessionHours
 const sessionOptions = {
-  secret: sessionName,
   cookie: {
-    maxAge: 1000 * 60 * 60 * sessionHours,
+    maxAge: maxAge,
     secure: isSecure
-  }
+  },
+  name: sessionName,
+  saveUninitialized: false,
+  secret: sessionName
 }
 
 // Save session data in memory
-app.use(sessionInMemory(Object.assign(sessionOptions, {
-  name: sessionName,
-  resave: false,
-  saveUninitialized: false
-})))
+app.use(session({
+  ...sessionOptions,
+  store: new MemoryStore({ checkPeriod: maxAge }),
+  resave: false
+}))
 
 // Middleware
 app.use(require('./lib/middleware/extensions/extensions.js'))

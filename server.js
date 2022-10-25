@@ -8,14 +8,13 @@ const cookieParser = require('cookie-parser')
 const dotenv = require('dotenv')
 const express = require('express')
 const nunjucks = require('nunjucks')
-const sessionInCookie = require('client-sessions')
-const sessionInMemory = require('express-session')
+const session = require('express-session')
+const MemoryStore = require('memorystore')(session)
 
 // Run before other code to make sure variables from .env are available
 dotenv.config()
 
 // Local dependencies
-const config = require('./app/config.js')
 const documentationRoutes = require('./docs/documentation_routes.js')
 const packageJson = require('./package.json')
 const utils = require('./lib/utils.js')
@@ -28,15 +27,13 @@ const documentationApp = express()
 // Set up configuration variables
 var releaseVersion = packageJson.version
 var env = utils.getNodeEnv()
-var useAutoStoreData = process.env.USE_AUTO_STORE_DATA || config.useAutoStoreData
-var useCookieSessionStore = process.env.USE_COOKIE_SESSION_STORE || config.useCookieSessionStore
-var useHttps = process.env.USE_HTTPS || config.useHttps
-
-useHttps = useHttps.toLowerCase()
+const useHttps = process.env.USE_HTTPS
+  ? process.env.USE_HTTPS.toLowerCase() === 'true'
+  : true
 
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
-var isSecure = (env === 'production' && useHttps === 'true')
+var isSecure = (env === 'production' && useHttps)
 if (isSecure) {
   app.use(utils.forceHttps)
   app.set('trust proxy', 1) // needed for secure cookies on heroku
@@ -44,41 +41,32 @@ if (isSecure) {
 
 // Add variables that are available in all views
 app.locals.asset_path = '/public/'
-app.locals.useAutoStoreData = (useAutoStoreData === 'true')
-app.locals.useCookieSessionStore = (useCookieSessionStore === 'true')
 app.locals.releaseVersion = 'v' + releaseVersion
-app.locals.serviceName = config.serviceName
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
 app.locals.extensionConfig = extensions.getAppConfig()
 
 // use cookie middleware for reading authentication cookie
 app.use(cookieParser())
 
-// Session uses service name to avoid clashes with other prototypes
-const sessionName = 'govuk-prototype-kit-' + (Buffer.from(config.serviceName, 'utf8')).toString('hex')
+const sessionName = 'govuk-prototype-kit-docs'
 const sessionHours = 20
+const sessionMaxAge = 1000 * 60 * 60 * sessionHours
 const sessionOptions = {
-  secret: sessionName,
   cookie: {
-    maxAge: 1000 * 60 * 60 * sessionHours,
+    maxAge: sessionMaxAge,
     secure: isSecure
-  }
+  },
+  name: sessionName,
+  saveUninitialized: false,
+  secret: sessionName
 }
 
-// Support session data in cookie or memory
-if (useCookieSessionStore === 'true') {
-  app.use(sessionInCookie(Object.assign(sessionOptions, {
-    cookieName: sessionName,
-    proxy: true,
-    requestKey: 'session'
-  })))
-} else {
-  app.use(sessionInMemory(Object.assign(sessionOptions, {
-    name: sessionName,
-    resave: false,
-    saveUninitialized: false
-  })))
-}
+// Save session data in memory
+app.use(session({
+  ...sessionOptions,
+  store: new MemoryStore({ checkPeriod: sessionMaxAge }),
+  resave: false
+}))
 
 // Middleware
 app.use(require('./lib/middleware/extensions/extensions.js'))
@@ -138,11 +126,9 @@ app.use(bodyParser.urlencoded({
 }))
 
 // Automatically store all data users enter
-if (useAutoStoreData === 'true') {
-  app.use(utils.autoStoreData)
-  utils.addCheckedFunction(nunjucksAppEnv)
-  utils.addCheckedFunction(nunjucksDocumentationEnv)
-}
+app.use(utils.autoStoreData)
+utils.addCheckedFunction(nunjucksAppEnv)
+utils.addCheckedFunction(nunjucksDocumentationEnv)
 
 // Redirect root to /docs
 console.log('Running Prototype Kit website')

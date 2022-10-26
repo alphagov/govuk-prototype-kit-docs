@@ -16,7 +16,6 @@ dotenv.config()
 
 // Local dependencies
 const documentationRoutes = require('./docs/documentation_routes.js')
-const packageJson = require('./package.json')
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const { projectDir } = require('./lib/path-utils')
@@ -25,7 +24,6 @@ const app = express()
 const documentationApp = express()
 
 // Set up configuration variables
-var releaseVersion = packageJson.version
 var env = utils.getNodeEnv()
 const useHttps = process.env.USE_HTTPS
   ? process.env.USE_HTTPS.toLowerCase() === 'true'
@@ -41,7 +39,6 @@ if (isSecure) {
 
 // Add variables that are available in all views
 app.locals.asset_path = '/public/'
-app.locals.releaseVersion = 'v' + releaseVersion
 // extensionConfig sets up variables used to add the scripts and stylesheets to each page.
 app.locals.extensionConfig = extensions.getAppConfig()
 
@@ -201,6 +198,6 @@ app.use(function (err, req, res, next) {
   res.send(err.message)
 })
 
-console.log('\nGOV.UK Prototype Kit v' + releaseVersion + ' -- website')
+console.log('\nGOV.UK Prototype Kit docs')
 
 module.exports = app

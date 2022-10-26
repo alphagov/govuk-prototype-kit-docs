@@ -9,7 +9,13 @@ const router = express.Router()
 // Local dependencies
 const utils = require('../lib/utils')
 
-// Page routes
+// version of Kit for docs
+const kitVersion = require('./govuk-prototype-kit-version').version
+
+router.all('*', function (req, res, next) {
+  res.locals.releaseVersion = kitVersion
+  next()
+})
 
 // Docs index
 router.get('/', function (req, res) {
@@ -33,21 +39,17 @@ router.get('/install/:page', function (req, res) {
   res.render('install_template', renderOptions)
 })
 
-// Redirect to download the current release zip from
-// GitHub, based on the version number from package.json
+// Redirect to download the current release zip from GitHub,
+// based on the version number from govuk-prototype-kit-version.json
 router.get('/download', function (req, res) {
-  const version = require('../package.json').version
-
   res.redirect(
-    `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${version}/govuk-prototype-kit-${version}.zip`
+    `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${kitVersion}/govuk-prototype-kit-${kitVersion}.zip`
   )
 })
 
 router.get('/update.sh', function (req, res) {
-  const version = require('../package.json').version
-
   res.redirect(
-    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v${version}/update.sh`
+    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v${kitVersion}/update.sh`
   )
 })
 

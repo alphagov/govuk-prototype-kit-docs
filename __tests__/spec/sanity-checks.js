@@ -33,26 +33,38 @@ describe('The Prototype Kit', () => {
   })
 
   describe('index page', () => {
+    it('should redirect to /docs/ if no path is given', async () => {
+      const response = await request(app).get('/')
+      expect(response.statusCode).toBe(302)
+      expect(response.get('location')).toMatch('/docs/')
+    })
+
     it('should send a well formed response', async () => {
-      const response = await request(app).get('/docs')
+      const response = await request(app).get('/docs/')
       expect(response.statusCode).toBe(200)
     })
 
     it('should return html file', async () => {
-      const response = await request(app).get('/docs')
+      const response = await request(app).get('/docs/')
       expect(response.type).toBe('text/html')
     })
   })
 
   describe('docs index page', () => {
     it('should send a well formed response', async () => {
-      const response = await request(app).get('/docs')
+      const response = await request(app).get('/docs/')
       expect(response.statusCode).toBe(200)
     })
 
     it('should return html file', async () => {
-      const response = await request(app).get('/docs')
+      const response = await request(app).get('/docs/')
       expect(response.type).toBe('text/html')
+    })
+
+    it('should redirect to /docs/ if no end slash is given', async () => {
+      const response = await request(app).get('/docs')
+      expect(response.statusCode).toBe(302)
+      expect(response.get('location')).toMatch('/docs/')
     })
   })
 

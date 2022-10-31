@@ -19,7 +19,14 @@ router.all('*', function (req, res, next) {
 
 // Docs index
 router.get('/', function (req, res) {
-  res.render('index')
+  const [originalPath, query] = req.originalUrl.split('?', 2)
+  if (!originalPath.endsWith('/')) {
+    const queryString = query ? `?${query}` : ''
+    // redirect to /docs/ so we can use relative hrefs safely
+    res.redirect(originalPath + '/' + queryString)
+  } else {
+    res.render('index')
+  }
 })
 
 router.get('/install', function (req, res) {

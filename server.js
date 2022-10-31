@@ -109,7 +109,7 @@ utils.addCheckedFunction(nunjucksAppEnv)
 console.log('Running Prototype Kit website')
 
 app.get('/', function (req, res) {
-  res.redirect('/docs')
+  res.redirect('/docs/')
 })
 
 // Allow search engines to index the Prototype Kit promo site

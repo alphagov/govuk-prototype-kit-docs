@@ -9,7 +9,6 @@ const request = require('supertest')
 const sass = require('sass')
 
 const app = require('../../server.js')
-const buildConfig = require('../../lib/build/config.json')
 const utils = require('../../lib/utils')
 const { generateAssets } = require('../../lib/build/tasks')
 
@@ -27,9 +26,9 @@ describe('The Prototype Kit', () => {
 
   it('should generate assets into the /public folder', () => {
     assert.doesNotThrow(async function () {
-      await utils.waitUntilFileExists(path.resolve(__dirname, '../../public/javascripts/docs.js'), 5000)
-      await utils.waitUntilFileExists(path.resolve(__dirname, '../../public/images/unbranded.ico'), 5000)
-      await utils.waitUntilFileExists(path.resolve(__dirname, '../../public/stylesheets/docs.css'), 5000)
+      await utils.waitUntilFileExists(path.resolve(__dirname, '../../public/docs/v12/javascripts/docs.js'), 5000)
+      await utils.waitUntilFileExists(path.resolve(__dirname, '../../public/docs/v12/images/unbranded.ico'), 5000)
+      await utils.waitUntilFileExists(path.resolve(__dirname, '../../public/docs/v12/stylesheets/docs.css'), 5000)
     })
   })
 
@@ -123,9 +122,9 @@ describe('The Prototype Kit', () => {
     })
   })
 
-  const sassFiles = glob.sync(buildConfig.paths.docsAssets + '/sass/*.scss')
+  const sassFiles = glob.sync('docs/*/assets/sass/*.scss')
 
-  describe(`${buildConfig.paths.docsAssets}/sass/`, () => {
+  describe('docs/*/assets/sass/', () => {
     it.each(sassFiles)('%s renders to CSS without errors', async (file) => {
       return new Promise((resolve, reject) => {
         sass.render({
@@ -144,7 +143,7 @@ describe('The Prototype Kit', () => {
   })
 
   describe('Documentation markdown page titles', () => {
-    const markdownFiles = glob.sync('docs/documentation/**/*.md')
+    const markdownFiles = glob.sync('docs/*/documentation/**/*.md')
     it.each(markdownFiles)('%s has a title', (filepath) => {
       const file = readFile(filepath)
       utils.getRenderOptions(file, filepath)

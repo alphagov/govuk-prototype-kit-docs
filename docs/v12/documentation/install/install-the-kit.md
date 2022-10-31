@@ -5,7 +5,7 @@ caption: Installation guide for new users
 
 ## Download the kit as a zip
 
-The simplest way to get the kit is to <a href="/docs/download" data-link="download">download it as a zip</a>.
+The simplest way to get the kit is to <a href="./download" data-link="download">download it as a zip</a>.
 
 You'll use a new copy of the kit for each new prototype you make. That way your prototypes don’t interfere with each other.
 

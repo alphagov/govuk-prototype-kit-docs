@@ -7,7 +7,7 @@ const express = require('express')
 const router = express.Router()
 
 // Local dependencies
-const utils = require('../lib/utils')
+const utils = require('../../lib/utils')
 
 // version of Kit for docs
 const kitVersion = require('./govuk-prototype-kit-version').version

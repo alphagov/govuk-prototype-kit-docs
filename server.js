@@ -15,13 +15,11 @@ const MemoryStore = require('memorystore')(session)
 dotenv.config()
 
 // Local dependencies
-const documentationRoutes = require('./docs/documentation_routes.js')
 const utils = require('./lib/utils.js')
 const extensions = require('./lib/extensions/extensions.js')
 const { projectDir } = require('./lib/path-utils')
 
 const app = express()
-const documentationApp = express()
 
 // Set up configuration variables
 var env = utils.getNodeEnv()
@@ -97,22 +95,6 @@ app.set('view engine', 'html')
 // Middleware to serve static assets
 app.use('/public', express.static(path.join(projectDir, '/public')))
 
-// Set up documentation app
-var documentationViews = [
-  path.join(__dirname, '/node_modules/govuk-frontend/'),
-  path.join(__dirname, '/node_modules/govuk-frontend/components'),
-  path.join(__dirname, '/docs/views/'),
-  path.join(__dirname, '/lib/')
-]
-
-nunjucksConfig.express = documentationApp
-var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
-// Nunjucks filters
-utils.addNunjucksFilters(nunjucksDocumentationEnv)
-
-// Set views engine
-documentationApp.set('view engine', 'html')
-
 // Support for parsing data in POSTs
 app.use(bodyParser.json())
 app.use(bodyParser.urlencoded({
@@ -122,7 +104,6 @@ app.use(bodyParser.urlencoded({
 // Automatically store all data users enter
 app.use(utils.autoStoreData)
 utils.addCheckedFunction(nunjucksAppEnv)
-utils.addCheckedFunction(nunjucksDocumentationEnv)
 
 // Redirect root to /docs
 console.log('Running Prototype Kit website')
@@ -137,17 +118,52 @@ app.get('/robots.txt', function (req, res) {
   res.send('User-agent: *\nAllow: /')
 })
 
-// Clone app locals to documentation app locals
-// Use Object.assign to ensure app.locals is cloned to prevent additions from
-// updating the original app.locals
-documentationApp.locals = Object.assign({}, app.locals)
-documentationApp.locals.serviceName = 'Prototype Kit'
+function createDocumentationApp (docsDir) {
+  // Set up documentation app
+  const documentationApp = express()
+
+  var documentationViews = [
+    path.join(__dirname, '/node_modules/govuk-frontend/'),
+    path.join(__dirname, '/node_modules/govuk-frontend/components'),
+    path.join(__dirname, docsDir, 'views/'),
+    path.join(__dirname, '/lib/')
+  ]
+
+  nunjucksConfig.express = documentationApp
+  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
+
+  // Nunjucks filters
+  utils.addNunjucksFilters(nunjucksDocumentationEnv)
+
+  // Set views engine
+  documentationApp.set('view engine', 'html')
+
+  // Automatically store all data users enter
+  utils.addCheckedFunction(nunjucksDocumentationEnv)
+
+  // Clone app locals to documentation app locals
+  // Use Object.assign to ensure app.locals is cloned to prevent additions from
+  // updating the original app.locals
+  documentationApp.locals = Object.assign({}, app.locals)
+  documentationApp.locals.serviceName = 'Prototype Kit'
+
+  // Docs under the /docs namespace
+  const documentationRoutes = require(path.resolve(docsDir, 'documentation_routes.js'))
+  documentationApp.use('/', documentationRoutes)
+
+  // Documentation  routes
+  const docsMdDir = path.resolve(docsDir, 'documentation')
+  documentationApp.get(/^([^.]+)$/, function (req, res, next) {
+    if (!utils.matchMdRoutes(docsMdDir, req, res)) {
+      utils.matchRoutes(req, res, next)
+    }
+  })
+
+  return documentationApp
+}
 
 // Create separate router for docs
-app.use('/docs', documentationApp)
-
-// Docs under the /docs namespace
-documentationApp.use('/', documentationRoutes)
+app.use('/docs', createDocumentationApp('./docs'))
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {
@@ -163,13 +179,6 @@ app.get(/\.html?$/i, function (req, res) {
 // App folder routes get priority
 app.get(/^([^.]+)$/, function (req, res, next) {
   utils.matchRoutes(req, res, next)
-})
-
-// Documentation  routes
-documentationApp.get(/^([^.]+)$/, function (req, res, next) {
-  if (!utils.matchMdRoutes(req, res)) {
-    utils.matchRoutes(req, res, next)
-  }
 })
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData

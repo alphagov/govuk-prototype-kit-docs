@@ -39,7 +39,7 @@ module.exports = (on, config) => {
 
   config.env.projectFolder = path.resolve(process.env.KIT_TEST_DIR || process.cwd())
   config.env.tempFolder = path.join(__dirname, '..', 'temp')
-  config.env.docsFolder = path.join(__dirname, '..', '..', 'docs')
+  config.env.docsFolder = path.join(__dirname, '..', '..', 'docs', 'v12')
 
   const waitUntilAppRestarts = async (timeout) => await waitOn({ delay: 2000, resources: [config.baseUrl], timeout })
   const getReplacementText = async (text, source) => source ? fsp.readFile(source) : text

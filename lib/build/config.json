@@ -2,7 +2,6 @@
   "paths": {
     "public": "public",
     "cypress": "cypress",
-    "docsAssets" : "docs/assets",
     "nodeModules": "node_modules",
     "lib": "lib"
   }

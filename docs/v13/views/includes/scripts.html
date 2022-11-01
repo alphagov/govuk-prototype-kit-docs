@@ -1,0 +1,11 @@
+<!-- Javascript -->
+<script src="/public/docs/v13/javascripts/jquery-1.11.3.js"></script>
+
+{% for scriptUrl in extensionConfig.scripts %}
+  <script src="{{scriptUrl}}"></script>
+{% endfor %}
+
+<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
+<script src="/public/docs/v13/javascripts/docs.js"></script>
+
+<script src="/public/docs/v13/javascripts/auto-store-data.js"></script>

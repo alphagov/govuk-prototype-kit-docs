@@ -163,7 +163,8 @@ function createDocumentationApp (docsDir) {
 }
 
 // Create separate router for docs
-app.use('/docs', createDocumentationApp('./docs/v12'))
+app.use('/v12/docs', createDocumentationApp('./docs/v12'))
+app.use(['/v13/docs', '/docs'], createDocumentationApp('./docs/v13'))
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {

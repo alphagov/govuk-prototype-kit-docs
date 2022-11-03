@@ -179,7 +179,13 @@ function createDocumentationApp (docsDir) {
   return documentationApp
 }
 
-// Create separate router for docs
+// Prevent search indexing of specific versions of docs
+app.use('/v*/docs', function (req, res, next) {
+  res.set('X-Robots-Tag', 'noindex')
+  next()
+})
+
+// Create separate routers for each version of docs
 app.use('/v12/docs', createDocumentationApp('./docs/v12'))
 app.use(['/v13/docs', '/docs'], createDocumentationApp('./docs/v13'))
 

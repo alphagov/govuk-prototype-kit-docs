@@ -68,6 +68,22 @@ describe('The Prototype Kit', () => {
     })
   })
 
+  describe('search engine indexing', () => {
+    it('should allow indexing of pages under /docs/', async () => {
+      const response = await request(app).get('/docs/')
+      expect(response.get('X-Robots-Tag')).toBeUndefined()
+    })
+
+    it('should not allow indexing of pages for specific versions', async () => {
+      let response
+      response = await request(app).get('/v12/docs/')
+      expect(response.get('X-Robots-Tag')).toMatch('noindex')
+
+      response = await request(app).get('/v12/docs/make-first-prototype/create-pages')
+      expect(response.get('X-Robots-Tag')).toMatch('noindex')
+    })
+  })
+
   describe('update script', () => {
     it('should redirect to GitHub', async () => {
       const response = await request(app).get('/docs/update.sh')

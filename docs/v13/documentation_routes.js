@@ -46,20 +46,6 @@ router.get('/install/:page', function (req, res) {
   res.render('install_template', renderOptions)
 })
 
-// Redirect to download the current release zip from GitHub,
-// based on the version number from govuk-prototype-kit-version.json
-router.get('/download', function (req, res) {
-  res.redirect(
-    `https://github.com/alphagov/govuk-prototype-kit/releases/download/v${kitVersion}/govuk-prototype-kit-${kitVersion}.zip`
-  )
-})
-
-router.get('/update.sh', function (req, res) {
-  res.redirect(
-    `https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v${kitVersion}/update.sh`
-  )
-})
-
 // Examples - examples post here
 router.post('/tutorials-and-examples', function (req, res) {
   res.redirect('tutorials-and-examples')

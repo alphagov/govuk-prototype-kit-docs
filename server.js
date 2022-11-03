@@ -147,6 +147,12 @@ function createDocumentationApp (docsDir) {
   documentationApp.locals = Object.assign({}, app.locals)
   documentationApp.locals.serviceName = 'Prototype Kit'
 
+  // Make the request base URL available to templates so we can construct links properly
+  documentationApp.all('*', (req, res, next) => {
+    res.locals.baseUrl = req.baseUrl
+    next()
+  })
+
   // Docs under the /docs namespace
   const documentationRoutes = require(path.resolve(docsDir, 'documentation_routes.js'))
   documentationApp.use('/', documentationRoutes)

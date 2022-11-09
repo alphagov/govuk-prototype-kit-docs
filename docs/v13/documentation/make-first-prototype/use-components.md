@@ -24,7 +24,7 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 ### Customise the example code
 
 1. Under `legend`, change `text` from "Where do you live?" to "How many balls can you juggle?".
-2. Change the `idPrefix` and `name` to `how-many-balls`.
+2. Change `name` to `how-many-balls`.
 3. We only want 3 options not 4, so delete the last of the `items` including the comma from the previous item:
 ```
     ,
@@ -42,7 +42,6 @@ Your component code should now look like this:
 
 ```
 {{ govukRadios({
-  idPrefix: "how-many-balls",
   name: "how-many-balls",
   fieldset: {
     legend: {

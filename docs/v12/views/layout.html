@@ -31,10 +31,10 @@
 {% endblock %}
 
 {% block header %}
-  {# Set serviceName in config.js. #}
   {{ govukHeader({
+    homepageUrl: baseUrl,
     serviceName: serviceName,
-    serviceUrl: "/",
+    serviceUrl: baseUrl,
     navigation: [
       {
         href: baseUrl + "/install",

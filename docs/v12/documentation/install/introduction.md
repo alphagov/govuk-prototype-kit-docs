@@ -7,7 +7,7 @@ This guide will walk you through installing and getting started with the kit. Yo
 
 Installation takes up to 30 minutes depending on how much you need to install.
 
-If you already installed a previous version of the Prototype Kit, you can [update your Prototype Kit](/docs/updating-the-kit) instead.
+If you already installed a previous version of the Prototype Kit, you can [update your Prototype Kit](../updating-the-kit) instead.
 
 If you’re comfortable using git and the terminal, you may prefer the [guide for advanced users](developer-install-instructions).
 

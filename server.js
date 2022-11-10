@@ -126,6 +126,7 @@ function createDocumentationApp (docsDir) {
     path.join(__dirname, '/node_modules/govuk-frontend/'),
     path.join(__dirname, '/node_modules/govuk-frontend/components'),
     path.join(__dirname, docsDir, 'views/'),
+    path.join(__dirname, 'views/layouts/'),
     path.join(__dirname, '/lib/')
   ]
 

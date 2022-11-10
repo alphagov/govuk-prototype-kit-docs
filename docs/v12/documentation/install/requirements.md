@@ -82,4 +82,4 @@ node --version
 
 If it’s installed correctly it should show a number starting with 18.
 
-<a href="install-the-kit.md" class="button">Next (How to install the kit)</a>
+<a href="install-the-kit" class="button">Next (How to install the kit)</a>

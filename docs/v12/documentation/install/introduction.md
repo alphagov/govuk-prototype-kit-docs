@@ -21,4 +21,4 @@ The GOV.UK Prototype Kit provides a simple way to make interactive prototypes th
 
 You’ll use a copy of the kit for each different prototype you want to make - they’re self contained. Once installed, the kit uses about 100mb.
 
-<a href="requirements.md" class="button">Next (Prototype Kit requirements)</a>
+<a href="requirements" class="button">Next (Prototype Kit requirements)</a>

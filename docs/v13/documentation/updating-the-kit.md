@@ -29,7 +29,7 @@ In Finder on Mac or Windows Explorer, go to your prototype folder and open the f
 
 1. Make a backup of your prototype folder. You can do this in Finder or Windows Explorer. This may take a few minutes.
 
-2. In the [terminal](https://govuk-prototype-kit.herokuapp.com/docs/install/requirements.md#terminal), `cd` to your prototype folder.
+2. In the [terminal](./install/requirements#terminal), `cd` to your prototype folder.
 
 3. Run this command:
 
@@ -80,5 +80,5 @@ To fix this:
 
 If you need to restart the Prototype Kit after the fix:
 
-1. in your [terminal](https://govuk-prototype-kit.herokuapp.com/docs/install/requirements.md#terminal), `cd` to your prototype folder
+1. in your [terminal](./install/requirements#terminal), `cd` to your prototype folder
 2. run `npm start`

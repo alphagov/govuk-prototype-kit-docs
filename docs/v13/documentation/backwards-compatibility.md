@@ -28,7 +28,7 @@ In Atom, press **cmd shift F**. It looks like this:
 
 ![Screenshot of section of the Atom user interface with: a text field that contains '/public/'; a button labelled 'find all'; a text field containing '/public/v6'; and a button labelled 'replace all'.](/public/docs/v13/images/docs/backwards-compatibility-atom.png)
 
-1. [Download the latest Prototype Kit](/docs/download) and unzip it.
+1. [Download the latest Prototype Kit](./download) and unzip it.
 
 1. Copy everything from the new Prototype Kit folder into your prototype folder.
 

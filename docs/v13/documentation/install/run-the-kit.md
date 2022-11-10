@@ -52,8 +52,8 @@ To quit the kit, in the terminal press the `ctrl` and `c` keys together.
 
 The kit is now installed. Congratulations!
 
-The Prototype Kit is updated regularly. We announce new versions of the Prototype Kit in the [#prototype-kit channel on cross-government Slack](https://ukgovernmentdigital.slack.com/messages/prototype-kit/). You should [update to the latest version of the kit](/docs/updating-the-kit) to get the latest components, new features and fixes.
+The Prototype Kit is updated regularly. We announce new versions of the Prototype Kit in the [#prototype-kit channel on cross-government Slack](https://ukgovernmentdigital.slack.com/messages/prototype-kit/). You should [update to the latest version of the kit](../updating-the-kit) to get the latest components, new features and fixes.
 
 ## Make your first prototype
 
-You can now start the tutorial to [make your first prototype](/docs/make-first-prototype/start).
+You can now start the tutorial to [make your first prototype](../make-first-prototype/start).

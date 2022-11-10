@@ -32,8 +32,9 @@
 
 {% block header %}
   {{ govukHeader({
+    homepageUrl: baseUrl,
     serviceName: "Prototype Kit v13",
-    serviceUrl: "/",
+    serviceUrl: baseUrl,
     navigation: [
       {
         href: baseUrl + "/install",

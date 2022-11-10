@@ -1,0 +1,19 @@
+{% if not docsLatestVersion %}
+  {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
+
+  {% set html %}
+    <h3 class="govuk-notification-banner__heading">
+      This is the documentation for older versions of the Prototype Kit
+    </h3>
+    <p class="govuk-body">
+      Covering {{ docsVersionName }}
+    </p>
+    <p class="govuk-body">
+      <a class="govuk-notification-banner__link" href="/docs">Go to latest version</a>
+    </p>
+  {% endset %}
+
+  {{ govukNotificationBanner({
+    html: html
+  }) }}
+{% endif %}

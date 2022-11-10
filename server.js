@@ -129,7 +129,7 @@ app.get('/robots.txt', function (req, res) {
   res.send('User-agent: *\nAllow: /')
 })
 
-function createDocumentationApp (docsDir) {
+function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   // Set up documentation app
   const documentationApp = express()
 
@@ -138,6 +138,7 @@ function createDocumentationApp (docsDir) {
     path.join(__dirname, '/node_modules/govuk-frontend/components'),
     path.join(__dirname, docsDir, 'views/'),
     path.join(__dirname, 'views/layouts/'),
+    path.join(__dirname, 'views/partials/'),
     path.join(__dirname, '/lib/')
   ]
 
@@ -158,6 +159,8 @@ function createDocumentationApp (docsDir) {
   // updating the original app.locals
   documentationApp.locals = Object.assign({}, app.locals)
   documentationApp.locals.serviceName = 'Prototype Kit'
+  documentationApp.locals.docsLatestVersion = !!latest
+  Object.assign(documentationApp.locals, locals)
 
   // Make the request base URL available to templates so we can construct links properly
   documentationApp.all('*', (req, res, next) => {
@@ -187,8 +190,12 @@ app.use('/v*/docs', function (req, res, next) {
 })
 
 // Create separate routers for each version of docs
-app.use('/v12/docs', createDocumentationApp('./docs/v12'))
-app.use(['/v13/docs', '/docs'], createDocumentationApp('./docs/v13'))
+app.use('/v12/docs',
+  createDocumentationApp('./docs/v12', { locals: { docsVersionName: 'versions 7, 8, 9, 10, 11 and 12' } })
+)
+app.use(['/v13/docs', '/docs'],
+  createDocumentationApp('./docs/v13', { latest: true })
+)
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {

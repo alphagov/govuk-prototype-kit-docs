@@ -43,7 +43,7 @@ jobs:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
 
-      - run: npm install -g npm@latest
+      - run: npm install -g npm@8
 
       - run: npm ci
         env:

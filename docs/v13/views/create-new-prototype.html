@@ -16,23 +16,20 @@ Create a new prototype
 {% endblock %}
 
 {% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
 
-  <div class="govuk-grid-row">
-    <div class="govuk-grid-column-two-thirds">
+    <h1 class="govuk-heading-xl">Create a new prototype</h1>
 
-      <h1 class="govuk-heading-xl">Create a new prototype</h1>
+    <p>Choose from:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li>create a prototype <a href="./install/getting-started">for new users</a></li>
+      <li>create a prototype <a href="./install/getting-started-advanced">for advanced users</a> familiar with Node.js, Git and the terminal</li>
+      <li><a href="./update-to-latest-version">update to the latest version of the Prototype Kit</a></li>
+    </ul>
 
-      <p>Choose from:</p>
-      <ul class="govuk-list govuk-list--bullet">
-        <li>create a prototype <a href="./install/getting-started">for new users</a></li>
-        <li>create a prototype <a href="./install/getting-started-advanced">for advanced users</a> familiar with Node.js, Git and the terminal</li>
-        <li><a href="./update-to-latest-version">update to the latest version of the Prototype Kit</a></li>
-      </ul>
+    {% include "_new-version-inset-text.njk" %}
 
   </div>
-
-
 </div>
-
-
 {% endblock %}

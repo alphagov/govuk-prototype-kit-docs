@@ -191,10 +191,16 @@ app.use('/v*/docs', function (req, res, next) {
 
 // Create separate routers for each version of docs
 app.use('/v12/docs',
-  createDocumentationApp('./docs/v12', { locals: { docsVersionName: 'versions 7, 8, 9, 10, 11 and 12' } })
+  createDocumentationApp(
+    './docs/v12',
+    { locals: { docsVersionName: 'versions 7, 8, 9, 10, 11 and 12' } }
+  )
 )
 app.use(['/v13/docs', '/docs'],
-  createDocumentationApp('./docs/v13', { latest: true })
+  createDocumentationApp(
+    './docs/v13',
+    { latest: true, locals: { docsVersionName: 'version 13' } }
+  )
 )
 
 // Strip .html and .htm if provided

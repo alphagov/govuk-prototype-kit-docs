@@ -12,3 +12,11 @@ It takes up to 30 minutes depending on how much you need to set up.
 There is an [getting started advanced guide](./getting-started-advanced) if you’re comfortable using Git and the terminal.
 
 [How to run the kit](./how-to-run-the-kit)
+
+<!-- TODO: replace with Nunjucks partial _new-version-inset-text -->
+<div class="govuk-inset-text">
+  <strong class="govuk-body govuk-!-font-weight-bold">
+    This has changed in version 13, if you are using a previous version, see the
+    <a class="govuk-link" href="/v12/docs">old documentation</a>
+  </strong>
+</div>

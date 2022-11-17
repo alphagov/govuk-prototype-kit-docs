@@ -37,3 +37,11 @@ Read the [Start using a service guidance](https://design-system.service.gov.uk/p
 ## Using step by step navigation
 
 Step by step navigation is for a page outside your transactional service. It’s in the Prototype Kit so you can prototype your journeys for testing. Step by step is available as a plugin.
+
+<!-- TODO: replace with Nunjucks partial _new-version-inset-text -->
+<div class="govuk-inset-text">
+  <strong class="govuk-body govuk-!-font-weight-bold">
+    This has changed in version 13, if you are using a previous version, see the
+    <a class="govuk-link" href="/v12/docs">old documentation</a>
+  </strong>
+</div>

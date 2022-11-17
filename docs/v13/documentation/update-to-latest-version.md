@@ -21,3 +21,11 @@ You will need to do this for each prototype you are working on.
 If you have a question or need help [contact the GOV.UK Prototype team](./support)
 
 Tell us as much as you can about the issue you're having and the operating system you're using.
+
+<!-- TODO: replace with Nunjucks partial _new-version-inset-text -->
+<div class="govuk-inset-text">
+  <strong class="govuk-body govuk-!-font-weight-bold">
+    This has changed in version 13, if you are using a previous version, see the
+    <a class="govuk-link" href="/v12/docs">old documentation</a>
+  </strong>
+</div>

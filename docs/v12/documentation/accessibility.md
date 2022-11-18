@@ -8,7 +8,7 @@ This page explains how the team works to ensure the Prototype Kit website is acc
 
 ## Accessibility statement for the GOV.UK Prototype Kit website
 
-This accessibility statement applies to the GOV.UK Prototype Kit documentation website at https://govuk-prototype-kit.herokuapp.com
+This accessibility statement applies to the GOV.UK Prototype Kit documentation website at https://prototype-kit.service.gov.uk
 
 The GOV.UK Prototype team wants as many people as possible to be able to use this website. For example, that means you should be able to:
 
@@ -36,7 +36,7 @@ GDS is committed to making its websites accessible, in accordance with the Publi
 
 ### Compliance status
 
-The Prototype Kit website at [https://govuk-prototype-kit.herokuapp.com](/) is fully compliant with the Web Content Accessibility Guidelines (WCAG) version 2.1 AA standard.
+The Prototype Kit website at [https://prototype-kit.service.gov.uk](/) is fully compliant with the Web Content Accessibility Guidelines (WCAG) version 2.1 AA standard.
 
 
 ### How this website has been tested for accessibility

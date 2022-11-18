@@ -1,27 +1,27 @@
 ---
-heading: Installation guide for advanced users
+heading: Getting started - advanced guide
 caption: Install the Prototype Kit
 ---
 
-The Prototype Kit is built on the [Express framework](http://expressjs.com/), and uses [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend).
+The Prototype Kit runs in Node.js. It is built on the [Express framework](http://expressjs.com/) and uses [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend).
 
-If you already installed a previous version of the Prototype Kit, you can [update the kit](../updating-the-kit) instead.
-
-[Download the Prototype Kit (zip file)](../download) if you have not already.
 
 ## Requirements
 
-node.js - version 18.x.x
+Node.js LTS version 18.x.x
 
-## Install dependencies
+## Create a prototype
 
-```
-npm install
-```
+1. Create a new folder for your prototype.
+
+2.  In that folder run:
+
+`npx govuk-prototype-kit create`
 
 ## Run the kit
-```
-npm start
-```
+
+In your terminal run:
+
+`npm run dev`
 
 [Go to localhost:3000](http://localhost:3000) in your browser.

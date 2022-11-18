@@ -4,11 +4,12 @@ heading: Store data in session
 
 **Advanced topic**
 
-If you need to store data for each user, the best way to do it is using session data.
+When a user answers questions in your prototype, their answers are stored in session data.
 
-This means that if more than one person is using your prototype, their data will not get mixed up.
+To clear session data you can either:
 
-The easiest way to clear session data is to use 'Incognito mode' for each user, and close that window when you're done.
+* use the 'Clear data' link in the footer
+* use incognito mode or private browsing for each user and close that window when they're done
 
 ## How to use
 
@@ -32,7 +33,7 @@ You'll have a `req.session.data` object in your route function:
 }
 ```
 
-These two field values can be accessed in JavaScript as:
+These 2 field values can be accessed in JavaScript as:
 
 ```js
 req.session.data['first-name']
@@ -73,7 +74,7 @@ You'll have a nested `req.session.data` object in your route function:
 }
 ```
 
-These four field values can be accessed in your route function as:
+These 4 field values can be accessed in your route function as:
 
 ```js
 req.session.data['claimant']['first-name']

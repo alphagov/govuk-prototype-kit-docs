@@ -21,8 +21,8 @@ Your prototype sends this key every time it asks Notify to do something.
 To get a key:
 - sign into GOV.UK Notify
 - go to the ‘API integration’ page
-- click ‘API keys’
-- click the ‘Create an API’ button
+- select ‘API keys’
+- select the ‘Create an API’ button
 - choose the ‘Team and guest list’ option
 - copy the key to your clipboard
 
@@ -43,11 +43,11 @@ command) and it will create one for you.
 
 ### Saving the key on Heroku
 
-This will let your prototype talk to Notify while it’s running on
+This will let your prototype talk to Notify if it’s running on
 Heroku.
 
 To save the key on Heroku, go to the settings page of your app, click
-‘Reveal config vars’ and fill in the two textboxes like this (where
+‘Reveal config vars’ and fill in the 2 textboxes like this (where
 xxxxxxx is the key you’ve copied from Notify):
 ```
 KEY          | VALUE
@@ -57,14 +57,17 @@ NOTIFYAPIKEY | xxxxxxx
 
 ### Keeping your key safe
 
-It’s really important that you keep your key secret. If you put it in
+It’s important that you keep your key secret. If you put it in
 the `.env` file it’s safe – that file isn’t published on GitHub. If you
-do accidentally publish your key somewhere you must sign into Notify and
-revoke it.
+do accidentally publish your key somewhere you will need to sign into Notify and revoke it.
 
 ## Add the Notify code to your prototype
 
-Add this code to the top of routes.js:
+In the terminal run:
+
+`npm install notifications-node-client`
+
+Then in your code editor, add this code to the top of routes.js:
 
 ```javascript
 var NotifyClient = require('notifications-node-client').NotifyClient,

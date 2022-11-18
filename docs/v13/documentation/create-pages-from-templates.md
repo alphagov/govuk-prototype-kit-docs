@@ -1,0 +1,39 @@
+---
+heading: Create pages from templates
+title: Create pages from templates
+---
+
+The Prototype Kit comes with templates to create common page types.
+
+To use them:
+
+1. In the terminal start your prototype.
+
+2. In your browser go to the **Templates** section of **Manage your prototype** (http://localhost:3000/manage-prototype/templates).
+
+From these templates you can create a:
+
+* GOV.UK page
+* Unbranded page
+* Question page
+* Content page
+* Task list
+* Check your answers
+* Confirmation page
+
+The Prototype Kit also has GOV.UK publishing templates for:
+
+* Mainstream guide
+* Start page
+* Step by step navigation
+* Start page with step by step
+
+You cannot alter the design of the GOV.UK publishing templates. They are to help you prototype realistic journeys connecting your service with the GOV.UK website.
+
+Read the guidance for mainstream guides in [Content design: planning, writing and managing content](https://www.gov.uk/guidance/content-design).
+
+Read the [Start using a service guidance](https://design-system.service.gov.uk/patterns/start-using-a-service) and the [step by step navigation guidance](https://design-system.service.gov.uk/patterns/step-by-step-navigation) to learn how to make these pages live for your service.
+
+## Using step by step navigation
+
+Step by step navigation is for a page outside your transactional service. It’s in the Prototype Kit so you can prototype your journeys for testing. Step by step is available as a plugin.

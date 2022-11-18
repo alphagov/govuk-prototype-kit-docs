@@ -3,20 +3,19 @@ heading: Open your prototype in your editor
 caption: Build a basic prototype
 ---
 
-### Mac
+You can manage your prototype in 2 ways:
 
-In Atom, select **File** then **Open**. Then select your prototype folder.
+* through the **Manage your prototype** page
+* in your text editor
 
-### Windows
+In your text editor open your prototype folder. You will see the files and folders that you can edit in your prototype.
 
-In Atom, select **File** then **Open Folder**. Then select your prototype folder.
+## Files and folders in your prototype
 
-## Overview of folders in the Prototype Kit
+`/app` is for your work. Inside that folder:
 
- - `/app` is for your work. Inside that folder:
-  - `views` is for HTML pages
+  - `views` is for pages
   - `assets` is for CSS, JavaScript, images and downloadable files
-  - `routes.js` is for advanced logic - for example, if a user should go to one page or another based on their answers. We'll cover it later.
- - `/docs/views/templates` has template pages for you to copy into your prototype
+  - `routes.js` is for advanced logic - for example, if a user should go to one page or another based on their answer
 
 [Next (create pages)](create-pages)

@@ -1,24 +1,14 @@
 ---
-heading: Installation guide for new users
+heading: Getting started with the Prototype Kit
 caption: Install the Prototype Kit
 ---
 
-This guide will walk you through installing and getting started with the kit. You don’t need any technical knowledge to follow along. If you get stuck, contact us using the [#prototype-kit channel on cross-government Slack](https://ukgovernmentdigital.slack.com/messages/C0647LW4R/), or if you have a developer on your team, they should be able to help.
+The GOV.UK Prototype Kit provides a simple way to make interactive prototypes that look and feel like pages on GOV.UK. These prototypes can be used to design and lay out pages and to use in user research.
 
-Installation takes up to 30 minutes depending on how much you need to install.
+This guide will walk you through installing what you need and starting with the kit. If you get stuck, [contact the GOV.UK Prototype team](../support) or if you have a developer on your team, they should be able to help.
 
-If you already installed a previous version of the Prototype Kit, you can [update your Prototype Kit](../updating-the-kit) instead.
+It takes up to 30 minutes depending on how much you need to set up.
 
-If you’re comfortable using git and the terminal, you may prefer the [guide for advanced users](developer-install-instructions).
+There is an [getting started advanced guide](./getting-started-advanced) if you’re comfortable using Git and the terminal.
 
-> This guide is a work in progress. [You can contribute](https://github.com/alphagov/govuk-prototype-kit/blob/main/CONTRIBUTING.md) to make it better.
-
-## Introduction
-
-The GOV.UK Prototype Kit provides a simple way to make interactive prototypes that look and feel like pages on GOV.UK. These prototypes can be used to design and lay out pages, and to use in user research.
-
-
-
-You’ll use a copy of the kit for each different prototype you want to make - they’re self contained. Once installed, the kit uses about 100mb.
-
-<a href="requirements" class="button">Next (Prototype Kit requirements)</a>
+[How to run the kit](./how-to-run-the-kit)

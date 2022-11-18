@@ -22,11 +22,9 @@ Our prototype will look a bit like this:
 
 ## Before you start
 
-Before you start, you must [install and run the GOV.UK Prototype Kit](/docs/install/introduction).
+Before you start with the kit, find out what you need to [install and do](/docs/install/getting-started).
 
-You'll also need a code editor. You can use any editor, but the instructions in this tutorial will refer to Atom.
-
-[Install Atom code editor](https://atom.io/)
+You'll also need a code editor.
 
 [Next (open your prototype in your editor)](open-prototype-in-editor)
 

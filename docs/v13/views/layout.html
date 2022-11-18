@@ -33,7 +33,7 @@
 {% block header %}
   {{ govukHeader({
     homepageUrl: baseUrl,
-    serviceName: "Prototype Kit v13",
+    serviceName: "Prototype Kit version 13",
     serviceUrl: baseUrl,
     navigation: [
       {
@@ -67,6 +67,10 @@
   {{ govukFooter({
     meta: {
       items: [
+        {
+          href: baseUrl + "/support",
+          text: "Support"
+        },
         {
           href: baseUrl + "/accessibility",
           text: "Accessibility"

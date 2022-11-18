@@ -13,15 +13,21 @@ The route takes the answer the user gave to the first question and either sends 
 
 ## Create an ineligible page
 
-1. Make an `ineligible.html` page by copying `content.html` from `docs/views/templates` to `app/views`.
+1. In your browser, go to the **Templates** section of **Manage your prototype**.
 
-2. Update the content to tell the user why they’re ineligible and what they can do next.
+2. Create a page from the **Content page** template.
 
-To check it works, [go to http://localhost:3000/ineligible](http://localhost:3000/ineligible).
+3. Enter the path `/ineligible`.
+
+4. In your code editor, update the content on this page to tell the user why they’re ineligible and what they can do next.
+
+To check it works, to to [http://localhost:3000/ineligible](http://localhost:3000/ineligible).
 
 ## Create a route
 
-We’re going to write some logic to process the user’s answer to question 1. If the user can juggle 3 balls or more, we’ll send them to question 2. If they answer with anything else, we’ll send them to the ineligible page.
+We’re going to write some logic to process the user’s answer to question 1.
+
+If the user can juggle 3 balls or more, we’ll send them to question 2. If they answer with anything else, we’ll send them to the ineligible page.
 
 Currently, the `juggling-balls` page sends the user directly to question 2. Instead, we’re going to send them to a special URL where we can run some code to check their answer.
 
@@ -29,7 +35,7 @@ Currently, the `juggling-balls` page sends the user directly to question 2. Inst
 
 2. Open `/app/routes.js`.
 
-3. Insert new JavaScript into line 5, before `module.exports = router`.
+3. Add this code to the end of the file:
 
 ```
 // Run this code when a form is submitted to 'juggling-balls-answer'

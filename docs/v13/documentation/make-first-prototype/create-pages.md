@@ -3,45 +3,58 @@ heading: Create pages
 caption: Build a basic prototype
 ---
 
-Create pages by copying template files that come with the Prototype Kit.
+You can create pages by using the templates that come with the Prototype Kit.
+
+In your browser go to the **Manage you prototype** page: http://localhost/manage-prototype. There is also a link to this page in the footer of your prototype.
+
+In the navigation menu, go to the **Templates** section.
 
 ### Create a start page
 
-Copy the `start.html` file from `docs/views/templates` to `app/views`.
+In the list of templates, find the Start page, then select **Create**.
 
+The next page is titled **Create new Start page**.
 
-To copy a file in Atom:
+In **Path for the new page** enter `/start`.
 
-1. Right-click a file in the folders list on the left and select **Copy**.
-2. Right-click the folder you want to copy the file into and select **Paste**.   
+Select **Create page**.
 
-Preview the pages in your prototype by going to ht<span>tp</span>://localhost:3000/NAME-OF-HTML-FILE in your web browser. For example, [go to http://localhost:3000/start](http://localhost:3000/start) to preview `start.html`.
+The kit creates a page from the template, in the `app/views` folder in your code editor.
 
 #### Change the service name
 
-You'll normally edit the HTML to make changes to pages, but the service name is in a config file. This is so we can change it in one place to update it on every page in your prototype.
+You change the service name in the config file. This will change it on every page in your prototype.
 
-1. Open the `config.js` file in your `app` folder.
-2. Change `serviceName` from `Service name goes here` to `Apply for a juggling licence`.
+1. In your code editor, go to the `app` folder and open the `config.js` file.
+
+2. Change `serviceName` from **Service name goes here** to **Apply for a juggling licence**.
+
 3. Press Cmd+S on Mac or Ctrl+S on Windows to save your change.
 
-You must save every time you make a change to a file. In Atom, a dot appears in the tab for any file that has unsaved changes.
+4. Refresh the page in your browser.
 
-Normally your changes will automatically show in the browser without refreshing. But for this config change, you need to refresh the page. You should see your service name change on the Start page.
+You’ll need to save every time you make a change to a file.
+
+Usually your changes will automatically show in the browser without refreshing. However, for this config change, you need to refresh the page. You should see your service name change on the Start page.
 
 ### Question pages
 
-Make 2 copies of the `question.html` file from `docs/views/templates` to `app/views`.
+In your browser, go to the **Templates** section of **Manage your prototype**.
 
-Rename the 2 file copies to:
+Create a page from the **Question page** template.
 
-- `juggling-balls.html`
-- `juggling-trick.html`
+Enter the path `/juggling-balls`.
+
+Create another page from the Question page template.
+
+Enter the path `/juggling-trick`.
 
 Go to the following URLs to check your pages:
 
 - http://localhost:3000/juggling-balls
 - http://localhost:3000/juggling-trick
+
+Go to your code editor.
 
 In the `juggling-balls.html` file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`.
 
@@ -49,10 +62,14 @@ In the `juggling-trick.html` file, change the text inside the `h1` tag to `What 
 
 ### 'Check answers' page
 
-Copy the `check-answers.html` file from `docs/views/templates` to `app/views`.
+In your browser, create a page from the **Check answers** template.
+
+Enter the path `/check-answers`.
 
 ### Confirmation page
 
-Copy the `confirmation.html` file from `docs/views/templates` to `app/views`.
+Create a page from the **Confirmation** template.
+
+Enter the path `/confirmation`.
 
 [Next (link your pages together)](link-pages-together)

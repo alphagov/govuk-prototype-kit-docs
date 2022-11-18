@@ -2,48 +2,83 @@
 heading: Create routes
 ---
 
-You may want to make prototypes that are more complex than simple HTML files. For example, you may want to respond to input from a form, and show different pages based on answers given by the user.
+You may want to make prototypes that are more complex than simple HTML files. For example, you may want to respond to input from a form and show different pages based on answers given by the user.
 
 To do this you will need to create 'routes' - rules for the server to respond to certain URLs.
 
-For example, with a route of `/sample` the URL is:
+You can edit the file `app/routes.js` to process requests from the browser and send custom responses. For example processing data and sending the user to different pages based on their answers.
 
-    http://localhost:3000/sample
-    
-All routes for the application are kept in the `routes.js` file. They follow this format:
+## Requests and responses
 
-    verb(route, callback(request, response) {
-        response.render(template, data);
-    });
+When you enter http://localhost:3000 in a browser, the browser sends a request to the Prototype Kit. The kit processes that request and sends a response.
 
-Let's break this down into bits:
+By default, the Prototype Kit looks in the `app/views` folder for a corresponding file, turns the file into a complete HTML page and sends that as a response to the browser.
 
-* **verb** : the type of request ('get' or 'post')
-* **route** : the route section of the URL as explained above
-* **callback** : a function that contains the code executed when that route is requested
-* **request** : the 1st parameter sent to the callback, an object representing the HTTP request made
-* **response** : the 2nd parameter sent to the callback, an object representing the HTTP response that will be sent
-* **response.render** : method of the response object used to create a page to send back to the browser that made the request
-* **template** : the 1st parameter sent to response.render, the name of the template file used to render the page, minus its `.html` extension
-* **data** : [optional] the 2nd parameter sent to response.render, an object containing variables to send into the template
+For example, if you go to http://localhost:3000/start, the Prototype Kit looks in the `app/views` folder for `start.html`. It adds the GOV.UK header and footer, and sends the whole start page back as a response to the browser.
 
-So as an example, a request for the URL `http://localhost:3000/examples/template-data` has this route:
+If the kit cannot find a corresponding file in `app/views`, it will send an 'Error: not found' page instead.
 
-    router.get('/examples/template-data', function(req, res) {
-        res.render('examples/template-data', { 'name' : 'Foo' });
-    });
-    
-We are saying that for a `get` request for the `/template-data` route we should run the code:
+## Routes
 
-    res.render('examples/template-data', { 'name' : 'Foo' });
-    
-This is the `render` method of the `res` parameter being run with two parameters: 
+Routes let you control the response to any request. You can add routes to the `app/routes.js` file.
 
-- the template called `template-data`
-- the data object `{ 'name' : 'Foo' }`
+This is an example of a route:
 
-Template files are found this way: `/views/` + `template` parameter + `.html`. The `sample` template therefore points to the `/views/examples/template-data.html` file. 
+```js
+router.get('/games/dice', function(request, response) {
 
-In the same way, the template `/examples/hello_world` would point to the `/examples/hello_world.html` file.
+	var dice = Math.ceil(Math.random()*6)
+	response.locals.dice = dice
+	response.render('dice')
+
+})
+```
+
+This route will pick a random number between 1 and 6, then display a 'dice' page with that number.
+
+Let's look at each bit of this route code separately.
+
+### router.get
+
+There are 2 ways a browser can make a request. They are 'get' and 'post':
+
+* a get request is when you enter an address or follow a link
+* a post request is when you submit a form
+
+This route will only run when the request is get, not post.
+
+### '/games/dice'
+
+This is called the request path.
+
+### function(request, response)
+
+This is our function (piece of code) to process the request. It has access to 2 variables or pieces of data:
+
+* request
+* response
+
+The request contains all the data related to the request from the browser. For example, `request.path` will give you the request path.
+
+The response lets us send a response back to the browser.
+
+### var dice = Math.ceil(Math.random()*6)
+
+This line simulates a dice throw. It stores a random number between 1 and 6 in the variable called dice.
+
+### response.locals.dice = dice
+
+This line makes the dice variable available to the view or page.
+
+### response.render('dice')
+
+Finally, we 'render' the page called 'dice' (don't add the extension `.html`. The kit does that automatically.
+
+On the page called 'dice', the variable is:
+
+```
+**{{ dice }}**
+```
+
 
 [Express documentation for routes](http://expressjs.com/4x/api.html#app.VERB)

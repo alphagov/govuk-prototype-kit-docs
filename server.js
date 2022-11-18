@@ -105,9 +105,20 @@ app.use(bodyParser.urlencoded({
 app.use(utils.autoStoreData)
 utils.addCheckedFunction(nunjucksAppEnv)
 
-// Redirect root to /docs
 console.log('Running Prototype Kit website')
 
+if (env === 'production' && process.env.HEROKU_APP_NAME && process.env.HEROKU_CUSTOM_DOMAIN) {
+  // Direct users away from govuk-prototype-kit.herokuapp.com and towards prototype-kit.service.gov.uk
+  app.use(function (req, res, next) {
+    if (req.get('Host') === process.env.HEROKU_APP_NAME + '.herokuapp.com') {
+      res.redirect(301, req.protocol + '://' + process.env.HEROKU_CUSTOM_DOMAIN + req.originalUrl)
+    } else {
+      next()
+    }
+  })
+}
+
+// Redirect root to /docs
 app.get('/', function (req, res) {
   res.redirect('/docs/')
 })

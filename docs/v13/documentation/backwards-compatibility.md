@@ -26,7 +26,7 @@ You will end up with 2 'apps' in your prototype:
 1. Find and replace all instances of **/public/** to **/public/v6/** in your code.
 In Atom, press **cmd shift F**. It looks like this:
 
-![Screenshot of section of the Atom user interface with: a text field that contains '/public/'; a button labelled 'find all'; a text field containing '/public/v6'; and a button labelled 'replace all'.](/public/docs/v12/images/docs/backwards-compatibility-atom.png)
+![Screenshot of section of the Atom user interface with: a text field that contains '/public/'; a button labelled 'find all'; a text field containing '/public/v6'; and a button labelled 'replace all'.](/public/docs/v13/images/docs/backwards-compatibility-atom.png)
 
 1. [Download the latest Prototype Kit](./download) and unzip it.
 

@@ -15,7 +15,7 @@ Our prototype will look a bit like this:
 
 <figure>
 
-![The first page has the title 'Start page' with the button 'Start now'. This is linked to a second page with the title 'Question 1' and a 'Continue' button. This forks to 2 different pages. 1 is titled 'Ineligible'. 2 is titled Question 2. Question 2 is linked to a page titled 'Check answers'. This links to page 6, titled 'Complete'.](/public/docs/v12/images/docs/tutorial-overview.png)
+![The first page has the title 'Start page' with the button 'Start now'. This is linked to a second page with the title 'Question 1' and a 'Continue' button. This forks to 2 different pages. 1 is titled 'Ineligible'. 2 is titled Question 2. Question 2 is linked to a page titled 'Check answers'. This links to page 6, titled 'Complete'.](/public/docs/v13/images/docs/tutorial-overview.png)
 
 <figcaption class="govuk-body">Diagram of 6 pages connected together.</figcaption>
 </figure>

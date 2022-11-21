@@ -68,20 +68,36 @@ describe('The Prototype Kit', () => {
     })
   })
 
+  describe('search engine indexing', () => {
+    it('should allow indexing of pages under /docs/', async () => {
+      const response = await request(app).get('/docs/')
+      expect(response.get('X-Robots-Tag')).toBeUndefined()
+    })
+
+    it('should not allow indexing of pages for specific versions', async () => {
+      let response
+      response = await request(app).get('/v12/docs/')
+      expect(response.get('X-Robots-Tag')).toMatch('noindex')
+
+      response = await request(app).get('/v12/docs/make-first-prototype/create-pages')
+      expect(response.get('X-Robots-Tag')).toMatch('noindex')
+    })
+  })
+
   describe('update script', () => {
     it('should redirect to GitHub', async () => {
-      const response = await request(app).get('/docs/update.sh')
+      const response = await request(app).get('/v12/docs/update.sh')
       expect(response.statusCode).toBe(302)
       expect(response.get('location')).toMatch(new RegExp('https://raw.githubusercontent.com/alphagov/govuk-prototype-kit/v[0-9]+.[0-9]+.[0-9]+/update.sh'))
     })
 
     it('should send a well formed response', async () => {
-      const response = await request(app).get('/docs/update.sh').redirects(1)
+      const response = await request(app).get('/v12/docs/update.sh').redirects(1)
       expect(response.statusCode).toBe(200)
     })
 
     it('should return plain text file', async () => {
-      const response = await request(app).get('/docs/update.sh').redirects(1)
+      const response = await request(app).get('/v12/docs/update.sh').redirects(1)
       expect(response.type).toBe('text/plain')
     })
   })

@@ -1,0 +1,46 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Support – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "GOV.UK Prototype Kit",
+	      href: "./"
+	    }
+	  ]
+	}) }}
+{% endblock %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+     <h1 class="govuk-heading-xl">Support</h1>
+
+   <p>If you’ve got a question, idea or suggestion get in touch with the GOV.UK Prototype team.</p>
+
+<p>The GOV.UK Prototype team provides support to people who use the Prototype Kit and work in the government.</p>
+
+<p><strong>We cannot give general advice to the public. We do not have access to information about you held by government departments.</strong></p>
+
+<p>For other enquiries, use the <a href="https://www.gov.uk/contact">contact form on GOV.UK</a>.</p>
+
+   <h2 class="govuk-heading-l">Slack</h2>
+
+    <p>Use the
+<a href="https://ukgovernmentdigital.slack.com/app_redirect?channel=prototype-kit">#prototype-kit channel on cross-government Slack</a>. </p>
+
+   <h2 class="govuk-heading-l">Email</h2>
+
+   <p>Email the GOV.UK Prototype team at
+		<a href="mailto: prototype-kit-support@digital.cabinet-office.gov.uk"></a> prototype-kit-support@digital.cabinet-office.gov.uk. </p>
+
+    </div>
+  </div>
+
+{% endblock %}

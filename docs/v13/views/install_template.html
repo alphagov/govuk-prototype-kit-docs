@@ -1,0 +1,16 @@
+{% extends "documentation_template.html" %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "GOV.UK Prototype Kit",
+	      href: baseUrl
+	    },
+	    {
+	      text: "Create a new prototype",
+	      href: baseUrl + "/create-new-prototype"
+	    }
+	  ]
+	}) }}
+{% endblock %}

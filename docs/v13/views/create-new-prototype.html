@@ -1,0 +1,35 @@
+{% extends "layout.html" %}
+
+{% block pageTitle %}
+Create a new prototype
+{% endblock %}
+
+{% block beforeContent %}
+	{{ govukBreadcrumbs({
+	  items: [
+	    {
+	      text: "GOV.UK Prototype Kit",
+	      href: "./"
+	    }
+	  ]
+	}) }}
+{% endblock %}
+
+{% block content %}
+<div class="govuk-grid-row">
+  <div class="govuk-grid-column-two-thirds">
+
+    <h1 class="govuk-heading-xl">Create a new prototype</h1>
+
+    <p>Choose from:</p>
+    <ul class="govuk-list govuk-list--bullet">
+      <li><a href="./install/getting-started">create a prototype for new users</a></li>
+      <li><a href="./install/getting-started-advanced">create a prototype for advanced users familiar with Node.js, Git and the terminal</a></li>
+      <li><a href="./update-to-latest-version">update to the latest version of the Prototype Kit</a></li>
+    </ul>
+
+    {% include "_new-version-inset-text.njk" %}
+
+  </div>
+</div>
+{% endblock %}

@@ -1,0 +1,43 @@
+---
+heading: How to run the kit
+caption: Create a prototype for new users
+---
+
+You’ll use the terminal to start and stop the kit.
+
+## Open the prototype folder in terminal
+
+If you're following the guide to getting started you'll already have the terminal open in the right folder.
+
+If you're coming back to work on a prototype, you'll need to navigate to the folder:
+
+`cd ~/Documents/prototypes/juggling-licence`
+
+Or replace 'juggling-licence' with the name of your prototype.
+
+## Run the kit
+
+In the terminal, enter:
+
+`npm run dev`
+
+The first time you run `npm run dev`, the kit will ask you whether you want to send anonymous data to help the team improve the service. Enter `y` or `n` to answer yes or no.
+
+In your web browser, go to <a href="http://localhost:3000" target="_blank">open http://localhost:3000 (opens in a new tab).</a>
+
+<figure>
+
+![Heading GOV.UK Prototype Kit, link Manage your prototype, Heading Service name goes here, text Change your service name in the file app/config.json](/public/docs/v13/images/docs/prototype-kit-homepage.png)
+
+<figcaption class="govuk-body">Screenshot of what your prototype homepage should look like.</figcaption>
+</figure>
+
+## Quitting the kit
+
+It’s fine to leave the kit running for days or while your computer is asleep.
+
+To quit the kit, in the terminal press the `ctrl` and `c` keys together.
+
+## Make your first prototype
+
+You can now start the tutorial to [make your first prototype](../make-first-prototype/start).

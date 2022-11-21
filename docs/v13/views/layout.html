@@ -33,14 +33,14 @@
 {% block header %}
   {{ govukHeader({
     homepageUrl: baseUrl,
-    serviceName: serviceName,
+    serviceName: "Prototype Kit version 13",
     serviceUrl: baseUrl,
     navigation: [
       {
-        href: baseUrl + "/install",
-        text: "Install",
+        href: baseUrl + "/create-new-prototype",
+        text: "Get started",
         attributes: {
-          "data-install": "Install"
+          "data-get-started": "Get started"
         }
       },
       {
@@ -67,6 +67,10 @@
   {{ govukFooter({
     meta: {
       items: [
+        {
+          href: baseUrl + "/support",
+          text: "Support"
+        },
         {
           href: baseUrl + "/accessibility",
           text: "Accessibility"

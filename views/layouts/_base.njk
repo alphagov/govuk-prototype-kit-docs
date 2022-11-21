@@ -1,0 +1,14 @@
+{% extends "govuk/template.njk" %}
+
+{# override main block so we can intercept the content block and inject the notificationBanner block #}
+{% block main %}
+  <div class="govuk-width-container {{ containerClasses }}">
+    {% block beforeContent %}{% endblock %}
+    <main class="govuk-main-wrapper {{ mainClasses }}" id="main-content" role="main"{% if mainLang %} lang="{{ mainLang }}"{% endif %}>
+      {# normally the notification banner would go in content, before the h1 but after any grid column classes #}
+      {# however, for uniformity, we've decided to make the banner full width everywhere, so we can forgo that #}
+      {% block notificationBanner %}{% endblock %}
+      {% block content %}{% endblock %}
+    </main>
+  </div>
+{% endblock %}

@@ -1,0 +1,12 @@
+{% from "govuk/components/inset-text/macro.njk" import govukInsetText %}
+
+{% set html %}
+  <strong class="govuk-body govuk-!-font-weight-bold">
+    This has changed in {{ docsVersionName }}, if you are using a previous version, see the
+    <a class="govuk-link" href="/v12/docs">old documentation</a>
+  </strong>
+{% endset %}
+
+{{ govukInsetText({
+  html: html
+}) }}

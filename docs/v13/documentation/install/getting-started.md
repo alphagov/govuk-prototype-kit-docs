@@ -11,7 +11,7 @@ It takes up to 30 minutes depending on how much you need to set up.
 
 There is an [getting started advanced guide](./getting-started-advanced) if you’re comfortable using Git and the terminal.
 
-[How to run the kit](./how-to-run-the-kit)
+[Next (Requirements)](./requirements)
 
 <!-- TODO: replace with Nunjucks partial _new-version-inset-text -->
 <div class="govuk-inset-text">

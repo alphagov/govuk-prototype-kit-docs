@@ -194,6 +194,12 @@ app.get('/docs/install', (req, res) => {
   res.redirect('/docs/create-new-prototype')
 })
 
+// Add redirect from /templates url to v12 docs for now
+// TODO: figure out what to do with templates
+app.use('/docs/templates', (req, res, next) => {
+  res.redirect('/v12/docs/templates' + req.path)
+})
+
 // Create separate routers for each version of docs
 app.use('/v12/docs',
   createDocumentationApp(

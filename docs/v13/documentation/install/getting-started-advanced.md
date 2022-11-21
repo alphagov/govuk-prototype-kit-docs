@@ -1,6 +1,6 @@
 ---
 heading: Getting started - advanced guide
-caption: Install the Prototype Kit
+caption: Create a prototype
 ---
 
 The Prototype Kit runs in Node.js. It is built on the [Express framework](http://expressjs.com/) and uses [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend).

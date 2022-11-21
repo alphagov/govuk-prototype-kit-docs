@@ -1,6 +1,6 @@
 ---
 heading: Prototype Kit requirements
-caption: Installation guide for new users
+caption: Create a prototype for new users
 ---
 
 The GOV.UK Prototype Kit runs on Mac, Windows and Linux. At a minimum you’ll need a web browser and Node.js (install instructions below).

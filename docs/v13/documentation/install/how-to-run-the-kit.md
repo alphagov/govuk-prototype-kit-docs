@@ -1,6 +1,6 @@
 ---
 heading: How to run the kit
-caption: Installation guide for new users
+caption: Create a prototype for new users
 ---
 
 You’ll use the terminal to start and stop the kit.

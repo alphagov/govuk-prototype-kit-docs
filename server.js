@@ -189,6 +189,11 @@ app.use('/v*/docs', function (req, res, next) {
   next()
 })
 
+// Add redirect from v12 /install to v13 /create-new-prototype
+app.get('/docs/install', (req, res) => {
+  res.redirect('/docs/create-new-prototype')
+})
+
 // Create separate routers for each version of docs
 app.use('/v12/docs',
   createDocumentationApp(

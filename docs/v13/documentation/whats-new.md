@@ -7,7 +7,7 @@ We’ve made some big changes to how the kit works so that it’s:
 - easier to update in the future
 - more secure
 
-If you’re starting a new prototype, you can use version 13 - it’s really easy to install now! Details are below.
+If you’re starting a new prototype, you can use version 13. It’s easy to install. Details are below.
 
 If you have an existing prototype and want to make the changes in this release, we recommend using the migration script to help with the breaking changes.
 
@@ -27,7 +27,7 @@ Having the kit as an npm package makes your prototype files and folders much sim
 
 ### Create your prototype
 
-The process to create a prototype is simpler - see the [get started guide](./create-new-prototype)
+The process to create a prototype is simpler. Read the [get started guide](./create-new-prototype).
 
 ### Run your prototype
 
@@ -49,7 +49,7 @@ There is a new approach to routes, templates and layouts:
 
 ### Using Node.js
 
-The Prototype Kit no longer supports versions 12 or 14 of Node.js. We recommend you update to the latest LTS version Node.js 18
+The Prototype Kit no longer supports versions 12 or 14 of Node.js. We recommend you update to the latest LTS version Node.js 18.
 
 ### GOV.UK Frontend
 When creating a new prototype, you will always have the latest version of GOV.UK Frontend.
@@ -61,6 +61,6 @@ When creating a new prototype, you will always have the latest version of GOV.UK
 - the Prototype Kit no longer includes jQuery by default
 - you can no longer use v6 compatibility mode
 
-There’s quite a lot going on!  [Read the release notes](https://github.com/alphagov/govuk-prototype-kit/releases/tag/v13.0.0) to see what’s changed in detail.
+There’s quite a lot going on! [Read the release notes](https://github.com/alphagov/govuk-prototype-kit/releases/tag/v13.0.0) to see what’s changed in detail for version 13.
 
-And as always, If you need help with the Prototype Kit, [contact the GOV.UK Prototype team](./support).
+If you need help with the Prototype Kit, [contact the GOV.UK Prototype team](./support).

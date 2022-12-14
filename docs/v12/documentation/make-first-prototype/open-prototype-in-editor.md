@@ -3,14 +3,6 @@ heading: Open your prototype in your editor
 caption: Build a basic prototype
 ---
 
-### Mac
-
-In Atom, select **File** then **Open**. Then select your prototype folder.
-
-### Windows
-
-In Atom, select **File** then **Open Folder**. Then select your prototype folder.
-
 ## Overview of folders in the Prototype Kit
 
  - `/app` is for your work. Inside that folder:

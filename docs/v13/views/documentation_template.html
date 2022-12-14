@@ -5,18 +5,18 @@
 {% endblock %}
 
 {% block beforeContent %}
-	{{ govukBreadcrumbs({
-	  items: [
-	    {
-	      text: "GOV.UK Prototype Kit",
-	      href: "./"
-	    },
-	    {
-	      text: "Tutorials and templates",
-	      href: "./tutorials-and-examples"
-	    }
-	  ]
-	}) }}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "GOV.UK Prototype Kit",
+        href: baseUrl
+      },
+      {
+        text: "Tutorials and templates",
+        href: baseUrl + "/tutorials-and-examples"
+      }
+    ]
+  }) }}
 {% endblock %}
 
 {% block content %}

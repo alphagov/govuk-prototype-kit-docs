@@ -24,9 +24,10 @@ Our prototype will look a bit like this:
 
 Before you start, you must [install and run the GOV.UK Prototype Kit](/docs/install/introduction).
 
-You'll also need a code editor. You can use any editor, but the instructions in this tutorial will refer to Atom.
+You'll also need a code editor. These two are popular, well established and fairly accessible:
 
-[Install Atom code editor](https://atom.io/)
+ - [VS Code](https://code.visualstudio.com)
+ - [Notepad++](https://notepad-plus-plus.org) (Windows only)
 
 [Next (open your prototype in your editor)](open-prototype-in-editor)
 

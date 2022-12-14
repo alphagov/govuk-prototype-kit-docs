@@ -7,13 +7,7 @@ Create pages by copying template files that come with the Prototype Kit.
 
 ### Create a start page
 
-Copy the `start.html` file from `docs/views/templates` to `app/views`.
-
-
-To copy a file in Atom:
-
-1. Right-click a file in the folders list on the left and select **Copy**.
-2. Right-click the folder you want to copy the file into and select **Paste**.   
+Copy the `start.html` file from `docs/views/templates` to `app/views`. 
 
 Preview the pages in your prototype by going to ht<span>tp</span>://localhost:3000/NAME-OF-HTML-FILE in your web browser. For example, [go to http://localhost:3000/start](http://localhost:3000/start) to preview `start.html`.
 
@@ -25,7 +19,7 @@ You'll normally edit the HTML to make changes to pages, but the service name is 
 2. Change `serviceName` from `Service name goes here` to `Apply for a juggling licence`.
 3. Press Cmd+S on Mac or Ctrl+S on Windows to save your change.
 
-You must save every time you make a change to a file. In Atom, a dot appears in the tab for any file that has unsaved changes.
+You must save every time you make a change to a file. In most code editors, a dot appears in the tab for any file that has unsaved changes.
 
 Normally your changes will automatically show in the browser without refreshing. But for this config change, you need to refresh the page. You should see your service name change on the Start page.
 

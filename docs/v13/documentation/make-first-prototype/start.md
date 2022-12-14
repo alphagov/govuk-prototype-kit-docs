@@ -24,7 +24,10 @@ Our prototype will look a bit like this:
 
 Before you start with the kit, find out what you need to [install and do](/docs/install/getting-started).
 
-You'll also need a code editor.
+You'll also need a code editor. These two are popular, well established and fairly accessible:
+
+ - [VS Code](https://code.visualstudio.com)
+ - [Notepad++](https://notepad-plus-plus.org) (Windows only)
 
 [Next (open your prototype in your editor)](open-prototype-in-editor)
 

@@ -20,12 +20,6 @@ Using [Package Control](https://packagecontrol.io/), install [SublimeLinter](htt
 
 For automatic formatting on save, install [StandardFormat](https://packagecontrol.io/packages/StandardFormat).
 
-### Atom
-
-Install [linter-js-standard](https://atom.io/packages/linter-js-standard).
-
-For automatic formatting, install [standard-formatter](https://atom.io/packages/standard-formatter). For snippets, install [standardjs-snippets](https://atom.io/packages/standardjs-snippets).
-
 ### Other editors
 
 There are [official guides for most of the popular editors](http://standardjs.com/index.html#text-editor-plugins).

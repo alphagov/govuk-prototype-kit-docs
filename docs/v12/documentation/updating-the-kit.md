@@ -39,7 +39,7 @@ curl -L https://prototype-kit.service.gov.uk/v12/docs/update.sh | bash
 
 It will download a zip file and unzip the latest version of the Prototype Kit into a new `update` folder.
 
-4. In a code editor (like Atom) open the file at `update/app/assets/sass/application.scss`.
+4. In a code editor open the file at `update/app/assets/sass/application.scss`.
 
 5. Copy everything until the line that starts with `// Add extra styles here`.
 
@@ -69,7 +69,7 @@ If you want to run an existing prototype made before July 2021, you may see an e
 
 To fix this:
 
-1. open a code editor, like Atom
+1. open a code editor
 2. from your prototype project folder, open the ‘start.js’ file
 3. go to the line that starts with: `var gulp = spawn`
 4. replace the entire line with:

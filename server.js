@@ -67,10 +67,10 @@ app.use(session({
 app.use(require('./lib/middleware/extensions/extensions.js'))
 
 // Set up App
-var appViews = extensions.getAppViews([
+app.set('views', extensions.getAppViews([
   path.join(projectDir, '/app/views/'),
   path.join(projectDir, '/lib/')
-])
+]))
 
 var nunjucksConfig = {
   autoescape: true,
@@ -82,14 +82,15 @@ if (env === 'development') {
   nunjucksConfig.watch = true
 }
 
-nunjucksConfig.express = app
-
-var nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig)
+var nunjucksAppEnv = nunjucks.configure(app.get('views'), nunjucksConfig)
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
 
-// Set views engine
+// Set view engines
+app.engine('.html', function (filePath, options, callback) {
+  nunjucksAppEnv.render(filePath, options, callback)
+})
 app.set('view engine', 'html')
 
 // Middleware to serve static assets
@@ -133,22 +134,24 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   // Set up documentation app
   const documentationApp = express()
 
-  var documentationViews = [
+  documentationApp.set('views', [
     path.join(__dirname, '/node_modules/govuk-frontend/'),
     path.join(__dirname, '/node_modules/govuk-frontend/components'),
     path.join(__dirname, docsDir, 'views/'),
     path.join(__dirname, 'views/layouts/'),
     path.join(__dirname, 'views/partials/'),
     path.join(__dirname, '/lib/')
-  ]
+  ])
 
-  nunjucksConfig.express = documentationApp
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
+  var nunjucksDocumentationEnv = nunjucks.configure(documentationApp.get('views'), nunjucksConfig)
 
   // Nunjucks filters
   utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
   // Set views engine
+  documentationApp.engine('.html', (filePath, options, callback) => {
+    nunjucksDocumentationEnv.render(filePath, options, callback)
+  })
   documentationApp.set('view engine', 'html')
 
   // Automatically store all data users enter

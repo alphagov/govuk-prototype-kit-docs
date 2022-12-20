@@ -15,8 +15,9 @@ const MemoryStore = require('memorystore')(session)
 dotenv.config()
 
 // Local dependencies
-const utils = require('./lib/utils.js')
-const extensions = require('./lib/extensions/extensions.js')
+const extensions = require('./lib/extensions/extensions')
+const utils = require('./lib/utils')
+const render = require('./lib/render')
 const { projectDir } = require('./lib/path-utils')
 
 const app = express()
@@ -152,7 +153,7 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   documentationApp.engine('.html', (filePath, options, callback) => {
     nunjucksDocumentationEnv.render(filePath, options, callback)
   })
-  documentationApp.engine('.md', utils.markdownEngine(nunjucksDocumentationEnv))
+  documentationApp.engine('.md', render.markdownEngine(nunjucksDocumentationEnv))
   documentationApp.set('view engine', 'html')
 
   // Automatically store all data users enter
@@ -184,7 +185,7 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
     if (name.startsWith('/')) { name = name.slice(1) }
     if (name.endsWith('/')) { name = name.slice(0, -1) }
 
-    if (utils.isMdView(docsMdDir, name)) {
+    if (render.isMdView(docsMdDir, name)) {
       res.render(path.join(docsMdDir, name + '.md'))
     } else {
       res.render(name)

@@ -149,11 +149,12 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   // Nunjucks filters
   utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
-  // Set views engine
+  // Set view engines
   documentationApp.engine('.html', (filePath, options, callback) => {
     nunjucksDocumentationEnv.render(filePath, options, callback)
   })
   documentationApp.engine('.md', render.markdownEngine(nunjucksDocumentationEnv))
+  documentationApp.engine('.njk', render.nunjucksAndMarkdownEngine(nunjucksDocumentationEnv))
   documentationApp.set('view engine', 'html')
 
   // Automatically store all data users enter
@@ -185,11 +186,7 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
     if (name.startsWith('/')) { name = name.slice(1) }
     if (name.endsWith('/')) { name = name.slice(0, -1) }
 
-    if (render.isMdView(docsMdDir, name)) {
-      res.render(path.join(docsMdDir, name + '.md'))
-    } else {
-      res.render(name)
-    }
+    res.render(render.findViewName(docsMdDir, name))
   })
 
   return documentationApp

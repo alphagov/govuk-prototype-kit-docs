@@ -22,5 +22,4 @@ linking to the review app will become active.
 ## Configuration
 
 The configuration of this repo's review apps is maintained in the Design
-System Heroku account. You can find the credentials for this account in the
-[team credential store](https://github.com/alphagov/design-system-team-credentials/tree/main/heroku).
+System Heroku account. You can find the credentials for this account in BitWarden.

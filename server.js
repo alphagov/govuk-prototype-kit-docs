@@ -219,7 +219,16 @@ app.get(/\.html?$/i, function (req, res) {
   var path = req.path
   var parts = path.split('.')
   parts.pop()
-  path = parts.join('.')
+  path = parts.join('.') + '/'
+  res.redirect(path)
+})
+
+// Strip .md if provided
+app.get(/\.md$/i, function (req, res) {
+  var path = req.path
+  var parts = path.split('.')
+  parts.pop()
+  path = parts.join('.') + '/'
   res.redirect(path)
 })
 

@@ -68,6 +68,54 @@ describe('The Prototype Kit', () => {
     })
   })
 
+  describe('tutorials and examples page', () => {
+    it('should send a well formed response', async () => {
+      const response = await request(app).get('/docs/tutorials-and-examples/')
+      expect(response.statusCode).toBe(200)
+    })
+
+    it('should return html file', async () => {
+      const response = await request(app).get('/docs/tutorials-and-examples/')
+      expect(response.type).toBe('text/html')
+    })
+
+    it('should redirect to /docs/tutorials-and-examples/ if .html given', async () => {
+      const response = await request(app).get('/docs/tutorials-and-examples.html')
+      expect(response.statusCode).toBe(302)
+      expect(response.get('location')).toMatch('/docs/tutorials-and-examples/')
+    })
+
+    it.skip('should redirect to /docs/tutorials-and-examples/ if no end slash is given', async () => {
+      const response = await request(app).get('/docs/tutorials-and-examples')
+      expect(response.statusCode).toBe(302)
+      expect(response.get('location')).toMatch('/docs/tutorials-and-examples/')
+    })
+  })
+
+  describe('getting started page', () => {
+    it('should send a well formed response', async () => {
+      const response = await request(app).get('/docs/install/getting-started/')
+      expect(response.statusCode).toBe(200)
+    })
+
+    it('should return html file', async () => {
+      const response = await request(app).get('/docs/install/getting-started/')
+      expect(response.type).toBe('text/html')
+    })
+
+    it('should redirect to /docs/install/getting-started/ if .md given', async () => {
+      const response = await request(app).get('/docs/install/getting-started.md')
+      expect(response.statusCode).toBe(302)
+      expect(response.get('location')).toMatch('/docs/install/getting-started/')
+    })
+
+    it.skip('should redirect to /docs/install/getting-started/ if no end slash is given', async () => {
+      const response = await request(app).get('/docs/install/getting-started')
+      expect(response.statusCode).toBe(302)
+      expect(response.get('location')).toMatch('/docs/install/getting-started/')
+    })
+  })
+
   describe('search engine indexing', () => {
     it('should allow indexing of pages under /docs/', async () => {
       const response = await request(app).get('/docs/')

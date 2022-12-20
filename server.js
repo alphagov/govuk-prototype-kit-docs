@@ -246,13 +246,6 @@ app.use(function (req, res, next) {
   next(err)
 })
 
-// Display error
-app.use(function (err, req, res, next) {
-  console.error(err.message)
-  res.status(err.status || 500)
-  res.send(err.message)
-})
-
 console.log('\nGOV.UK Prototype Kit docs')
 
 module.exports = app

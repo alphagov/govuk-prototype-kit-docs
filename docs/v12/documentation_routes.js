@@ -22,17 +22,6 @@ router.get('/', function (req, res) {
   }
 })
 
-router.get('/install', function (req, res) {
-  res.render('install')
-})
-
-// Pages in install folder are markdown
-router.get('/install/:page', function (req, res) {
-  var doc = fs.readFileSync(path.join(__dirname, '/documentation/install/', req.params.page + '.md'), 'utf8')
-  const renderOptions = utils.getRenderOptions(doc)
-  res.render('install_template', renderOptions)
-})
-
 // Redirect to download the current release zip from GitHub,
 // based on the version number from govuk-prototype-kit-version.json
 router.get('/download', function (req, res) {

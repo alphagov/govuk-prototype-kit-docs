@@ -5,6 +5,7 @@ const fs = require('fs')
 const path = require('path')
 
 const glob = require('glob')
+const matter = require('gray-matter')
 const request = require('supertest')
 const sass = require('sass')
 
@@ -222,7 +223,8 @@ describe('The Prototype Kit', () => {
     const markdownFiles = glob.sync('docs/*/documentation/**/*.md')
     it.each(markdownFiles)('%s has a title', (filepath) => {
       const file = readFile(filepath)
-      utils.getRenderOptions(file, filepath)
+      const parsedFile = matter(file)
+      expect(parsedFile.data.heading).toBeTruthy()
     })
   })
 })

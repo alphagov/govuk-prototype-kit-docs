@@ -22,17 +22,6 @@ router.get('/', function (req, res) {
   }
 })
 
-router.get('/install', function (req, res) {
-  res.render('install')
-})
-
-// Pages in install folder are markdown
-router.get('/install/:page', function (req, res) {
-  var doc = fs.readFileSync(path.join(__dirname, '/documentation/install/', req.params.page + '.md'), 'utf8')
-  const renderOptions = utils.getRenderOptions(doc)
-  res.render('install_template', renderOptions)
-})
-
 // Examples - examples post here
 router.post('/tutorials-and-examples', function (req, res) {
   res.redirect('tutorials-and-examples')

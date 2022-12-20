@@ -152,6 +152,7 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   documentationApp.engine('.html', (filePath, options, callback) => {
     nunjucksDocumentationEnv.render(filePath, options, callback)
   })
+  documentationApp.engine('.md', utils.markdownEngine(nunjucksDocumentationEnv))
   documentationApp.set('view engine', 'html')
 
   // Automatically store all data users enter
@@ -178,8 +179,15 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   // Documentation  routes
   const docsMdDir = path.resolve(docsDir, 'documentation')
   documentationApp.get(/^([^.]+)$/, function (req, res, next) {
-    if (!utils.matchMdRoutes(docsMdDir, req, res)) {
-      utils.matchRoutes(req, res, next)
+    // get the URL path without the leading or trailing slashes
+    let name = req.path
+    if (name.startsWith('/')) { name = name.slice(1) }
+    if (name.endsWith('/')) { name = name.slice(0, -1) }
+
+    if (utils.isMdView(docsMdDir, name)) {
+      res.render(path.join(docsMdDir, name + '.md'))
+    } else {
+      res.render(name)
     }
   })
 
@@ -233,13 +241,6 @@ app.get(/\.md$/i, function (req, res) {
   parts.pop()
   path = parts.join('.') + '/'
   res.redirect(path)
-})
-
-// Auto render any view that exists
-
-// App folder routes get priority
-app.get(/^([^.]+)$/, function (req, res, next) {
-  utils.matchRoutes(req, res, next)
 })
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData

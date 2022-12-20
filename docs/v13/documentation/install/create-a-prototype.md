@@ -1,4 +1,5 @@
 ---
+layout: install_template.html
 heading: Create a prototype
 caption: Create a prototype
 ---

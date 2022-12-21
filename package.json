@@ -56,7 +56,7 @@
     "jest": "^28.1.1",
     "standard": "^14.3.3",
     "start-server-and-test": "^1.14.0",
-    "supertest": "^6.2.3",
+    "supertest": "^6.3.3",
     "tar": "^6.1.11",
     "wait-on": "^6.0.1"
   },

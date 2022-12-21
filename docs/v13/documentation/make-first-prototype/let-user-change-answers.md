@@ -14,36 +14,25 @@ If you select a **Change** link, you’ll go back to the right question page, bu
 
 ## Show the user’s answer in question 1
 
-Radios and checkboxes have a `checked` option to set whether they are selected (checked) or not when the page loads.
+The GOV.UK radios component has a `value` option to set which ones are selected when the page loads. (The same option for checkboxes  is called `values` as checkboxes can have more than one selection.)
 
 Open the `juggling-balls.html` file in your `app/views` folder.
 
-For each of the `items`, we’ll add a `checked` value, like this:
+In the `govukRadios` component, add a `value` line, like this:
 
 ```
-    {
-        value: "3 or more",
-        text: "3 or more",
-        checked: checked("how-many-balls", "3 or more")
-    },
-    {
-        value: "1 or 2",
-        text: "1 or 2",
-        checked: checked("how-many-balls", "1 or 2")
-    },
-    {
-        value: "None - I cannot juggle",
-        text: "None - I cannot juggle",
-        checked: checked("how-many-balls", "None - I cannot juggle")
-    }
+{{ govukRadios({
+  name: "how-many-balls",
+  value: data['how-many-balls'],
+  fieldset: {
+  ...
 ```
-In each case make sure the spelling is exactly the same as the `value`.
 
 [Go to http://localhost:3000/juggling-balls](http://localhost:3000/juggling-balls) and check the journey works by selecting an answer, continuing to the next page, then going back.
 
 ## Show the user’s answer in question 2
 
-Text inputs and textareas have a `value` to set what text appears in them when the page loads.
+Text inputs and textareas also have a `value` option to set what text appears in them when the page loads.
 
 Open the `juggling-trick.html` file in your `app/views` folder.
 

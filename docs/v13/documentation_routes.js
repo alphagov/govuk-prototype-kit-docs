@@ -88,6 +88,10 @@ router.get('/privacy-policy', function (req, res) {
   res.redirect('/docs/privacy-notice')
 })
 
+router.get('/examples/pass-data', function (req, res) {
+  res.redirect('/pass-data')
+})
+
 module.exports = router
 
 // Strip off markdown extensions if present and redirect

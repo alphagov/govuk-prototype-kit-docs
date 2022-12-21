@@ -69,6 +69,14 @@ module.exports = {
 
 ## Advanced features
 
+### Checkboxes and radios using HTML
+
+If you are using the HTML components instead of Nunjucks, you need to use the `checked` function for radios and checkboxes. For example:
+
+```
+<input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" {{ checked('waste','mines') }}>
+```
+
 ### Using the data on the server
 
 You can access the data on the server in a route function

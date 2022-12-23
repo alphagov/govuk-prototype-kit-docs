@@ -1,4 +1,5 @@
 ---
+layout: install_template.html
 heading: Getting started with the Prototype Kit
 caption: Create a prototype
 ---

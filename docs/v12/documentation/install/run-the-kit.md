@@ -1,4 +1,5 @@
 ---
+layout: install_template.html
 heading: How to run the kit
 caption: Installation guide for new users
 ---

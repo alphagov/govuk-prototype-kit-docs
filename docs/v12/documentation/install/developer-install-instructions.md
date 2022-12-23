@@ -1,4 +1,5 @@
 ---
+layout: install_template.html
 heading: Installation guide for advanced users
 caption: Install the Prototype Kit
 ---

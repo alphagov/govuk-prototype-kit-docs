@@ -1,4 +1,5 @@
 ---
+layout: install_template.html
 heading: Getting started - advanced guide
 caption: Create a prototype
 ---

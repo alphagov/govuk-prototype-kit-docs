@@ -15,8 +15,9 @@ const MemoryStore = require('memorystore')(session)
 dotenv.config()
 
 // Local dependencies
-const utils = require('./lib/utils.js')
-const extensions = require('./lib/extensions/extensions.js')
+const extensions = require('./lib/extensions/extensions')
+const utils = require('./lib/utils')
+const render = require('./lib/render')
 const { projectDir } = require('./lib/path-utils')
 
 const app = express()
@@ -67,10 +68,10 @@ app.use(session({
 app.use(require('./lib/middleware/extensions/extensions.js'))
 
 // Set up App
-var appViews = extensions.getAppViews([
+app.set('views', extensions.getAppViews([
   path.join(projectDir, '/app/views/'),
   path.join(projectDir, '/lib/')
-])
+]))
 
 var nunjucksConfig = {
   autoescape: true,
@@ -82,14 +83,15 @@ if (env === 'development') {
   nunjucksConfig.watch = true
 }
 
-nunjucksConfig.express = app
-
-var nunjucksAppEnv = nunjucks.configure(appViews, nunjucksConfig)
+var nunjucksAppEnv = nunjucks.configure(app.get('views'), nunjucksConfig)
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
 
-// Set views engine
+// Set view engines
+app.engine('.html', function (filePath, options, callback) {
+  nunjucksAppEnv.render(filePath, options, callback)
+})
 app.set('view engine', 'html')
 
 // Middleware to serve static assets
@@ -133,22 +135,25 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   // Set up documentation app
   const documentationApp = express()
 
-  var documentationViews = [
+  documentationApp.set('views', [
     path.join(__dirname, '/node_modules/govuk-frontend/'),
     path.join(__dirname, '/node_modules/govuk-frontend/components'),
     path.join(__dirname, docsDir, 'views/'),
     path.join(__dirname, 'views/layouts/'),
     path.join(__dirname, 'views/partials/'),
     path.join(__dirname, '/lib/')
-  ]
+  ])
 
-  nunjucksConfig.express = documentationApp
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationViews, nunjucksConfig)
+  var nunjucksDocumentationEnv = nunjucks.configure(documentationApp.get('views'), nunjucksConfig)
 
   // Nunjucks filters
   utils.addNunjucksFilters(nunjucksDocumentationEnv)
 
   // Set views engine
+  documentationApp.engine('.html', (filePath, options, callback) => {
+    nunjucksDocumentationEnv.render(filePath, options, callback)
+  })
+  documentationApp.engine('.md', render.markdownEngine(nunjucksDocumentationEnv))
   documentationApp.set('view engine', 'html')
 
   // Automatically store all data users enter
@@ -175,8 +180,15 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
   // Documentation  routes
   const docsMdDir = path.resolve(docsDir, 'documentation')
   documentationApp.get(/^([^.]+)$/, function (req, res, next) {
-    if (!utils.matchMdRoutes(docsMdDir, req, res)) {
-      utils.matchRoutes(req, res, next)
+    // get the URL path without the leading or trailing slashes
+    let name = req.path
+    if (name.startsWith('/')) { name = name.slice(1) }
+    if (name.endsWith('/')) { name = name.slice(0, -1) }
+
+    if (render.isMdView(docsMdDir, name)) {
+      res.render(path.join(docsMdDir, name + '.md'))
+    } else {
+      res.render(name)
     }
   })
 
@@ -219,15 +231,17 @@ app.get(/\.html?$/i, function (req, res) {
   var path = req.path
   var parts = path.split('.')
   parts.pop()
-  path = parts.join('.')
+  path = parts.join('.') + '/'
   res.redirect(path)
 })
 
-// Auto render any view that exists
-
-// App folder routes get priority
-app.get(/^([^.]+)$/, function (req, res, next) {
-  utils.matchRoutes(req, res, next)
+// Strip .md if provided
+app.get(/\.md$/i, function (req, res) {
+  var path = req.path
+  var parts = path.split('.')
+  parts.pop()
+  path = parts.join('.') + '/'
+  res.redirect(path)
 })
 
 // Redirect all POSTs to GETs - this allows users to use POST for autoStoreData
@@ -244,13 +258,6 @@ app.use(function (req, res, next) {
   var err = new Error(`Page not found: ${req.path}`)
   err.status = 404
   next(err)
-})
-
-// Display error
-app.use(function (err, req, res, next) {
-  console.error(err.message)
-  res.status(err.status || 500)
-  res.send(err.message)
 })
 
 console.log('\nGOV.UK Prototype Kit docs')

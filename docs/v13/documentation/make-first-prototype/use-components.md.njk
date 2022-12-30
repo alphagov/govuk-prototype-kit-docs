@@ -40,6 +40,7 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 Your component code should now look like this:
 
+{% raw %}
 ```
 {{ govukRadios({
   name: "how-many-balls",
@@ -66,6 +67,7 @@ Your component code should now look like this:
   ]
 }) }}
 ```
+{% endraw %}
 
 Your page should now look like this:
 
@@ -76,4 +78,11 @@ Your page should now look like this:
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
 
-[Next (add a textarea to question 2)](use-components-2)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Add a textarea to question 2",
+    href: "use-components-2"
+  }
+}) }}
+

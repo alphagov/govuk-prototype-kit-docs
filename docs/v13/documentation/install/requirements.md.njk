@@ -82,4 +82,10 @@ node --version
 
 If it’s installed correctly it should show a number starting with 18.
 
-<a href="create-a-prototype" class="button">Next (Create a prototype)</a>
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Create a prototype",
+    href: "create-a-prototype"
+  }
+}) }}

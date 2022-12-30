@@ -49,4 +49,10 @@ Run:
 
 `npx govuk-prototype-kit create`
 
-<a href="how-to-run-the-kit" class="button">Next (How to run the kit)</a>
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "How to run the kit",
+    href: "how-to-run-the-kit"
+  }
+}) }}

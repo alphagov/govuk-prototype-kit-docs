@@ -85,4 +85,11 @@ The first line of this sample output ends with `/app/routes.js:12`.
 
 The '12' suggests there’s probably an issue on line 12 or the line before it. In this case, the issue was a missing bracket.
 
-[Next (Link your index page to your start page)](link-index-page-start-page)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Link your index page to your start page",
+    href: "link-index-page-start-page"
+  }
+}) }}
+

@@ -20,6 +20,7 @@ Open the `juggling-balls.html` file in your `app/views` folder.
 
 In the `govukRadios` component, add a `value` line, like this:
 
+{% raw %}
 ```
 {{ govukRadios({
   name: "how-many-balls",
@@ -27,6 +28,7 @@ In the `govukRadios` component, add a `value` line, like this:
   fieldset: {
   ...
 ```
+{% endraw %}
 
 [Go to http://localhost:3000/juggling-balls](http://localhost:3000/juggling-balls) and check the journey works by selecting an answer, continuing to the next page, then going back.
 
@@ -38,6 +40,7 @@ Open the `juggling-trick.html` file in your `app/views` folder.
 
 Add `value: data['most-impressive-trick']` like this:
 
+{% raw %}
 ```
 {{ govukTextarea({
     name: "most-impressive-trick",
@@ -50,7 +53,15 @@ Add `value: data['most-impressive-trick']` like this:
     value: data['most-impressive-trick']
 }) }}
 ```
+{% endraw %}
 
 [Go to http://localhost:3000/juggling-trick](http://localhost:3000/juggling-trick) and check it works by filling in an answer, continuing to the next page, going back, then refreshing your browser.
 
-[Next (Show different pages depending on user input)](branching)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Show different pages depending on user input",
+    href: "branching"
+  }
+}) }}
+

@@ -112,4 +112,11 @@ Your code should now look like this:
 </div>
 ```
 
-[Next (Let the user change their answers)](let-user-change-answers)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Let the user change their answers",
+    href: "let-user-change-answers"
+  }
+}) }}
+

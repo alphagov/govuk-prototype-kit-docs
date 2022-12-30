@@ -72,4 +72,11 @@ Create a page from the **Confirmation** template.
 
 Enter the path `/confirmation`.
 
-[Next (link your pages together)](link-pages-together)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Link your pages together",
+    href: "link-pages-together"
+  }
+}) }}
+

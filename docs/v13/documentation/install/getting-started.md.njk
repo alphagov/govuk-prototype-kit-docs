@@ -12,6 +12,14 @@ It takes up to 30 minutes depending on how much you need to set up.
 
 There is an [getting started advanced guide](./getting-started-advanced) if you’re comfortable using Git and the terminal.
 
-[Next (Requirements)](./requirements)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Requirements",
+    href: "./requirements"
+  }
+}) }}
+
+<hr>
 
 {% include "_new-version-inset-text.njk" %}

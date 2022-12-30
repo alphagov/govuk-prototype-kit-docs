@@ -18,6 +18,12 @@ In your text editor open your prototype folder. You will see the files and folde
   - `assets` is for CSS, JavaScript, images and downloadable files
   - `routes.js` is for advanced logic - for example, if a user should go to one page or another based on their answer
 
-[Next (create pages)](create-pages)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Create pages",
+    href: "create-pages"
+  }
+}) }}
 
 {% include "_new-version-inset-text.njk" %}

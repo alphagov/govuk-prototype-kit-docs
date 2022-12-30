@@ -17,6 +17,7 @@ caption: Build a basic prototype
 
 Your component code should now look like this:
 
+{% raw %}
 ```
 {{ govukTextarea({
   name: "most-impressive-trick",
@@ -28,6 +29,7 @@ Your component code should now look like this:
   }
 }) }}
 ```
+{% endraw %}
 
 Your page should now look like this:
 
@@ -38,4 +40,11 @@ Your page should now look like this:
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
 
-[Next (Show the user’s answers on your ‘Check answers’ page)](show-users-answers)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Show the user’s answers on your ‘Check answers’ page",
+    href: "show-users-answers"
+  }
+}) }}
+

@@ -29,7 +29,14 @@ You'll also need a code editor. These two are popular, well established and fair
  - [VS Code](https://code.visualstudio.com)
  - [Notepad++](https://notepad-plus-plus.org) (Windows only)
 
-[Next (open your prototype in your editor)](open-prototype-in-editor)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Open your prototype in your editor",
+    href: "open-prototype-in-editor"
+  }
+}) }}
+
 
 <hr>
 

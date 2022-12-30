@@ -38,4 +38,11 @@ This time it's a real HTML button, not a link. Buttons submit form data - the UR
 
 The 'Check answers' page template links to the ‘Confirmation’ page by default. So you do not need to change the ‘Check answers’ page.
 
-[Next (use components from the Design System)](use-components)
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Use components from the Design System",
+    href: "use-components"
+  }
+}) }}
+

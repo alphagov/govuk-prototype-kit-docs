@@ -186,7 +186,16 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
     if (name.startsWith('/')) { name = name.slice(1) }
     if (name.endsWith('/')) { name = name.slice(0, -1) }
 
-    res.render(render.findViewName(docsMdDir, name))
+    res.render(render.findViewName(docsMdDir, name), (err, str) => {
+      if (err && err.view) {
+        console.log(err.message)
+        return next()
+      } else if (err) {
+        return next(err)
+      } else {
+        res.send(str)
+      }
+    })
   })
 
   return documentationApp

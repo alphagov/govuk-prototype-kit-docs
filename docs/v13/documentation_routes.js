@@ -23,8 +23,8 @@ router.get('/', function (req, res) {
 })
 
 // Examples - examples post here
-router.post('/tutorials-and-examples', function (req, res) {
-  res.redirect('tutorials-and-examples')
+router.post('/tutorials-and-guides', function (req, res) {
+  res.redirect('tutorials-and-guides')
 })
 
 // Example routes
@@ -74,6 +74,10 @@ router.get('/install/introduction', function (req, res) {
 
 router.get('/install/developer-install-instructions', function (req, res) {
   res.redirect('/docs/install/getting-started-advanced')
+})
+
+router.get('/tutorials-and-examples', function (req, res) {
+  res.redirect('/docs/tutorials-and-guides')
 })
 
 module.exports = router

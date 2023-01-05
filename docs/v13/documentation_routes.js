@@ -68,4 +68,12 @@ router.get('/examples/pass-data', function (req, res) {
   res.redirect('/pass-data')
 })
 
+router.get('/install/introduction', function (req, res) {
+  res.redirect('/docs/install/getting-started')
+})
+
+router.get('/install/developer-install-instructions', function (req, res) {
+  res.redirect('/docs/install/getting-started-advanced')
+})
+
 module.exports = router

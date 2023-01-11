@@ -71,25 +71,25 @@ describe('The Prototype Kit', () => {
 
   describe('tutorials and examples page', () => {
     it('should send a well formed response', async () => {
-      const response = await request(app).get('/docs/tutorials-and-examples/')
+      const response = await request(app).get('/docs/tutorials-and-guides/')
       expect(response.statusCode).toBe(200)
     })
 
     it('should return html file', async () => {
-      const response = await request(app).get('/docs/tutorials-and-examples/')
+      const response = await request(app).get('/docs/tutorials-and-guides/')
       expect(response.type).toBe('text/html')
     })
 
-    it('should redirect to /docs/tutorials-and-examples/ if .html given', async () => {
-      const response = await request(app).get('/docs/tutorials-and-examples.html')
+    it('should redirect to /docs/tutorials-and-guides/ if .html given', async () => {
+      const response = await request(app).get('/docs/tutorials-and-guides.html')
       expect(response.statusCode).toBe(302)
-      expect(response.get('location')).toMatch('/docs/tutorials-and-examples/')
+      expect(response.get('location')).toMatch('/docs/tutorials-and-guides/')
     })
 
-    it.skip('should redirect to /docs/tutorials-and-examples/ if no end slash is given', async () => {
-      const response = await request(app).get('/docs/tutorials-and-examples')
+    it.skip('should redirect to /docs/tutorials-and-guides/ if no end slash is given', async () => {
+      const response = await request(app).get('/docs/tutorials-and-guides')
       expect(response.statusCode).toBe(302)
-      expect(response.get('location')).toMatch('/docs/tutorials-and-examples/')
+      expect(response.get('location')).toMatch('/docs/tutorials-and-guides/')
     })
   })
 

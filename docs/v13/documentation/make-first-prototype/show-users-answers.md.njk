@@ -8,10 +8,10 @@ The Prototype Kit stores answers that users enter. This means you can make more 
 
 ## Show the answer to question 1
 
-1. Open `check-answers.html` in your `app/views` folder.
-2. Find the `<dt>` tag that contains the text 'Name'.
-3. Change 'Name' to 'Number of balls you can juggle'.
-4. In the `<dd>` tag on the next line, change 'Sarah Philips' to `{{ data['how-many-balls'] }}`.
+1. Open `check-answers.html` in your `app/views` folder
+2. Find the `<dt>` tag that contains the text 'Name'
+3. Change 'Name' to 'Number of balls you can juggle'
+4. In the `<dd>` tag on the next line, change 'Sarah Philips' to <br>{% raw %}`{{ data['how-many-balls'] }}`{% endraw %}
 
 This is how we show data a user has entered – 'how-many-balls' is the `name` attribute from the `<input>` on the question page.
 
@@ -28,9 +28,9 @@ Screen readers will read this out but it will not appear on the page. Without th
 
 ## Show the answer to question 2
 
-1. Find the `<dt>` tag that contains the text 'Date of birth'.
-2. Change 'Date of birth' to 'Your most impressive juggling trick'.
-3. In the `<dd>` tag on the next line, change '5 January 1978' to `{{ data['most-impressive-trick'] }}`.
+1. Find the `<dt>` tag that contains the text 'Date of birth'
+2. Change 'Date of birth' to 'Your most impressive juggling trick'
+3. In the `<dd>` tag on the next line, change '5 January 1978' to <br>{% raw %}`{{ data['most-impressive-trick'] }}`{% endraw %}
 
 Change
 ```
@@ -55,6 +55,7 @@ On the ‘Check answers’ template page, there are example answers that you do 
 
 Your code should now look like this:
 
+{% raw %}
 ```
 <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -111,6 +112,7 @@ Your code should now look like this:
     </div>
 </div>
 ```
+{% endraw %}
 
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({

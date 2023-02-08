@@ -9,108 +9,163 @@ The Prototype Kit stores answers that users enter. This means you can make more 
 ## Show the answer to question 1
 
 1. Open `check-answers.html` in your `app/views` folder
-2. Find the `<dt>` tag that contains the text 'Name'
-3. Change 'Name' to 'Number of balls you can juggle'
-4. In the `<dd>` tag on the next line, change 'Sarah Philips' to <br>{% raw %}`{{ data['how-many-balls'] }}`{% endraw %}
+2. Find this code:
+```
+key: {
+  text: "Question 1"
+},
+value: {
+  text: "Answer 1"
+}
+```
+3. Change it to:
+```
+key: {
+  text: "Number of balls you can juggle"
+},
+value: {
+  text: data['how-many-balls']
+}
+```
 
 This is how we show data a user has entered – 'how-many-balls' is the `name` attribute from the `<input>` on the question page.
 
-Update the screen reader text – change this
+4. Update the screen reader text – change this
 ```
-<span class="govuk-visually-hidden"> name</span>
+visuallyHiddenText: "Question 1"
 ```
 to
 ```
-<span class="govuk-visually-hidden"> number of balls you can juggle</span>
+visuallyHiddenText: "number of balls you can juggle"
 ```
 
 Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it’s for.
 
 ## Show the answer to question 2
 
-1. Find the `<dt>` tag that contains the text 'Date of birth'
-2. Change 'Date of birth' to 'Your most impressive juggling trick'
-3. In the `<dd>` tag on the next line, change '5 January 1978' to <br>{% raw %}`{{ data['most-impressive-trick'] }}`{% endraw %}
-
-Change
+1. Find this code:
 ```
-<span class="govuk-visually-hidden"> date of birth</span>
+key: {
+  text: "Question 2"
+},
+value: {
+  text: "Answer 2"
+}
+```
+2. Change it to:
+```
+key: {
+  text: "Your most impressive juggling trick"
+},
+value: {
+  text: data['most-impressive-trick']
+}
+```
+3. Change
+```
+visuallyHiddenText: "Question 2"
 ```
 to
 ```
-<span class="govuk-visually-hidden"> your most impressive juggling trick</span>
+visuallyHiddenText: "your most impressive juggling trick"
 ```
 [Go to http://localhost:3000/start](http://localhost:3000/start) and answer the questions to check your answers show up correctly.
 
-## Delete the remaining example answers
+## Delete the remaining example row
 
-On the ‘Check answers’ template page, there are example answers that you do not need.
+On the ‘Check answers’ template page, there is a third example row you do not need.
 
-1. Find and delete the whole `<div>` that starts with `<div class="govuk-summary-list__row">` and contains 'Contact information'.
+Find and delete the last row **including the comma above it**
 
-2. Find and delete the whole `<div>` that starts with `<div class="govuk-summary-list__row">` and contains 'Contact details'.
-
-3. Delete everything from the line that contains 'Application details' down to the line before 'Now send your application'.
-
+```
+,
+{
+  key: {
+    text: "Question 3"
+  },
+  value: {
+    text: "Answer 3"
+  },
+  actions: {
+    items: [
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "Question 3"
+      }
+    ]
+  }
+}
+```
 
 Your code should now look like this:
 
 {% raw %}
 ```
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-xl">
+        Check your answers before sending your application
+      </h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Number of balls you can juggle"
+            },
+            value: {
+              text: data['how-many-balls']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "number of balls you can juggle"
+                }
+              ]
+            }
+          },
+          {
+            key: {
+              text: "Your most impressive juggling trick"
+            },
+            value: {
+              text: data['most-impressive-trick']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "your most impressive juggling trick"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Number of balls you can juggle
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['how-many-balls'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden">  number of balls you can juggle</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your most impressive juggling trick
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['most-impressive-trick'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> your most impressive juggling trick</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
-
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
 
       <form action="/confirmation" method="post" novalidate>
 
-        <input type="hidden" name="answers-checked" value="true">
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
-        </button>
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
 
       </form>
 
     </div>
-</div>
+  </div>
 ```
 {% endraw %}
 

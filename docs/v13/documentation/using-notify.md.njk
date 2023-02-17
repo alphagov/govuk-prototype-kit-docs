@@ -11,7 +11,7 @@ confirmation email at the end of a journey.
 
 You need an account before you can use GOV.UK Notify to send text messages or emails.
 
-If you have a government email address you can [sign up for a GOV.UK Notify account](https://www.gov.uk/notify)
+If you have a government email address you can [sign up for a GOV.UK Notify account](https://www.gov.uk/notify).
 
 ## Getting an API key
 
@@ -63,13 +63,23 @@ do accidentally publish your key somewhere you will need to sign into Notify and
 
 ## Add the Notify code to your prototype
 
-In the terminal run:
+1. In the terminal, start your prototype.
+2. In your browser, go to the <strong>Plugins</strong>
+section of <strong><a href="http://localhost:3000/manage-prototype">Manage your prototype</a></strong> (opens in a new tab).
+3. Install <strong>Notifications node client</strong> from the <strong>Available plugins</strong> list.
+
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+{{ govukDetails({
+  summaryText: "If the Notifications node client plugin is not available",
+  html: "You can update to the <a href=\"https://prototype-kit.service.gov.uk/docs/update-to-latest-version\">latest version of the Prototype Kit</a> or in the terminal run:
 
 `npm install notifications-node-client`
+"
+}) }}
 
-Then in your code editor, add this code to the top of routes.js:
+In your code editor, add this code to the top of routes.js:
 
-```javascript
+```
 var NotifyClient = require('notifications-node-client').NotifyClient,
     notify = new NotifyClient(process.env.NOTIFYAPIKEY);
 ```
@@ -78,8 +88,9 @@ var NotifyClient = require('notifications-node-client').NotifyClient,
 
 Make a page with a form to collect the user’s email address. For
 example:
+{% raw %}
 ```
-{% extends "layout.html" %}
+{% extends "layouts/main.html" %}
 
 {% block content %}
 
@@ -107,11 +118,11 @@ example:
   </div>
 {% endblock %}
 ```
+{% endraw %}
 
 Save this page as `email-address-page.html`.
 
-Then add this code to `routes.js`, above the line that says
-`module.exports = router`:
+Then add this code to `app/routes.js` at the end of the file.
 
 ```javascript
 // The URL here needs to match the URL of the page that the user is on

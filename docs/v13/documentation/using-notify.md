@@ -63,7 +63,19 @@ do accidentally publish your key somewhere you will need to sign into Notify and
 
 ## Add the Notify code to your prototype
 
-In the terminal run:
+1. In the terminal, start your prototype.
+2. In your browser, go to the <strong>Plugins</strong>
+section of <strong><a href="http://localhost:3000/manage-prototype">Manage your prototype</a></strong> (opens in a new tab).
+3. Install <strong>Notifications node client</strong> from the <strong>Available plugins</strong> list.
+
+<details class="govuk-details" data-module="govuk-details">
+  <summary class="govuk-details__summary">
+    <span class="govuk-details__summary-text">
+If the Notifications node client plugin is not available
+    </span>
+  </summary>
+  <div class="govuk-details__text">
+    You can update to the latest version of the Prototype Kit or in the terminal run:
 
 `npm install notifications-node-client`
 
@@ -73,6 +85,8 @@ Then in your code editor, add this code to the top of routes.js:
 var NotifyClient = require('notifications-node-client').NotifyClient,
     notify = new NotifyClient(process.env.NOTIFYAPIKEY);
 ```
+  </div>
+</details>
 
 ## Sending your first email
 

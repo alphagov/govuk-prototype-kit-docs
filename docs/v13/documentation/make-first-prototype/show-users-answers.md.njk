@@ -4,72 +4,91 @@ title: Show the user’s answers
 caption: Build a basic prototype
 ---
 
-The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check.
+The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers on the ‘Check answers’ page.
+
+We will change the text in the template to match the questions in your prototype and show the user’s answers. 
 
 ## Show the answer to question 1
 
-1. Open `check-answers.html` in your `app/views` folder
-2. Find this code:
+1. In your browser, go to [http://localhost:3000/check-answers](http://localhost:3000/check-answers).
+2. In your code editor, open `check-answers.html` in your `app/views` folder.
+3. You need to change the text 'Question 1' to 'Number of balls you can juggle'. Find this code:
 ```
 key: {
   text: "Question 1"
 },
-value: {
-  text: "Answer 1"
-}
 ```
-3. Change it to:
+4. Change it to:
 ```
 key: {
   text: "Number of balls you can juggle"
 },
+```
+5. You need to change the text 'Answer 1' to `data['how-many-balls']`. Find this code:
+```
+value: {
+  text: "Answer 1"
+},
+```
+6. Change it to:
+```
 value: {
   text: data['how-many-balls']
-}
+},
 ```
 
 This is how we show data a user has entered – 'how-many-balls' is the `name` attribute from the `<input>` on the question page.
 
-4. Update the screen reader text – change this
+## Update the screen reader text
+Screen readers read out hidden text, but it will not appear on the page. For example, there is a 'Change' link next to each question. Without hidden text, screen reader users would just hear “Change” and not know what it’s for.
+
+
+Update the screen reader text – change this:
 ```
 visuallyHiddenText: "Question 1"
 ```
-to
+to:
 ```
 visuallyHiddenText: "number of balls you can juggle"
 ```
 
-Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it’s for.
 
 ## Show the answer to question 2
 
-1. Find this code:
+1. You need to change the text 'Question 2' to 'Your most impressive juggling trick'. Find this code:
 ```
 key: {
   text: "Question 2"
 },
-value: {
-  text: "Answer 2"
-}
 ```
 2. Change it to:
 ```
 key: {
   text: "Your most impressive juggling trick"
 },
+```
+3. You need to change the text 'Answer 2' to `data['most-impressive-trick']`. Find this code:
+```
+value: {
+  text: "Answer 2"
+},
+```
+4. Change it to:
+```
 value: {
   text: data['most-impressive-trick']
-}
+},
 ```
-3. Change
+
+5. Update the screen reader text – change this:
 ```
 visuallyHiddenText: "Question 2"
 ```
-to
+to:
 ```
 visuallyHiddenText: "your most impressive juggling trick"
 ```
-[Go to http://localhost:3000/start](http://localhost:3000/start) and answer the questions to check your answers show up correctly.
+6. Go to [http://localhost:3000/start](http://localhost:3000/start) and answer the questions to check your answers show up correctly.
 
 ## Delete the remaining example row
 

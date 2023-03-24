@@ -4,113 +4,188 @@ title: Show the user’s answers
 caption: Build a basic prototype
 ---
 
-The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers for users to check.
+The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers on the ‘Check answers’ page.
+
+We will change the text in the template to match the questions in your prototype and show the user’s answers. 
 
 ## Show the answer to question 1
 
-1. Open `check-answers.html` in your `app/views` folder
-2. Find the `<dt>` tag that contains the text 'Name'
-3. Change 'Name' to 'Number of balls you can juggle'
-4. In the `<dd>` tag on the next line, change 'Sarah Philips' to <br>{% raw %}`{{ data['how-many-balls'] }}`{% endraw %}
+1. In your browser, go to [http://localhost:3000/check-answers](http://localhost:3000/check-answers).
+2. In your code editor, open `check-answers.html` in your `app/views` folder.
+3. You need to change the text 'Question 1' to 'Number of balls you can juggle'. Find this code:
+```
+key: {
+  text: "Question 1"
+},
+```
+4. Change it to:
+```
+key: {
+  text: "Number of balls you can juggle"
+},
+```
+5. You need to change the text 'Answer 1' to `data['how-many-balls']`. Find this code:
+```
+value: {
+  text: "Answer 1"
+},
+```
+6. Change it to:
+```
+value: {
+  text: data['how-many-balls']
+},
+```
 
 This is how we show data a user has entered – 'how-many-balls' is the `name` attribute from the `<input>` on the question page.
 
-Update the screen reader text – change this
+## Update the screen reader text
+Screen readers read out hidden text, but it will not appear on the page. For example, there is a 'Change' link next to each question. Without hidden text, screen reader users would just hear “Change” and not know what it’s for.
+
+
+Update the screen reader text – change this:
 ```
-<span class="govuk-visually-hidden"> name</span>
+visuallyHiddenText: "Question 1"
 ```
-to
+to:
 ```
-<span class="govuk-visually-hidden"> number of balls you can juggle</span>
+visuallyHiddenText: "number of balls you can juggle"
 ```
 
-Screen readers will read this out but it will not appear on the page. Without this hidden text, screen reader users would just hear “Change” and not know what it’s for.
 
 ## Show the answer to question 2
 
-1. Find the `<dt>` tag that contains the text 'Date of birth'
-2. Change 'Date of birth' to 'Your most impressive juggling trick'
-3. In the `<dd>` tag on the next line, change '5 January 1978' to <br>{% raw %}`{{ data['most-impressive-trick'] }}`{% endraw %}
-
-Change
+1. You need to change the text 'Question 2' to 'Your most impressive juggling trick'. Find this code:
 ```
-<span class="govuk-visually-hidden"> date of birth</span>
+key: {
+  text: "Question 2"
+},
 ```
-to
+2. Change it to:
 ```
-<span class="govuk-visually-hidden"> your most impressive juggling trick</span>
+key: {
+  text: "Your most impressive juggling trick"
+},
 ```
-[Go to http://localhost:3000/start](http://localhost:3000/start) and answer the questions to check your answers show up correctly.
+3. You need to change the text 'Answer 2' to `data['most-impressive-trick']`. Find this code:
+```
+value: {
+  text: "Answer 2"
+},
+```
+4. Change it to:
+```
+value: {
+  text: data['most-impressive-trick']
+},
+```
 
-## Delete the remaining example answers
+5. Update the screen reader text – change this:
+```
+visuallyHiddenText: "Question 2"
+```
+to:
+```
+visuallyHiddenText: "your most impressive juggling trick"
+```
+6. Go to [http://localhost:3000/start](http://localhost:3000/start) and answer the questions to check your answers show up correctly.
 
-On the ‘Check answers’ template page, there are example answers that you do not need.
+## Delete the remaining example row
 
-1. Find and delete the whole `<div>` that starts with `<div class="govuk-summary-list__row">` and contains 'Contact information'.
+The ‘Check answers’ template page has 3 example rows, each row represents a question. We only have 2 questions in our prototype, so we'll delete the last row.
 
-2. Find and delete the whole `<div>` that starts with `<div class="govuk-summary-list__row">` and contains 'Contact details'.
+Delete the last row including the comma above it. The row starts on line 56 and ends on line 73.
 
-3. Delete everything from the line that contains 'Application details' down to the line before 'Now send your application'.
-
+```
+,
+{
+  key: {
+    text: "Question 3"
+  },
+  value: {
+    text: "Answer 3"
+  },
+  actions: {
+    items: [
+      {
+        href: "#",
+        text: "Change",
+        visuallyHiddenText: "Question 3"
+      }
+    ]
+  }
+}
+```
 
 Your code should now look like this:
 
 {% raw %}
 ```
-<div class="govuk-grid-row">
+  <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 
-      <h1 class="govuk-heading-xl">Check your answers before sending your application</h1>
+      <h1 class="govuk-heading-xl">
+        Check your answers before sending your application
+      </h1>
 
-      <h2 class="govuk-heading-m">Personal details</h2>
+      {{ govukSummaryList({
+        rows: [
+          {
+            key: {
+              text: "Number of balls you can juggle"
+            },
+            value: {
+              text: data['how-many-balls']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "number of balls you can juggle"
+                }
+              ]
+            }
+          }
+          ,
+          {
+            key: {
+              text: "Your most impressive juggling trick"
+            },
+            value: {
+              text: data['most-impressive-trick']
+            },
+            actions: {
+              items: [
+                {
+                  href: "#",
+                  text: "Change",
+                  visuallyHiddenText: "your most impressive juggling trick"
+                }
+              ]
+            }
+          }
+        ]
+      }) }}
 
-      <dl class="govuk-summary-list govuk-!-margin-bottom-9">
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Number of balls you can juggle
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['how-many-balls'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden">  number of balls you can juggle</span>
-            </a>
-          </dd>
-        </div>
-        <div class="govuk-summary-list__row">
-          <dt class="govuk-summary-list__key">
-            Your most impressive juggling trick
-          </dt>
-          <dd class="govuk-summary-list__value">
-            {{ data['most-impressive-trick'] }}
-          </dd>
-          <dd class="govuk-summary-list__actions">
-            <a href="#">
-              Change
-              <span class="govuk-visually-hidden"> your most impressive juggling trick</span>
-            </a>
-          </dd>
-        </div>
-      </dl>
+      <h2 class="govuk-heading-m">
+        Now send your application
+      </h2>
 
-      <h2 class="govuk-heading-m">Now send your application</h2>
-
-      <p>By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.</p>
+      <p>
+        By submitting this application you are confirming that, to the best of your knowledge, the details you are providing are correct.
+      </p>
 
       <form action="/confirmation" method="post" novalidate>
 
-        <input type="hidden" name="answers-checked" value="true">
-
-        <button type="submit" class="govuk-button" data-module="govuk-button">
-          Accept and send
-        </button>
+        {{ govukButton({
+          text: "Accept and send"
+        }) }}
 
       </form>
 
     </div>
-</div>
+  </div>
 ```
 {% endraw %}
 

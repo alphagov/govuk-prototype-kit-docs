@@ -1,0 +1,94 @@
+---
+heading: Use Nunjucks to prototype
+title: Use Nunjucks to prototype
+---
+You can use 2 coding languages in your prototype with the (GOV.UK Design System)[https://design-system.service.gov.uk/], Nunjucks or HTML.
+
+HTML is the language used to create web pages.
+
+Nunjucks is another language we can run in the Prototype Kit, to make HTML for us. Short, simple Nunjucks code can create much longer, more complex HTML. It saves time with reusable, accessible components for forms, navigation, panels, tables and helps to make services consistent with GOV.UK.
+
+Nunjucks allows you to use: 
+ 
+- styles, patterns and components with less code
+- options to change HTML
+- logic to send the user to different pages based on their answer
+
+Using Nunjucks makes it easier to manage your code and make changes to it in the future.
+
+## Add a component
+
+Find the component that you want to use on the (GOV.UK Design system)[https://design-system.service.gov.uk/], then select the Nunjucks tab and copy the code into your code editor. In this example we will use (radios)[https://design-system.service.gov.uk/components/radios/].
+
+{% from "govuk/components/radios/macro.njk" import govukRadios %}
+
+```
+{{ govukRadios({
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Where do you live?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "England"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "northern-ireland",
+      text: "Northern Ireland"
+    }
+  ]
+}) }}
+```
+
+
+## Delete parts of a component
+
+Each component in the GOV.UK Design System has coded examples. You can add or remove parts of the component to fit your design.
+
+For example, if you want to remove the last radio ‘Northern Ireland’, you can delete this code:
+ ```
+ ,
+ {
+     value: "northern-ireland",
+     text: "Northern Ireland"
+ }
+```
+You can add another country as a radio button, like Spain. Add this code:
+```
+ ,
+ {
+     value: "spain",
+     text: "Spain"
+ }
+```
+It is important that you do not change or delete the closing brackets:
+```
+ ]
+}) }}
+```
+## Change a component
+
+You can use `options` to change how a component looks or behaves. For example, you can use the text option to change the text on a (button)[https://design-system.service.gov.uk/components/button/]:
+```
+{{ govukButton({
+    text: "Example button text"
+}) }}
+```
+To view the options for each component, select ‘Nunjucks macro options’ within the Nunjucks tab in the Design System.
+
+The Nunjucks macro options for a button looks like this:
+
+[Add screenshot]

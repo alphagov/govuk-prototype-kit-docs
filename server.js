@@ -212,6 +212,11 @@ app.get('/docs/install', (req, res) => {
   res.redirect('/docs/create-new-prototype')
 })
 
+// Add redirect from v12 /routes to v13 /create-routes
+app.get('/docs/routes', (req, res) => {
+  res.redirect('/docs/create-routes')
+})
+
 // Add redirect from /templates url to v12 docs for now
 // TODO: figure out what to do with templates
 app.use('/docs/templates', (req, res, next) => {

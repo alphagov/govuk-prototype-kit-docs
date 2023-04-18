@@ -2,83 +2,115 @@
 heading: Create routes
 ---
 
-You may want to make prototypes that are more complex than simple HTML files. For example, you may want to respond to input from a form and show different pages based on answers given by the user.
+You may want to make prototypes that are more complex than simple HTML files. For example, you may want to respond to input from a form and show different pages based on answers given by the user (also called branching).
 
-To do this you will need to create 'routes' - rules for the server to respond to certain URLs.
-
-You can edit the file `app/routes.js` to process requests from the browser and send custom responses. For example processing data and sending the user to different pages based on their answers.
+To do this you will need to create 'routes' - rules for the Prototype Kit to respond to certain web addresses (URLs), in the file `app/routes.js`
 
 ## Requests and responses
 
-When you enter http://localhost:3000 in a browser, the browser sends a request to the Prototype Kit. The kit processes that request and sends a response.
+![Diagram showing a browser on a laptop with an arrow labelled 'request' going to a server. An arrow labelled 'response' comes back to the laptop.](/public/docs/v13/images/docs/request-response.svg)
 
-By default, the Prototype Kit looks in the `app/views` folder for a corresponding file, turns the file into a complete HTML page and sends that as a response to the browser.
+When you enter `http://localhost:3000/start` in a browser, the browser sends a request to the server - the Prototype Kit. The kit processes that request and sends a response.
 
-For example, if you go to http://localhost:3000/start, the Prototype Kit looks in the `app/views` folder for `start.html`. It adds the GOV.UK header and footer, and sends the whole start page back as a response to the browser.
+The kit looks in the `app/views` folder for a file called `start.html`. It adds the GOV.UK header and footer, and sends the whole start page back as a response to the browser.
 
-If the kit cannot find a corresponding file in `app/views`, it will send an 'Error: not found' page instead.
+If the kit cannot find `start.html` in `app/views`, it will send an 'Error: not found' page instead.
 
 ## Routes
 
-Routes let you control the response to any request. You can add routes to the `app/routes.js` file.
+You can control the response to any request by adding routes to the `app/routes.js` file. Routes are written in JavaScript.
 
 This is an example of a route:
 
 ```js
-router.get('/games/dice', function(request, response) {
+router.post('/live-in-uk-answer', function(request, response) {
 
-	var dice = Math.ceil(Math.random()*6)
-	response.locals.dice = dice
-	response.render('dice')
-
+    var liveInUK = request.session.data['live-in-uk']
+    if (liveInUK == "Yes"){
+        response.redirect("/next-question")
+    } else {
+        response.redirect("/ineligible")
+    }
 })
 ```
 
-This route will pick a random number between 1 and 6, then display a 'dice' page with that number.
+In this example, the user was asked if they live in the UK, with 'Yes' and 'No' radio buttons to answer.
+
+This route sends the user to a different page depending on their answer.
 
 Let's look at each bit of this route code separately.
 
-### router.get
+<div class="govuk-!-margin-bottom-8">
 
-There are 2 ways a browser can make a request. They are 'get' and 'post':
+`router.post`
 
-* a get request is when you enter an address or follow a link
-* a post request is when you submit a form
+The router handles all the requests. There are 2 ways a browser can make a request: 'get' and 'post'.
 
-This route will only run when the request is get, not post.
+* a get request is when you enter an address in the browser or follow a link
+* a post request is when you submit your answer to a form with a button
 
-### '/games/dice'
+This route will only run when the request is post, not get.
 
-This is called the request path.
+</div>
+<div class="govuk-!-margin-bottom-8">
 
-### function(request, response)
+`'/live-in-uk-answer'`
 
-This is our function (piece of code) to process the request. It has access to 2 variables or pieces of data:
+This is called the request path. On the question page, the form has an `action` with the same path.
 
-* request
-* response
+</div>
+<div class="govuk-!-margin-bottom-8">
 
-The request contains all the data related to the request from the browser. For example, `request.path` will give you the request path.
+`function(request, response)`
 
-The response lets us send a response back to the browser.
+This is our function (piece of code) to process the request. It has access to 2 variables (pieces of data):
 
-### var dice = Math.ceil(Math.random()*6)
+* request - contains information from the browser, including the user's answers
+* response - lets us send instructions to the browser, for example the next page to redirect to
 
-This line simulates a dice throw. It stores a random number between 1 and 6 in the variable called dice.
+</div>
+<div class="govuk-!-margin-bottom-8">
 
-### response.locals.dice = dice
+`var liveInUK = request.session.data['live-in-uk']`
 
-This line makes the dice variable available to the view or page.
+To send users to different pages based on their answers, the kit stores all answers in a variable called `request.session.data`.
 
-### response.render('dice')
+We need the answer to 'Do you live in the UK?' `['live-in-uk']`
 
-Finally, we 'render' the page called 'dice' (don't add the extension `.html`. The kit does that automatically.
+We use `var liveInUK =` to copy `request.session.data['live-in-uk']` to a shorter variable. This makes it easier to type later on.
 
-On the page called 'dice', the variable is:
+</div>
+<div class="govuk-!-margin-bottom-8">
 
-```
-**{{ dice }}**
-```
+`if (liveInUK == "Yes"){`
 
+This code checks whether the answer to 'Do you live in the UK' is 'Yes'.
 
-[Express documentation for routes](http://expressjs.com/4x/api.html#app.VERB)
+Note the double = symbol for checking an answer. A single = makes a copy as we did above.
+
+</div>
+<div class="govuk-!-margin-bottom-8">
+
+`response.redirect("/next-question")`
+
+Because the user's answer is 'Yes', our `response` is to `redirect` them to `/next-question` - as they are eligible to use the service.
+
+</div>
+<div class="govuk-!-margin-bottom-8">
+
+`} else {`
+
+If the user's answer was not 'Yes', we use `else` to set a different response.
+
+</div>
+<div class="govuk-!-margin-bottom-8">
+
+`response.redirect("/ineligible")`
+
+Our `response` is to `redirect` them to `/ineligible` - they are not eligible to continue in the service.
+
+</div>
+
+Find out [how to make branching journeys using routes](./branching-journeys)
+
+[Advanced documentation for routes](https://expressjs.com/en/guide/routing.html)

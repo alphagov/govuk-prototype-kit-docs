@@ -80,11 +80,11 @@ router.get('/tutorials-and-examples', function (req, res) {
   res.redirect('/docs/tutorials-and-guides')
 })
 
-router.get('/docs/install/node', function (req, res) {
+router.get('/install/node', function (req, res) {
   res.redirect('/docs/install/getting-started')
 })
 
-router.get('/docs/install/requirements', function (req, res) {
+router.get('/install/requirements', function (req, res) {
   res.redirect('/docs/install/getting-started')
 })
 

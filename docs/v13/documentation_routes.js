@@ -80,4 +80,12 @@ router.get('/tutorials-and-examples', function (req, res) {
   res.redirect('/docs/tutorials-and-guides')
 })
 
+router.get('/install/node', function (req, res) {
+  res.redirect('/docs/install/getting-started')
+})
+
+router.get('/install/requirements', function (req, res) {
+  res.redirect('/docs/install/getting-started')
+})
+
 module.exports = router

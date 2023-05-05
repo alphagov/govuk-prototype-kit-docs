@@ -44,8 +44,6 @@ In this example, we've changed the button to a secondary grey button:
 
 ## Delete parts of a component
 
-Some components like radios and tables have multiple `items` or `rows`. You can add or delete these to fit your design.
-
 Some components are made up of multiple parts. For example, the checkboxes are `items` in the checkbox component and a table has multiple `rows`. You can add or delete these to fit your design.
 
 This is the radios component:

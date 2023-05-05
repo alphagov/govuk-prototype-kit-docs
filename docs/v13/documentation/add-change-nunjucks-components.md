@@ -31,7 +31,7 @@ For example, you can use the `text` option to change the text on a [button](http
 }) }}
 ```
 
-To add another option, you need to add a comma at the end of the previous option. 
+When adding another option, add a comma at the end of the previous option. 
 
 In this example, we've changed the button to a secondary grey button:
 
@@ -44,13 +44,13 @@ In this example, we've changed the button to a secondary grey button:
 
 ## Delete parts of a component
 
-Some components like radios and tables have multiple `items` or `rows`. You can add or remove these to fit your design.
+Some components like radios and tables have multiple `items` or `rows`. You can add or delete these to fit your design.
 
-For example, this is the radios component:
+Some components are made up of multiple parts. For example, the checkboxes are `items` in the checkbox component and a table has multiple `rows`. You can add or delete these to fit your design.
+
+This is the radios component:
 
 ```
-{% from "govuk/components/radios/macro.njk" import govukRadios %}
-
 {{ govukRadios({
   name: "where-do-you-live",
   fieldset: {
@@ -81,7 +81,7 @@ For example, this is the radios component:
 }) }}
 ```
 
-To remove the last radio ‘Northern Ireland’, delete this `item` including the comma before:
+To delete the last radio ‘Northern Ireland’, delete this `item` including the comma before:
 
  ```
  ,
@@ -101,5 +101,41 @@ You can add another country as a radio button, like Spain. Add this `item` inclu
 It is important that you do not change or delete the closing brackets:
 ```
  ]
+}) }}
+```
+
+Your code should look like this:
+```
+{{ govukRadios({
+  name: "where-do-you-live",
+  fieldset: {
+    legend: {
+      text: "Where do you live?",
+      isPageHeading: true,
+      classes: "govuk-fieldset__legend--l"
+    }
+  },
+  items: [
+    {
+      value: "england",
+      text: "England"
+    },
+    {
+      value: "scotland",
+      text: "Scotland"
+    },
+    {
+      value: "wales",
+      text: "Wales"
+    },
+    {
+      value: "northern-ireland",
+      text: "Northern Ireland"
+    },
+    {
+     value: "spain",
+     text: "Spain"
+    }
+  ]
 }) }}
 ```

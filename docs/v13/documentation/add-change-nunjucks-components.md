@@ -127,10 +127,6 @@ Your code should look like this:
       text: "Wales"
     },
     {
-      value: "northern-ireland",
-      text: "Northern Ireland"
-    },
-    {
      value: "spain",
      text: "Spain"
     }

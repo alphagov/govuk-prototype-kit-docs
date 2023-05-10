@@ -29,7 +29,7 @@ You can show what the user entered later on like this:
 </p>
 ```
 
-### Showing answers in inputs
+### Show answers in inputs
 
 If a user goes back to a page where they entered data, they would expect to see the answer they gave.
 
@@ -44,7 +44,7 @@ Most inputs use the `value` option:
 
 For checkboxes the option is `values`, since more than one can be selected.
 
-### Setting default data
+### Set default data
 
 You can set default data in your prototype. This will appear without the user having to enter anything. For example, if you want to prototype a journey where a user previously saved their responses and returned to it later to review or update the information already in the prototype.
 
@@ -67,6 +67,24 @@ module.exports = {
 }
 ```
 
+### Use links to set data
+
+You can use links to set data. If you want to test different scenarios, you can have links to set data for each scenario.
+
+To set data from a link, add a `?` to the `href` followed by the data you want to set:
+
+```
+<a href="/start?first-name=Amina">
+```
+
+To set more than one piece of data in a link, use an `&` between them:
+
+```
+<a href="/start?first-name=Amina&over-18=yes">
+```
+
+If the user changes this data in the prototype, their new answers will be saved.
+
 ## Advanced features
 
 ### Checkboxes and radios using HTML
@@ -77,7 +95,7 @@ If you are using the HTML components instead of Nunjucks, you need to use the `c
 <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" {{ checked('waste','mines') }}>
 ```
 
-### Using the data on the server
+### Use the data on the server
 
 You can access the data on the server in a route function
 
@@ -120,7 +138,7 @@ You can access the data on the server in a route function:
 var firstName = req.session.data['claimant']['first-name']
 ```
 
-### Ignoring inputs
+### Ignore inputs
 
 To prevent an input being stored, use an underscore at the start of the name.
 

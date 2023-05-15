@@ -31,4 +31,4 @@ If your prototype does not work, compare the new `package.json` file to the `pac
 
 Run `npm install PACKAGE-NAME` for each package that's missing in the new file.
 
-Contact the [contact the GOV.UK Prototype team](./support) if you need help doing this.
+[Contact the GOV.UK Prototype team](./support) if you need help.

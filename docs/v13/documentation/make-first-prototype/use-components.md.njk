@@ -15,10 +15,14 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 ## Add radios to question 1
 
-1. Go to the [radios component in the Design System](https://design-system.service.gov.uk/components/radios/).
+1. Go to the [radios component in the Design System](https://design-system.service.gov.uk/components/radios/) (opens in a new tab).
+
 2. Select the **Nunjucks** tab under the first example, then **Copy code**.
+
 3. Open `juggling-balls.html` in your `app/views` folder.
+
 4. Replace this paragraph with the code you copied:
+
 ```
 <p>
   [Insert question content here - see the
@@ -30,9 +34,14 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 ### Customise the example code
 
-1. Under `legend`, change `text` from "Where do you live?" to "How many balls can you juggle?".
-2. Change `name` to `how-many-balls`.
+1. Under `legend`, change `text` from `"Where do you live?"` to `"How many balls can you juggle?"`.
+
+   We use legends to set the contents on the page. When there's only one question on a page, the heading is usually the same as the `<legend>`.
+
+2. Change `name` to `how-many-balls`. We use the name to show the answer to this question on the **Check answers page**.
+
 3. We only want 3 options not 4, so delete the last of the `items` including the comma from the previous item:
+
 ```
     ,
     {
@@ -41,6 +50,7 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
     }
 ```
 4. Change the `value` and `text` in the `items` to:
+
   - 3 or more
   - 1 or 2
   - None - I cannot juggle

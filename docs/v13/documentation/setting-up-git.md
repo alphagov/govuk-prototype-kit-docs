@@ -6,7 +6,7 @@ Git helps track changes in code and lets you undo mistakes or identify bugs. It�
 
 This guide will walk you through setting up a Git repo (repository) and committing your work so that you can publish your prototype on the web.
 
-> You don’t *have* to use Git to use the Prototype Kit, but it will be really useful if you learn some basics.
+> You do not have to use Git to use the Prototype Kit, but it will be really useful if you learn some basics.
 
 > Git is not the same as GitHub. Git stores versions of your work, and lets you collaborate more easily with others. GitHub puts it all online with a nice web interface.
 
@@ -30,9 +30,9 @@ For example,  `git config --global user.name "John Smith"`
 
 If you have an account on GitHub, use the *same* email address for both.
 
-## 2. Initialise a Git repo
+## 2. Set up a Git repo
 
-The first time you want to use Git on your prototype, you need to initialise it.
+The first time you want to use Git on your prototype, you need to set up a new repository (also called 'initialising').
 
 In your prototype folder:
 ```
@@ -59,6 +59,8 @@ As this is a new Git repo, all files in the kit will be listed as having changes
 
 ## 4. Doing your first commit
 
+A commit is when you want to save the changes that you’ve made to a file (or set of files).
+
 There are two stages to committing your changes. The first is to select the specific files with changes you want to commit, called **‘staging’**. The second is to commit all the changes in ‘staging’.
 
 ### Select files you want to commit
@@ -71,7 +73,7 @@ In terminal:
 ```
 git add .
 ```
-> In everyday use, you will use a different command to only pick specific files with changes rather than all at once.
+> You will usually enter a different command to only pick specific files with changes rather than all at once.
 
 
 ### Check Git status

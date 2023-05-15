@@ -3,7 +3,9 @@ heading: How to use layouts
 title: How to use layouts
 ---
 
-Layouts let you share a common design across pages. For example, if your pages share a custom header and footer, you can add them to one shared layout file. If you need to change those parts of the page in future, you can change them once and they will update on all the pages that use that layout.
+Layouts let you share a common design across pages. For example, if you want to include the name of your service or use the GOV.UK footer on every page in your service.
+
+If your pages share a custom header and footer, you can add them to one shared layout file. To change those parts of the page in future, you can change them once and they will update on all the pages that use that layout.
 
 To make a page use a layout, you need to add an `extends` line at the top of the file. For example if you want to extend a layout called admin, use:
 
@@ -23,21 +25,21 @@ Note the line:
 
 It means this layout extends a standard layout that comes with the Prototype Kit. It loads the default code needed for GOV.UK branded pages, along with the functionality in the kit, such as automatically storing data.
 
-You can overwrite existing blocks and define your own blocks in your layout.
+You can make changes to existing blocks and define your own blocks in your layout.
 
-<div class="govuk-inset-text">
-  If you do not want your pages to be GOV.UK branded, go to <strong>Manage your prototype</strong> and create a page with the <strong>Unbranded page</strong> template.
-</div>
+## Unbranded pages
+
+If you do not want to use the GOV.UK logo or footer, you can choose to use unbranded pages in your prototype. Go to <strong>Manage your prototype</strong> and create a page with the <strong>Unbranded page</strong> template.
 
 ## Using blocks
 
 Blocks are how layouts and pages share code. For example, there is a block called `header` for the header content on every page.
 
-These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas).
+These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas) (opens in a new tab).
 
 ### Header block
 
-You can overwrite the existing GOV.UK header using the `header` block, adding navigation like this:
+You can make changes to the existing GOV.UK header using the `header` block, such as adding navigation like in this example:
 
 ```
 {% block header %}
@@ -64,11 +66,11 @@ You can overwrite the existing GOV.UK header using the `header` block, adding na
 {% endblock %}
  ```
 
-Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
+Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/) (opens in a new tab).
 
 ### Footer block
 
-You can overwrite the existing GOV.UK footer using the `footer` block:
+You can make changes to the existing GOV.UK footer using the `footer` block:
 
 ```
 {% block footer %}
@@ -94,8 +96,8 @@ You can overwrite the existing GOV.UK footer using the `footer` block:
 {% endblock %}
 ```
 
-Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/).
+Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/) (opens in a new tab).
 
 ## Stylesheets (CSS) and JavaScript
 
-You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. See the [guide to adding CSS and JavaScript](./adding-css-javascript-and-images).
+You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. [Find out more about adding CSS and JavaScript](./adding-css-javascript-and-images) (opens in a new tab).

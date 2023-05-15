@@ -2,14 +2,16 @@
 heading: Store your code online with GitHub and GitHub Desktop
 ---
 
-GitHub is a way to store code online so you can collaborate with other people. It also makes it easier to publish your prototype online with Heroku.
+GitHub is a way to store code online so you can collaborate with others. It also makes it easier to publish your prototype online using a hosting service.
 
 Some concepts:
 
 - Git - software that stores versions of your code
 - GitHub - a website that shares your code online
-- GitHub Desktop - an app that puts your code on GitHub
+- GitHub Desktop - an app that puts your code on GitHub (so that you can collaborate with others in your team)
 - Repository/repo - a project stored in Git
+
+If you are new to these concepts, [follow Github’s get started exercise](https://docs.github.com/en/get-started/quickstart/hello-world) or [read the guide on how to set up git using the terminal](https://prototype-kit.service.gov.uk/docs/setting-up-git). 
 
 ## Set up GitHub Desktop
 

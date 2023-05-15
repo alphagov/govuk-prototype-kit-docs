@@ -22,4 +22,4 @@ You can install any plugins from the available list.
 
 ## Updating plugins
 
-If there is a newer version of a plugin you’ve installed, you’ll see it on the Plugins page and can update it from there.
+If there is a newer version of a plugin you’ve installed, you’ll see it on the Plugins page and you can update it from there.

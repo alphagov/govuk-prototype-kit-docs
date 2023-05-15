@@ -51,7 +51,7 @@ You can use JavaScript to make changes that will appear on the page immediately.
 
 ### Add your own JavaScript
 
-To add your own JavaScript, use:
+To add your own JavaScript, open the file:
 
 `/app/assets/javascripts/application.js`
 

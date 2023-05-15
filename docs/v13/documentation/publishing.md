@@ -3,6 +3,8 @@ heading: Publish your prototype online
 title: Publish your prototype online
 ---
 
+We usually run the Prototype Kit on our own devices using localhost. If we want to share the prototype with others, we need to publish it online.  
+
 Publishing your prototype online means you can:
  - share it with colleagues for collaboration
  - test it with users on their own devices
@@ -25,14 +27,16 @@ Some hosting services automatically publish every time you [push to GitHub](./gi
 
 When running the Prototype Kit online, you need to set a password. This is to stop anyone finding your prototype accidentally and mistaking it for a real service.
 
-Check your hosting services documentation on how to set 'environment variables' (it may have a slightly different name like 'config vars' or 'variables').
+To set a password, you need to add 2 environment variables where the:
+- `name` is `NODE_ENV`, and the `value` is `production`
+- `name` is `PASSWORD`, and the `value` is whatever password you would like to use
 
-Add an environment variable where the 'name' is NODE_ENV, and the 'value' is 'production'.
+If you are not sure how to add environment variables, check your hosting services documentation (it may have a slightly different name like `config vars` or `variables`).
 
-Add another environment variable where the 'name' is PASSWORD, and the 'value' is whatever password you would like to use.
+You’ll also need to add another environment variable where the `name` is PASSWORD and the `value` is whatever password you want to use.
 
 ### If you get an error about username
 
-Older versions of the Prototype Kit require a username - you can [migrate your prototype to version 13](./migrate-an-existing-prototype) or set a username:
+Older versions of the Prototype Kit require a username - you can [migrate your prototype to version 13](./migrate-an-existing-prototype) or set a username.
 
-Add another environment variable where the 'name' is USERNAME, and the 'value' is whatever username you would like to use.
+Add another environment variable where the `name` is `USERNAME` and the `value` is whatever username you would like to use.

@@ -1,0 +1,69 @@
+{% from "govuk/components/cookie-banner/macro.njk" import govukCookieBanner %}
+
+{% set html %}
+  <p class="govuk-body">We use some essential cookies to make this service work.</p>
+  <p class="govuk-body">We’d also like to use analytics cookies so we can understand how you use the service and make improvements.</p>
+{% endset %}
+
+{% set acceptHtml %}
+<p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/docs/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{% set rejectHtml %}
+<p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/docs/cookies">change your cookie settings</a> at any time.</p>
+{% endset %}
+
+{{ govukCookieBanner({
+  ariaLabel: "Cookies on GOV.UK Prototype kit Documentation",
+  hidden: true,
+  messages: [
+    {
+      headingText: "Cookies on GOV.UK Prototype kit Documentation",
+      html: html,
+      actions: [
+        {
+          text: "Accept analytics cookies",
+          type: "button",
+          name: "cookies",
+          value: "accept",
+          classes: "cookie-banner-accept-button"
+        },
+        {
+          text: "Reject analytics cookies",
+          type: "button",
+          name: "cookies",
+          value: "reject",
+          classes: "cookie-banner-reject-button"
+        },
+        {
+          text: "View cookies",
+          href: "/docs/cookies"
+        }
+      ]
+    },
+    {
+      html: acceptHtml,
+      role: "alert",
+      hidden: true,
+      actions: [
+        {
+          text: "Hide cookie message",
+          classes: "js-cookie-banner-hide js-cookie-banner-hide--accept"
+        }
+      ],
+      classes: "js-cookie-banner-confirmation-accept app-width-container"
+    },
+    {
+      html: rejectHtml,
+      role: "alert",
+      hidden: true,
+      actions: [
+        {
+          text: "Hide cookie message",
+          classes: "js-cookie-banner-hide js-cookie-banner-hide--reject"
+        }
+      ],
+      classes: "js-cookie-banner-confirmation-reject app-width-container"
+    }
+  ]
+}) }}

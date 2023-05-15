@@ -30,6 +30,11 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
+{% block bodyStart %}
+  <a id="top"></a>
+  {% include "includes/cookie_banner.html" %}
+{% endblock %}
+
 {% block header %}
   {{ govukHeader({
     homepageUrl: baseUrl,

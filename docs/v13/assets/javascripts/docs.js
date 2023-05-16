@@ -11,12 +11,10 @@ function runAnalyticsAndBanner () {
   /* Name of the cookie to save users cookie preferences to. */
   const CONSENT_COOKIE_NAME = 'prototype_kit_docs_cookies_policy'
 
-  /* Google Analytics tracking IDs for preview and live environments. */
-  const TRACKING_PREVIEW_ID = 'xxxx-xx'
-  const TRACKING_LIVE_ID = 'xxxx-xx'
+  const TRACKING_LIVE_ID = 'UA-26179049-11'
 
   const COOKIE_CATEGORIES = {
-    analytics: ['_ga', '_gid', '_gat_UA-' + TRACKING_PREVIEW_ID, '_gat_UA-' + TRACKING_LIVE_ID],
+    analytics: ['_ga', '_gid', '_gat_UA-' + TRACKING_LIVE_ID],
     essential: [CONSENT_COOKIE_NAME]
   }
   const DEFAULT_COOKIE_CONSENT = {
@@ -24,24 +22,20 @@ function runAnalyticsAndBanner () {
   }
 
   function runAnalytics () {
-    if (!window.ga || !window.ga.loaded) {
-      // Load gtm script
-      // Script based on snippet at https://developers.google.com/tag-manager/quickstart
-      (function (w, d, s, l, i) {
-        w[l] = w[l] || []
-        w[l].push({
-          'gtm.start': new Date().getTime(),
-          event: 'gtm.js'
-        })
+    const $gaScript = document.createElement('script')
+    $gaScript.setAttribute('src', 'https://www.googletagmanager.com/gtag/js?id=' + TRACKING_LIVE_ID)
+    document.body.appendChild($gaScript)
+    $gaScript.addEventListener('load', function () {
+      window.dataLayer = window.dataLayer || []
 
-        var j = d.createElement(s)
-        var dl = l !== 'dataLayer' ? '&l=' + l : ''
+      function gtag () {
+        window.dataLayer.push(arguments)
+      }
 
-        j.async = true
-        j.src = 'https://www.googletagmanager.com/gtm.js?id=' + i + dl
-        document.head.appendChild(j)
-      })(window, document, 'script', 'dataLayer', 'XXX-XXXXX')
-    }
+      gtag('js', new Date())
+
+      gtag('config', TRACKING_LIVE_ID)
+    })
   }
 
   function Cookie (name, value, options) {
@@ -131,12 +125,10 @@ function runAnalyticsAndBanner () {
       // Initialise analytics if allowed
       if (cookieType === 'analytics' && options[cookieType]) {
         // Enable GA if allowed
-        window['ga-disable-UA-' + TRACKING_PREVIEW_ID] = false
         window['ga-disable-UA-' + TRACKING_LIVE_ID] = false
         runAnalytics()
       } else {
         // Disable GA if not allowed
-        window['ga-disable-UA-' + TRACKING_PREVIEW_ID] = true
         window['ga-disable-UA-' + TRACKING_LIVE_ID] = true
       }
 

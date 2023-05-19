@@ -11,7 +11,7 @@
     /* Name of the cookie to save users cookie preferences to. */
     const CONSENT_COOKIE_NAME = 'prototype_kit_docs_cookies_policy'
 
-    const TRACKING_LIVE_ID = 'UA-26179049-11'
+    const TRACKING_LIVE_ID = '26179049-11'
 
     const COOKIE_CATEGORIES = {
       analytics: ['_ga', '_gid', '_gat_UA-' + TRACKING_LIVE_ID],

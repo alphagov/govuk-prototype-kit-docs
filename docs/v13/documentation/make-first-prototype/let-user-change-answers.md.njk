@@ -2,7 +2,7 @@
 heading: Let the user change their answers
 caption: Build a basic prototype
 ---
-Next to each question on the **Check answers page** there’s a **Change** link, so that users can add or change the information. 
+Next to each question on the Check answers page there’s a **Change** link, so that users can add or change the information. 
 
 ## Make the ‘Change’ links work
 
@@ -33,7 +33,7 @@ In the `govukRadios` component, add a `value` line, like this:
 ```
 {% endraw %}
 
-[Go to http://localhost:3000/juggling-balls](http://localhost:3000/juggling-balls) (opens in a new tab) and check the journey works by selecting an answer, continuing to the next page, then going back.
+Go to <a href="http://localhost:3000/juggling-balls" target="_blank">http://localhost:3000/juggling-balls (opens in a new tab)</a> and check the journey works by selecting an answer, continuing to the next page, then going back.
 
 ## Show the user’s answer in question 2
 
@@ -58,7 +58,7 @@ Add `value: data['most-impressive-trick']` like this:
 ```
 {% endraw %}
 
-[Go to http://localhost:3000/juggling-trick](http://localhost:3000/juggling-trick) (opens in a new tab) and check it works by filling in an answer, continuing to the next page, going back, then refreshing your browser.
+Go to <a href="http://localhost:3000/juggling-trick" target="_blank">http://localhost:3000/juggling-trick (opens in a new tab)</a> and check it works by filling in an answer, continuing to the next page, going back, then refreshing your browser.
 
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({

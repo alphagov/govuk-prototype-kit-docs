@@ -11,13 +11,13 @@ There is also a link to this page in the footer of your prototype.
 
 In the navigation menu, go to the **Templates** section.
 
-### Create a start page
+### Create a Start page
 
-1. In the list of templates, find the Start page and select **Create**.
+1. In the list of templates, find the **Start page** and select **Create**
 
-2. The next page is titled **Create new Start page**. In **Path for the new page** enter `/start`.
+2. Enter `/start` in **Path for the new page**
 
-3. Select **Create page**.
+3. Select **Create page**
 
 
 The kit creates a page from the template, in the `app/views` folder in your code editor.
@@ -38,19 +38,20 @@ You’ll need to save every time you make a change to a file.
 
 Usually your changes will automatically show in the browser without refreshing. We have made a change that applies to all pages in the prototype (called a config change), so you need to refresh the page.
 
-You should see your service name change on the **Start page**.
+You should see your service name change on the Start page.
 
 ### Question pages
 
-1. In your browser, go to the **Templates** section of **Manage your prototype** (http://localhost:3000/manage-prototype/templates).
+1. In your browser, go to the **Templates** section of **Manage your prototype**  
+<a href="http://localhost:3000/manage-prototype/templates" target="_blank">http://localhost:3000/manage-prototype/templates (opens in a new tab)</a>
 
 2. Create a page from the **Question page** template.
 
-3. Enter the path `/juggling-balls`.
+3. Enter the path `/juggling-balls`
 
 4. Create another page from the **Question page** template.
 
-5. Enter the path `/juggling-trick`.
+5. Enter the path `/juggling-trick`
 
 6. Go to the following URLs to check your pages:
 
@@ -61,21 +62,21 @@ You should see your service name change on the **Start page**.
 
 8. To create headings on a page we use heading tags, like `<h1>` for the page title, `<h2>` for a subheading and so on.
 
-   In the `juggling-balls.html` file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`.
+   In the `juggling-balls.html` file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`
 
-9. In the `juggling-trick.html` file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`.
+9. In the `juggling-trick.html` file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`
 
-### 'Check answers' page
+### Check answers page
 
 1. In your browser, create a page from the **Check answers** template.
 
-2. Enter the path `/check-answers`.
+2. Enter the path `/check-answers`
 
 ### Confirmation page
 
 1. Create a page from the **Confirmation** template.
 
-2. Enter the path `/confirmation`.
+2. Enter the path `/confirmation`
 
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({

@@ -42,6 +42,20 @@ These two code editors are popular, well established and fairly accessible:
 * [VS Code](https://code.visualstudio.com/)
 * [Notepad++](https://notepad-plus-plus.org/)
 
+{% from "govuk/components/details/macro.njk" import govukDetails %}
+
+{{ govukDetails({
+  summaryText: "Code editor shortcut tips",
+  text: "
+  * `ctrl` and `s` = save your changes
+  * `ctrl` and `p` = search for a file in your project
+  * `ctrl` and `f` = search for something in your file
+
+  You can find more shortcuts at [Visual Studio Code's tips and tricks](https://code.visualstudio.com/docs/getstarted/tips-and-tricks).
+  "
+
+}) }}
+
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({
   next: {

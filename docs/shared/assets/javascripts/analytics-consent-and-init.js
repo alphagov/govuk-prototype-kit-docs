@@ -230,6 +230,20 @@
       }
     }
 
+    function showSuccess () {
+      const $banner = document.querySelector('.js-cookies-page-success')
+      $banner.removeAttribute('hidden')
+
+      if (!$banner.getAttribute('tabindex')) {
+        $banner.setAttribute('tabindex', '-1')
+      }
+
+      $banner.focus()
+
+      // scroll to the top of the page
+      window.scrollTo(0, 0)
+    }
+
     // Show the banner if there is no consent cookie or if it is outdated
     const currentConsentCookie = document.cookie.match(new RegExp('(^| )' + CONSENT_COOKIE_NAME + '=([^;]+)'))
 
@@ -286,6 +300,7 @@
         setConsentCookie({
           analytics: $yesInput.checked
         })
+        showSuccess()
       })
     }
   }

@@ -15,11 +15,24 @@
   }) }}
 {% endblock %}
 
+{% set successNotificationBannerHtml %}
+  <p class="govuk-notification-banner__heading">You’ve set your cookie preferences.</p>
+{% endset %}
+
 {% block content %}
 
 
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds">
+      
+      {{ govukNotificationBanner({
+        type: "success",
+        html: successNotificationBannerHtml,
+        classes: "js-cookies-page-success",
+        attributes: {
+          hidden: ""
+        }
+      }) }}
 
       <h1 class="govuk-heading-xl">Cookies</h1>
 

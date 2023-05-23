@@ -41,4 +41,12 @@ To quit the kit, in the terminal press the `ctrl` and `c` keys together.
 
 ## Make your first prototype
 
-You can now start the tutorial to [make your first prototype](../make-first-prototype/start).
+You’ve completed the Prototype Kit set up. You’re ready to make your first prototype.
+
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Make your first prototype",
+    href: "../make-first-prototype/start"
+  }
+}) }}

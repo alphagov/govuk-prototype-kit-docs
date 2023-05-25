@@ -141,7 +141,8 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
     path.join(__dirname, docsDir, 'views/'),
     path.join(__dirname, 'views/layouts/'),
     path.join(__dirname, 'views/partials/'),
-    path.join(__dirname, '/lib/')
+    path.join(__dirname, '/lib/'),
+    path.join(__dirname, 'docs', 'shared', 'views')
   ])
 
   var nunjucksDocumentationEnv = nunjucks.configure(documentationApp.get('views'), nunjucksConfig)

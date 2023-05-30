@@ -21,6 +21,6 @@ Before you start, you must [install and run the GOV.UK Prototype Kit](/docs/inst
 ## Give feedback
 If you would like to give feedback about this tutorial, or you’ve got a question, get in touch with the GOV.UK Design System team:
 
-- on the <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/app_redirect?channel=prototype-kit" data-hsupport="slack">#prototype-kit channel on cross-government Slack</a>.
+- on the <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C0647LW4R" data-hsupport="slack">#prototype-kit channel on cross-government Slack</a>.
 
 - by email at <a class="govuk-link" href="mailto:govuk-design-system-support@digital.cabinet-office.gov.uk" data-hsupport="email">govuk-design-system-support@digital.cabinet-office.gov.uk</a>

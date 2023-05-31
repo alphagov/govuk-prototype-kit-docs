@@ -24,14 +24,14 @@ You must protect user privacy at all times, even when using prototypes. Prototyp
 The GOV.UK Prototype Kit is maintained by the Government Digital Service. If you’ve got a question or need support you can:
 
 * email [govuk-design-system-support@digital.cabinet-office.gov.uk](mailto:govuk-design-system-support@digital.cabinet-office.gov.uk)
-* [get in touch on Slack](https://ukgovernmentdigital.slack.com/app_redirect?channel=prototype-kit)
+* [get in touch on Slack](https://ukgovernmentdigital.slack.com/archives/C0647LW4R)
 * [view known issues on GitHub](https://github.com/alphagov/govuk-prototype-kit/issues)
 
 ## Contributing
 
 If you’ve got an idea or suggestion, you can:
 
-* [get in touch on the developer Slack channel](https://ukgovernmentdigital.slack.com/app_redirect?channel=prototype-kit-dev)
+* [get in touch on the developer Slack channel](https://ukgovernmentdigital.slack.com/archives/C0E1063DW)
 * [create a GitHub issue](https://github.com/alphagov/govuk-prototype-kit/issues)
 
 The govuk-prototype-kit repository is public and we welcome contributions from anyone.

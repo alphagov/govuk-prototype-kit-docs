@@ -12,7 +12,7 @@ To get security patches and new features, make sure you update to the latest ver
 If you have a question or need help with updating the Prototype Kit, you can:
 
 - email govuk-design-system-support@digital.cabinet-office.gov.uk
-- get in touch on the [Prototype Kit's channel on cross-government Slack](https://ukgovernmentdigital.slack.com/messages/prototype-kit/)
+- get in touch on the [Prototype Kit's channel on cross-government Slack](https://ukgovernmentdigital.slack.com/archives/C0647LW4R)
 
 Tell us as much as you can about the issue you're having, and the computer and operating system you're using.
 

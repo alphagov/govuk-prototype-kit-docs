@@ -2,24 +2,22 @@
 heading: Create a plugin
 title: Create a plugin
 ---
-Plugins are a way to add extra components, styles, patterns and other features from the cross-government community. You can create plugins for other users of the kit to install and iterate, so that they meet the specific needs of their users. 
+Plugins are a way to add extra components, styles, patterns and other features from the cross-government community. 
 
-For example, if you want to share how you ask for an email address or National Insurance number in your service, you can create a plugin for it.
+Anyone can create plugins for other users of the kit. They will be able to install and then use the features in their own designs to meet the specific needs of their users. 
 
-## Plugins
-A plugin is any prototype with a `govuk-prototype-kit.config.json` in its root folder. A plugin can include:
+For example, the HMRC Frontend plugin provides components like the [account header](https://design.tax.service.gov.uk/hmrc-design-patterns/account-header/) and [currency input](https://design.tax.service.gov.uk/hmrc-design-patterns/currency-input/). 
+
+> We also have a guide on how to [install and use plugins](https://prototype-kit.service.gov.uk/docs/install-and-use-plugins).
+
+A plugin can include:
 
 * components
 * styles (Sass and CSS)
-* assets
-* templates
+* assets (for example images)
+* page templates
 * filters
 * JavaScript
-
-## Who can create plugins
-Anyone can create a plugin to share their ideas with the community. 
-
-We depend on a strong cross-government community to ensure the Prototype Kit includes the latest research, design and development to represent and be relevant for its users.
 
 ## Approved plugins 
 We will publish all plugins from the community in the kit, so that other users can find and install them straight away. 
@@ -28,10 +26,8 @@ We will also review each plugin to check if there are any issues or recommendati
 
 Our team will monitor the plugins that the community are using to help us decide the things we need to work on the most.
 
-## How to create a plugin
-Follow these steps to create a plugin using NPM modules. 
+## Create your first plugin tutorial
 
-The Prototype Kit looks for a package.json file in the prototype folder. If the kit finds an NPM module/dependency that has a package.json file, it considers it a plugin.
 
 1. Create a new folder for your plugin and navigate to it in the terminal, then enter:
 `git init`
@@ -64,9 +60,54 @@ Here’s an example of the `package.json` file for a plugin template:
 
 4. Add your code for your plugin in the prototype folder. Here’s an example:
 
-5. To publish your plugin in the terminal enter:
+5. Install plugin locally to a prototype
+
+6. To publish your plugin in the terminal enter:
 
 `npm publish`
+
+
+A plugin is a folder containing various files and other folders
+
+## Package.json file
+
+To do
+
+## The config file
+
+All plugins need a config file to tell the Prototype Kit what is included in the plugin, this file is called `govuk-prototype-kit-config.json`
+
+`assets`
+
+To do
+
+`importNunjucksMacrosInto`
+
+To do
+
+`nunjucksPaths`
+
+To do
+
+`nunjucksFilters`
+
+To do
+
+`sass`
+
+To do
+
+`scripts`
+
+To do
+
+`stylesheets`
+
+To do
+
+`templates`
+
+To do
 
 
 

@@ -3,9 +3,19 @@ heading: Link your index page to your start page
 caption: Build a basic prototype
 ---
 
-You can route users from your service's index page to your start page. The index page is the page that loads when users [go to http://localhost:3000](http://localhost:3000).
+You can route users from your service's index page to your start page. The index page is the page that loads when users go to [http://localhost:3000](http://localhost:3000).
 
 1. Open the `index.html` file in your `app/views` folder.
-2. Add an `<a>` tag that links to `/start`.
+2. Add a link to the start of your service using the code:
 
-You can now find out [how to publish your prototype online](../publishing), so you can share it with your team or do user research.
+```
+<p>
+    <a href="/start">
+        Go to the start page
+    </a>
+</p>
+```
+
+You have completed building a basic prototype. 
+
+If you want to learn more about how to use the GOV.UK Prototype Kit, you can [view our tutorials and guides](../tutorials-and-guides).

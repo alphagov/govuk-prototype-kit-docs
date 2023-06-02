@@ -10,8 +10,10 @@ We will change the text in the template to match the questions in your prototype
 
 ## Show the answer to question 1
 
-1. In your browser, go to [http://localhost:3000/check-answers](http://localhost:3000/check-answers).
+1. In your browser, go to <a href="http://localhost:3000/check-answers" target="_blank">http://localhost:3000/check-answers (opens in a new tab)</a>.
+
 2. In your code editor, open `check-answers.html` in your `app/views` folder.
+
 3. You need to change the text 'Question 1' to 'Number of balls you can juggle'. Find this code:
 ```
 key: {
@@ -56,39 +58,45 @@ visuallyHiddenText: "number of balls you can juggle"
 ## Show the answer to question 2
 
 1. You need to change the text 'Question 2' to 'Your most impressive juggling trick'. Find this code:
+
 ```
 key: {
   text: "Question 2"
 },
 ```
 2. Change it to:
+
 ```
 key: {
   text: "Your most impressive juggling trick"
 },
 ```
 3. You need to change the text 'Answer 2' to `data['most-impressive-trick']`. Find this code:
+
 ```
 value: {
   text: "Answer 2"
 },
 ```
 4. Change it to:
+
 ```
 value: {
   text: data['most-impressive-trick']
 },
 ```
 
-5. Update the screen reader text – change this:
+5. Update the screen reader text – find this code:
+
 ```
 visuallyHiddenText: "Question 2"
 ```
-to:
+6. Change it to:
+
 ```
 visuallyHiddenText: "your most impressive juggling trick"
 ```
-6. Go to [http://localhost:3000/start](http://localhost:3000/start) and answer the questions to check your answers show up correctly.
+7. Go to <a href="http://localhost:3000/start" target="_blank">http://localhost:3000/start (opens in a new tab)</a> and answer the questions to check that your answers show up correctly.
 
 ## Delete the remaining example row
 

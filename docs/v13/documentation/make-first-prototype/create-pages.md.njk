@@ -11,15 +11,14 @@ There is also a link to this page in the footer of your prototype.
 
 In the navigation menu, go to the **Templates** section.
 
-### Create a start page
+### Create a Start page
 
-In the list of templates, find the Start page, then select **Create**.
+1. In the list of templates, find the **Start page** and select **Create**
 
-The next page is titled **Create new Start page**.
+2. Enter `/start` in **Path for the new page**
 
-In **Path for the new page** enter `/start`.
+3. Select **Create page**
 
-Select **Create page**.
 
 The kit creates a page from the template, in the `app/views` folder in your code editor.
 
@@ -37,42 +36,47 @@ You change the service name in the config file. This will change it on every pag
 
 You’ll need to save every time you make a change to a file.
 
-Usually your changes will automatically show in the browser without refreshing. However, for this config change, you need to refresh the page. You should see your service name change on the Start page.
+Usually your changes will automatically show in the browser without refreshing. We have made a change that applies to all pages in the prototype (called a config change), so you need to refresh the page.
+
+You should see your service name change on the Start page.
 
 ### Question pages
 
-In your browser, go to the **Templates** section of **Manage your prototype**.
+1. In your browser, go to the **Templates** section of **Manage your prototype**  
+<a href="http://localhost:3000/manage-prototype/templates" target="_blank">http://localhost:3000/manage-prototype/templates (opens in a new tab)</a>
 
-Create a page from the **Question page** template.
+2. Create a page from the **Question page** template.
 
-Enter the path `/juggling-balls`.
+3. Enter the path `/juggling-balls`
 
-Create another page from the Question page template.
+4. Create another page from the **Question page** template.
 
-Enter the path `/juggling-trick`.
+5. Enter the path `/juggling-trick`
 
-Go to the following URLs to check your pages:
+6. Go to the following URLs to check your pages:
 
-- http://localhost:3000/juggling-balls
-- http://localhost:3000/juggling-trick
+- http://localhost:3000/juggling-balls 
+- http://localhost:3000/juggling-trick 
 
-Go to your code editor.
+7. Go to your code editor.
 
-In the `juggling-balls.html` file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`.
+8. To create headings on a page we use heading tags, like `<h1>` for the page title, `<h2>` for a subheading and so on.
 
-In the `juggling-trick.html` file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`.
+   In the `juggling-balls.html` file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`
 
-### 'Check answers' page
+9. In the `juggling-trick.html` file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`
 
-In your browser, create a page from the **Check answers** template.
+### Check answers page
 
-Enter the path `/check-answers`.
+1. In your browser, create a page from the **Check answers** template.
+
+2. Enter the path `/check-answers`
 
 ### Confirmation page
 
-Create a page from the **Confirmation** template.
+1. Create a page from the **Confirmation** template.
 
-Enter the path `/confirmation`.
+2. Enter the path `/confirmation`
 
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({

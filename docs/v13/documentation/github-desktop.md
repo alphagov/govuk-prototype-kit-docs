@@ -11,7 +11,7 @@ Some concepts:
 - GitHub Desktop - an app that puts your code on GitHub (so that you can collaborate with others in your team)
 - Repository/repo - a project stored in Git
 
-If you are new to these concepts, [follow Github’s get started exercise](https://docs.github.com/en/get-started/quickstart/hello-world) or [read the guide on how to set up git using the terminal](https://prototype-kit.service.gov.uk/docs/setting-up-git). 
+If you are new to these concepts, [follow GitHub’s get started exercise](https://docs.github.com/en/get-started/quickstart/hello-world).
 
 ## Set up GitHub Desktop
 
@@ -27,15 +27,19 @@ If you are new to these concepts, [follow Github’s get started exercise](https
 
 1. Select **Add an Existing Repository** (if it's not on the screen, click the **File** menu and select **Add Local Repository**).
 
-2. Set the **local path** to your prototype folder. Github Desktop will now show a warning, but do not worry - this is the correct process.
+2. Click the **Choose** button and select your prototype folder.
 
-A screenshot of GitHub Desktop at this point:
+### If Github Desktop shows a warning
+
+You may get a warning, like this screenshot:
 
 ![Screenshot of the GitHub Desktop app. There is a separate pop-up box with the heading 'Add local repository'. In this box there is a text input labelled 'local path'. A button labelled 'choose'. A link titled 'Create a repository'. A button labelled 'Cancel'. And a button labelled 'Add repository'.](/public/docs/v13/images/docs/github-desktop-add-local-repository.png)
 
-3. In the warning, click the **create a repository** link.
+Do not worry if you get this warning - this is the correct process.
 
-4. On the next screen, titled **Create a repository**, click the **Create repository** button.
+1. In the warning, click the **create a repository** link.
+
+2. On the next screen, titled **Create a repository**, click the **Create repository** button.
 
 ## Upload your prototype to GitHub
 

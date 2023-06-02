@@ -3,17 +3,17 @@ heading: Pass data from page to page
 ---
 
 
-You may want to use or display data a user has entered over a few screens. The kit automatically stores all data entered, so you can show it later.
+The kit stores data from all answers that users give in a prototype. This lets you can use or show the answers later.
 
 To clear the data (for example at the end of a user research session) use the **Clear data** link in the footer.
 
-[View an example of what passing data looks like in a prototype](./examples/pass-data/vehicle-registration) (opens in a new tab).
+[View an example of what passing data looks like in a prototype](./examples/pass-data/vehicle-registration).
 
 ## How to use
 
-The kit stores data from information that you input into the Prototype Kit using the `name` attribute of the input.
+The kit stores data from answers that users give in a prototype using the `name` attribute of the input.
 
-For example, when a user enters their first name you will have this input:
+For example, when a user enters their first name you could have this input:
 
 ```
 {{ govukInput({
@@ -48,11 +48,13 @@ For checkboxes the option is `values`, since more than one can be selected.
 
 You can set default data in your prototype. This will appear without the user having to enter anything. 
 
-For example, if you want to show a user's saved answers when they return to review or update their information in the prototype.
+For example, if you want to test a journey where the user returns to review or update their information.
 
 If the user changes this data in the prototype, their new answers are saved.
 
-You can add default data to your `app/data/session-data-defaults.js file`. For example, to set default data for the ‘First name’ and ‘Over 18’ inputs in the [passing data example](https://prototype-kit.service.gov.uk/docs/examples/pass-data/vehicle-registration) add:
+Add default data to your `app/data/session-data-defaults.js` file.
+
+For example, to set default data for the ‘First name’ and ‘Over 18’ inputs in the [passing data example](https://prototype-kit.service.gov.uk/docs/examples/pass-data/vehicle-registration) add:
 
 ```
 module.exports = {
@@ -144,4 +146,4 @@ To prevent an input being stored, use an underscore at the start of the name.
 }) }}
 ```
 
-To use this data you'll have to [write your own route](create-routes) (opens in a new tab).
+To use this data you'll have to [write your own route](create-routes).

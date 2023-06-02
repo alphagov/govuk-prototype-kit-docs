@@ -3,7 +3,7 @@ heading: How to use layouts
 title: How to use layouts
 ---
 
-Layouts let you share a common design across pages. For example, if you want to include the name of your service or use the GOV.UK footer on every page in your service.
+Layouts let you share a common design across pages. For example, to include the name of your service or use the GOV.UK footer on every page in your service.
 
 If your pages share a custom header and footer, you can add them to one shared layout file. To change those parts of the page in future, you can change them once and they will update on all the pages that use that layout.
 
@@ -35,11 +35,11 @@ If you do not want to use the GOV.UK logo or footer, you can choose to use unbra
 
 Blocks are how layouts and pages share code. For example, there is a block called `header` for the header content on every page.
 
-These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas) (opens in a new tab).
+These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas).
 
 ### Header block
 
-You can make changes to the existing GOV.UK header using the `header` block, such as adding navigation like in this example:
+You can make changes to the existing GOV.UK header using the `header` block. This example adds navigation:
 
 ```
 {% block header %}
@@ -66,7 +66,7 @@ You can make changes to the existing GOV.UK header using the `header` block, suc
 {% endblock %}
  ```
 
-Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/) (opens in a new tab).
+Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
 
 ### Footer block
 
@@ -96,8 +96,8 @@ You can make changes to the existing GOV.UK footer using the `footer` block:
 {% endblock %}
 ```
 
-Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/) (opens in a new tab).
+Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/).
 
 ## Stylesheets (CSS) and JavaScript
 
-You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. [Find out more about adding CSS and JavaScript](./adding-css-javascript-and-images) (opens in a new tab).
+You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. [Find out more about adding CSS and JavaScript](./adding-css-javascript-and-images).

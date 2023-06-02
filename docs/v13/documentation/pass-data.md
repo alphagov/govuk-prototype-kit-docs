@@ -3,17 +3,17 @@ heading: Pass data from page to page
 ---
 
 
-You may want to use or display data a user has entered over a few screens. The kit automatically stores all data entered, so you can show it later.
+The kit stores data from all answers that users give in a prototype. This lets you can use or show the answers later.
 
 To clear the data (for example at the end of a user research session) use the **Clear data** link in the footer.
 
-[An example of what passing data looks like in a prototype](./examples/pass-data/vehicle-registration)
+[View an example of what passing data looks like in a prototype](./examples/pass-data/vehicle-registration).
 
 ## How to use
 
-The kit stores data from inputs using the `name` attribute of the input.
+The kit stores data from answers that users give in a prototype using the `name` attribute of the input.
 
-For example, if you have this input:
+For example, when a user enters their first name you could have this input:
 
 ```
 {{ govukInput({
@@ -46,17 +46,15 @@ For checkboxes the option is `values`, since more than one can be selected.
 
 ### Set default data
 
-You can set default data in your prototype. This will appear without the user having to enter anything. For example, if you want to prototype a journey where a user previously saved their responses and returned to it later to review or update the information already in the prototype.
+You can set default data in your prototype. This will appear without the user having to enter anything. 
 
-If the user changes this data in the prototype, their new answers will be saved.
+For example, if you want to test a journey where the user returns to review or update their information.
 
-Add default data to this file:
+If the user changes this data in the prototype, their new answers are saved.
 
-```
-app/data/session-data-defaults.js
-```
+Add default data to your `app/data/session-data-defaults.js` file.
 
-For example to set default data for the inputs for 'First name' and 'Over 18' in the examples above, you would have this in your `session-data-defaults.js` file:
+For example, to set default data for the ‘First name’ and ‘Over 18’ inputs in the [passing data example](https://prototype-kit.service.gov.uk/docs/examples/pass-data/vehicle-registration) add:
 
 ```
 module.exports = {
@@ -97,7 +95,7 @@ If you are using the HTML components instead of Nunjucks, you need to use the `c
 
 ### Use the data on the server
 
-You can access the data on the server in a route function
+You can access the data on the server in a route function.
 
 For example for an input with `name="first-name"`:
 
@@ -148,4 +146,4 @@ To prevent an input being stored, use an underscore at the start of the name.
 }) }}
 ```
 
-To use this data you'll have to write your own route.
+To use this data you'll have to [write your own route](create-routes).

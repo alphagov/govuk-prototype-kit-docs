@@ -10,9 +10,9 @@ The Prototype Kit processes all the files in the `/app/assets` folder and makes 
 
 ## Add CSS
 
-CSS lets you change how web pages look, for example, text sizes, colours or spacing.
+CSS lets you change how web pages look, for example, text sizes, colours or spacing. This is also called style.
 
-To add styles, use:
+To add your own styles, open the file:
 
 `/app/assets/sass/application.scss`
 
@@ -51,7 +51,7 @@ You can use JavaScript to make changes that will appear on the page immediately.
 
 ### Add your own JavaScript
 
-To add your own JavaScript, use:
+To add your own JavaScript, open the file:
 
 `/app/assets/javascripts/application.js`
 

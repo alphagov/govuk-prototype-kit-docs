@@ -17,17 +17,61 @@ GOV.UK Prototype Kit
       <h1 class="govuk-heading-xl">GOV.UK Prototype Kit</h1>
 
       <p class="govuk-body-l">
-        Rapidly create HTML prototypes of GOV.UK services.
-      </p>
+        Use the GOV.UK Prototype Kit to build realistic prototypes of your service that look and behave like GOV.UK.</p>
 
-      <h2 class="govuk-heading-m">
-        <a href="./whats-new">
-          What’s new in version 13
-        </a>
-      </h2>
-      <p>
-        Lots of big changes including new ways to create, run and manage your&nbsp;prototypes.
-      </p>
+      <p>The kit is used by multidisciplinary teams across government to design services. Anyone can use the kit, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>content, interaction and service designers</li>
+        <li>developers</li>
+        <li>user researchers</li>
+        <li>product owners</li>
+      </ul>
+
+    <p>To use the kit you'll need some basic knowledge of HTML, for example what tags and attributes are and how to copy and paste code. You can learn basic HTML and CSS on codecademy at <a href="https://www.codecademy.com/">https://www.codecademy.com</a>.</p>
+    
+    <p>The GOV.UK Prototype Kit provides a simple way to make interactive prototypes that look like services on GOV.UK. You can use these prototypes to get valuable feedback and insights, either from the people you work with or through user research.</p>
+
+<p>You can copy example code from the GOV.UK Design System to add styles, components and patterns into your prototype. This means you can:</p> 
+<ul class="govuk-list govuk-list--bullet">
+  <li>create prototypes quickly and easily</li>
+  <li>learn from the research and experience of other service teams</li>
+  <li>avoid repeating work that's already been done</li>
+</ul>
+
+<p>Teams across government work in the open. If you cannot find what you need on the Design System, you can:</p> 
+<ul class="govuk-list govuk-list--bullet">
+  <li><a href="https://github.com/orgs/alphagov/projects/43/views/2">check the discussion around styles, components and patterns on Github</a></li>
+  <li><a href="https://github.com/alphagov/govuk-prototype-kit/issues">add an issue to the Prototype Kit backlog</a></li>
+</ul>
+ 
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{{ govukPagination({
+  next: {
+    labelText: "Get started",
+    href: "./create-new-prototype"
+  }
+}) }}
+
+      </div>
+    </div>
+        <div class="govuk-grid-row">
+          <div class="govuk-grid-column-full-width govuk-!-margin-top-6">
+
+        <hr class="govuk-section-break govuk-section-break--visible">
+            </div>
+            </div>
+        
+            <div class="govuk-grid-row">
+              <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+          
+        <h2 class="govuk-heading-m">Prototyping</h2>
+        <p>
+         Learn about different prototyping methods, when to use them and the benefits of the GOV.UK Prototype Kit. 
+        </p>
+        <p><a href="./prototyping">Find out more about prototyping</a>.</p>
+
+ 
 
     </div>
 
@@ -39,15 +83,7 @@ GOV.UK Prototype Kit
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
 
-      <h2 class="govuk-heading-m"><a href="./create-new-prototype" data-hget-started="Get started">Get started</a></h2>
-      <p>
-        Create and run a prototype
-      </p>
-
-    </div>
-    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
-
-      <h2 class="govuk-heading-m"><a href="./tutorials-and-guides" data-htutorials="Tutorials and guides">Tutorials and guides</a></h2>
+      <h2 class="govuk-heading-m"><a href="./tutorials-guides" data-htutorials="Tutorials and guides">Tutorials and guides</a></h2>
       <p>
         Tutorials, examples and guides.
       </p>
@@ -55,14 +91,22 @@ GOV.UK Prototype Kit
     </div>
     <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
 
-      <h2 class="govuk-heading-m"><a href="./about" data-habout="About">About</a></h2>
+      <h2 class="govuk-heading-m"><a href="./tutorials-and-guides" data-htutorials="Tutorials and guides">Community</a></h2>
       <p>
-        Get support, Prototype Kit principles, privacy.
+        Feedback your ideas and suggestions to help improve the kit.
+      </p>
+
+    </div>
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a href="./about" data-habout="About">Support</a></h2>
+      <p>
+        Contact the team to get help and support.
       </p>
 
     </div>
 
   </div>
 
-  {% include "_new-version-inset-text.njk" %}
+
 {% endblock %}

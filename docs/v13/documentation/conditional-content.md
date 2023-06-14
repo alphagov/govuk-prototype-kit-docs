@@ -1,8 +1,8 @@
 ---
-heading: Add dynamic or conditional content
+heading: Change the content within a page based on a user's answers
 ---
 
-You can use dynamic or conditional content to show different text depending on how a user answers a question.
+You can show different text on a page depending on how a user answers a question. For example, using a previous answer to ask more specific questions.
 
 When you use dynamic content, all content variations are on one page instead of linking to lots of slightly different pages.
 
@@ -53,8 +53,7 @@ text: "Northern Ireland"
 To change the content in a heading based on the user’s previous input, we use the `name` attribute in the format `{{data.name}}`. Our example uses `{{data.country}}`.
 
 ```
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l"
->
+<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
  <h1 class="govuk-fieldset__heading">
  How long have you lived in {{data.country}}?
  </h1>
@@ -62,6 +61,10 @@ To change the content in a heading based on the user’s previous input, we use 
 ```
 
 >Make sure you have double brackets around your data, like `{{data.example}}`. If you are calling content within the middle of a sentence, leave spacing either side of it.
+
+## Link 
+
+The button to take the user to another page must be between a `<form>` tag. Do not add an href to the button - this will turn it into a link and means it will not submit the form or any of its data.
 
 ## If statements
 
@@ -83,8 +86,6 @@ This service is also available in Gaelic.
  {% endif %}
 ```
 
-There's no limit to what you can put inside an `if statement`, but you should use separate pages if all of the content on the page is different.
-
 ### 2 different conditions
 An example with conditional content based on if the answer is Scotland or anything else: 
 ```
@@ -102,7 +103,7 @@ languages.
 ```
 
 ### More than 2 conditions
-An example with conditional content based on the answer Scotland, Wales and no content for any other answer: 
+An example with conditional content based on whether the answer for 'country' is Scotland, Wales and no content for any other answer: 
 ```
 {% if (data.country == "Scotland") %}
  <div class="govuk-inset-text">
@@ -128,7 +129,7 @@ Gaelic and Irish.
  </div>
 {% endif %}
 ```
-An example with the same conditional content for the answer Scotland or French:
+An example with the same conditional content for the answer for 'country' being Scotland and the answer for 'nationality' being French:
 
 ```
 {% if (data.country == "Scotland") and
@@ -141,7 +142,7 @@ Gaelic and French.
 ```
 
 ### Multiple conditions
-An example with conditional content based on multiple conditions:
+An example where the 'country' is Scotland and the content is different based on the 'nationality':
 ```
 {% if (data.country == "Scotland") %}
  <div class="govuk-inset-text">

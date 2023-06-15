@@ -2,55 +2,19 @@
 heading: Change the content within a page based on a user's answers
 ---
 
+>To change the content within a page based on a user's answers, you need to know [how to pass data from page to page](pass-data).
+
 You can show different text on a page depending on how a user answers a question. For example, using a previous answer to ask more specific questions.
+
+Using a previous answer to change content is called 'conditional' or 'dynamic' content.
 
 When you use dynamic content, all content variations are on one page instead of linking to lots of slightly different pages.
 
-## Use session data
+## How to use dynamic content
 
-When a user answers questions in your prototype, their answers are stored in session data. We use the `name` attribute to `call` this session data and decide which conditional content to use. 
+To change content based on the user’s previous input (like in a heading or inset text), we use the `name` attribute in the format `{{data.name}}`. 
 
-Our example question will ask the user where they live, we’ll then include the name of the country in the next question.
-We’ve used `name: "country"` to set the list of countries. Names cannot have spaces, so use hyphens and lowercase for simplicity.
-
-The `value` tag is how we identify each radio or checkbox answer (like the country name). For a text input, the `value` is whatever the user enters in the text area.
-
-```
-{% from "govuk/components/radios/macro.njk" import govukRadios %} 
-{{ govukRadios({ 
-name: "country", 
-fieldset: { 
-legend: { 
-text: "Where do you live?", 
-isPageHeading: true, 
-classes: "govuk-fieldset__legend--l" 
-}
-}, 
-items: [
-{
-value: "england", 
-text: "England" 
-}, 
-{ 
-value: 
-"scotland", 
-text: "Scotland" 
-}, 
-{ 
-value: "wales", 
-text: "Wales" 
-}, 
-{ 
-value: "northern-ireland", 
-text: "Northern Ireland" 
-} 
-] 
-}) }}
-```
-
-## Call session data
-
-To change the content in a heading based on the user’s previous input, we use the `name` attribute in the format `{{data.name}}`. Our example uses `{{data.country}}`.
+Our example uses `{{data.country}}`:
 
 ```
 <legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
@@ -61,10 +25,6 @@ To change the content in a heading based on the user’s previous input, we use 
 ```
 
 >Make sure you have double brackets around your data, like `{{data.example}}`. If you are calling content within the middle of a sentence, leave spacing either side of it.
-
-## Link 
-
-The button to take the user to another page must be between a `<form>` tag. Do not add an href to the button - this will turn it into a link and means it will not submit the form or any of its data.
 
 ## If statements
 

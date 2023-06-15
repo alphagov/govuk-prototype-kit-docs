@@ -3,7 +3,7 @@ heading: Pass data from page to page
 ---
 
 
-The kit stores data from all answers that users give in a prototype. This lets you can use or show the answers later.
+The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.
 
 To clear the data (for example at the end of a user research session) use the **Clear data** link in the footer.
 

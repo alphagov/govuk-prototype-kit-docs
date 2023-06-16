@@ -88,4 +88,8 @@ router.get('/install/requirements', function (req, res) {
   res.redirect('/docs/install/getting-started')
 })
 
+router.get('/about', function (req, res) {
+  res.redirect('/docs')
+})
+
 module.exports = router

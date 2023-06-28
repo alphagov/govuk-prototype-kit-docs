@@ -1,5 +1,6 @@
 ---
 heading: Apply filters and functions to format or change content 
+heading: Create dynamic content
 
 ---
 
@@ -12,7 +13,7 @@ To change the format of how these answers appear, you can apply filters and func
 ## Filters and functions
 You can use filters to change how content appears on a page. For example, to change the format of a date from 28/08/2023 to 28th August 2023.
 
-Functions perform tasks or calculate values by taking an input and returning an output. You can use functions to dynamically add content to a page.
+Functions perform tasks or calculate values by taking an input and returning an output, so that you caan dynamically add content to a page. They are useful if you want to include content that will change over time, like a date.
 
 For example, if you ask the user when they taxed their vehicle, you can use their answer to show: 
 - the date their vehicle tax runs out 

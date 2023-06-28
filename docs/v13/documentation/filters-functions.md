@@ -1,12 +1,10 @@
 ---
-heading: Apply filters and functions to format or change content 
-heading: Create dynamic content
-
+heading: Apply filters and functions to format or change content or Create dynamic content
 ---
 
 > To apply filters and functions, you need to know how to [pass data from page to page](./pass-data).
 
-The kit stores data from all answers that users give in a prototype, so that you can use or show the answers later. 
+The kit stores data from all answers that users give in a prototype, so that you can use or show the answers later. np
 
 To change the format of how these answers appear, you can apply filters and functions. For example, to change the font from lower to uppercase.
 

@@ -106,5 +106,3 @@ Link to it like this:
 ```
 <a href="/public/downloads/report.odf">Download the report</a>
 ```
-
-Do not put files directly in `/public` because it’s deleted and rebuilt every time you make a change to your prototype.

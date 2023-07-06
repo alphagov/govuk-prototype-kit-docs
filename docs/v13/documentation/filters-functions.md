@@ -12,7 +12,6 @@ You can create your own filters or [use existing Nunjucks filters](https://mozil
 {{ data['name'] | upper }}
 ```
 
-
 ### Create a Nunjucks filter
 
 Add your own filters to the `app/filters.js` file. Filters are written in JavaScript.
@@ -26,31 +25,30 @@ addFilter('uppercase', function (content) {
 })
 ```
 
-### Apply multiple filters together
-
-You can add multiple filters to a file using one require statement. For example, these 2 filters are in a `filters.js` file:
+Then use it on a page like this:
 
 ```
-const { addFilter } = require('govuk-prototype-kit').views
+{{ data['name'] | uppercase }}
+```
 
-addFilter(someFilter.uppercase', function (content) {
-  return content.toUpperCase()
-})
+### Use HTML in a Nunjucks filter
 
-addFilter(someFilter.uppercase', function (content) {
+If you want to use HTML in a filter, use the `renderAsHTML` option like this:
+
+```
+addFilter('bold', function (content) {
   return '<strong>' + content + '</strong>'
 }, { renderAsHtml: true })
 ```
 
-You can use these filters on each page in your prototype:
+Then use it on a page like this:
 
 ```
-<p>Hello {{ "world" | someFilter.uppercase }}<p>
-
-<p>Hello {{ "world" | someFilter.bold }}<p>
+{{ data['name'] | bold }}
 ```
 
 You can also use these filters together:
+
 ```
-<p>Hello {{ "world" | someFilter.uppercase | someFilter.bold }}<p>
+{{ data['name'] | upper | bold }}
 ```

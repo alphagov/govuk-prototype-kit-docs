@@ -44,6 +44,32 @@ Most inputs use the `value` option:
 
 For checkboxes the option is `values`, since more than one can be selected.
 
+### Show content if users have not answered optional questions
+
+You can show content if data is currently blank using `or`, for example:
+
+```
+{{ data['first-name'] or "First name not given" }}
+```
+
+You can also use this in a component. For example to show that a user has not answered an optional question on Check your answers:
+
+```
+{{ govukSummaryList({
+  rows: [
+    {
+      key: {
+        text: "First name"
+      },
+      value: {
+        text: data['first-name'] or "First name not given"
+      }
+    }
+  ]
+})}}
+```
+
+
 ### Set default data
 
 You can set default data in your prototype. This will appear without the user having to enter anything. 

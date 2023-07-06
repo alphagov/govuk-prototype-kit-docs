@@ -7,11 +7,6 @@ The kit stores data from all answers that users give in a prototype. This lets y
 
 To clear the data (for example at the end of a user research session) use the **Clear data** link in the footer.
 
-
-The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.
-
-To clear the data (for example at the end of a user research session) use the **Clear data** link in the footer.
-
 [View an example of what passing data looks like in a prototype](./examples/pass-data/vehicle-registration).
 
 ## How to use
@@ -52,40 +47,6 @@ For checkboxes the option is `values`, since more than one can be selected.
 ### Show content if users have not answered optional questions
 
 You can show content if data is currently blank using `or`, for example:
-
-```
-{{ data['first-name'] or "First name not given" }}
-```
-
-You can also use this in a component. For example to show that a user has not answered an optional question on Check your answers:
-
-```
-{{ govukSummaryList({
-  rows: [
-    {
-      key: {
-        text: "First name"
-      },
-      value: {
-        text: data['first-name'] or "First name not given"
-      }
-    }
-  ]
-})}}
-```
-
-
-### Set default data
-
-You can set default data in your prototype. This will appear without the user having to enter anything. 
-
-For example, if you want to test a journey where the user returns to review or update their information.
-
-If the user changes this data in the prototype, their new answers are saved.
-
-Add default data to your `app/data/session-data-defaults.js` file.
-
-For example, to set default data for the ‘First name’ and ‘Over 18’ inputs in the [passing data example](https://prototype-kit.service.gov.uk/docs/examples/pass-data/vehicle-registration) add:
 
 ```
 {{ data['first-name'] or "First name not given" }}

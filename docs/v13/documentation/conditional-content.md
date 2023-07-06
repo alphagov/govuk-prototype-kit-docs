@@ -4,142 +4,108 @@ heading: Change the content within a page based on a user's answers
 
 >To change the content within a page based on a user's answers, you need to know [how to pass data from page to page](pass-data).
 
-You can show different text on a page depending on how a user answers a question. For example, using a previous answer to ask more specific questions.
+There are 2 ways to show content based on a user's answers. You can either [send the user to different pages](branching-journeys) (called 'branching') or change the content within a page (called 'conditional' content).
 
-Using a previous answer to change content is called 'conditional' or 'dynamic' content.
-
-When you use dynamic content, all content variations are on one page instead of linking to lots of slightly different pages.
-
-## How to use dynamic content
-
-To change content based on the user’s previous input (like in a heading or inset text), we use the `name` attribute in the format `{{data.name}}`. 
-
-Our example uses `{{data.country}}`:
-
-```
-<legend class="govuk-fieldset__legend govuk-fieldset__legend--l">
- <h1 class="govuk-fieldset__heading">
- How long have you lived in {{data.country}}?
- </h1>
-</legend>
-```
-
->Make sure you have double brackets around your data, like `{{data.example}}`. If you are calling content within the middle of a sentence, leave spacing either side of it.
+Branching is better when most of the content on the page is different.
 
 ## If statements
 
-We can also use if statements to show conditional content, in the format: 
+We can use `if` statements to show conditional content, in the format: 
 ```
 {% if (condition) %} 
-The content you want to appear 
+    The content you want to appear 
 {% endif %}
 ``` 
-The content will only appear when your `if statement` is true.
+The content will only appear when your `if` statement is true.
 
 For example, to show specific content when the user answers Scotland:
 
 ```
-{% if (data.country == "Scotland") %}
- <div class="govuk-inset-text">
-This service is also available in Gaelic.
- </div>
- {% endif %}
-```
-
-### 2 different conditions
-An example with conditional content based on if the answer is Scotland or anything else: 
-```
-{% if (data.country == "Scotland") %}
- <div class="govuk-inset-text">
- This service is also available in
-Gaelic.
- </div>
-{% else %}
- <div class="govuk-inset-text">
- This service is available in other
-languages.
- </div>
+{% if (data['country'] == "Scotland") %}
+    <div class="govuk-inset-text">
+        This service is also available in Gaelic.
+    </div>
 {% endif %}
 ```
 
-### More than 2 conditions
-An example with conditional content based on whether the answer for 'country' is Scotland, Wales and no content for any other answer: 
+### Conditional content for any other answer
+An example with conditional content when the answer is Scotland and different content for any other answer: 
 ```
-{% if (data.country == "Scotland") %}
- <div class="govuk-inset-text">
- This service is also available in
-Gaelic.
- </div>
-{% elseif (data.country == "Wales") %}
- <div class="govuk-inset-text">
- This service is also available in Welsh.
- </div>
+{% if (data['country'] == "Scotland") %}
+
+    <div class="govuk-inset-text">
+        This service is also available in Gaelic.
+    </div>
+
 {% else %}
+
+    <div class="govuk-inset-text">
+        This service is available in other languages.
+    </div>
+
+{% endif %}
+```
+
+### Conditional content for 2 specific answers
+An example with conditional content when the answer is Scotland and different content for Wales: 
+
+```
+{% if (data['country'] == "Scotland") %}
+
+    <div class="govuk-inset-text">
+        This service is also available in Gaelic.
+    </div>
+
+{% elseif (data.country == "Wales") %}
+
+    <div class="govuk-inset-text">
+        This service is also available in Welsh.
+    </div>
+
 {% endif %}
 ```
 
 ### Combine conditions
 An example with the same conditional content for the answer Scotland or Northern Ireland:
 ```
-{% if (data.country == "Scotland") or (data.
-country == "Northern Ireland") %}
- <div class="govuk-inset-text">
- This service is also available in
-Gaelic and Irish.
- </div>
+{% if (data['country'] == "Scotland" or data['country'] == "Northern Ireland") %}
+ 
+    <div class="govuk-inset-text">
+        This service is also available in Gaelic and Irish.
+    </div>
+
 {% endif %}
 ```
-An example with the same conditional content for the answer for 'country' being Scotland and the answer for 'nationality' being French:
+An example with conditional content when the answer for 'country' is Scotland and the answer for 'nationality' is French:
 
 ```
-{% if (data.country == "Scotland") and
-(data.nationality == "French") %}
- <div class="govuk-inset-text">
- This service is also available in
-Gaelic and French.
- </div>
+{% if (data['country'] == "Scotland" and data['nationality'] == "French") %}
+
+    <div class="govuk-inset-text">
+        This service is also available in Gaelic and French.
+    </div>
+
 {% endif %}
 ```
 
 ### Multiple conditions
 An example where the 'country' is Scotland and the content is different based on the 'nationality':
 ```
-{% if (data.country == "Scotland") %}
- <div class="govuk-inset-text">
- {% if (data.nationality == "Northern
-Irish") %}
-This service is also available in
-Gaelic and Irish.
- {% endif %}
- {% if (data.nationality == "French") %}
-This service is also available in
-Gaelic and French.
- {% endif %}
- </div>
-{% endif %}
-```
+{% if (data['country'] == "Scotland") %}
 
-### Hide an answer
-You can choose to only show content and style when there’s actually data. For example, an optional phone number field. 
+    <div class="govuk-inset-text">
 
-On the **Check your answers** page, you can include a row in the table when the user gives their phone number and hide it when they do not. 
+        {% if (data['nationality'] == "Northern Irish") %}
 
-Add an `if statement` in the format `{% if data.nametag %}` like in this example:
-```
-{% if data.phone %}
- <div class="govuk-summary-list__row">
- <dt class="govuk-summary-list__key">
-Phone number
- </dt>
- <dd class="govuk-summary-list__value">
-{{data.phone}}
- </dd>
- <dd class="govuk-summary-list__actions">
-<a class="govuk-link" href="personal-details">
-Change<span class="govuk-visually-hidden"> phone number<
-/span>
-</a>
- </dd>
- </div>
+            This service is also available in Gaelic and Irish.
+
+        {% elseif (data['nationality'] == "French") %}
+
+            This service is also available in Gaelic and French.
+
+        {% endif %}
+
+    </div>
+
 {% endif %}
 ```

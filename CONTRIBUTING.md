@@ -7,7 +7,7 @@ We do have a few guidelines to bear in mind.
 
 If you’ve got an idea or suggestion you can:
 
-* email [govuk-design-system-support@digital.cabinet-office.gov.uk](mailto:govuk-design-system-support@digital.cabinet-office.gov.uk)
+* email [prototype-kit-support@digital.cabinet-office.gov.uk](mailto:prototype-kit-support@digital.cabinet-office.gov.uk)
 * [get in touch on developer Slack channel](https://ukgovernmentdigital.slack.com/archives/C0E1063DW)
 * [create a GitHub issue](https://github.com/alphagov/govuk-prototype-kit/issues)
 

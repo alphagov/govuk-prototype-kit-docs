@@ -56,7 +56,7 @@ An example with conditional content when the answer is Scotland and different co
         This service is also available in Gaelic.
     </div>
 
-{% elseif (data.country == "Wales") %}
+{% elseif (data['country'] == "Wales") %}
 
     <div class="govuk-inset-text">
         This service is also available in Welsh.

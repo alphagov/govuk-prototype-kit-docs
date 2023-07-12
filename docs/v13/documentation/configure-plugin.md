@@ -7,92 +7,73 @@ title: Configure your plugin
 
 To do-->
 
-All plugins need a `govuk-prototype-kit-config.json` file (also called a 'config file') to tell the Prototype Kit what is included in the plugin.
+## Use a namespace
+
+When configuring your plugin, you need to choose a short and unique name (called a namespace) for your plugin or group of plugins. This means your plugin will not clash with other plugins.
+
+For example if 2 plugins include a component called `timeline`, they would clash and not work correctly. If they use the namespaces `govuk` and `hmrc`, the 2 components have different names and will work correctly (`govuk-timeline` and `hmrc-timeline`).
 
 ## The config file
 
+Plugins need a file called `govuk-prototype-kit.config.json` (also known as a config file). The config file tells the kit what’s included in the plugin. 
+
+There are multiple options you can use in the config file, depending on what your plugin provides.
+
 `nunjucksPaths`
 
-We use Nunjucks as our Prototype Kit templating language. It allows us to add a number of paths, then uses those paths to find includes, layouts and macros. For example, if you add `{% extends “some-plugin/layouts/main.njk” %}` to your config file then Nunjucks will search for a matching file inside the plugin folder.
-
-Follow these steps to make sure Nunjucks can find your plugin.
-
-1. Create a folder inside your plugin (for example, `nunjucks`). It’s better to use a separate Nunjucks directory instead of your root.
-2. Create a `some-plugin` folder inside your nunjucks folder
-3. Create a layouts folder in your `some-plugin` folder.
-4. Create a file called `main.njk` in your layouts folder.
-5. Add the folder that contains the `some-plugin` directory to your `govuk-prototype-kit.config.json`. For example, if the path in your project is `lib/nunjucks/some-plugin/layouts/main.njk` then in your configuration file add:
+An array of paths for Nunjucks includes, layouts and macros. For example:
 
 ```
 {
   "nunjucksPaths": [
-    "/lib/nunjucks"
+    "/nunjucks/"
   ]
 }
 ```
 
-You can add multiple `nunjucksPaths`, but it’s easier for users to find your includes and layouts when you use one. Inside that folder there should oly be one folder with the same name as your plugin, so that users know which plugin they’re getting the include or layout from. Do not name your path `/`.
+In this example, if you add `{% extends “some-plugin/layouts/main.njk” %}` to a page then Nunjucks will search for a matching file inside the plugin folder (`/nunjucks/some-plugin/layouts/main.njk`).
+
+Inside your Nunjucks path folder you need a folder with the same name as your plugin (`some-plugin`). This lets users know which plugin they’re getting the include or layout from.
+
+You can add multiple `nunjucksPaths`, but it’s easier for users to find your includes and layouts when you use one.
 
 `nunjucksFilters`
 
-Nunjucks filters are tools that users of the Prototype Kit can add to their Nunjucks templates.  For example, you can create an ‘uppercase’ filter to  make text uppercase like this:
-```
-const { addFilter } = require('govuk-prototype-kit').views
-
-addFilter('somePlugin.uppercase', function (content) {
-  return content.toUpperCase()
-})
-```
-
-You can put multiple filters in one file with only one require statement. For example, these 2 filters are for a file called filters.js:
-
-```
-const { addFilter } = require('govuk-prototype-kit').views
-
-addFilter(somePlugin.uppercase', function (content) {
-  return content.toUpperCase()
-})
-
-addFilter(somePlugin.uppercase', function (content) {
-  return '<strong>' + content + '</strong>'
-}, { renderAsHtml: true })
-```
-Add these filters in your govuk-prototype-kit.config.json:
+An array of files for Nunjucks filters. For example:
 
 ```
 {
-  "filters": [
+  "nunjucksFilters": [
     "/filters.js"
   ]
 }
 ```
 
-Once the user has installed your plugin they can use these filters:
+Filters change the format of how a users answers appear in a prototype. We have a [guide to creating filters](./create-filters).
 
-`<p>Hello {{ "world" | somePlugin.uppercase }}<p>`
-`<p>Hello {{ "world" | somePlugin.bold }}<p>`
+When creating filters for a plugin, use your namespace in your filter names. For example:
 
-They can also use these filters together:
-
-`<p>Hello {{ "world" | somePlugin.uppercase | somePlugin.bold }}<p>`
-
+```
+addFilter('somePlugin.uppercase', function (content) {
+  return content.toUpperCase()
+})
+```
 
 `nunjucksMacros`
 
-You can use Nunjucks Macros to define reusable chunks of content, similar to using functions in a programming language. Each component in `govuk-frontend` is a Nunjucks Macro. We ask that you include the plugin name in your Nunjucks Macro name and path. Do not include a `/` at the start of the nunjucksPath, as the path is relative to any of the folders you’ve listed in `nunjucksPaths`. For example:
+An array of objects, consisting of:
+ - `macroName` - the name of the macro
+ - `importFrom` - the path of the macro
 
-`nunjucks/somePlugin/macros/text-input.njk`
-```
-{% macro somePluginTextInput(params) %}
-  <input type="text" class="some-plugin_text-input" value="{{params.value}}">
-{% endmacro %}
-`nunjucksFilters`
-```
+It requires the [`nunjucksPaths`](#) option.
 
-`govuk-prototype-kit.config.json`
+For example:
+
 ```
 {
-  "nunjucksPaths": ["/nunjucks"],
+  "nunjucksPaths": [
+    "/nunjucks/
+  ],
   "nunjucksMacros": [
     {
       "macroName": "somePluginTextInput",
@@ -102,8 +83,28 @@ You can use Nunjucks Macros to define reusable chunks of content, similar to usi
 }
 ```
 
-You’ve set up the macro, so now the user does not need to import the macro (unless they’re creating their own layout files). If they do need to import the macro, they can add the following code to their page:
+Nunjucks Macros are reusable components, like the components in the GOV.UK Design System.
 
+Use your namespace in your Nunjucks Macro names and paths, as in the example above.
+
+Do not include a `/` at the start of `importFrom`. The path is relative to any of the folders you’ve listed in `nunjucksPaths`. In the example above you would add a file at this path:
+
+```
+nunjucks/somePlugin/macros/text-input.njk
+```
+
+With a Nunjucks macro like this:
+
+```
+{% macro somePluginTextInput(value) %}
+  <input type="text" class="some-plugin_text-input" value="{{ value }}">
+{% endmacro %}
+```
+
+[Find out more about macros in the Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html#macro).
+
+<!-- check with Natalie -->
+You’ve set up the macro, so now the user does not need to import the macro (unless they’re creating their own layout files). If they do need to import the macro, they can add the following code to their page:
 
 `{% import somePluginTextInput from "somePlugin/macros/text-input.njk" %}`
 
@@ -111,14 +112,7 @@ The import statement uses the same parameters as the `nunjucksMacro` in your con
 
 `sass`
 
-SASS is a CSS preprocessor that generates the CSS which is used on every page.  You can add SASS files to share styles. For example, you can create a style for a highlight:
-```
-.some-plugin_highlight {
-  background-color: yellow;
-}
-```
-
-Save SASS files with the extension `.scss`, for example `styles.scss`. You also need to add the SASS file to your config file, so those styles appear in the user’s prototype:
+An array of Sass files. For example:
 
 ```
 {
@@ -128,21 +122,9 @@ Save SASS files with the extension `.scss`, for example `styles.scss`. You also 
 }
 ```
 
-The user can set variables in their `app/assets/sass/settings.scss` before any plugin sass, or they can add styles into their `app/assets/sass/application.scss` that runs after all plugin sass. For example, your sass file can include:
+Sass generates CSS which is loaded on every page.
 
-```
-$some-plugin_highlight-colour: yellow !default;
-
-.some-plugin_highlight {
-  background-color: $some-plugin_highlight-colour;
-}
-```
-
-This means that the user can override `$some-plugin_highlight-colour` in their `app/assets/sass/settings.scss` and also use the highlight colour in their own scss.
-
-`stylesheets`
-
-You can add stylesheets that are ready for use in the browser and that should not be pre-processed by SASS, for example:
+Use your namespace in your Sass naming, for example:
 
 ```
 .some-plugin_highlight {
@@ -150,7 +132,11 @@ You can add stylesheets that are ready for use in the browser and that should no
 }
 ```
 
-Save stylesheet files with the extension `.css`, like `styles.css`.  To use these styles in the prototype, you also need to add them to the config file:
+[Find out more in the Sass documentation](https://sass-lang.com/guide/#variables)
+
+`stylesheets`
+
+An array of CSS files. For example:
 
 ```
 {
@@ -160,24 +146,32 @@ Save stylesheet files with the extension `.css`, like `styles.css`.  To use thes
 }
 ```
 
+These stylesheets are loaded on every page.
+
+Use your namespace in your CSS naming, for example:
+
+```
+.some-plugin_highlight {
+  background-color: yellow;
+}
+```
+
 `scripts`
 
-Scripts are javascript files that you can add to prototype pages. You can add as many as you want. A simple script to try is:
+An array of JavaScript files. For example:
 
-```
-console.log('Hello world')
-```
-
-Save scripts in a file called `pageScript.js`, then you can add them to the plugin config file:
 ```
 {
   "scripts": [
-    "/pageScripts.js"
+    "/scripts.js"
   ]
 }
 ```
 
-If you want to create Javascript functions or variables, you should create a single global variable. For example:
+<!-- check with Natalie -->
+These files are loaded on every page.
+
+Use your namespace in your JavaScript naming, for example:
 
 ```
 window.SOME_PLUGIN = window.SOME_PLUGIN || {}
@@ -189,79 +183,48 @@ window.SOME_PLUGIN.log = function (whatToLog) {
 
 `templates`
 
-We use templates to make it easy for users to create new pages in their prototype. When a user creates a page from a template, the kit automatically adds a file in the user’s prototype with a copy of the template. 
+An array of objects, consisting of:
+ - `path` - the path to the template file
+ - `name` - this appears in the **Templates** section of **Manage your prototype**
+ - `type` - this is always "nunjucks"
 
-If you update a template in your plugin in the future, any changes you make will only impact users who create new pages using the template. Any existing pages that were created with the old version will stay the same. You should keep templates small and only use them as a way to show other features in your plugin.
+ For example:
 
-This example template does not rely on anything else and comes with a warning to let users know that they may end up with out of date versions of this page in the future.
-
-We've included nunjucksMacros, nunjucksPaths, importNunjucksMacrosInto and stylesheets to show how templates can work well as part of a bigger system:
-
-`nunjucks/somePlugin/layouts/main.njk`
-```
-<!DOCTYPE html>
-
-<main class="some-plugin_main-content">
-  {% block content %}
-    <p>It looks like you haven't provided any content. Please add a "{% block content %}" to your page</p>
-  {% endblock %}
-</main>
-```
-
-
-`nunjucks/somePlugin/macros/text-input.njk`
-```
-{% macro somePluginTextInput(params) %}
-  <input type="text" class="some-plugin_text-input" value="{{params.value}}">
-{% endmacro %}
-```
-`assets/styles/styles.css`
-```
-.some-plugin_main-content {
-  border: 1px solid blue;
-}
-
-.some-plugin_text-input {
-  padding: .3rem 1rem;
-}
-```
-
-`templates/text-input.njk`
-```
-{% extends "somePlugin/layouts/main.njk" %}
-
-{% block content %}
-  somePluginTextInput({value: 'Hello world'})
-{% endblock %}
-```
-
-The govuk-prototype-kit.config.json brings this all together:
 ```
 {
   "templates": [
     {
-      "path": "/templates/text-input.njk",
-      "name": "Page with text input",
+      "path": "/templates/hello-world.njk",
+      "name": "Hello world page",
       "type": "nunjucks"
     }
-  ],
-  "nunjucksPaths": [
-    "/nunjucks"
-  ],
-  "nunjucksMacros": [
-    {
-      "macroName": "somePluginTextInput",
-      "importFrom": "somePlugin/macros/text-input.njk"
-    }
-  ],
-  "importNunjucksMacrosInto": [
-    "/nunjucks/somePlugin/layouts/main.njk"
   ]
 }
 ```
+
+Templates let users create pages that are commonly used across government services.
+
+In the example above you would add a file at this path:
+
+```
+/templates/hello-world.njk
+```
+With a Nunjucks page like this:
+
+```
+<!DOCTYPE html>
+<html>
+  <body>
+    <h1>Hello world</h1>
+    <!-- Add your content here -->
+  </body>
+</html>
+```
+
+
 `importNunjucksMacrosInto`
 
-Some plugins include Nunjucks Macros. It’s easier for users of the Prototype Kit if these macros are already imported for them, so they do not need to include each macro they’re using. 
+Some plugins include Nunjucks Macros. It’s easier for users of the Prototype Kit if these macros are already imported for them, so they do not need to import each macro they’re using. 
 
 We have added `nunjucksMacros` to the plugin config so we can generate import statements automatically. If you have files in your plugin that benefit from having these Nunjucks macros, you can list them in `importNunjucksMacrosInto`. 
 

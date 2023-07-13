@@ -240,21 +240,35 @@ We mostly use this for layouts. If your plugin includes a layout, you can import
 
 `assets`
 
-When you add stylesheets, macros, scripts, templates and other assets, you often need to link to other resources. These resources can have their own URLs and may include additional files. For example, images that are loaded within favicons.
-
-Add assets to your config file so that you can specify files and folders that should be available within the prototype, for example:
+An array of paths for any files you want to make available in a prototype. For example:
 
 ```
 {
   "assets": [
-    "/resources/for-the-browser",
-    "/scripts/additional/example.js"
+    "/assets/",
+    "/images/profile.png"
   ]
 }
 ```
 
-This config file will make everything in the `resources/for-the-browser` folder and the `scripts/additional/example.js` file available within the prototype. To access these assets, the URL structure is `/plugin-assets/<your plugin name>/<the path inside your plugin>` - for example:
+Paths can be folders or files. Files can be any type, for example images, PDFs and so on.
 
-`/plugin-assets/somePlugin/resources/for-the-browser/favicon.ico`
+In the example above you would add a file at this path:
 
-If you’re using assets URLs from SASS, you can use the variable `$govuk-plugins-url-context` instead of `/plugin-assets`. This means that if we change the URL in future releases you will not need to make any changes.
+```
+/images/profile.png
+```
+
+To use this in a page, the URL structure is:
+
+```
+/plugin-assets/<your plugin name>/<asset path>
+```
+
+In our example:
+
+```
+<img src="/plugin-assets/somePlugin/images/profile.png" alt="profile icon">
+```
+
+If you’re using asset paths in your Sass, use the variable `$govuk-plugins-url-context` instead of `/plugin-assets`. This means that if we change the path in the future you will not need to make any changes.

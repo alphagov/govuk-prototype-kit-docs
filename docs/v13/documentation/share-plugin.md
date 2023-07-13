@@ -3,19 +3,44 @@ heading: Share your plugin
 title: Share your plugin
 ---
 
-## Test your plugin
-
-Check that you’ve set up your plugin correctly using our automated test tool. Run the command:
-
-`npx govuk-prototype-kit@latest validate-plugin`
-
-The validator will check you haven’t made mistakes in your configuration file but of course you’ll need to test that the functionality in your plugin works as expected.  You can do this by installing it as a local dependency.  You can do this by running npm install and giving it the folder for your plugin, when you do this the prototype kit realises you’ve installed a local dependency and watches your files for changes so you should be able to see your changes reflected quickly while you’re building your plugin.  For example, if your plugin is in the directory ~/projects/some-plugin you can install it by running the following command in a prototype:
-
-`npm install ~/projects/some-plugin`
-
 ## Write documentation for your plugin
 
-You need to publish supporting documentation for everything in your plugin, so that users understand how to use it.
+Supporting documentation lets users understand what is included in your plugin and how to use it.
+
+You can publish this anywhere, for example your organisation's design system, or add a `readme.md` file to your plugin folder.
+
+You can see an example here:
+
+https://www.npmjs.com/package/@govuk-prototype-kit/common-templates
+
+If your documentation is not in the `readme.md` file, you need to add a link to your `govuk-prototype-kit.config.json`.
+
+For example:
+
+```
+documentation: "https://example.com"
+```
+
+## Test your plugin
+
+Check that you’ve set up your plugin correctly using our testing tool.
+
+In the terminal, change to your plugin folder and enter:
+
+<!-- Natalie - can we change the tool to test-plugin -->
+```
+npx govuk-prototype-kit@latest validate-plugin
+```
+
+The tool will tell you if it finds any errors in your plugin.
+
+You also need to check your plugin manually.
+
+1. If you do not have a prototype, [create one](./create-new-prototype)
+2. In the terminal change to your prototype folder.
+3. Run `npm install [path]` where `[path]` is the path to your plugin folder, for example `~/projects/prototype-plugins/my-example-plugin`
+4. Run your prototype and check if your plugin works as expected.
+
 
 ## Publish your plugin
 

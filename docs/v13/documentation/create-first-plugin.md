@@ -98,6 +98,7 @@ You have created a plugin that provides a template page.
 
 ## Test your plugin
 
-1. In the terminal change to your prototype folder.
-2. Run `npm install [path]` where `[path]` is the path to your plugin folder, for example `~/projects/prototype-plugins/my-example-plugin`
-3. Run your prototype, your template should be available in the **Templates** section of **Manage your prototype**
+1. If you do not have a prototype, [create one](./create-new-prototype)
+2. In the terminal change to your prototype folder.
+3. Run `npm install [path]` where `[path]` is the path to your plugin folder, for example `~/projects/prototype-plugins/my-example-plugin`
+4. Run your prototype, your template should be available in the **Templates** section of **Manage your prototype**

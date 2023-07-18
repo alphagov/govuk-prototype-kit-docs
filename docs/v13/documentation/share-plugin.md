@@ -13,12 +13,18 @@ You can see an example here:
 
 https://www.npmjs.com/package/@govuk-prototype-kit/common-templates
 
-If your documentation is not in the `readme.md` file, you need to add a link to your `govuk-prototype-kit.config.json`.
+You need to add a documentation link to your `govuk-prototype-kit.config.json`.
 
 For example:
 
 ```
 documentation: "https://example.com"
+```
+
+If your documentation is in your `readme.md`, use the value `npm`:
+
+```
+documentation: "npm"
 ```
 
 ## Test your plugin

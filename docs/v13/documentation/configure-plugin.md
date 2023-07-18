@@ -3,41 +3,50 @@ heading: Configure your plugin
 title: Configure your plugin
 ---
 
-<!--## Package.json file - is this something that we still need?
-
-To do-->
+Plugins need a file called `govuk-prototype-kit.config.json` (also known as a config file). The config file tells the kit what’s included in the plugin. 
 
 ## Use a namespace
 
 When configuring your plugin, you need to choose a short and unique name (called a namespace) for your plugin or group of plugins. This means your plugin will not clash with other plugins.
 
+If your namespace has more than one word, we recommend the use of camelCase.
+
 For example if 2 plugins include a component called `timeline`, they would clash and not work correctly. If they use the namespaces `govuk` and `hmrc`, the 2 components have different names and will work correctly (`govuk-timeline` and `hmrc-timeline`).
 
-## The config file
-
-Plugins need a file called `govuk-prototype-kit.config.json` (also known as a config file). The config file tells the kit what’s included in the plugin. 
+## Config file options
 
 There are multiple options you can use in the config file, depending on what your plugin provides.
 
-`nunjucksPaths`
+ - [assets](#assets)
+ - [importNunjucksMacrosInto](#importNunjucksMacrosInto)
+ - [nunjucksFilters](#nunjucksFilters)
+ - [nunjucksMacros](#nunjucksMacros)
+ - [nunjucksPaths](#nunjucksPaths)
+ - [pluginDependencies](#pluginDependencies)
+ - [sass](#sass)
+ - [scripts](#scripts)
+ - [templates](#templates)
+
+
+### nunjucksPaths
 
 An array of paths for Nunjucks includes, layouts and macros. For example:
 
 ```
 {
   "nunjucksPaths": [
-    "/nunjucks/"
+    "/nunjucks"
   ]
 }
 ```
 
-In this example, if you add `{% extends “some-plugin/layouts/main.njk” %}` to a page then Nunjucks will search for a matching file inside the plugin folder (`/nunjucks/some-plugin/layouts/main.njk`).
+In this example, if you add `{% extends “somePlugin/layouts/main.njk” %}` to a page then Nunjucks will search for a matching file inside the plugin folder (`/nunjucks/somePlugin/layouts/main.njk`).
 
-Inside your Nunjucks path folder you need a folder with the same name as your plugin (`some-plugin`). This lets users know which plugin they’re getting the include or layout from.
+Inside your Nunjucks path folder you need a folder named the same as your namespace (`somePlugin`). This lets users know which plugin they’re getting the include or layout from.
 
 You can add multiple `nunjucksPaths`, but it’s easier for users to find your includes and layouts when you use one.
 
-`nunjucksFilters`
+### nunjucksFilters
 
 An array of files for Nunjucks filters. For example:
 
@@ -59,7 +68,7 @@ addFilter('somePlugin.uppercase', function (content) {
 })
 ```
 
-`nunjucksMacros`
+### nunjucksMacros
 
 An array of objects, consisting of:
  - `macroName` - the name of the macro
@@ -97,20 +106,17 @@ With a Nunjucks macro like this:
 
 ```
 {% macro somePluginTextInput(value) %}
-  <input type="text" class="some-plugin_text-input" value="{{ value }}">
+  <input type="text" class="somePlugin_text-input" value="{{ value }}">
 {% endmacro %}
 ```
 
 [Find out more about macros in the Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html#macro).
 
-<!-- check with Natalie -->
-You’ve set up the macro, so now the user does not need to import the macro (unless they’re creating their own layout files). If they do need to import the macro, they can add the following code to their page:
+The kit normally imports Nunjucks macros for users. If they make their own layouts file, they can manually import your macro like this:
 
 `{% import somePluginTextInput from "somePlugin/macros/text-input.njk" %}`
 
-The import statement uses the same parameters as the `nunjucksMacro` in your config file.
-
-`sass`
+### sass
 
 An array of Sass files. For example:
 
@@ -127,14 +133,14 @@ Sass generates CSS which is loaded on every page.
 Use your namespace in your Sass naming, for example:
 
 ```
-.some-plugin_highlight {
+.somePlugin_highlight {
   background-color: yellow;
 }
 ```
 
 [Find out more in the Sass documentation](https://sass-lang.com/guide/#variables)
 
-`stylesheets`
+### stylesheets
 
 An array of CSS files. For example:
 
@@ -151,12 +157,12 @@ These stylesheets are loaded on every page.
 Use your namespace in your CSS naming, for example:
 
 ```
-.some-plugin_highlight {
+.somePlugin_highlight {
   background-color: yellow;
 }
 ```
 
-`scripts`
+### scripts
 
 An array of JavaScript files. For example:
 
@@ -168,7 +174,6 @@ An array of JavaScript files. For example:
 }
 ```
 
-<!-- check with Natalie -->
 These files are loaded on every page.
 
 Use your namespace in your JavaScript naming, for example:
@@ -181,7 +186,7 @@ window.SOME_PLUGIN.log = function (whatToLog) {
 }
 ```
 
-`templates`
+### templates
 
 An array of objects, consisting of:
  - `path` - the path to the template file
@@ -221,14 +226,9 @@ With a Nunjucks page like this:
 </html>
 ```
 
+### importNunjucksMacrosInto
 
-`importNunjucksMacrosInto`
-
-Some plugins include Nunjucks Macros. It’s easier for users of the Prototype Kit if these macros are already imported for them, so they do not need to import each macro they’re using. 
-
-We have added `nunjucksMacros` to the plugin config so we can generate import statements automatically. If you have files in your plugin that benefit from having these Nunjucks macros, you can list them in `importNunjucksMacrosInto`. 
-
-We mostly use this for layouts. If your plugin includes a layout, you can import the Nunjucks macros into it:
+An array of layout files to import Nunjucks macros into. For example:
 
 ```
 {
@@ -238,7 +238,33 @@ We mostly use this for layouts. If your plugin includes a layout, you can import
 }
 ```
 
-`assets`
+You can include [layout files](./how-to-use-layouts) in your plugin, so that you can extend them in your templates.
+
+`importNunjucksMacrosInto` makes Nunjucks macros (components) from all plugins available in your layout files.
+
+### pluginDependencies
+
+An array of plugins that your plugin depends on. For example:
+
+```
+{
+  "pluginDependencies": ["govuk-frontend"]
+}
+```
+
+You can optionally add a minimum or maximum version:
+
+```
+{
+  "pluginDependencies": [{
+    "packageName": "govuk-frontend",
+    "minVersion": "4.4.0",
+    "maxVersion": "4.5.0"
+  }]
+}
+```
+
+### assets
 
 An array of paths for any files you want to make available in a prototype. For example:
 

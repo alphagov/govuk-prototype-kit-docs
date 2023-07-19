@@ -29,6 +29,15 @@ You can show what the user entered later on like this:
 </p>
 ```
 
+Answers from checkboxes will appear with commas, like 'a,b,c'. To show them as a list, use a for loop:
+```
+<ul>
+{% for country in data['countries'] %}
+  <li>{{ country }}</li>
+{% endfor %}
+</ul>
+```
+
 ### Show answers in inputs
 
 If a user goes back to a page where they entered data, they would expect to see the answer they gave.

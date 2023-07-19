@@ -11,8 +11,6 @@ Some concepts:
 - GitHub Desktop - an app that puts your code on GitHub (so that you can collaborate with others in your team)
 - Repository/repo - a project stored in Git
 
-If you are new to these concepts, [follow GitHub’s get started exercise](https://docs.github.com/en/get-started/quickstart/hello-world).
-
 ## Set up GitHub Desktop
 
 1. [Create a free GitHub account](https://github.com/join).
@@ -50,3 +48,5 @@ Do not worry if you get this warning - this is the correct process.
 3. Click **publish repository.**
 
 Your prototype code is now on GitHub, which means other people can see and collaborate on your code.
+
+> [Find out more about how to use GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)

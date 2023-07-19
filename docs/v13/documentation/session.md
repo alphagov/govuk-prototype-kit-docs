@@ -90,8 +90,3 @@ Or in views as:
 {{ data['claimant']['last-name'] }}
 {{ data['partner']['first-name'] }}
 {{ data['partner']['last-name'] }}
-```
-
-An [example using express-session to store page views for a user](https://github.com/expressjs/session#example)
-
-Read more about the [Express Session](https://github.com/expressjs/session)

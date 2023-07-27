@@ -76,7 +76,7 @@ You can make changes to the existing GOV.UK footer using the `footer` block:
 {% block footer %}
  {{ govukFooter({
    meta: {
-     items: [,
+     items: [
        {
          href: "/privacy",
          text: "Privacy policy"

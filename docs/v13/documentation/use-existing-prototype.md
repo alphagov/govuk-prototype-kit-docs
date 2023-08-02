@@ -19,6 +19,6 @@ Open the prototype folder in your code editor. In the terminal, run `npm install
 
 ## Changes to the prototype
 
-You can make changes on your device using a `branch` and merge them to the `main` version of the prototype (also called 'pushing' a change).
+You can make changes on your device using a `branch` and publish it to the `main` version of the prototype (also called 'pushing' a change).
 
 When someone makes a change to the prototype, you'll need update your version. You can `pull` these changes from Github Desktop or the Github repository.

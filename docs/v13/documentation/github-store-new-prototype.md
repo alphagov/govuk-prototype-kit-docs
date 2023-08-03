@@ -33,8 +33,3 @@ Your prototype code is now on GitHub, which means other people can see and colla
 
 > [Find out more about how to use GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
 
-## Changes to the prototype
-
-You can make changes on your device using a `branch` and publish it to the `main` version of the prototype (also called 'pushing' a change).
-
-When someone makes a change to the prototype, you'll need update your version. You can `pull` these changes from Github Desktop or the Github repository.

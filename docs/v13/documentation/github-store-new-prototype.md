@@ -23,13 +23,12 @@ Do not worry if you get this warning - this is the correct process.
 
 ## Upload your prototype to GitHub
 
-1. In the top right, click **publish repository**.
+1. In the top right, click **publish repository**
 
 2. Make sure **'Keep this code private'** is not ticked, as we need others to be able to see and collaborate on it.
 
-3. Click **publish repository.**
+3. Click **publish repository**
 
 Your prototype code is now on GitHub, which means other people can see and collaborate on your code.
 
-> [Find out more about how to use GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)
 

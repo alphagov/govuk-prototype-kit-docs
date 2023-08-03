@@ -31,3 +31,4 @@ You can now:
 * [store your new prototype in GitHub](./github-store-new-prototype)
 * [download an existing prototype from GitHub](./github-download-existing-prototype)
 
+> [Find out more about how to use GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)

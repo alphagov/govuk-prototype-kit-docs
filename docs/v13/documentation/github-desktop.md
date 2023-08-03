@@ -21,32 +21,13 @@ Some concepts:
 
 4. Sign in with your GitHub account details.
 
-## Store your prototype in Git
+## Using GitHub Desktop
 
-1. Select **Add an Existing Repository** (if it's not on the screen, click the **File** menu and select **Add Local Repository**).
+Use GitHub Desktop to work with repositories. 
 
-2. Click the **Choose** button and select your prototype folder.
+A repository contains all of the files in a prototype. You can use the repository to view the file history and work on your prototype with others.
 
-### If Github Desktop shows a warning
+You can now:
+* [store your new prototype in GitHub](./store-new-prototype)
+* [download an existing prototype from GitHub](./use-existing-prototype)
 
-You may get a warning, like this screenshot:
-
-![Screenshot of the GitHub Desktop app. There is a separate pop-up box with the heading 'Add local repository'. In this box there is a text input labelled 'local path'. A button labelled 'choose'. A link titled 'Create a repository'. A button labelled 'Cancel'. And a button labelled 'Add repository'.](/public/docs/v13/images/docs/github-desktop-add-local-repository.png)
-
-Do not worry if you get this warning - this is the correct process.
-
-1. In the warning, click the **create a repository** link.
-
-2. On the next screen, titled **Create a repository**, click the **Create repository** button.
-
-## Upload your prototype to GitHub
-
-1. In the top right, click **publish repository**.
-
-2. Make sure **'Keep this code private'** is not ticked, as we need others to be able to see and collaborate on it.
-
-3. Click **publish repository.**
-
-Your prototype code is now on GitHub, which means other people can see and collaborate on your code.
-
-> [Find out more about how to use GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)

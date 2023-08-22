@@ -91,7 +91,7 @@ An array of files for Nunjucks filters. For example:
 }
 ```
 
-Filters change the format of how a users answers appear in a prototype. We have a [guide to creating filters](./create-filters).
+Filters change the format of how a users answers appear in a prototype. We have a [guide to creating filters](./filters).
 
 When creating filters for a plugin, use your namespace in your filter names. For example:
 

@@ -1,0 +1,80 @@
+---
+heading: Learn HTML
+caption: Build a basic prototype
+---
+
+We use HTML (HyperText Markup Language) to give a web page content and structure.
+
+## HTML Structure
+HTML is organised into a family tree structure. HTML elements can have parents, grandparents, siblings, children and grandchildren.
+
+Each page starts with a document type declaration `<!!DOCTYPE html>` to let the browser know what type of document we're using.
+
+We can then start to build a page with different elements:
+```
+<!!DOCTYPE html>
+<div>
+  <h1>A large heading</h1>
+  <p>Some text for the heading.</p>
+</div>
+<div>
+  <h2>A smaller heading</h2>
+  <p>Here’s some text.</p>
+</div>
+```
+
+## Elements and tags 
+
+Each element includes an opening tag, content and a closing tag. For example: `<p>example text</p>`
+
+In the example:
+- `<p>` is the opening tag
+- `example text` is the content
+- `</p>` is the closing tag
+
+There are many different elements you can use to format content, including:
+
+- `<div>` To divide other elements into sections
+- `<h1>` A large heading
+- `<h2>` A smaller heading (there are 6 heading levels)
+- `<p>` Standard paragraph text
+
+
+### Lists
+
+To format a list, use an opening `<li>` element and then include the list items using either:
+  - `<ol>` for ordered lists 
+  - `<ul>` for unordered lists 
+    
+For example:
+
+```
+<li>My list
+  <ul>List item 1</ul>
+  <ul>List item 2</ul>
+</li>
+```
+
+### Links 
+The `<a>` anchor element creates hyperlinks. These hyperlinks can point to other pages in your kit, or to an external page using the `href` attribute. 
+
+For example: `<a href="https://prototype-kit.service.gov.uk/docs/">Link to the Prototype Kit</a>`
+
+## Attributes
+
+Attributes are values you can add to opening tags to change the element’s default behaviour. For example, to change the colour of text using the style attribute:
+
+
+`<p  style="color: green;">Text that's changed to the colour green using HTML attributes</p>`
+
+
+
+<!--
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+{{ govukPagination({
+  next: {
+    labelText: "Link your pages together",
+    href: "link-pages-together"
+  }
+}) }}
+-->

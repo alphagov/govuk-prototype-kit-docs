@@ -2,8 +2,6 @@
 heading: Store data in session
 ---
 
-**Advanced topic**
-
 When a user answers questions in your prototype, their answers are stored in session data.
 
 To clear session data you can either:
@@ -13,7 +11,7 @@ To clear session data you can either:
 
 ## How to use
 
-In a route function, refer to `req.session`.
+Create a route function in your `app/routes.js` file and refer to `req.session`.
 
 ### Accessing fields from the session
 

@@ -111,6 +111,6 @@ Our `response` is to `redirect` them to `/ineligible` - they are not eligible to
 
 </div>
 
-Find out [how to make branching journeys using routes](./branching-journeys)
+[Find out how to make branching journeys using routes](./branching-journeys).
 
-[Advanced documentation for routes](https://expressjs.com/en/guide/routing.html)
+[Advanced documentation for routes](https://expressjs.com/en/guide/routing.html).

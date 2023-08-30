@@ -1,29 +1,20 @@
 ---
-heading: Learn HTML
+heading: Understand basic HTML
 caption: Build a basic prototype
 ---
 
-We use HTML (HyperText Markup Language) to give a web page content and structure.
+We use a language called HTML to create web pages. You only need to understand basic HTML to create prototypes.
 
-## HTML Structure
-HTML is organised into a family tree structure. HTML elements can have parents, grandparents, siblings, children and grandchildren.
+You will learn some concepts on this page that will help with the rest of the tutorial, but you will not make any changes to your prototype.
 
-Each page starts with a document type declaration `<!!DOCTYPE html>` to let the browser know what type of document we're using.
+## Elements 
 
-We can then start to build a page with different elements:
-```
-<!!DOCTYPE html>
-<div>
-  <h1>A large heading</h1>
-  <p>Some text for the heading.</p>
-</div>
-<div>
-  <h2>A smaller heading</h2>
-  <p>Here’s some text.</p>
-</div>
-```
+HTML has different elements that represent content. For example:
 
-## Elements and tags 
+- `<h1>` the main page heading
+- `<h2>` other page headings are numbered from the most to least important (up to h6)
+- `<p>` standard paragraph text
+- `<div>` to divide other elements into sections
 
 Each element includes an opening tag, content and a closing tag. For example: `<p>example text</p>`
 
@@ -32,44 +23,35 @@ In the example:
 - `example text` is the content
 - `</p>` is the closing tag
 
-There are many different elements you can use to format content, including:
-
-- `<div>` To divide other elements into sections
-- `<h1>` A large heading
-- `<h2>` A smaller heading (there are 6 heading levels)
-- `<p>` Standard paragraph text
-
-
-### Lists
-
-To format a list, use an opening `<li>` element and then include the list items using either:
-  - `<ol>` for ordered lists 
-  - `<ul>` for unordered lists 
-    
-For example:
-
-```
-<li>My list
-  <ul>List item 1</ul>
-  <ul>List item 2</ul>
-</li>
-```
-
-### Links 
-The `<a>` anchor element creates hyperlinks. These hyperlinks can point to other pages in your kit, or to an external page using the `href` attribute. 
-
-For example: `<a href="https://prototype-kit.service.gov.uk/docs/">Link to the Prototype Kit</a>`
-
 ## Attributes
 
-Attributes are values you can add to opening tags to change the element’s default behaviour. For example, to change the colour of text using the style attribute:
+Attributes are values you can add to opening tags to change the element. 
+
+To make a heading look like a GOV.UK heading, we can add the `class` attribute `"govuk-heading-l"`:
 
 
-`<p  style="color: green;">Text that's changed to the colour green using HTML attributes</p>`
+```
+<h1 class="govuk-heading-l">govuk-heading-l</h1>
+```
+
+
+## HTML structure
+
+We can start to build a page with different elements:
+```
+<div>
+  <h1 class="govuk-heading-l">Page heading</h1>
+  <p>Some text for the heading.</p>
+</div>
+
+```
+We use a `<div>` to create a page section, then include elements within it. In our first section we've included a `<h1>` and a `<p>`.
 
 
 
-<!--
+
+
+
 {% from "govuk/components/pagination/macro.njk" import govukPagination %}
 {{ govukPagination({
   next: {
@@ -77,4 +59,4 @@ Attributes are values you can add to opening tags to change the element’s defa
     href: "link-pages-together"
   }
 }) }}
--->
+

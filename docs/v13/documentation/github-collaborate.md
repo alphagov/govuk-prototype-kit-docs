@@ -1,5 +1,5 @@
 ---
-heading: Save and download changes using GitHub Desktop
+heading: Collaborate on prototypes using GitHub Desktop
 ---
 
 When you store a prototype on GitHub, you can collaborate on your code with anyone in your team.

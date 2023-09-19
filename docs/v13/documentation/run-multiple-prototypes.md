@@ -11,7 +11,7 @@ You can run as many prototypes as you like. Each prototype needs a different por
 4. View your prototype at http://localhost:3001. 
 
 ## If you want to regularly run multiple prototypes
-You can set your prototype a port number in `app/config.js`:
+You can set a port number for your prototype in `app/config.js`:
 
 ```
 {

@@ -25,9 +25,18 @@ You can also shorten (or 'truncate') the month 'March':
 ```
 {{ 3 | monthName("truncate") }}
 ```
-## Show a deadline 
-You can use filters to show how many days have passed since an application:
+## Show the number of days since an application was made 
+To show how many days have passed since the user submitted their application:
 
 ```
-You submitted your application {{ "2024-01-31" | duration(5) }} days ago.
+{% set dateSubmitted = '2023-09-18' %}
+
+<p>You submitted your application {{ dateSubmitted | daysAgo | plural("day") }} ago</p>
+```
+
+## Show when a user is eligible
+If you ask for the user's date of birth, you can use filters to show when they're eligible to use your service. For example, if the user must be 18 to apply:
+
+```
+<p>You can apply for a juggling licence on {{ dateOfBirth | duration(18, 'years') | govukDate }}</p>
 ```

@@ -15,7 +15,7 @@ title: Migrate an existing prototype to version 13
 
 5. In your prototype folder, run this command in the terminal:
 
-    `npx govuk-prototype-kit@13 migrate`
+    `npx govuk-prototype-kit@latest migrate`
 
 6. If some migration steps fail, the script will report these.
 

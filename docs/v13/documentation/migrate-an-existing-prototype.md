@@ -3,7 +3,7 @@ heading: Migrate an existing prototype to version 13
 title: Migrate an existing prototype to version 13
 ---
 
-1. If you do not already have it, [install Node.js version 18](https://nodejs.org/en).
+1. If you do not already have it, [install Node.js version 20](https://nodejs.org/en).
 
 2. In the terminal, change to your prototype folder. 
 

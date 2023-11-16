@@ -41,19 +41,18 @@ Add another environment variable where the `name` is `USERNAME` and the `value` 
 
 ## If you want to create additional passwords
 
-In some cases you might want to give temporary access to your prototype, eg. for a round of user research or to show it to a stakeholder.
+In some cases you might want to give temporary access to your prototype. For example, for a round of user research or to show it to a stakeholder.
 
 To support this, you can create additional passwords. You can revoke these later whilst still providing access for your team via the primary password.
 
-To set additional passwords, you need to first add an environment variable PASSWORD_KEYS that lists the keys of the additional passwords:
-
-- PASSWORD_KEYS=PASSWORD_01,PASSWORD_02
+To set additional passwords, you need to first add an environment variable `PASSWORD_KEYS` that lists the keys of the additional passwords.
+For example, to add password keys `PASSWORD_01` and `PASSWORD_02` you need to add the following environment variable where the: 
+- `name` is `PASSWORD_KEYS`, and the `value` is `PASSWORD_01,PASSWORD_02`
 
 The password keys are not the passwords, they just identify them. They can take any unique value that’s a valid environment variable.
 
 To specify the passwords, add an environment variable for each one, like this:
-
-- PASSWORD_01=password01
-- PASSWORD_02=password02
+- `name` is `PASSWORD_01`, and the `value` is `password01`
+- `name` is `PASSWORD_02`, and the `value` is `password02`
 
 Please make sure your prototype kit is version **13.15.0** or later to allow this functionality to work.

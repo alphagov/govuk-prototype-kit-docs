@@ -27,7 +27,7 @@ title: Migrate an existing prototype to version 13
 
 ## If your prototype does not work
 
-If your prototype does not work, compare the new `package.json` file to the `package.json` file in the backup you made in step 3.
+If your prototype does not work, compare the new `package.json` file to the `package.json` file in the backup you made in step 4.
 
 Run `npm install PACKAGE-NAME` for each package that's missing in the new file.
 

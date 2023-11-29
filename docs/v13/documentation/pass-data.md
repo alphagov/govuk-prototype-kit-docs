@@ -110,10 +110,22 @@ To set data from a link, add a `?` to the `href` followed by the data you want t
 <a href="/start?first-name=Amina">
 ```
 
+To clear data from a link, as above without the equals sign and the value:
+
+```
+<a href="/start?first-name">
+```
+
 To set more than one piece of data in a link, use an `&` between them:
 
 ```
 <a href="/start?first-name=Amina&over-18=yes">
+```
+
+To clear more than one piece of data in a link, as above without the equals sign and the value:
+
+```
+<a href="/start?first-name&over-18">
 ```
 
 If the user changes this data in the prototype, their new answers will be saved.

@@ -1,7 +1,6 @@
 {
   "paths": {
     "public": "public",
-    "cypress": "cypress",
     "nodeModules": "node_modules",
     "lib": "lib"
   }

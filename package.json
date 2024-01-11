@@ -35,7 +35,6 @@
     "marked": "^4.0.10",
     "memorystore": "^1.6.7",
     "nodemon": "^2.0.15",
-    "notifications-node-client": "^5.1.0",
     "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",
     "require-dir": "^1.0.0",

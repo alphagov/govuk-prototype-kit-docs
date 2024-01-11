@@ -1,14 +1,15 @@
 # Contribution guidelines
 
-We really like contributions and bug reports, in fact the project wouldn't have got to this stage without them.
-We do have a few guidelines to bear in mind.
+
+The GOV.UK Prototype Kit is currently maintained by the [GOV.UK Design System team](https://design-system.service.gov.uk/get-in-touch/).
+
+[There is only minimal support in place](https://github.com/alphagov/govuk-prototype-kit/issues/2389) so we cannot work on contributions at this time.
 
 ## Contributing
 
 If you’ve got an idea or suggestion you can:
 
-* email [govuk-prototype-kit-support@digital.cabinet-office.gov.uk](mailto:govuk-prototype-kit-support@digital.cabinet-office.gov.uk)
-* [get in touch on developer Slack channel](https://ukgovernmentdigital.slack.com/archives/C0E1063DW)
+* [share with other users on the Slack channel](https://ukgovernmentdigital.slack.com/archives/C0647LW4R)
 * [create a GitHub issue](https://github.com/alphagov/govuk-prototype-kit/issues)
 
 ## Raising bugs

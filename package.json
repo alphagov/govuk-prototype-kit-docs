@@ -13,8 +13,6 @@
     "lint": "standard",
     "rapidtest": "jest --bail",
     "test:heroku": "start-server-and-test 'npx --yes heroku local --port 3000' 3000 'curl localhost:3000'",
-    "test:acceptance": "KIT_TEST_DIR=tmp/test-prototype-package start-server-and-test 'node cypress/scripts/run-starter-prototype' 3000 'cypress run'",
-    "test:acceptance:open": "KIT_TEST_DIR=tmp/test-prototype-package start-server-and-test 'node cypress/scripts/run-starter-prototype' 3000 'cypress open'",
     "test": "jest && npm run lint"
   },
   "dependencies": {
@@ -37,7 +35,6 @@
     "marked": "^4.0.10",
     "memorystore": "^1.6.7",
     "nodemon": "^2.0.15",
-    "notifications-node-client": "^5.1.0",
     "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",
     "require-dir": "^1.0.0",
@@ -47,8 +44,6 @@
     "uuid": "^8.3.2"
   },
   "devDependencies": {
-    "cypress": "^10.6.0",
-    "eslint-plugin-cypress": "^2.12.1",
     "glob": "^7.1.4",
     "govuk-prototype-kit": "^0.0.1-alpha.3",
     "jest": "^28.1.1",
@@ -57,17 +52,8 @@
     "supertest": "^6.3.3",
     "wait-on": "^6.0.1"
   },
-  "standard": {
-    "plugins": [
-      "cypress"
-    ],
-    "env": {
-      "cypress/globals": true
-    }
-  },
   "jest": {
     "testPathIgnorePatterns": [
-      "__tests__/spec/utils.js",
       "/node_modules/",
       "/tmp/"
     ]

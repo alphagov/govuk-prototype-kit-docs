@@ -24,9 +24,7 @@ The team has also made the website text as simple as possible to understand.
 
 ### Feedback and contact information
 
-The GOV.UK Prototype team is always looking to improve the accessibility of this website. If you find any problems that are not listed on this page or think this website is not meeting accessibility requirements, email the GOV.UK Prototype team at govuk-prototype-kit-support@digital.cabinet-office.gov.uk
-
-The GOV.UK Prototype team will review your request and get back to you in 2 working days.
+The GOV.UK Prototype Kit is maintained by the GOV.UK Design System team. If you find any problems that are not listed on this page or think this website is not meeting accessibility requirements, email the GOV.UK Design System team at govuk-design-system-support@digital.cabinet-office.gov.uk
 
 ### Enforcement procedure
 

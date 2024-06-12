@@ -62,6 +62,10 @@ router.get('/make-first-prototype/add-questions', function (req, res) {
   res.redirect('/docs/make-first-prototype/use-components')
 })
 
+router.get('/make-first-prototype/make-first-prototype', function (req, res) {
+  res.redirect('/docs/make-first-prototype/start')
+})
+
 router.get('/templates/check-your-answers', function (req, res) {
   res.redirect('/docs/templates/check-answers')
 })

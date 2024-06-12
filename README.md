@@ -1,44 +1,20 @@
-# GOV.UK Prototype Kit
+# GOV.UK Prototype Kit Docs
 
-Go to the [GOV.UK Prototype Kit site](https://prototype-kit.service.gov.uk/docs/) to download the latest version and read the documentation.
+This repository contains the code for the [GOV.UK Prototype Kit website](https://prototype-kit.service.gov.uk/docs/).
 
-## About the Prototype Kit
+The code for the Prototype Kit can be found at [alphagov/govuk-prototype-kit](https://github.com/alphagov/govuk-prototype-kit).
 
-The Prototype Kit provides a simple way to make interactive prototypes that look like pages on GOV.UK. These prototypes can be used to show ideas to people you work with, and to do user research.
+## History of this repo
 
-Read the [project principles](https://prototype-kit.service.gov.uk/docs/principles).
+The Prototype Kit used to include its own documentation, and the Prototype Kit website was a deployed version of the Prototype Kit with specific flags set to always redirect to the documentation.
 
-## Make sure prototypes are password-protected
+This repo was originally created in 2020 to spike a new documentation site based on the Design System website.
 
-If you publish your prototypes online, they **must** be protected by a [username and password](https://prototype-kit.service.gov.uk/docs/publishing-on-heroku). This is to prevent members of the public finding prototypes and thinking they are real services.
+In June 2022 the documentation was removed from the Prototype Kit repo. At that point, the history of the `main` branch for this repo was rewritten to have the same history as the Prototype Kit repo, preserving the documentation so that it could be served from this repo instead.
 
-You must protect user privacy at all times, even when using prototypes. Prototypes made with the kit look like GOV.UK, but do not have the same security provisions. Always make sure you are handling user data appropriately.
+The original history from the spike is preserved in the `from-govuk-design-system` branch.
 
-## Installation instructions
-
-- [Installation guide for new users (non technical)](https://prototype-kit.service.gov.uk/docs/install/introduction)
-- [Installation guide for developers (technical)](https://prototype-kit.service.gov.uk/docs/install/developer-install-instructions)
-
-## Support
-
-The GOV.UK Prototype Kit is maintained by the Government Digital Service. If you’ve got a question or need support you can:
-
-* email [govuk-prototype-kit-support@digital.cabinet-office.gov.uk](mailto:govuk-prototype-kit-support@digital.cabinet-office.gov.uk)
-* [get in touch on Slack](https://ukgovernmentdigital.slack.com/archives/C0647LW4R)
-* [view known issues on GitHub](https://github.com/alphagov/govuk-prototype-kit/issues)
-
-## Contributing
-
-If you’ve got an idea or suggestion, you can:
-
-* [get in touch on the developer Slack channel](https://ukgovernmentdigital.slack.com/archives/C0E1063DW)
-* [create a GitHub issue](https://github.com/alphagov/govuk-prototype-kit/issues)
-
-The govuk-prototype-kit repository is public and we welcome contributions from anyone.
-
-Contributors to alphagov repositories are expected to follow the [Contributor Covenant Code of Conduct](https://github.com/alphagov/.github/blob/main/CODE_OF_CONDUCT.md#contributor-covenant-code-of-conduct). Contributors working within government are also expected to follow the [Civil Service code](https://www.gov.uk/government/publications/civil-service-code/the-civil-service-code).
-
-We're unable to monitor activity on this repository outside of our office hours (10am to 4pm, UK time). To get a faster response at other times, you can [report abuse or spam to GitHub](https://docs.github.com/en/communities/maintaining-your-safety-on-github/reporting-abuse-or-spam).
+[Read issue #22 for more information](https://github.com/alphagov/govuk-prototype-kit-docs/issues/22#issuecomment-1162876785).
 
 ### Security
 

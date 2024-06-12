@@ -30,13 +30,3 @@ You'll also need a code editor. These two are popular, well established and fair
  - [Notepad++](https://notepad-plus-plus.org) (Windows only)
 
 [Next (open your prototype in your editor)](open-prototype-in-editor)
-
-<hr>
-
-## Give feedback
-
-If you would like to give feedback about this tutorial, or you’ve got a question, get in touch with the GOV.UK Design System team:
-
-- on the <a class="govuk-link" href="https://ukgovernmentdigital.slack.com/archives/C0647LW4R" data-hsupport="slack">#prototype-kit channel on cross-government Slack</a>
-
-- by email at <a class="govuk-link" href="mailto:govuk-prototype-kit-support@digital.cabinet-office.gov.uk" data-hsupport="email">govuk-prototype-kit-support@digital.cabinet-office.gov.uk</a>

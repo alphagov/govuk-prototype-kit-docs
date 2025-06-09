@@ -147,6 +147,8 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
 
   var nunjucksDocumentationEnv = nunjucks.configure(documentationApp.get('views'), nunjucksConfig)
 
+  nunjucksDocumentationEnv.addGlobal('govukRebrand', true)
+
   // Nunjucks filters
   utils.addNunjucksFilters(nunjucksDocumentationEnv)
 

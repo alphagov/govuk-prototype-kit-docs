@@ -176,7 +176,7 @@ describe('The Prototype Kit', () => {
           if (err) {
             done(err)
           } else {
-            assert.strictEqual('' + res.body, readFile('node_modules/govuk-frontend/govuk/assets/images/favicon.ico'))
+            assert.strictEqual('' + res.body, readFile('node_modules/govuk-frontend/dist/govuk/assets/images/favicon.ico'))
             done()
           }
         })

@@ -11,6 +11,7 @@
     "dev": "node lib/build/build-watch-and-serve",
     "serve": "node listen-on-port",
     "lint": "standard",
+    "lint:md": "remark --config '**/*.{md,md.njk}' --ignore-path=.gitignore --silently-ignore", 
     "rapidtest": "jest --bail",
     "test:heroku": "start-server-and-test 'npx --yes heroku local --port 3000' 3000 'curl localhost:3000'",
     "test": "jest && npm run lint"
@@ -47,6 +48,9 @@
     "glob": "^7.1.4",
     "govuk-prototype-kit": "^0.0.1-alpha.3",
     "jest": "^28.1.1",
+    "remark-cli": "^12.0.1",
+    "remark-lint": "^10.0.1",
+    "remark-lint-code-block-style": "^4.0.1",
     "standard": "^14.3.3",
     "start-server-and-test": "^1.14.0",
     "supertest": "^6.3.3",
@@ -56,6 +60,15 @@
     "testPathIgnorePatterns": [
       "/node_modules/",
       "/tmp/"
+    ]
+  },
+  "remarkConfig": {
+    "plugins": [
+      "remark-lint",
+      [
+        "remark-lint-code-block-style",
+        "fenced"
+      ]
     ]
   }
 }

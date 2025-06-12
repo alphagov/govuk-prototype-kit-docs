@@ -32,7 +32,7 @@
     "gray-matter": "^4.0.3",
     "inquirer": "^8.2.0",
     "lodash": "^4.17.21",
-    "marked": "^4.0.10",
+    "marked": "^15.0.12",
     "memorystore": "^1.6.7",
     "nodemon": "^2.0.15",
     "nunjucks": "^3.2.1",

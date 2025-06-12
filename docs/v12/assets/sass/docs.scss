@@ -2,8 +2,11 @@
 $govuk-assets-path: '/govuk/assets/';
 
 $govuk-new-link-styles: true;
+$govuk-suppressed-warnings: (
+  'legacy-colour-param',
+);
 
-@import "node_modules/govuk-frontend/dist/govuk/all";
+@import "node_modules/govuk-frontend/dist/govuk/index";
 
 img{
   max-width: 100%;

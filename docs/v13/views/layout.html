@@ -39,13 +39,13 @@
 
 {% block header %}
   {{ govukHeader({
-    useTudorCrown: true,
     homepageUrl: baseUrl,
-    serviceName: "Prototype Kit version 13",
-    serviceUrl: baseUrl
+    productName: "Prototype Kit"
   }) }}
   {{
     govukServiceNavigation({
+      serviceName: "v13 documentation",
+      serviceUrl: baseUrl,
       navigation: [
         {
           href: baseUrl + "/create-new-prototype",

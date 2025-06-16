@@ -40,12 +40,13 @@
 
 {% block header %}
   {{ govukHeader({
-    homepageUrl: baseUrl,
-    serviceName: serviceName,
-    serviceUrl: baseUrl
+    homepageUrl: "/docs",
+    productName: "Prototype Kit"
   }) }}
   {{
     govukServiceNavigation({
+      serviceName: "v12 and earlier documentation",
+      serviceUrl: baseUrl,
       navigation: [
         {
           href: baseUrl + "/install",

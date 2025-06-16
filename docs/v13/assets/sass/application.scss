@@ -1,6 +1,7 @@
 // global styles for <a> and <p> tags
 $govuk-global-styles: true;
 $govuk-new-link-styles: true;
+$govuk-new-typography-scale: true;
 $govuk-suppressed-warnings: (
   'legacy-colour-param',
 );

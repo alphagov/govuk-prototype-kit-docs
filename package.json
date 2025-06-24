@@ -11,7 +11,7 @@
     "dev": "node lib/build/build-watch-and-serve",
     "serve": "node listen-on-port",
     "lint": "standard",
-    "lint:md": "remark --config '**/*.{md,md.njk}' --ignore-path=.gitignore --silently-ignore", 
+    "lint:md": "remark --config '**/*.{md,md.njk}' --ignore-path=.gitignore --silently-ignore",
     "rapidtest": "jest --bail",
     "test:heroku": "start-server-and-test 'npx --yes heroku local --port 3000' 3000 'curl localhost:3000'",
     "test": "jest && npm run lint"
@@ -29,7 +29,7 @@
     "express": "^4.18.2",
     "express-session": "^1.17.3",
     "fs-extra": "^10.0.1",
-    "govuk-frontend": "^5.10.2",
+    "govuk-frontend": "^5.11.0",
     "gray-matter": "^4.0.3",
     "inquirer": "^8.2.0",
     "lodash": "^4.17.21",

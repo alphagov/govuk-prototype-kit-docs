@@ -8,13 +8,17 @@ To do this you will need to create 'routes' - rules for the server to respond to
 
 For example, with a route of `/sample` the URL is:
 
-    http://localhost:3000/sample
-    
+```
+http://localhost:3000/sample
+```    
+
 All routes for the application are kept in the `routes.js` file. They follow this format:
 
-    verb(route, callback(request, response) {
-        response.render(template, data);
-    });
+```js
+verb(route, callback(request, response) {
+    response.render(template, data);
+});
+```
 
 Let's break this down into bits:
 
@@ -29,13 +33,17 @@ Let's break this down into bits:
 
 So as an example, a request for the URL `http://localhost:3000/examples/template-data` has this route:
 
-    router.get('/examples/template-data', function(req, res) {
-        res.render('examples/template-data', { 'name' : 'Foo' });
-    });
+```js
+router.get('/examples/template-data', function(req, res) {
+    res.render('examples/template-data', { 'name' : 'Foo' });
+});
+```
     
 We are saying that for a `get` request for the `/template-data` route we should run the code:
 
-    res.render('examples/template-data', { 'name' : 'Foo' });
+```js
+res.render('examples/template-data', { 'name' : 'Foo' });
+```
     
 This is the `render` method of the `res` parameter being run with two parameters: 
 

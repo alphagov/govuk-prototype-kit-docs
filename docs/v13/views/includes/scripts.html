@@ -3,10 +3,10 @@
 <script src="/public/docs/shared/javascripts/analytics-consent-and-init.js"></script>
 
 {% for scriptUrl in extensionConfig.scripts %}
-  <script src="{{scriptUrl}}"></script>
+  <script src="{{scriptUrl}}" {% if scriptUrl.indexOf('extension-assets/govuk-frontend') != -1 %}type="module"{% endif %}></script>
 {% endfor %}
 
-<script src="/extension-assets/govuk-frontend/govuk/all.js"></script>
-<script src="/public/docs/v13/javascripts/docs.js"></script>
+<script src="/extension-assets/govuk-frontend/dist/govuk/govuk-frontend.min.js" type="module"></script>
+<script src="/public/docs/v13/javascripts/docs.js" type="module"></script>
 
 <script src="/public/docs/v13/javascripts/auto-store-data.js"></script>

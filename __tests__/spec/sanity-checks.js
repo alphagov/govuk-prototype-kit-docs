@@ -154,14 +154,14 @@ describe('The Prototype Kit', () => {
   describe('extensions', () => {
     it('should allow known assets to be loaded from node_modules', (done) => {
       request(app)
-        .get('/extension-assets/govuk-frontend/govuk/all.js')
+        .get('/extension-assets/govuk-frontend/dist/govuk/govuk-frontend.min.js')
         .expect('Content-Type', /application\/javascript; charset=UTF-8/)
         .expect(200)
         .end(function (err, res) {
           if (err) {
             done(err)
           } else {
-            assert.strictEqual('' + res.text, readFile('node_modules/govuk-frontend/govuk/all.js'))
+            assert.strictEqual('' + res.text, readFile('node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js'))
             done()
           }
         })
@@ -176,7 +176,7 @@ describe('The Prototype Kit', () => {
           if (err) {
             done(err)
           } else {
-            assert.strictEqual('' + res.body, readFile('node_modules/govuk-frontend/govuk/assets/images/favicon.ico'))
+            assert.strictEqual('' + res.body, readFile('node_modules/govuk-frontend/dist/govuk/assets/images/favicon.ico'))
             done()
           }
         })

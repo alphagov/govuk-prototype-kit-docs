@@ -20,6 +20,7 @@
 {% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
 {% from "govuk/components/radios/macro.njk"        import govukRadios %}
 {% from "govuk/components/select/macro.njk"        import govukSelect %}
+{% from "govuk/components/service-navigation/macro.njk"        import govukServiceNavigation %}
 {% from "govuk/components/skip-link/macro.njk"     import govukSkipLink %}
 {% from "govuk/components/table/macro.njk"         import govukTable %}
 {% from "govuk/components/tabs/macro.njk"          import govukTabs %}
@@ -39,33 +40,38 @@
 
 {% block header %}
   {{ govukHeader({
-    homepageUrl: baseUrl,
-    serviceName: serviceName,
-    serviceUrl: baseUrl,
-    navigation: [
-      {
-        href: baseUrl + "/install",
-        text: "Install",
-        attributes: {
-          "data-install": "Install"
-        }
-      },
-      {
-        href: baseUrl + "/tutorials-and-examples",
-        text: "Tutorials and templates",
-        attributes: {
-          "data-tutorials": "Tutorials and templates"
-        }
-      },
-      {
-        href: baseUrl + "/about",
-        text: "About",
-        attributes: {
-          "data-about": "About"
-        }
-      }
-    ]
+    homepageUrl: "/docs",
+    productName: "Prototype Kit"
   }) }}
+  {{
+    govukServiceNavigation({
+      serviceName: "v12 and earlier documentation",
+      serviceUrl: baseUrl,
+      navigation: [
+        {
+          href: baseUrl + "/install",
+          text: "Install",
+          attributes: {
+            "data-install": "Install"
+          }
+        },
+        {
+          href: baseUrl + "/tutorials-and-examples",
+          text: "Tutorials and templates",
+          attributes: {
+            "data-tutorials": "Tutorials and templates"
+          }
+        },
+        {
+          href: baseUrl + "/about",
+          text: "About",
+          attributes: {
+            "data-about": "About"
+          }
+        }
+      ]
+    })
+  }}
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}

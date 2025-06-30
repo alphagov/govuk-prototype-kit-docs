@@ -49,7 +49,7 @@ There is a new approach to routes, templates and layouts:
 
 ### Using Node.js
 
-The Prototype Kit no longer supports versions 12, 14 or 16 of Node.js. We recommend you update to the latest LTS version Node.js 20.
+The Prototype Kit no longer supports versions 12, 14 or 16 of Node.js. We recommend you update to the latest LTS version Node.js 22.
 
 ### GOV.UK Frontend
 When creating a new prototype, you will always have the latest version of GOV.UK Frontend.

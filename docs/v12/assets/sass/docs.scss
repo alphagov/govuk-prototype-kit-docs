@@ -53,7 +53,7 @@ figure {
   overflow: auto;
   border: $govuk-focus-width solid transparent;
   outline: 1px solid $govuk-border-colour;
-  background-color: govuk-colour("light-grey", $legacy: "grey-4");
+  background-color: govuk-colour("light-grey");
   max-width: 38em;
   @include govuk-responsive-margin(5, "bottom");
 
@@ -120,7 +120,7 @@ figure {
   p code,
   li code {
     color: #d13118;
-    background-color: govuk-colour("light-grey", $legacy: "grey-4");
+    background-color: govuk-colour("light-grey");
     padding: 0 govuk-spacing(1);
   }
 

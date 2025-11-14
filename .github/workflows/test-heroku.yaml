@@ -13,11 +13,11 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v2
-    - name: Use Node v18
-      uses: actions/setup-node@v3
+    - uses: actions/checkout@v5.0.0
+    - name: Use Node v24
+      uses: actions/setup-node@v6.0.0
       with:
         cache: 'npm'
-        node-version: '18'
+        node-version-file: '.nvmrc'
     - run: npm ci
     - run: npm run test:heroku

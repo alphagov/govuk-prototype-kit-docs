@@ -12,7 +12,7 @@ jobs:
     strategy:
       fail-fast: false  # continue other tests if one test in matrix fails
       matrix:
-        node-version: [20.x]
+        node-version: [24.x]
         os: [ubuntu-latest]
 
     name: Test kit on Node v${{ matrix.node-version }} (${{ matrix.os }})
@@ -27,23 +27,23 @@ jobs:
       CYPRESS_CACHE_FOLDER: ~/.cache/Cypress
 
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v5.0.0
         with:
           fetch-depth: 0
 
       - name: Use Node v${{ matrix.node-version }}
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4.4.0
         with:
           cache: 'npm'
           node-version: ${{ matrix.node-version }}
 
       - name: Cache Cypress binary
-        uses: actions/cache@v3
+        uses: actions/cache@v4.3.0
         with:
           path: ~/.cache/Cypress
           key: cypress-${{ runner.os }}-cypress-${{ hashFiles('**/package.json') }}
 
-      - run: npm install -g npm@8
+      - run: npm install
 
       - run: npm ci
         env:

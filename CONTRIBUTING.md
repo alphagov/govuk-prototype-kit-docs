@@ -1,7 +1,7 @@
 # Contribution guidelines
 
 
-The GOV.UK Prototype Kit is currently maintained by the [GOV.UK Design System team](https://design-system.service.gov.uk/get-in-touch/).
+The GOV.UK Prototype Kit is currently maintained by the [GOV.UK Design System team](https://design-system.service.gov.uk/contact/).
 
 [There is only minimal support in place](https://github.com/alphagov/govuk-prototype-kit/issues/2389) so we cannot work on contributions at this time.
 

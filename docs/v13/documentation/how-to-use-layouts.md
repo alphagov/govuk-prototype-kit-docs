@@ -33,16 +33,16 @@ If you do not want to use the GOV.UK logo or footer, you can choose to use unbra
 
 ## Using blocks
 
-Blocks are how layouts and pages share code. For example, there is a block called `header` for the header content on every page.
+Blocks are how layouts and pages share code. For example, there is a block called `govukHeader` for the header content on every page.
 
 These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas).
 
 ### Header block
 
-You can make changes to the existing GOV.UK header using the `header` block. This example adds navigation:
+You can make changes to the existing GOV.UK header using the `govukHeader` block. This example adds navigation:
 
 ```
-{% block header %}
+{% block govukHeader %}
 {{ govukHeader({
   homepageUrl: "#",
   serviceName: "Service name",
@@ -68,12 +68,14 @@ You can make changes to the existing GOV.UK header using the `header` block. Thi
 
 Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
 
+> If you're using GOV.UK Frontend 5 the block is called `header`.
+
 ### Footer block
 
-You can make changes to the existing GOV.UK footer using the `footer` block:
+You can make changes to the existing GOV.UK footer using the `govukFooter` block:
 
 ```
-{% block footer %}
+{% block govukFooter %}
  {{ govukFooter({
    meta: {
      items: [
@@ -97,6 +99,8 @@ You can make changes to the existing GOV.UK footer using the `footer` block:
 ```
 
 Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/).
+
+> If you're using GOV.UK Frontend 5 the block is called `footer`.
 
 ## Stylesheets (CSS) and JavaScript
 

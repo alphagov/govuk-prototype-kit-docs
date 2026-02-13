@@ -31,72 +31,15 @@ You can make changes to existing blocks and define your own blocks in your layou
 
 If you do not want to use the GOV.UK logo or footer, you can choose to use unbranded pages in your prototype. Go to <strong>Manage your prototype</strong> and create a page with the <strong>Unbranded page</strong> template.
 
-## Using blocks
+## Changing template content
 
-Blocks are how layouts and pages share code. For example, there is a block called `header` for the header content on every page.
+You can change parts of the template by setting variables and blocks, for example:
 
-These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas).
+- customising or replacing the default header, service navigation or footer
+- setting the `content` block to add content to the page
+- adding your own content to other blocks
 
-### Header block
-
-You can make changes to the existing GOV.UK header using the `header` block. This example adds navigation:
-
-```
-{% block header %}
-{{ govukHeader({
-  homepageUrl: "#",
-  serviceName: "Service name",
-  serviceUrl: "#",
-  navigation: [
-    {
-      href: "#1",
-      text: "Navigation item 1",
-      active: true
-    },
-    {
-      href: "#2",
-      text: "Navigation item 2"
-    },
-    {
-      href: "#3",
-      text: "Navigation item 3"
-    }
-  ]
-}) }}
-{% endblock %}
- ```
-
-Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
-
-### Footer block
-
-You can make changes to the existing GOV.UK footer using the `footer` block:
-
-```
-{% block footer %}
- {{ govukFooter({
-   meta: {
-     items: [
-       {
-         href: "/privacy",
-         text: "Privacy policy"
-       },
-       {
-         href: "/manage-prototype",
-         text: "Manage your prototype"
-       },
-       {
-         href: "/manage-prototype/clear-data",
-         text: "Clear data"
-       }
-     ],
-     visuallyHiddenTitle: "Footer links"
-   }
- }) }}
-{% endblock %}
-```
-
-Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/).
+[See the page template guidance on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/) for more information on how to change template content.
 
 ## Stylesheets (CSS) and JavaScript
 

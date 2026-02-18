@@ -33,11 +33,11 @@ If you do not want to use the GOV.UK logo or footer, you can choose to use unbra
 
 ## Using blocks
 
-Blocks are how layouts and pages share code. For example, there is a block called `govukHeader` for the header on every page.
+Blocks are how layouts and pages share code. For example, there's a block called `govukHeader` for the header on every page.
 
 You can use blocks to:
 
-- customise or replace the default header, service navigation or footer
+- customise or replace the default GOV.UK header, GOV.UK footer or Service navigation components
 - add your own content to parts of the page
 - include extra scripts or stylesheets in the page
 
@@ -45,9 +45,9 @@ You can use blocks to:
 
 ### Customising service navigation
 
-Your prototype will already include [service navigation](https://design-system.service.gov.uk/components/service-navigation/) if you've set `serviceName` in the config for your prototype.
+Your prototype will already include the [Service navigation component](https://design-system.service.gov.uk/components/service-navigation/) if you've set `serviceName` in the config for your prototype.
 
-If you want to add additional links to your service navigation, you'll need to use the `govukServiceNavigation` block to replace the default service navigation with your own:
+If you want to add additional links to your Service navigation, you'll need to use the `govukServiceNavigation` block to replace the default Service navigation component with your own:
 
 ```
 {% block govukServiceNavigation %}

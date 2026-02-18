@@ -33,47 +33,51 @@ If you do not want to use the GOV.UK logo or footer, you can choose to use unbra
 
 ## Using blocks
 
-Blocks are how layouts and pages share code. For example, there is a block called `header` for the header content on every page.
+Blocks are how layouts and pages share code. For example, there's a block called `govukHeader` for the header on every page.
 
-These are some of the default blocks on the [template page on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/#exploded-view-of-the-page-template-block-areas).
+You can use blocks to:
 
-### Header block
+- customise or replace the default GOV.UK header, GOV.UK footer or Service navigation components
+- add your own content to parts of the page
+- include extra scripts or stylesheets in the page
 
-You can make changes to the existing GOV.UK header using the `header` block. This example adds navigation:
+[See the page template guidance on the GOV.UK Design System](https://design-system.service.gov.uk/styles/page-template/) for a list of all the blocks you can use.
+
+### Customising service navigation
+
+Your prototype will already include the [Service navigation component](https://design-system.service.gov.uk/components/service-navigation/) if you've set `serviceName` in the config for your prototype.
+
+If you want to add additional links to your Service navigation, you'll need to use the `govukServiceNavigation` block to replace the default Service navigation component with your own:
 
 ```
-{% block header %}
-{{ govukHeader({
-  homepageUrl: "#",
-  serviceName: "Service name",
-  serviceUrl: "#",
-  navigation: [
-    {
-      href: "#1",
-      text: "Navigation item 1",
-      active: true
-    },
-    {
-      href: "#2",
-      text: "Navigation item 2"
-    },
-    {
-      href: "#3",
-      text: "Navigation item 3"
-    }
-  ]
-}) }}
+{% block govukServiceNavigation %}
+  {{ govukServiceNavigation({
+    serviceName: serviceName,
+    navigation: [
+      {
+        href: "#",
+        text: "Navigation item 1"
+      },
+      {
+        href: "#",
+        text: "Navigation item 2",
+        active: true
+      },
+      {
+        href: "#",
+        text: "Navigation item 3"
+      }
+    ]
+  }) }}
 {% endblock %}
  ```
 
-Read more about [headers in the GOV.UK Design System](https://design-system.service.gov.uk/components/header/).
-
 ### Footer block
 
-You can make changes to the existing GOV.UK footer using the `footer` block:
+You can make changes to the [GOV.UK footer](https://design-system.service.gov.uk/components/footer/) using the `govukFooter` block:
 
 ```
-{% block footer %}
+{% block govukFooter %}
  {{ govukFooter({
    meta: {
      items: [
@@ -95,8 +99,6 @@ You can make changes to the existing GOV.UK footer using the `footer` block:
  }) }}
 {% endblock %}
 ```
-
-Read more about [footers in the GOV.UK Design System](https://design-system.service.gov.uk/components/footer/).
 
 ## Stylesheets (CSS) and JavaScript
 

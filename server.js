@@ -23,14 +23,14 @@ const { projectDir } = require('./lib/path-utils')
 const app = express()
 
 // Set up configuration variables
-var env = utils.getNodeEnv()
+const env = utils.getNodeEnv()
 const useHttps = process.env.USE_HTTPS
   ? process.env.USE_HTTPS.toLowerCase() === 'true'
   : true
 
 // Force HTTPS on production. Do this before using basicAuth to avoid
 // asking for username/password twice (for `http`, then `https`).
-var isSecure = (env === 'production' && useHttps)
+const isSecure = (env === 'production' && useHttps)
 if (isSecure) {
   app.use(utils.forceHttps)
   app.set('trust proxy', 1) // needed for secure cookies on heroku
@@ -73,7 +73,7 @@ app.set('views', extensions.getAppViews([
   path.join(projectDir, '/lib/')
 ]))
 
-var nunjucksConfig = {
+const nunjucksConfig = {
   autoescape: true,
   noCache: true,
   watch: false // We are now setting this to `false` (it's by default false anyway) as having it set to `true` for production was making the tests hang
@@ -83,7 +83,7 @@ if (env === 'development') {
   nunjucksConfig.watch = true
 }
 
-var nunjucksAppEnv = nunjucks.configure(app.get('views'), nunjucksConfig)
+const nunjucksAppEnv = nunjucks.configure(app.get('views'), nunjucksConfig)
 
 // Add Nunjucks filters
 utils.addNunjucksFilters(nunjucksAppEnv)
@@ -145,7 +145,7 @@ function createDocumentationApp (docsDir, { latest = false, locals = {} }) {
     path.join(__dirname, 'docs', 'shared', 'views')
   ])
 
-  var nunjucksDocumentationEnv = nunjucks.configure(documentationApp.get('views'), nunjucksConfig)
+  const nunjucksDocumentationEnv = nunjucks.configure(documentationApp.get('views'), nunjucksConfig)
 
   nunjucksDocumentationEnv.addGlobal('govukRebrand', true)
 
@@ -242,8 +242,8 @@ app.use(['/v13/docs', '/docs'],
 
 // Strip .html and .htm if provided
 app.get(/\.html?$/i, function (req, res) {
-  var path = req.path
-  var parts = path.split('.')
+  let path = req.path
+  const parts = path.split('.')
   parts.pop()
   path = parts.join('.') + '/'
   res.redirect(path)
@@ -251,8 +251,8 @@ app.get(/\.html?$/i, function (req, res) {
 
 // Strip .md if provided
 app.get(/\.md$/i, function (req, res) {
-  var path = req.path
-  var parts = path.split('.')
+  let path = req.path
+  const parts = path.split('.')
   parts.pop()
   path = parts.join('.') + '/'
   res.redirect(path)
@@ -269,7 +269,7 @@ app.post(/^\/([^.]+)$/, function (req, res) {
 
 // Catch 404 and forward to error handler
 app.use(function (req, res, next) {
-  var err = new Error(`Page not found: ${req.path}`)
+  const err = new Error(`Page not found: ${req.path}`)
   err.status = 404
   next(err)
 })

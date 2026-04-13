@@ -28,6 +28,7 @@ There are multiple options you can use in the config file, depending on what you
  - [stylesheets](#stylesheets)
  - [templates](#templates)
 
+<a name="assets">
 ### assets
 
 An array of paths for any files you want to make available in a prototype. For example:
@@ -63,6 +64,8 @@ In our example:
 
 If you’re using asset paths in your Sass, use the variable `$govuk-plugins-url-context` instead of `/plugin-assets`. This means that if we change the path in the future you will not need to make any changes.
 
+
+<a name="importnunjucksmacrosinto">
 ### importNunjucksMacrosInto
 
 An array of layout files to import Nunjucks macros into. For example:
@@ -79,6 +82,7 @@ You can include [layout files](./how-to-use-layouts) in your plugin, so that you
 
 `importNunjucksMacrosInto` makes Nunjucks macros (components) from all plugins available in your layout files.
 
+<a name="nunjucksfilters">
 ### nunjucksFilters
 
 An array of files for Nunjucks filters. For example:
@@ -101,6 +105,7 @@ addFilter('somePlugin.uppercase', function (content) {
 })
 ```
 
+<a name="nunjucksmacros">
 ### nunjucksMacros
 
 An array of objects, consisting of:
@@ -149,6 +154,8 @@ The kit normally imports Nunjucks macros for users. If they make their own layou
 
 `{% import somePluginTextInput from "somePlugin/macros/text-input.njk" %}`
 
+
+<a name="nunjuckspaths">
 ### nunjucksPaths
 
 An array of paths for Nunjucks includes, layouts and macros. For example:
@@ -167,6 +174,7 @@ Inside your Nunjucks path folder you need a folder named the same as your namesp
 
 You can add multiple `nunjucksPaths`, but it’s easier for users to find your includes and layouts when you use one.
 
+<a name="plugindependencies">
 ### pluginDependencies
 
 An array of plugins that your plugin depends on. For example:
@@ -189,7 +197,7 @@ You can optionally add a minimum or maximum version:
 }
 ```
 
-
+<a name="sass">
 ### sass
 
 An array of Sass files. For example:
@@ -214,6 +222,8 @@ Use your namespace in your Sass naming, for example:
 
 [Find out more in the Sass documentation](https://sass-lang.com/guide/#variables)
 
+
+<a name="scripts">
 ### scripts
 
 An array of JavaScript files. For example:
@@ -238,6 +248,8 @@ window.SOME_PLUGIN.log = function (whatToLog) {
 }
 ```
 
+
+<a name="stylesheets">
 ### stylesheets
 
 An array of CSS files. For example:
@@ -260,6 +272,7 @@ Use your namespace in your CSS naming, for example:
 }
 ```
 
+<a name="templates">
 ### templates
 
 An array of objects, consisting of:

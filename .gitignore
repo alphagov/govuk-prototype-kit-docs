@@ -15,6 +15,7 @@ usage-data-config.json
 /cypress/videos
 /govuk-prototype-kit*.zip
 tmp/
+.tmp
 
 # General ignores
 .DS_Store

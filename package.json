@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "24.11.0",
-    "npm": "11.6.0"
+    "node": "24.x"
   },
   "scripts": {
     "build": "node lib/build/generate-assets",

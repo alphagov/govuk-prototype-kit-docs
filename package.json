@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@govuk-prototype-kit/step-by-step": "^2.0.0",
-    "ansi-colors": "^4.1.1",
     "body-parser": "^1.14.1",
     "browser-sync": "^2.27.11",
     "chokidar": "^3.5.3",

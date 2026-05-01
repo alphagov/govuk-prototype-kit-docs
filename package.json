@@ -4,8 +4,7 @@
   "version": "0.0.0",
   "private": true,
   "engines": {
-    "node": "24.11.0",
-    "npm": "11.6.0"
+    "node": "24.x"
   },
   "scripts": {
     "build": "node lib/build/generate-assets",
@@ -24,7 +23,6 @@
     "browser-sync": "^2.27.11",
     "chokidar": "^3.5.3",
     "cookie-parser": "^1.4.6",
-    "cross-spawn": "^7.0.2",
     "del": "^6.0.0",
     "dotenv": "^10.0.0",
     "express": "^4.18.2",
@@ -42,9 +40,7 @@
     "portscanner": "^2.1.1",
     "require-dir": "^1.0.0",
     "sass": "^1.49.10",
-    "sync-request": "^6.0.0",
-    "universal-analytics": "^0.5.3",
-    "uuid": "^8.3.2"
+    "universal-analytics": "^0.5.3"
   },
   "devDependencies": {
     "glob": "^7.1.4",
@@ -55,8 +51,7 @@
     "remark-lint-code-block-style": "^4.0.1",
     "standard": "^14.3.3",
     "start-server-and-test": "^1.14.0",
-    "supertest": "^6.3.3",
-    "wait-on": "^6.0.1"
+    "supertest": "^6.3.3"
   },
   "jest": {
     "testPathIgnorePatterns": [

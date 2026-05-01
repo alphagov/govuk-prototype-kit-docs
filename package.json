@@ -18,7 +18,6 @@
   },
   "dependencies": {
     "@govuk-prototype-kit/step-by-step": "^2.0.0",
-    "ansi-colors": "^4.1.1",
     "body-parser": "^1.14.1",
     "browser-sync": "^2.27.11",
     "chokidar": "^3.5.3",
@@ -38,9 +37,7 @@
     "nodemon": "^2.0.15",
     "nunjucks": "^3.2.1",
     "portscanner": "^2.1.1",
-    "require-dir": "^1.0.0",
-    "sass": "^1.49.10",
-    "universal-analytics": "^0.5.3"
+    "sass": "^1.49.10"
   },
   "devDependencies": {
     "glob": "^7.1.4",

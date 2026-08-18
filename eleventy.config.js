@@ -9,7 +9,6 @@ export default function (eleventyConfig) {
       'docs/v13/views',
       'views/partials',
       'views/layouts',
-      'docs/shared/views',
       'node_modules/govuk-frontend/dist'
     ])
   )

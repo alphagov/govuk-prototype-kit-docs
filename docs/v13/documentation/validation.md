@@ -1,6 +1,9 @@
 ---
 heading: Use error messages in the kit 
 ---
+
+{% raw %}
+
 Use the [error summary](https://design-system.service.gov.uk/components/error-summary/) and [error message](https://design-system.service.gov.uk/components/error-message/) to help users recover from validation errors.
 
 Live services use validation messages to help users when they miss information or enter something that cannot be correct. 
@@ -34,9 +37,4 @@ For example, to show an error message for a name input:
     }
   }) }}
   ```
-
-
-
-
-
-
+{% endraw %}

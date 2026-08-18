@@ -16,6 +16,7 @@ Sending users to different pages based on their answers is called branching.
 Create a page that has a form with checkboxes, using this code:
 
 ```
+{% raw %}
 <form class="form" action="/exports-answer" method="post">
 
 {{ govukCheckboxes({
@@ -52,6 +53,7 @@ Create a page that has a form with checkboxes, using this code:
 }) }}
 
 </form>
+{% endraw %}
 ```
 
 In the checkboxes component, the `name` is "exports". The name is important - it is where the kit stores the answer to the question. Names cannot have spaces, so use hyphens instead and use lowercase for simplicity.

@@ -2,6 +2,8 @@
 heading: Use filters to change how answers appear
 ---
 
+{% raw %}
+
 > To use filters, you need to know how to [pass data from page to page](./pass-data).
 
 The kit stores data from all answers that users give in a prototype, so that you can use or show the answers later. To change the format of how these answers appear, you can apply filters. 
@@ -52,3 +54,5 @@ You can also use these filters together:
 ```
 {{ data['name'] | upper | bold }}
 ```
+
+{% endraw %}

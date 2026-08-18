@@ -2,6 +2,7 @@
 heading: Pass data from page to page
 ---
 
+{% raw %}
 
 The kit stores data from all answers that users give in a prototype. This lets you use or show the answers later.
 
@@ -194,3 +195,5 @@ To prevent an input being stored, use an underscore at the start of the name.
 ```
 
 To use this data you'll have to [write your own route](create-routes).
+
+{% endraw %}

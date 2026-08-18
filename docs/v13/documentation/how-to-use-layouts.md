@@ -3,6 +3,8 @@ heading: How to use layouts
 title: How to use layouts
 ---
 
+{% raw %}
+
 Layouts let you share a common design across pages. For example, to include the name of your service or use the GOV.UK footer on every page in your service.
 
 If your pages share a custom header and footer, you can add them to one shared layout file. To change those parts of the page in future, you can change them once and they will update on all the pages that use that layout.
@@ -103,3 +105,5 @@ You can make changes to the [GOV.UK footer](https://design-system.service.gov.uk
 ## Stylesheets (CSS) and JavaScript
 
 You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. [Find out more about adding CSS and JavaScript](./adding-css-javascript-and-images).
+
+{% endraw %}

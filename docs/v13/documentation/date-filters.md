@@ -2,6 +2,8 @@
 heading: Use filters to add dates 
 ---
 
+{% raw %}
+
 > To use date filters, you need to know how to [pass data from page to page](./pass-data) and [use filters to change how answers appear](./filters).
 
 You can [use existing x-govuk date filters](https://x-govuk.github.io/govuk-prototype-filters/get-started/) to add dates that will change in your prototype. 
@@ -43,3 +45,4 @@ You can use filters to show when someone is eligible to use your service. For ex
 
 <p>You can apply for a juggling licence on {{ dateOfBirth | duration(18, 'years') | govukDate }}</p>
 ```
+{% endraw %}

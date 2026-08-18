@@ -1,5 +1,0 @@
-#!/usr/bin/env node
-
-const { buildWatchAndServe } = require('./tasks')
-
-buildWatchAndServe()

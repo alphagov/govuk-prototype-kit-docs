@@ -1,7 +1,0 @@
-{
-  "paths": {
-    "public": "public",
-    "nodeModules": "node_modules",
-    "lib": "lib"
-  }
-}

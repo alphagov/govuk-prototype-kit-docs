@@ -7,14 +7,8 @@
     "node": "24.x"
   },
   "scripts": {
-    "build": "node lib/build/generate-assets",
-    "dev": "node lib/build/build-watch-and-serve",
-    "serve": "node listen-on-port",
     "lint": "standard",
-    "lint:md": "remark --config '**/*.{md,md.njk}' --ignore-path=.gitignore --silently-ignore",
-    "rapidtest": "jest --bail",
-    "test:heroku": "start-server-and-test 'npx --yes heroku local --port 3000' 3000 'curl localhost:3000'",
-    "test": "jest && npm run lint"
+    "lint:md": "remark --config '**/*.{md,md.njk}' --ignore-path=.gitignore --silently-ignore"
   },
   "dependencies": {
     "govuk-frontend": "^5.11.0",
@@ -26,12 +20,6 @@
     "remark-lint": "^10.0.1",
     "remark-lint-code-block-style": "^4.0.1",
     "standard": "^14.3.3"
-  },
-  "jest": {
-    "testPathIgnorePatterns": [
-      "/node_modules/",
-      "/tmp/"
-    ]
   },
   "remarkConfig": {
     "plugins": [

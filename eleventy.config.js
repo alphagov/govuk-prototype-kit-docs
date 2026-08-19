@@ -17,6 +17,8 @@ export default function (eleventyConfig) {
     ])
   )
 
+  nunjucksEnvironment.addGlobal('govukRebrand', true)
+
   eleventyConfig.setLibrary('njk', nunjucksEnvironment)
 
   eleventyConfig.addGlobalData('layout', 'layout.html')

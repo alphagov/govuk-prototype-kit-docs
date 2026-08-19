@@ -19,7 +19,7 @@ A plugin can include:
 * filters
 * JavaScript
 
-> We also have a guide on how to [install and use plugins](https://prototype-kit.service.gov.uk/docs/install-and-use-plugins).
+> We also have a guide on how to [install and use plugins](/install-and-use-plugins).
 
 ## Tutorial
 

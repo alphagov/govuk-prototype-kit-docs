@@ -22,7 +22,7 @@ The main types of prototype are:
 
 -   [sketches](https://designnotes.blog.gov.uk/2014/05/22/gov-uk-sketching-templates/) - explore and discuss basic ideas with colleagues
 -   [click-through](https://design-system.service.gov.uk/community/resources-and-tools/#create-prototypes-and-wireframes) - use a design tool to visualise an early idea and get feedback from colleagues or users
--   [code](https://prototype-kit.service.gov.uk/docs/) - show or test a realistic version of your service that looks and behaves like GOV.UK (best for user research)
+-   [code](/) - show or test a realistic version of your service that looks and behaves like GOV.UK (best for user research)
 
 You should use the type of prototype that best meets your needs at the time.
 
@@ -32,11 +32,11 @@ The advantages of code prototypes are that you can:
 
 -   create a service that looks and behaves like the real thing, on mobile and desktop
 -   test on the user's device and with assistive technology (for example, a screen reader)
--   show different pages based on user input (called '[branching](https://prototype-kit.service.gov.uk/docs/branching-journeys)') to test journey flows
--   [share them by publishing on the web](https://prototype-kit.service.gov.uk/docs/publishing)
+-   show different pages based on user input (called '[branching](/branching-journeys)') to test journey flows
+-   [share them by publishing on the web](/publishing)
 -   make design decisions within the constraints of the web
 -   share understanding of design ideas, flows and behaviours with the whole team
--   [use common tools like Git and GitHub](https://prototype-kit.service.gov.uk/docs/github-desktop) for collaboration and project history
+-   [use common tools like Git and GitHub](/github-desktop) for collaboration and project history
 
 ## Prototype code vs. production code
 
@@ -44,4 +44,4 @@ The point of prototyping in code is to test ideas as quickly as possible, it doe
 
 You must not use prototype code for production. When your service is ready to move into production, the code needs to meet different standards. For example, it needs to be secure and perform well with large volumes of traffic.
 
-[Get started with the GOV.UK Prototype Kit](https://prototype-kit.service.gov.uk/docs/create-new-prototype)
+[Get started with the GOV.UK Prototype Kit](/create-new-prototype)

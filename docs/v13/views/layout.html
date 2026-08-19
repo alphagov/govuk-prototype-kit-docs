@@ -1,7 +1,7 @@
 {#- We can't mount GOV.UK Frontend's assets at root as it's done automatically by the extensions framework. -#}
 {%- set assetPath = '/govuk/assets/rebrand' -%}
 
-{% extends "docs.njk" %}
+{% extends "govuk/template.njk" %}
 
 {% from "govuk/components/back-link/macro.njk"     import govukBackLink %}
 {% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
@@ -74,6 +74,8 @@
 {% endblock %}
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% block content %}{{ content | safe }}{% endblock %}
 
 {% block footer %}
   {{ govukFooter({

@@ -8,7 +8,6 @@ export default function (eleventyConfig) {
     new Nunjucks.FileSystemLoader([
       'docs/v13/views',
       'views/partials',
-      'views/layouts',
       'node_modules/govuk-frontend/dist'
     ])
   )

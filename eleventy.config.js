@@ -26,7 +26,7 @@ export default function (eleventyConfig) {
 
   eleventyConfig.setLibrary('njk', nunjucksEnvironment)
 
-  eleventyConfig.addGlobalData('layout', 'layout.html')
+  eleventyConfig.addGlobalData('layout', 'documentation_template.html')
 
   return {
     htmlTemplateEngine: 'njk',

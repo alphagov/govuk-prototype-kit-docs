@@ -39,30 +39,30 @@
 
 {% block header %}
   {{ govukHeader({
-    homepageUrl: baseUrl,
+    homepageUrl: "/",
     productName: "Prototype Kit"
   }) }}
   {{
     govukServiceNavigation({
       serviceName: "v13 documentation",
-      serviceUrl: baseUrl,
+      serviceUrl: "/",
       navigation: [
         {
-          href: baseUrl + "/create-new-prototype",
+          href: "/create-new-prototype",
           text: "Get started",
           attributes: {
             "data-get-started": "Get started"
           }
         },
         {
-          href: baseUrl + "/tutorials-and-guides",
+          href: "/tutorials-and-guides",
           text: "Tutorials and guides",
           attributes: {
             "data-tutorials": "Tutorials and guides"
           }
         },
         {
-          href: baseUrl + "/support",
+          href: "/support",
           text: "Support",
           attributes: {
             "data-about": "Support"
@@ -82,19 +82,19 @@
     meta: {
       items: [
         {
-          href: baseUrl + "/support",
+          href: "/support",
           text: "Support"
         },
         {
-          href: baseUrl + "/accessibility",
+          href: "/accessibility",
           text: "Accessibility"
         },
         {
-          href: baseUrl + "/cookies",
+          href: "/cookies",
           text: "Cookies"
         },
         {
-          href: baseUrl + "/privacy-notice",
+          href: "/privacy-notice",
           text: "Privacy notice"
         }
       ]

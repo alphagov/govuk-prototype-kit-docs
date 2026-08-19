@@ -11,7 +11,8 @@ export default function (eleventyConfig) {
 
   // Copy font and image assets from govuk-frontend to the project
   eleventyConfig.addPassthroughCopy({
-    './node_modules/govuk-frontend/dist/govuk/assets': 'assets'
+    './node_modules/govuk-frontend/dist/govuk/assets': 'assets',
+    './node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js': 'assets'
   })
 
   eleventyConfig.addPassthroughCopy('src/images')

@@ -18,8 +18,7 @@ export default function (eleventyConfig) {
 
   const nunjucksEnvironment = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
-      'docs/v13/views',
-      'views/partials',
+      'views',
       'node_modules/govuk-frontend/dist'
     ])
   )
@@ -35,7 +34,7 @@ export default function (eleventyConfig) {
     markdownTemplateEngine: 'njk',
     dir: {
       input: 'src',
-      layouts: '../docs/v13/views'
+      layouts: '../views'
     }
   }
 }

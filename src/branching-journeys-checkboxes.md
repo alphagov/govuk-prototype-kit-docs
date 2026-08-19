@@ -62,7 +62,7 @@ The button needs to be between the 2 `form` tags. Do not add an `href` to the bu
 
 The page should look like this:
 
-![What do you export? Select all that apply. Checkboxes: Fruit Vegetables Meat. Button: Continue](/public/docs/v13/images/docs/branching-checkboxes.png)
+![What do you export? Select all that apply. Checkboxes: Fruit Vegetables Meat. Button: Continue](/images/branching-checkboxes.png)
 
 ## Using routes
 

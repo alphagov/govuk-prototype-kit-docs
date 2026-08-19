@@ -41,7 +41,7 @@ You need to navigate to your prototype folder in the terminal. Most commands for
 
 When you open the terminal it should look like this:
 
-![Screenshot of terminal ](/public/docs/v13/images/docs/terminal.png)
+![Screenshot of terminal ](/images/terminal.png)
 
 To navigate to your prototype, type this command into the terminal and press enter:
 
@@ -49,7 +49,7 @@ To navigate to your prototype, type this command into the terminal and press ent
 
 Your terminal should look like this:
 
-![Screenshot of terminal, now in the juggling-licence folder](/public/docs/v13/images/docs/terminal-02.png)
+![Screenshot of terminal, now in the juggling-licence folder](/images/terminal-02.png)
 
 Take note of what is upper or lower case - for example lower case 'd' for 'Documents' will not work.
 

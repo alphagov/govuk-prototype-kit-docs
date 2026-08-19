@@ -31,7 +31,7 @@ In your web browser, go to <a href="http://localhost:3000" target="_blank">open 
   
   <figcaption class="govuk-body">Screenshot of what your prototype homepage should look like:</figcaption>
 
-  ![Heading GOV.UK Prototype Kit, link Manage your prototype, Heading Service name goes here, text Change your service name in the file app/config.json](/public/docs/v13/images/docs/prototype-kit-homepage.png)
+  ![Heading GOV.UK Prototype Kit, link Manage your prototype, Heading Service name goes here, text Change your service name in the file app/config.json](/images/prototype-kit-homepage.png)
 
 </figure>
 

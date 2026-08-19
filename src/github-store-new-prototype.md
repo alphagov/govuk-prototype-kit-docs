@@ -13,7 +13,7 @@ heading: Store your new prototype in GitHub
 
 You may get a warning, like this screenshot:
 
-![Screenshot of the GitHub Desktop app. There is a separate pop-up box with the heading 'Add local repository'. In this box there is a text input labelled 'local path'. A button labelled 'choose'. A link titled 'Create a repository'. A button labelled 'Cancel'. And a button labelled 'Add repository'.](/public/docs/v13/images/docs/github-desktop-add-local-repository.png)
+![Screenshot of the GitHub Desktop app. There is a separate pop-up box with the heading 'Add local repository'. In this box there is a text input labelled 'local path'. A button labelled 'choose'. A link titled 'Create a repository'. A button labelled 'Cancel'. And a button labelled 'Add repository'.](/images/github-desktop-add-local-repository.png)
 
 Do not worry if you get this warning - this is the correct process.
 

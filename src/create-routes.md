@@ -8,7 +8,7 @@ To do this you will need to create 'routes' - rules for the Prototype Kit to res
 
 ## Requests and responses
 
-![Diagram showing a browser on a laptop with an arrow labelled 'request' going to a server. An arrow labelled 'response' comes back to the laptop.](/public/docs/v13/images/docs/request-response.svg)
+![Diagram showing a browser on a laptop with an arrow labelled 'request' going to a server. An arrow labelled 'response' comes back to the laptop.](/images/request-response.svg)
 
 When you enter `http://localhost:3000/start` in a browser, the browser sends a request to the server - the Prototype Kit. The kit processes that request and sends a response.
 

@@ -60,7 +60,7 @@ In the radios component, the `name` is "country". The name is important - it is 
 
 The page should look like this:
 
-![Where do you live? Radios: England, Scotland, Wales, Northern Ireland Button:Continue](/public/docs/v13/images/docs/branching-radios.png)
+![Where do you live? Radios: England, Scotland, Wales, Northern Ireland Button:Continue](/images/branching-radios.png)
 
 ## Using routes
 

@@ -14,6 +14,8 @@ export default function (eleventyConfig) {
     './node_modules/govuk-frontend/dist/govuk/assets': 'assets'
   })
 
+  eleventyConfig.addPassthroughCopy('src/images')
+
   const nunjucksEnvironment = new Nunjucks.Environment(
     new Nunjucks.FileSystemLoader([
       'docs/v13/views',

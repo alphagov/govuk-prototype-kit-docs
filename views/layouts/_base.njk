@@ -8,7 +8,7 @@
       {# normally the notification banner would go in content, before the h1 but after any grid column classes #}
       {# however, for uniformity, we've decided to make the banner full width everywhere, so we can forgo that #}
       {% block notificationBanner %}{% endblock %}
-      {% block content %}{% endblock %}
+      {% block content %}{{ content | safe }}{% endblock %}
     </main>
   </div>
 {% endblock %}

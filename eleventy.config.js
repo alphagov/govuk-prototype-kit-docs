@@ -32,8 +32,8 @@ export default function (eleventyConfig) {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',
     dir: {
-      input: 'docs/v13/documentation',
-      layouts: '../views'
+      input: 'src',
+      layouts: '../docs/v13/views'
     }
   }
 }

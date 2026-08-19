@@ -13,7 +13,7 @@ import cssnano from 'cssnano'
 export function setupStylesheetCompilation (eleventyConfig, { to }) {
   const assetsDir = join(eleventyConfig.dir.output, to)
 
-  const stylesheetsGlob = `${eleventyConfig.dir.input}/../assets/**/*.scss`
+  const stylesheetsGlob = `${eleventyConfig.dir.input}/_stylesheets/**/*.scss`
 
   eleventyConfig.addWatchTarget(stylesheetsGlob)
   eleventyConfig.on('eleventy.before', async () => {

@@ -29,6 +29,10 @@
   {% include "includes/head.html" %}
 {% endblock %}
 
+{% block pageTitle %}
+{% if title %}{{ title }} - {% endif -%} GOV.UK Prototype Kit
+{% endblock %}
+
 {% block bodyStart %}
   <a id="top"></a>
   {% include "includes/cookie-banner.html" %}

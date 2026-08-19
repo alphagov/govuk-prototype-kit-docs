@@ -19,7 +19,7 @@ title: Migrate an existing prototype to version 13
 
 6. If some migration steps fail, the script will report these.
 
-    If this is the case, [contact the GOV.UK Prototype team](./support).
+    If this is the case, [contact the GOV.UK Prototype team](/support).
 
 7. If you are using Git, commit these changes.
 
@@ -31,4 +31,4 @@ If your prototype does not work, compare the new `package.json` file to the `pac
 
 Run `npm install PACKAGE-NAME` for each package that's missing in the new file.
 
-[Contact the GOV.UK Prototype team](./support) if you need help.
+[Contact the GOV.UK Prototype team](/support) if you need help.

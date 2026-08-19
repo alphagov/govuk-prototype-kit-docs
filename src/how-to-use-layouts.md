@@ -104,6 +104,6 @@ You can make changes to the [GOV.UK footer](https://design-system.service.gov.uk
 
 ## Stylesheets (CSS) and JavaScript
 
-You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. [Find out more about adding CSS and JavaScript](./adding-css-javascript-and-images).
+You can use custom layouts to load your own stylesheets (CSS) and JavaScript on multiple pages. [Find out more about adding CSS and JavaScript](/adding-css-javascript-and-images).
 
 {% endraw %}

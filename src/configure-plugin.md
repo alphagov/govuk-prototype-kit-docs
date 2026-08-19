@@ -75,7 +75,7 @@ An array of layout files to import Nunjucks macros into. For example:
 }
 ```
 
-You can include [layout files](./how-to-use-layouts) in your plugin, so that you can extend them in your templates.
+You can include [layout files](/how-to-use-layouts) in your plugin, so that you can extend them in your templates.
 
 `importNunjucksMacrosInto` makes Nunjucks macros (components) from all plugins available in your layout files.
 
@@ -91,7 +91,7 @@ An array of files for Nunjucks filters. For example:
 }
 ```
 
-Filters change the format of how a users answers appear in a prototype. We have a [guide to creating filters](./filters).
+Filters change the format of how a users answers appear in a prototype. We have a [guide to creating filters](/filters).
 
 When creating filters for a plugin, use your namespace in your filter names. For example:
 

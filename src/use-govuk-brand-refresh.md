@@ -36,4 +36,4 @@ If there was nothing else besides `serviceName` in your config, it should now lo
 }
 ```
 
-If you haven't already, start your prototype locally, [using the instructions on running the kit](/docs/install/how-to-run-the-kit). You should now see the refreshed GOV.UK brand.
+If you haven't already, start your prototype locally, [using the instructions on running the kit](/install/how-to-run-the-kit). You should now see the refreshed GOV.UK brand.

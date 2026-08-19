@@ -6,11 +6,11 @@
 {% endset %}
 
 {% set acceptHtml %}
-<p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/docs/cookies">change your cookie settings</a> at any time.</p>
+<p class="govuk-body">You’ve accepted analytics cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
 {% endset %}
 
 {% set rejectHtml %}
-<p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/docs/cookies">change your cookie settings</a> at any time.</p>
+<p class="govuk-body">You’ve rejected analytics cookies. You can <a class="govuk-link" href="/cookies">change your cookie settings</a> at any time.</p>
 {% endset %}
 
 {{ govukCookieBanner({
@@ -37,7 +37,7 @@
         },
         {
           text: "View cookies",
-          href: "/docs/cookies"
+          href: "/cookies"
         }
       ]
     },

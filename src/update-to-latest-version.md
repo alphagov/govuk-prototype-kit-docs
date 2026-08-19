@@ -15,6 +15,6 @@ You will need to do this for each prototype you are working on.
 
 ## Get help
 
-If you have a question or need help [contact the GOV.UK Prototype team](./support).
+If you have a question or need help [contact the GOV.UK Prototype team](/support).
 
 Tell us as much as you can about the issue you're having and the operating system you're using.

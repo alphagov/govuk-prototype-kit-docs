@@ -10,16 +10,16 @@ This guide will walk you through installing what you need and starting with the 
 
 It takes up to 30 minutes depending on how much you need to set up.
 
-If you’re comfortable using Git and the terminal, you can [use the advanced guide](./getting-started-advanced).
+If you’re comfortable using Git and the terminal, you can [use the advanced guide](/getting-started-advanced).
 
 The GOV.UK Prototype Kit runs on Mac, Windows and Linux. There are different requirements for each operating system.
 
 ## Mac
-[Install guide for Mac ](./requirements-mac)
+[Install guide for Mac ](/requirements-mac)
 
 ## Windows
-[Install guide for Windows](./requirements-windows)
+[Install guide for Windows](/requirements-windows)
 
 ## Linux
-[Install guide for Linux](./requirements-linux)
+[Install guide for Linux](/requirements-linux)
 

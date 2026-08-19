@@ -68,7 +68,7 @@ We need some logic to decide when to send users to different pages. This kind of
 
 The route takes the answer the user gave to the question and either sends them to the next question or the ineligible page, depending on their answer.
 
-> [Find out more about routes](/docs/create-routes)
+> [Find out more about routes](/create-routes)
 
 ### How we set the route from the page
 

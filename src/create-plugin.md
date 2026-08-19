@@ -23,8 +23,8 @@ A plugin can include:
 
 ## Tutorial
 
-[Create your first plugin](./create-first-plugin)
+[Create your first plugin](/create-first-plugin)
 
 ## Guides
 
-[Find out how to configure your plugin](./configure-plugin)
+[Find out how to configure your plugin](/configure-plugin)

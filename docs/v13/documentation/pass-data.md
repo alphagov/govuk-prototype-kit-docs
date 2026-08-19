@@ -8,8 +8,6 @@ The kit stores data from all answers that users give in a prototype. This lets y
 
 To clear the data (for example at the end of a user research session) use the **Clear data** link in the footer.
 
-[View an example of what passing data looks like in a prototype](./examples/pass-data/vehicle-registration).
-
 ## How to use
 
 The kit stores data from answers that users give in a prototype using the `name` attribute of the input.
@@ -90,7 +88,7 @@ If the user changes this data in the prototype, their new answers are saved.
 
 Add default data to your `app/data/session-data-defaults.js` file.
 
-For example, to set default data for the ‘First name’ and ‘Over 18’ inputs in the [passing data example](https://prototype-kit.service.gov.uk/docs/examples/pass-data/vehicle-registration) add:
+For example, to set default data for inputs with the names `first-name` and `over-18`:
 
 ```
 module.exports = {

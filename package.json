@@ -14,13 +14,17 @@
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",
     "govuk-frontend": "^5.11.0",
-    "nunjucks": "^3.2.1",
-    "sass": "^1.49.10"
+    "nunjucks": "^3.2.1"
   },
   "devDependencies": {
+    "autoprefixer": "^10.5.4",
+    "cssnano": "^8.0.6",
+    "glob": "^13.0.6",
+    "postcss": "^8.5.26",
     "remark-cli": "^12.0.1",
     "remark-lint": "^10.0.1",
     "remark-lint-code-block-style": "^4.0.1",
+    "sass": "^1.102.0",
     "standard": "^14.3.3"
   },
   "remarkConfig": {

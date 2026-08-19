@@ -7,7 +7,7 @@ $govuk-suppressed-warnings: (
   'legacy-colour-param',
 );
 
-@import "node_modules/govuk-frontend/dist/govuk/index";
+@import "govuk";
 
 img{
   max-width: 100%;

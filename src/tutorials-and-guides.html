@@ -1,20 +1,8 @@
 ---
 title: Tutorials and guides
 layout: layout.html
+breadcrumbs: true
 ---
-
-{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-	  items: [
-	    {
-	      text: "GOV.UK Prototype Kit",
-	      href: "/"
-	    }
-	  ]
-	}) }}
-{% endblock %}
 
 {% block content %}
 

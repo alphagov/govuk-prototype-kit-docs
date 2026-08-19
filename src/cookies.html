@@ -1,24 +1,13 @@
 ---
 title: Cookies
 layout: layout.html
+breadcrumbs: true
 ---
 
-{% from "govuk/components/breadcrumbs/macro.njk" import govukBreadcrumbs %}
 {% from "govuk/components/button/macro.njk" import govukButton %}
 {% from "govuk/components/notification-banner/macro.njk" import govukNotificationBanner %}
 {% from "govuk/components/radios/macro.njk" import govukRadios %}
 {% from "govuk/components/table/macro.njk" import govukTable %}
-
-{% block beforeContent %}
-  {{ govukBreadcrumbs({
-    items: [
-      {
-        text: "GOV.UK Prototype Kit",
-        href: "/"
-      }
-    ]
-  }) }}
-{% endblock %}
 
 {% set successNotificationBannerHtml %}
   <p class="govuk-notification-banner__heading">You’ve set your cookie preferences.</p>

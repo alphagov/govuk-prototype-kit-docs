@@ -76,6 +76,19 @@
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
+{% block beforeContent %}
+  {% if breadcrumbs %}
+    {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "GOV.UK Prototype Kit",
+          href: "/"
+        }
+      ]
+    }) }}
+  {% endif %}
+{% endblock %}
+
 {% block content %}{{ content | safe }}{% endblock %}
 
 {% block footer %}

@@ -1,5 +1,7 @@
 ---
 heading: Principles
+redirects:
+  - /docs/principles
 ---
 
 The GOV.UK Prototype Kit:

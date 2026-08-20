@@ -2,6 +2,8 @@
 heading: Let the user change their answers
 caption: Build a basic prototype
 next: /make-first-prototype/branching/
+redirects:
+  - /docs/make-first-prototype/let-user-change-answers
 ---
 
 Next to each question on the Check answers page there’s a **Change** link, so that users can add or change the information. 

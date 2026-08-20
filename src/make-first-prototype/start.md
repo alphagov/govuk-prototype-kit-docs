@@ -2,6 +2,8 @@
 heading: Build a basic prototype using the Prototype Kit
 title: Build a basic prototype
 next: /make-first-prototype/open-prototype-in-editor/
+redirects:
+  - /docs/make-first-prototype/start
 ---
 
 This tutorial shows you how to prototype a fictional 'Apply for a juggling licence' service that will:

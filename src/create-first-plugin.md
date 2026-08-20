@@ -1,6 +1,8 @@
 ---
 heading: Create your first plugin
 title: Create your first plugin
+redirects:
+  - /docs/create-first-plugin
 ---
 
 This tutorial shows you how to create a plugin that provides a simple 'Hello world' page template.

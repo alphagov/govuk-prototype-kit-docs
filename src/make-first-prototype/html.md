@@ -2,6 +2,8 @@
 heading: Understand basic HTML
 caption: Build a basic prototype
 next: /make-first-prototype/link-pages-together/
+redirects:
+  - /docs/make-first-prototype/html
 ---
 
 We use a language called HTML to create web pages. You only need to understand basic HTML to create prototypes.

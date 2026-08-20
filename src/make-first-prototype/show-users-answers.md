@@ -3,6 +3,8 @@ heading: Show the user’s answers on the ‘Check answers’ page
 title: Show the user’s answers
 caption: Build a basic prototype
 next: /make-first-prototype/let-user-change-answers/
+redirects:
+  - /docs/make-first-prototype/show-users-answers
 ---
 
 The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers on the ‘Check answers’ page.

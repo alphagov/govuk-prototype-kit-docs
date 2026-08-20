@@ -1,5 +1,7 @@
 ---
 heading: Pass data from page to page
+redirects:
+  - /docs/pass-data
 ---
 
 {% raw %}

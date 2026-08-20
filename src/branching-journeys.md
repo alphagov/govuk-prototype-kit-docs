@@ -1,5 +1,7 @@
 ---
 heading: Branching (show different pages based on a user’s answers)
+redirects:
+  - /docs/branching-journeys
 ---
 
 >To create branching journeys, you need to know [how to use routes](/create-routes/).

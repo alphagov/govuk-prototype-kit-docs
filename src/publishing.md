@@ -1,6 +1,8 @@
 ---
 heading: Publish your prototype online
 title: Publish your prototype online
+redirects:
+  - /docs/publishing
 ---
 
 You'll usually run the Prototype Kit on your own device using localhost. To share the prototype with others, you need to publish it online.  

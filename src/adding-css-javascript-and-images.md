@@ -1,5 +1,7 @@
 ---
 heading: Add CSS, JavaScript, images and other files
+redirects:
+  - /docs/adding-css-javascript-and-images
 ---
 
 The Prototype Kit comes with standard GOV.UK Frontend styles and components for you to use in your prototypes.

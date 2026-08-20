@@ -3,6 +3,8 @@ layout: install_template.html
 heading: Prototype Kit requirements (Mac)
 caption: Create a prototype for new users
 next: /install/node-mac/
+redirects:
+  - /docs/install/requirements-mac
 ---
 
 You'll usually need admin access to your machine to install the software.

@@ -1,5 +1,7 @@
 ---
 heading: Change the content within a page based on a user's answers
+redirects:
+  - /docs/conditional-content
 ---
 
 >To change the content within a page based on a user's answers, you need to know [how to pass data from page to page](/pass-data/).

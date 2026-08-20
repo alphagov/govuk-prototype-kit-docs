@@ -1,6 +1,8 @@
 ---
 heading: Migrate an existing prototype to version 13
 title: Migrate an existing prototype to version 13
+redirects:
+  - /docs/migrate-an-existing-prototype
 ---
 
 1. If you do not already have it, [install Node.js version 24](https://nodejs.org/en).

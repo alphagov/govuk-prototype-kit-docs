@@ -1,5 +1,7 @@
 ---
 heading: Share usage data
+redirects:
+  - /docs/usage-data
 ---
 
 You can choose to have the Prototype Kit send anonymous usage data for analysis.

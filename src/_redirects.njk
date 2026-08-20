@@ -1,0 +1,9 @@
+---
+permalink: "_redirects"
+layout: false
+---
+{%- for page in collections.all -%}
+{% for redirect in page.data.redirects -%}
+{{ redirect }}	{{ page.url }}
+{% endfor %}
+{%- endfor -%}

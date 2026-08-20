@@ -2,6 +2,8 @@
 heading: Add a textarea to question 2
 caption: Build a basic prototype
 next: /make-first-prototype/show-users-answers/
+redirects:
+  - /docs/make-first-prototype/use-components-2
 ---
 
 1. Go to the <a href="https://design-system.service.gov.uk/components/textarea/" target="_blank">textarea component in the Design System (opens in a new tab)</a>.

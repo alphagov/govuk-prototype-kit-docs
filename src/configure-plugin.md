@@ -1,6 +1,8 @@
 ---
 heading: Configure your plugin
 title: Configure your plugin
+redirects:
+  - /docs/configure-plugin
 ---
 
 Plugins need a file called `govuk-prototype-kit.config.json` (also known as a config file). The config file tells the kit what’s included in the plugin. 

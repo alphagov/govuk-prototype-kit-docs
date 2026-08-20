@@ -1,6 +1,8 @@
 ---
 heading: Link your index page to your start page
 caption: Build a basic prototype
+redirects:
+  - /docs/make-first-prototype/link-index-page-start-page
 ---
 
 You can route users from your service's index page to your start page. The index page is the page that loads when users go to [http://localhost:3000](http://localhost:3000).

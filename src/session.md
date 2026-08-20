@@ -1,5 +1,7 @@
 ---
 heading: Store data in session
+redirects:
+  - /docs/session
 ---
 
 When a user answers questions in your prototype, their answers are stored in session data.

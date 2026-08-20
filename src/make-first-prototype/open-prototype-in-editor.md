@@ -2,6 +2,8 @@
 heading: Open your prototype in your editor
 caption: Build a basic prototype
 next: /make-first-prototype/create-pages/
+redirects:
+  - /docs/make-first-prototype/open-prototype-in-editor
 ---
 
 

@@ -3,6 +3,8 @@ layout: install_template.html
 heading: Prototype Kit requirements (Windows)
 caption: Create a prototype for new users
 next: /install/node-windows/
+redirects:
+  - /docs/install/requirements-windows
 ---
 
 You'll usually need admin access to your machine to install the software.

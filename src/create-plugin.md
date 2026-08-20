@@ -1,6 +1,8 @@
 ---
 heading: Create a plugin
 title: Create a plugin
+redirects:
+  - /docs/create-plugin
 ---
 
 Plugins are a way to add extra components, styles, patterns and other features from the cross-government community. 

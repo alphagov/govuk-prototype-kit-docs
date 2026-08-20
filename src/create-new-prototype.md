@@ -1,5 +1,7 @@
 ---
 heading: Create a new prototype
+redirects:
+  - /docs/create-new-prototype
 ---
 
 To use the kit you'll need some basic knowledge of HTML, for example what tags and attributes are and how to copy and paste code. You can learn basic HTML and CSS on codecademy at [https://www.codecademy.com](https://www.codecademy.com/).

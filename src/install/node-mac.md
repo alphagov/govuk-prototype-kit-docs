@@ -3,6 +3,8 @@ layout: install_template.html
 heading: Install Node.js (Mac)
 caption: Create a prototype for new users
 next: /install/create-a-prototype/
+redirects:
+  - /docs/install/node-mac
 ---
 
 The kit is designed to work with Node.js version 24 and above.

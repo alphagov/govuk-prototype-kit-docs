@@ -1,6 +1,8 @@
 ---
 heading: Run multiple prototypes
 title: Run multiple prototypes
+redirects:
+  - /docs/run-multiple-prototypes
 ---
 
 You can run as many prototypes as you like, but each prototype needs a different port number. The default port is `3000` and you can view the prototype at http://localhost:3000/.

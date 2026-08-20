@@ -1,5 +1,7 @@
 ---
 heading: Use error messages in the kit 
+redirects:
+  - /docs/validation
 ---
 
 {% raw %}

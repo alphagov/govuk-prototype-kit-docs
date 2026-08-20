@@ -2,6 +2,8 @@
 heading: Link your pages together
 caption: Build a basic prototype
 next: /make-first-prototype/use-components/
+redirects:
+  - /docs/make-first-prototype/link-pages-together
 ---
 
 To take users from one page to another, you can use either:

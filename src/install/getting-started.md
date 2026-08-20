@@ -2,6 +2,8 @@
 layout: install_template.html
 heading: Getting started with the Prototype Kit
 caption: Create a prototype
+redirects:
+  - /docs/install/getting-started
 ---
 
 The GOV.UK Prototype Kit provides a simple way to make interactive prototypes that look and feel like pages on GOV.UK. These prototypes can be used to design and lay out pages and to use in user research.

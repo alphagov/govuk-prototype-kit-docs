@@ -1,6 +1,8 @@
 ---
 heading: Use the GOV.UK brand refresh in your prototype
 title: Use the GOV.UK brand refresh in your prototype
+redirects:
+  - /docs/use-govuk-brand-refresh
 ---
 
 On 25 June 2025, GDS launched a refreshed GOV.UK brand for web. If you're prototyping a GOV.UK service and your prototype is not using the refreshed GOV.UK brand, we recommend you use the refreshed brand so that it's consistent with the GOV.UK website and other GOV.UK services.

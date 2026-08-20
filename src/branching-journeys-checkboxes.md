@@ -1,5 +1,7 @@
 ---
 heading: Branching journeys using checkboxes
+redirects:
+  - /docs/branching-journeys-checkboxes
 ---
 
 You can create branches using any form fields, including checkboxes and radios. In this example we will use checkboxes.

@@ -1,5 +1,7 @@
 ---
 heading: Store your code online with GitHub and GitHub Desktop
+redirects:
+  - /docs/github-desktop
 ---
 
 GitHub is a way to store code online so you can collaborate with others. It also makes it easier to publish your prototype online using a hosting service.

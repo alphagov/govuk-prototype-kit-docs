@@ -1,5 +1,7 @@
 ---
 heading: Use filters to add dates 
+redirects:
+  - /docs/date-filters
 ---
 
 {% raw %}

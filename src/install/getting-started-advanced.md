@@ -2,6 +2,8 @@
 layout: install_template.html
 heading: Getting started - advanced guide
 caption: Create a prototype
+redirects:
+  - /docs/install/getting-started-advanced
 ---
 
 The Prototype Kit runs in Node.js. It is built on the [Express framework](http://expressjs.com/) and uses [GOV.UK Frontend](https://github.com/alphagov/govuk-frontend).

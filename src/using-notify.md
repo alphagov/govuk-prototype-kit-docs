@@ -1,6 +1,8 @@
 ---
 heading: Use GOV.UK Notify to prototype emails and text messages
 title: Use GOV.UK Notify
+redirects:
+  - /docs/using-notify
 ---
 
 You can use GOV.UK Notify to send text messages or emails when users

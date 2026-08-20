@@ -1,5 +1,7 @@
 ---
 heading: Use filters to change how answers appear
+redirects:
+  - /docs/filters
 ---
 
 {% raw %}

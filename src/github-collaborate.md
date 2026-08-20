@@ -1,5 +1,7 @@
 ---
 heading: Collaborate on prototypes using GitHub Desktop
+redirects:
+  - /docs/github-collaborate
 ---
 
 When you store a prototype on GitHub, you can collaborate on your code with anyone in your team.

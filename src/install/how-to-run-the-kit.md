@@ -3,6 +3,8 @@ layout: install_template.html
 heading: How to run the kit
 caption: Create a prototype for new users
 next: /make-first-prototype/start/
+redirects:
+  - /docs/install/how-to-run-the-kit
 ---
 
 You’ll use the terminal to start and stop the kit.

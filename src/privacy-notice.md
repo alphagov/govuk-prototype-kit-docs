@@ -1,5 +1,7 @@
 ---
 heading: Privacy notice
+redirects:
+  - /docs/privacy-notice
 ---
 
 The GOV.UK Prototype Kit is provided by the [Government Digital Service](https://www.gov.uk/government/organisations/government-digital-service) (GDS), which is part of the Cabinet Office. The data controller for GDS is the Cabinet Office — a data controller determines how and why personal data can be processed.

@@ -1,5 +1,7 @@
 ---
 heading: Support
+redirects:
+  - /docs/support
 ---
 
 The GOV.UK Prototype Kit is currently maintained by the [GOV.UK Design System team](https://design-system.service.gov.uk/contact/), who can only provide [limited support](https://github.com/alphagov/govuk-prototype-kit/issues/2389).

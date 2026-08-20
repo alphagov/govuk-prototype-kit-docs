@@ -1,5 +1,7 @@
 ---
 heading: Branching using radios
+redirects:
+  - /docs/branching-journeys-radios
 ---
 
 You can create branches from any form fields, including checkboxes and radios. In this example we will use radios.

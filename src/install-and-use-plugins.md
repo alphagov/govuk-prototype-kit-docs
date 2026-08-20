@@ -1,6 +1,8 @@
 ---
 heading: Install and use plugins
 title: Install and use plugins
+redirects:
+  - /docs/install-and-use-plugins
 ---
 
 The Prototype Kit comes with most of the common GOV.UK components and design patterns built in ready to use.

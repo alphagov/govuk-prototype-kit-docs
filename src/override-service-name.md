@@ -1,5 +1,7 @@
 ---
 heading: Change the service name on one page
+redirects:
+  - /docs/override-service-name
 ---
 
 You can set a different service name to the rest of your prototype on one page.

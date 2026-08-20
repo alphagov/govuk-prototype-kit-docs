@@ -1,5 +1,7 @@
 ---
 heading: Download an existing prototype from GitHub
+redirects:
+  - /docs/github-download-existing-prototype
 ---
 >To download an existing prototype from GitHub, you need to [set up GitHub Desktop](/github-desktop/).
 

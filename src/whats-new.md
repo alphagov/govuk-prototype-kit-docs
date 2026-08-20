@@ -1,5 +1,7 @@
 ---
 heading: What’s new in version 13
+redirects:
+  - /docs/whats-new
 ---
 
 We’ve made some big changes to how the kit works so that it’s:

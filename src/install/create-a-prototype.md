@@ -3,6 +3,8 @@ layout: install_template.html
 heading: Create a prototype
 caption: Create a prototype
 next: /install/how-to-run-the-kit/
+redirects:
+  - /docs/install/create-a-prototype
 ---
 
 ## Terminal basics

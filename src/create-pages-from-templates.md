@@ -1,6 +1,8 @@
 ---
 heading: Create pages from templates
 title: Create pages from templates
+redirects:
+  - /docs/create-pages-from-templates
 ---
 
 The Prototype Kit comes with templates so that you can create pages that are commonly used across government services.

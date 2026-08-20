@@ -1,6 +1,8 @@
 ---
 heading: Add or change Nunjucks components
 title: Add or change Nunjucks components
+redirects:
+  - /docs/add-change-nunjucks-components
 ---
 You can use 2 coding languages in your prototype with the [GOV.UK Design System](https://design-system.service.gov.uk/), Nunjucks or HTML.
 

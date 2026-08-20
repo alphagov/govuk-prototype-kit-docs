@@ -1,6 +1,8 @@
 ---
 heading: Update to the latest version of the Prototype Kit
 caption: Update to the latest version of the Kit
+redirects:
+  - /docs/update-to-latest-version
 ---
 
 To get bug fixes and new features, update your prototypes to the latest version of the kit.

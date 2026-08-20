@@ -1,6 +1,8 @@
 ---
 heading: How to use layouts
 title: How to use layouts
+redirects:
+  - /docs/how-to-use-layouts
 ---
 
 {% raw %}

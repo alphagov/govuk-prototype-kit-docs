@@ -1,5 +1,7 @@
 ---
 heading: Prototyping
+redirects:
+  - /docs/prototyping
 ---
 
 A prototype allows the team to test and explore ideas before developing them. You can share ideas with users early and often, so that you can find issues with the design and make improvements based on user research.

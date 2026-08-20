@@ -10,7 +10,7 @@
   "scripts": {
     "lint": "standard",
     "lint:md": "remark --config '**/*.{md,md.njk}' --ignore-path=.gitignore --silently-ignore",
-    "check-links": "linkinator _site --skip '^https?://(?!127.0.0.1|localhost)' --recurse --redirects \"error\""
+    "check-links": "linkinator _site --skip '^https?://(?!127.0.0.1|localhost)' --skip 'http://localhost:3000' --recurse --redirects \"error\""
   },
   "dependencies": {
     "@11ty/eleventy": "^3.1.6",

@@ -28,7 +28,7 @@ Use GitHub Desktop to work with repositories.
 A repository contains all of the files in a prototype. You can use the repository to view the file history and work on your prototype with others.
 
 You can now:
-* [store your new prototype in GitHub](/github-store-new-prototype)
-* [download an existing prototype from GitHub](/github-download-existing-prototype)
+* [store your new prototype in GitHub](/github-store-new-prototype/)
+* [download an existing prototype from GitHub](/github-download-existing-prototype/)
 
 > [Find out more about how to use GitHub Desktop](https://docs.github.com/en/desktop/installing-and-configuring-github-desktop/overview/getting-started-with-github-desktop)

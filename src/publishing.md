@@ -17,7 +17,7 @@ The GOV.UK Prototype Kit runs on any hosting service that supports Node.js. This
 
 Your organisation may already use a hosting service for the Prototype Kit. Check with your IT or digital team about which platform to use.
 
-Some hosting services automatically publish every time you [push to GitHub](/github-desktop). For example:
+Some hosting services automatically publish every time you [push to GitHub](/github-desktop/). For example:
 
  - [Railway](https://railway.app/new/github)
  - [Render](https://render.com/docs/github)
@@ -35,7 +35,7 @@ To set a password, you need to add 2 environment variables where the:
 
 ### If you get an error about username
 
-Older versions of the Prototype Kit require a username - you can [migrate your prototype to version 13](/migrate-an-existing-prototype) or set a username.
+Older versions of the Prototype Kit require a username - you can [migrate your prototype to version 13](/migrate-an-existing-prototype/) or set a username.
 
 Add another environment variable where the `name` is `USERNAME` and the `value` is whatever username you want to use.
 

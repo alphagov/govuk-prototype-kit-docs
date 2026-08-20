@@ -9,7 +9,7 @@ To check if your prototype is using the refreshed GOV.UK brand, see [the guidanc
 
 You can update the branding in your prototype using the `rebrand` option in the GOV.UK Frontend Prototype Kit plugin.
 
-Before you start, make sure your prototype is using GOV.UK Frontend v5.10.0 or later.  See [installing and using plugins](/docs/install-and-use-plugins) for details on how to check.
+Before you start, make sure your prototype is using GOV.UK Frontend v5.10.0 or later.  See [installing and using plugins](/docs/install-and-use-plugins/) for details on how to check.
 
 ## Add the `rebrand` option and set it to `true`
 
@@ -36,4 +36,4 @@ If there was nothing else besides `serviceName` in your config, it should now lo
 }
 ```
 
-If you haven't already, start your prototype locally, [using the instructions on running the kit](/install/how-to-run-the-kit). You should now see the refreshed GOV.UK brand.
+If you haven't already, start your prototype locally, [using the instructions on running the kit](/install/how-to-run-the-kit/). You should now see the refreshed GOV.UK brand.

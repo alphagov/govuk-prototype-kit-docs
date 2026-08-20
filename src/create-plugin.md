@@ -19,12 +19,12 @@ A plugin can include:
 * filters
 * JavaScript
 
-> We also have a guide on how to [install and use plugins](/install-and-use-plugins).
+> We also have a guide on how to [install and use plugins](/install-and-use-plugins/).
 
 ## Tutorial
 
-[Create your first plugin](/create-first-plugin)
+[Create your first plugin](/create-first-plugin/)
 
 ## Guides
 
-[Find out how to configure your plugin](/configure-plugin)
+[Find out how to configure your plugin](/configure-plugin/)

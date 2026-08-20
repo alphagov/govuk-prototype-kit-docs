@@ -11,9 +11,9 @@ If you’re starting a new prototype, you can use version 13. It’s easy to ins
 
 If you have an existing prototype and want to make the changes in this release, we recommend using the migration script to help with the breaking changes.
 
-[Migrate an existing prototype to version 13](/migrate-an-existing-prototype)
+[Migrate an existing prototype to version 13](/migrate-an-existing-prototype/)
 
-If you need help with the Prototype Kit or migration, [contact the GOV.UK Prototype team](/support).
+If you need help with the Prototype Kit or migration, [contact the GOV.UK Prototype team](/support/).
 
 ## Summary of changes
 
@@ -27,7 +27,7 @@ Having the kit as an npm package makes your prototype files and folders much sim
 
 ### Create your prototype
 
-The process to create a prototype is simpler. Read the [get started guide](/create-new-prototype).
+The process to create a prototype is simpler. Read the [get started guide](/create-new-prototype/).
 
 ### Run your prototype
 
@@ -43,9 +43,9 @@ There is a new Manage your Prototype page in the kit. From this page you can:
 
 There is a new approach to routes, templates and layouts:
 
-- [Create routes](/create-routes)
-- [Create pages from templates](/create-pages-from-templates)
-- [How to use layouts](/how-to-use-layouts)
+- [Create routes](/create-routes/)
+- [Create pages from templates](/create-pages-from-templates/)
+- [How to use layouts](/how-to-use-layouts/)
 
 ### Using Node.js
 
@@ -63,4 +63,4 @@ When creating a new prototype, you will always have the latest version of GOV.UK
 
 There’s quite a lot going on! [Read the release notes](https://github.com/alphagov/govuk-prototype-kit/releases/tag/v13.0.0) to see what’s changed in detail for version 13.
 
-If you need help with the Prototype Kit, [contact the GOV.UK Prototype team](/support).
+If you need help with the Prototype Kit, [contact the GOV.UK Prototype team](/support/).

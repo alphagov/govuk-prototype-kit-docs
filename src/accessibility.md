@@ -46,10 +46,10 @@ The test was carried out by the GOV.UK Prototype Kit team.
 The GOV.UK Prototype Kit team tested a sample of pages to cover the different content types in the Prototype Kit website. They were:
 
 - [the homepage](/)
-- [the tutorials and guides page](/tutorials-and-guides)
-- [the tutorial pages](/make-first-prototype/start)
-- [the guide pages](/publishing-on-heroku)
-- [the example pages](/examples/pass-data)
+- [the tutorials and guides page](/tutorials-and-guides/)
+- [the tutorial pages](/make-first-prototype/start/)
+- [the guide pages](/publishing-on-heroku/)
+- [the example pages](/examples/pass-data/)
 
 ### How the GOV.UK Prototype Kit team makes this website accessible
 

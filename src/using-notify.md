@@ -74,7 +74,7 @@ section of <strong><a href="http://localhost:3000/manage-prototype">Manage your 
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {{ govukDetails({
   summaryText: "If the Notifications node client plugin is not available",
-  html: "You can update to the <a href=\"/update-to-latest-version\">latest version of the Prototype Kit</a> or in the terminal run:
+  html: "You can update to the <a href=\"/update-to-latest-version/\">latest version of the Prototype Kit</a> or in the terminal run:
 
 `npm install notifications-node-client`
 "

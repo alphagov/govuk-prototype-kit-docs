@@ -32,11 +32,11 @@ The advantages of code prototypes are that you can:
 
 -   create a service that looks and behaves like the real thing, on mobile and desktop
 -   test on the user's device and with assistive technology (for example, a screen reader)
--   show different pages based on user input (called '[branching](/branching-journeys)') to test journey flows
--   [share them by publishing on the web](/publishing)
+-   show different pages based on user input (called '[branching](/branching-journeys/)') to test journey flows
+-   [share them by publishing on the web](/publishing/)
 -   make design decisions within the constraints of the web
 -   share understanding of design ideas, flows and behaviours with the whole team
--   [use common tools like Git and GitHub](/github-desktop) for collaboration and project history
+-   [use common tools like Git and GitHub](/github-desktop/) for collaboration and project history
 
 ## Prototype code vs. production code
 
@@ -44,4 +44,4 @@ The point of prototyping in code is to test ideas as quickly as possible, it doe
 
 You must not use prototype code for production. When your service is ready to move into production, the code needs to meet different standards. For example, it needs to be secure and perform well with large volumes of traffic.
 
-[Get started with the GOV.UK Prototype Kit](/create-new-prototype)
+[Get started with the GOV.UK Prototype Kit](/create-new-prototype/)

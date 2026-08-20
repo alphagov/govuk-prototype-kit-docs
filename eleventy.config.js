@@ -6,14 +6,14 @@ import { setupStylesheetCompilation } from './eleventy/stylesheets.js'
  *  @param {import("@11ty/eleventy/UserConfig")} eleventyConfig
  */
 export default function (eleventyConfig) {
-  // Watch and compile Sass files on change
-  eleventyConfig.addPlugin(setupStylesheetCompilation, { to: 'assets' })
-
   // Copy font and image assets from govuk-frontend to the project
   eleventyConfig.addPassthroughCopy({
     './node_modules/govuk-frontend/dist/govuk/assets': 'assets',
-    './node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js': 'assets'
+    './node_modules/govuk-frontend/dist/govuk/govuk-frontend.min.js': 'assets/govuk-frontend.min.js'
   })
+
+  // Watch and compile Sass files on change
+  eleventyConfig.addPlugin(setupStylesheetCompilation, { to: 'assets' })
 
   eleventyConfig.addPassthroughCopy('src/images')
 

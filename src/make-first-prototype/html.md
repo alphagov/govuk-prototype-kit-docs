@@ -56,7 +56,7 @@ We use a `<div>` to create a page section, then include elements within it. In o
 {{ govukPagination({
   next: {
     labelText: "Link your pages together",
-    href: "link-pages-together"
+    href: "/make-first-prototype/link-pages-together/"
   }
 }) }}
 

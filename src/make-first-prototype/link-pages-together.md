@@ -42,7 +42,7 @@ The 'Check answers' page template links to the ‘Confirmation’ page by defaul
 {{ govukPagination({
   next: {
     labelText: "Use components from the Design System",
-    href: "use-components"
+    href: "/make-first-prototype/use-components/"
   }
 }) }}
 

@@ -67,6 +67,6 @@ Run:
 {{ govukPagination({
   next: {
     labelText: "How to run the kit",
-    href: "how-to-run-the-kit"
+    href: "/install/how-to-run-the-kit/"
   }
 }) }}

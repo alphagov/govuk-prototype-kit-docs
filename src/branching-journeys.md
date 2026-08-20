@@ -2,9 +2,9 @@
 heading: Branching (show different pages based on a user’s answers)
 ---
 
->To create branching journeys, you need to know [how to use routes](create-routes).
+>To create branching journeys, you need to know [how to use routes](/create-routes/).
 
-There are 2 ways to show content based on a user's answers. You can either send the user to different pages (called 'branching') or [change the content within a page](conditional-content) (called 'conditional' content).
+There are 2 ways to show content based on a user's answers. You can either send the user to different pages (called 'branching') or [change the content within a page](/conditional-content/) (called 'conditional' content).
 
 Branching means that the user will only see the pages that are relevant to them.
 
@@ -16,5 +16,5 @@ If the user is:
 
 Find out how to create branching journeys using:
 
- - [radios](branching-journeys-radios)
- - [checkboxes](branching-journeys-checkboxes)
+ - [radios](/branching-journeys-radios/)
+ - [checkboxes](/branching-journeys-checkboxes/)

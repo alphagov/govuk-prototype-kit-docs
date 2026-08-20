@@ -97,7 +97,7 @@ Your page should now look like this:
 {{ govukPagination({
   next: {
     labelText: "Add a textarea to question 2",
-    href: "use-components-2"
+    href: "/make-first-prototype/use-components-2/"
   }
 }) }}
 

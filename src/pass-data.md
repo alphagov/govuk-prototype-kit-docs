@@ -192,6 +192,6 @@ To prevent an input being stored, use an underscore at the start of the name.
 }) }}
 ```
 
-To use this data you'll have to [write your own route](create-routes).
+To use this data you'll have to [write your own route](/create-routes/).
 
 {% endraw %}

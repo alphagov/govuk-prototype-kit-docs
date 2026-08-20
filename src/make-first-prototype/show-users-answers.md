@@ -201,7 +201,7 @@ Your code should now look like this:
 {{ govukPagination({
   next: {
     labelText: "Let the user change their answers",
-    href: "let-user-change-answers"
+    href: "/make-first-prototype/let-user-change-answers/"
   }
 }) }}
 

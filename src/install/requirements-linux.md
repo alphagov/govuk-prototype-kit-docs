@@ -40,6 +40,6 @@ You'll need a code editor to make changes to your prototype. VS Code is a well e
 {{ govukPagination({
   next: {
     labelText: "Install Node",
-    href: "node-linux"
+    href: "/install/node-linux/"
   }
 }) }}

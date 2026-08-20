@@ -51,6 +51,6 @@ You’ve completed the Prototype Kit set up. You’re ready to make your first p
 {{ govukPagination({
   next: {
     labelText: "Make your first prototype",
-    href: "../make-first-prototype/start"
+    href: "/make-first-prototype/start/"
   }
 }) }}

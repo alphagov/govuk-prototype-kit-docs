@@ -37,6 +37,6 @@ If it’s installed correctly it should show a number starting with 24.
 {{ govukPagination({
   next: {
     labelText: "Create a prototype",
-    href: "/create-a-prototype"
+    href: "/install/create-a-prototype/"
   }
 }) }}

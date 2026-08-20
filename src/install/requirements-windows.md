@@ -54,6 +54,6 @@ These two code editors are popular, well established and fairly accessible:
 {{ govukPagination({
   next: {
     labelText: "Install Node",
-    href: "node-windows"
+    href: "/install/node-windows/"
   }
 }) }}

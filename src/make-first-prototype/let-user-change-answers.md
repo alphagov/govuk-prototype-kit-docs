@@ -64,7 +64,7 @@ Go to <a href="http://localhost:3000/juggling-trick" target="_blank">http://loca
 {{ govukPagination({
   next: {
     labelText: "Show different pages depending on user input",
-    href: "branching"
+    href: "/make-first-prototype/branching/"
   }
 }) }}
 

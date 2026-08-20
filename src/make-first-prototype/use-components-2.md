@@ -56,7 +56,7 @@ Your page should now look like this:
 {{ govukPagination({
   next: {
     labelText: "Show the user’s answers on your ‘Check answers’ page",
-    href: "show-users-answers"
+    href: "/make-first-prototype/show-users-answers/"
   }
 }) }}
 

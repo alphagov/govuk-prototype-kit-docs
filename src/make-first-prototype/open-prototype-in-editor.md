@@ -21,6 +21,6 @@ You can learn more about these features after you finish building a basic protot
 {{ govukPagination({
   next: {
     labelText: "Create pages",
-    href: "create-pages"
+    href: "/make-first-prototype/create-pages/"
   }
 }) }}

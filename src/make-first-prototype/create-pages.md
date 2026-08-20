@@ -88,7 +88,7 @@ http://localhost:3000/manage-prototype/templates (opens in a new tab).
 {{ govukPagination({
   next: {
     labelText: "Understand basic HTML",
-    href: "html"
+    href: "/make-first-prototype/html/"
   }
 }) }}
 

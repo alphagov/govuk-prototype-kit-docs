@@ -25,6 +25,6 @@ Our prototype will look a bit like this:
 {{ govukPagination({
   next: {
     labelText: "Open your prototype in your editor",
-    href: "open-prototype-in-editor"
+    href: "/make-first-prototype/open-prototype-in-editor/"
   }
 }) }}

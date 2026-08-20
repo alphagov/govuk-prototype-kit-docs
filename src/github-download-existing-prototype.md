@@ -1,7 +1,7 @@
 ---
 heading: Download an existing prototype from GitHub
 ---
->To download an existing prototype from GitHub, you need to [set up GitHub Desktop](github-desktop).
+>To download an existing prototype from GitHub, you need to [set up GitHub Desktop](/github-desktop/).
 
 You can work with others on an existing prototype. For example, if you're joining a team that has a prototype.
 

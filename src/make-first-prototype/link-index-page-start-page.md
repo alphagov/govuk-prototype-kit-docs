@@ -18,4 +18,4 @@ You can route users from your service's index page to your start page. The index
 
 You have completed building a basic prototype. 
 
-If you want to learn more about how to use the GOV.UK Prototype Kit, you can [view our tutorials and guides](../tutorials-and-guides).
+If you want to learn more about how to use the GOV.UK Prototype Kit, you can [view our tutorials and guides](/tutorials-and-guides/).

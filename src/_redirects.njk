@@ -6,4 +6,9 @@ layout: false
 {% for redirect in page.data.redirects -%}
 {{ redirect }}	{{ page.url }}
 {% endfor %}
-{%- endfor -%}
+{%- endfor %}
+
+# Serve a 410 status code for archived pages
+{% for url in archivedPages -%}
+{{ url }}	{{ url }}	410!
+{% endfor %}

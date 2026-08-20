@@ -3,6 +3,8 @@ heading: Publish your prototype online
 title: Publish your prototype online
 redirects:
   - /docs/publishing
+  - /docs/publishing-on-heroku
+  - /docs/publishing-on-heroku-terminal
 ---
 
 You'll usually run the Prototype Kit on your own device using localhost. To share the prototype with others, you need to publish it online.  

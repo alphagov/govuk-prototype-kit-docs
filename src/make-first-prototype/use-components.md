@@ -4,6 +4,7 @@ caption: Build a basic prototype
 next: /make-first-prototype/use-components-2/
 redirects:
   - /docs/make-first-prototype/use-components
+  - /docs/make-first-prototype/add-questions
 ---
 
 You can copy example code from the GOV.UK Design System to add page elements like radios and text inputs - we call these ‘components’.

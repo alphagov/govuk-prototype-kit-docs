@@ -4,6 +4,7 @@ caption: Build a basic prototype
 next: /make-first-prototype/link-index-page-start-page/
 redirects:
   - /docs/make-first-prototype/branching
+  - /docs/examples/branching
 ---
 
 Our first question asks the user how many balls they can juggle. We’re going to send them to an ‘ineligible’ page if they can only juggle 2 balls or less. Sending users to different pages based on their input is called branching.

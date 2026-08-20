@@ -4,6 +4,7 @@ caption: Build a basic prototype
 next: /make-first-prototype/html/
 redirects:
   - /docs/make-first-prototype/create-pages
+  - /docs/making-pages
 ---
 
 You can create pages by using the templates that come with the Prototype Kit.

@@ -1,6 +1,7 @@
 ---
 heading: Build a basic prototype using the Prototype Kit
 title: Build a basic prototype
+next: /make-first-prototype/open-prototype-in-editor/
 ---
 
 This tutorial shows you how to prototype a fictional 'Apply for a juggling licence' service that will:
@@ -19,12 +20,3 @@ Our prototype will look a bit like this:
 
 <figcaption class="govuk-body">Diagram of 6 pages connected together.</figcaption>
 </figure>
-
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Open your prototype in your editor",
-    href: "/make-first-prototype/open-prototype-in-editor/"
-  }
-}) }}

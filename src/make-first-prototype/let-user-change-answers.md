@@ -1,7 +1,9 @@
 ---
 heading: Let the user change their answers
 caption: Build a basic prototype
+next: /make-first-prototype/branching/
 ---
+
 Next to each question on the Check answers page there’s a **Change** link, so that users can add or change the information. 
 
 ## Make the ‘Change’ links work
@@ -59,12 +61,3 @@ Add `value: data['most-impressive-trick']` like this:
 {% endraw %}
 
 Go to <a href="http://localhost:3000/juggling-trick" target="_blank">http://localhost:3000/juggling-trick (opens in a new tab)</a> and check it works by filling in an answer, continuing to the next page, going back, then refreshing your browser.
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Show different pages depending on user input",
-    href: "/make-first-prototype/branching/"
-  }
-}) }}
-

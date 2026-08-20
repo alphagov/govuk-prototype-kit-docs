@@ -2,6 +2,7 @@
 layout: install_template.html
 heading: Prototype Kit requirements (Linux)
 caption: Create a prototype for new users
+next: /install/node-linux/
 ---
 
 You'll usually need admin access to your machine to install the software.
@@ -34,12 +35,4 @@ You'll need a code editor to make changes to your prototype. VS Code is a well e
   [Find out more about how to use VS Code](https://code.visualstudio.com/docs/introvideos/basics)
   "
 
-}) }}
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Install Node",
-    href: "/install/node-linux/"
-  }
 }) }}

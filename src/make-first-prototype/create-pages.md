@@ -1,6 +1,7 @@
 ---
 heading: Create pages
 caption: Build a basic prototype
+next: /make-first-prototype/html/
 ---
 
 You can create pages by using the templates that come with the Prototype Kit.
@@ -83,12 +84,3 @@ http://localhost:3000/manage-prototype/templates (opens in a new tab).
 2. Create a page from the **Confirmation** template.
 
 3. Enter the path `/confirmation`
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Understand basic HTML",
-    href: "/make-first-prototype/html/"
-  }
-}) }}
-

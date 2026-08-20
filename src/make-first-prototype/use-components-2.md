@@ -1,6 +1,7 @@
 ---
 heading: Add a textarea to question 2
 caption: Build a basic prototype
+next: /make-first-prototype/show-users-answers/
 ---
 
 1. Go to the <a href="https://design-system.service.gov.uk/components/textarea/" target="_blank">textarea component in the Design System (opens in a new tab)</a>.
@@ -51,12 +52,3 @@ Your page should now look like this:
 
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Show the user’s answers on your ‘Check answers’ page",
-    href: "/make-first-prototype/show-users-answers/"
-  }
-}) }}
-

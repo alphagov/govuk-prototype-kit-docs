@@ -1,6 +1,7 @@
 ---
 heading: Link your pages together
 caption: Build a basic prototype
+next: /make-first-prototype/use-components/
 ---
 
 To take users from one page to another, you can use either:
@@ -37,12 +38,3 @@ This time it's a real HTML button, not a link. Buttons submit form data - the UR
 [Go to http://localhost:3000/juggling-trick](http://localhost:3000/juggling-trick) and select **Continue** to check the button works.
 
 The 'Check answers' page template links to the ‘Confirmation’ page by default. So you do not need to change the ‘Check answers’ page.
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Use components from the Design System",
-    href: "/make-first-prototype/use-components/"
-  }
-}) }}
-

@@ -1,6 +1,7 @@
 ---
 heading: Understand basic HTML
 caption: Build a basic prototype
+next: /make-first-prototype/link-pages-together/
 ---
 
 We use a language called HTML to create web pages. You only need to understand basic HTML to create prototypes.
@@ -46,17 +47,3 @@ We can start to build a page with different elements:
 
 ```
 We use a `<div>` to create a page section, then include elements within it. In our first section we've included a `<h1>` and a `<p>`.
-
-
-
-
-
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Link your pages together",
-    href: "/make-first-prototype/link-pages-together/"
-  }
-}) }}
-

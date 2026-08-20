@@ -1,6 +1,7 @@
 ---
 heading: Use components from the Design System
 caption: Build a basic prototype
+next: /make-first-prototype/use-components-2/
 ---
 
 You can copy example code from the GOV.UK Design System to add page elements like radios and text inputs - we call these ‘components’.
@@ -92,12 +93,3 @@ Your page should now look like this:
 
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Add a textarea to question 2",
-    href: "/make-first-prototype/use-components-2/"
-  }
-}) }}
-

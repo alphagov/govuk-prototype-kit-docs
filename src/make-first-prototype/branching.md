@@ -1,6 +1,7 @@
 ---
 heading: Show different pages depending on user input (branching)
 caption: Build a basic prototype
+next: /make-first-prototype/link-index-page-start-page/
 ---
 
 Our first question asks the user how many balls they can juggle. We’re going to send them to an ‘ineligible’ page if they can only juggle 2 balls or less. Sending users to different pages based on their input is called branching.
@@ -85,12 +86,3 @@ SyntaxError: Unexpected token }
 The first line of this sample output ends with `/app/routes.js:12`.
 
 The '12' suggests there’s probably an issue on line 12 or the line before it. In this case the issue was a missing bracket.
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Link your index page to your start page",
-    href: "/make-first-prototype/link-index-page-start-page/"
-  }
-}) }}
-

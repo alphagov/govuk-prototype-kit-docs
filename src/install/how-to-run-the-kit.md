@@ -2,6 +2,7 @@
 layout: install_template.html
 heading: How to run the kit
 caption: Create a prototype for new users
+next: /make-first-prototype/start/
 ---
 
 You’ll use the terminal to start and stop the kit.
@@ -46,11 +47,3 @@ To quit the kit, in the terminal press the `ctrl` and `c` keys together.
 ## Make your first prototype
 
 You’ve completed the Prototype Kit set up. You’re ready to make your first prototype.
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Make your first prototype",
-    href: "/make-first-prototype/start/"
-  }
-}) }}

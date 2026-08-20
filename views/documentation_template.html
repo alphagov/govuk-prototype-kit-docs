@@ -1,5 +1,7 @@
 {% extends "layout.html" %}
 
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
 {% block pageTitle %}
 {{ (title or heading) or "Documentation" }} – GOV.UK Prototype Kit
 {% endblock %}
@@ -27,6 +29,17 @@
       <div class="app-prose-scope">
         {{ content | safe }}
       </div>
+
+      {% if next %}
+        {%- set nextPage = collections.all | findByUrl(next) -%}
+
+        {{ govukPagination({
+          next: {
+            href: next,
+            labelText: nextPage.data.title | default(nextPage.data.heading)
+          }
+        }) }}
+      {% endif %}
     </div>
   </div>
 {% endblock %}

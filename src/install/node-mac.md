@@ -2,6 +2,7 @@
 layout: install_template.html
 heading: Install Node.js (Mac)
 caption: Create a prototype for new users
+next: /install/create-a-prototype/
 ---
 
 The kit is designed to work with Node.js version 24 and above.
@@ -35,10 +36,3 @@ node --version
 
 If it’s installed correctly it should show a number starting with 24.
 
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Create a prototype",
-    href: "/install/create-a-prototype/"
-  }
-}) }}

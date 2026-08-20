@@ -2,6 +2,7 @@
 layout: install_template.html
 heading: Prototype Kit requirements (Windows)
 caption: Create a prototype for new users
+next: /install/node-windows/
 ---
 
 You'll usually need admin access to your machine to install the software.
@@ -48,12 +49,4 @@ These two code editors are popular, well established and fairly accessible:
   [Find out more about how to use VS Code](https://code.visualstudio.com/docs/introvideos/basics)
   "
 
-}) }}
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Install Node",
-    href: "/install/node-windows/"
-  }
 }) }}

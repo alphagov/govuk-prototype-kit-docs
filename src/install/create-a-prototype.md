@@ -2,6 +2,7 @@
 layout: install_template.html
 heading: Create a prototype
 caption: Create a prototype
+next: /install/how-to-run-the-kit/
 ---
 
 ## Terminal basics
@@ -62,11 +63,3 @@ If any of your folder names contain spaces, you must add quotation marks around 
 Run:
 
 `npx govuk-prototype-kit@latest create`
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "How to run the kit",
-    href: "/install/how-to-run-the-kit/"
-  }
-}) }}

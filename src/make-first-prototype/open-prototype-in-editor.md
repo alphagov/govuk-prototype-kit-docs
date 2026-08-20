@@ -1,6 +1,7 @@
 ---
 heading: Open your prototype in your editor
 caption: Build a basic prototype
+next: /make-first-prototype/create-pages/
 ---
 
 
@@ -16,11 +17,3 @@ In your code editor open your prototype folder. You will see the files and folde
   - `routes.js` is for advanced logic - for example, if a user should go to one page or another based on their answer
 
 You can learn more about these features after you finish building a basic prototype. 
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Create pages",
-    href: "/make-first-prototype/create-pages/"
-  }
-}) }}

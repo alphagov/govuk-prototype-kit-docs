@@ -2,6 +2,7 @@
 heading: Show the user’s answers on the ‘Check answers’ page
 title: Show the user’s answers
 caption: Build a basic prototype
+next: /make-first-prototype/let-user-change-answers/
 ---
 
 The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers on the ‘Check answers’ page.
@@ -196,12 +197,3 @@ Your code should now look like this:
   </div>
 ```
 {% endraw %}
-
-{% from "govuk/components/pagination/macro.njk" import govukPagination %}
-{{ govukPagination({
-  next: {
-    labelText: "Let the user change their answers",
-    href: "/make-first-prototype/let-user-change-answers/"
-  }
-}) }}
-

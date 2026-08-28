@@ -7,7 +7,6 @@
     "/v12/docs/backwards-compatibility/",
     "/v12/docs/cookies/",
     "/v12/docs/creating-routes/",
-    "/v12/docs/download/",
     "/v12/docs/examples/",
     "/v12/docs/examples/override-service-name/",
     "/v12/docs/examples/pass-data/",
@@ -49,7 +48,6 @@
     "/v12/docs/templates/step-by-step-navigation/",
     "/v12/docs/templates/task-list/",
     "/v12/docs/tutorials-and-examples/",
-    "/v12/docs/update.sh/",
     "/v12/docs/updating-the-kit/",
     "/v12/docs/usage-data/",
     "/v12/docs/using-notify/"

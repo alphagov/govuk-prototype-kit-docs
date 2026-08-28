@@ -5,6 +5,8 @@ redirects:
   - /docs/conditional-content
 ---
 
+{% raw %}
+
 >To change the content within a page based on a user's answers, you need to know [how to pass data from page to page](/pass-data/).
 
 There are 2 ways to show content based on a user's answers. You can either [send the user to different pages](/branching-journeys/) (called 'branching') or change the content within a page (called 'conditional' content).
@@ -112,3 +114,5 @@ An example where the 'country' is Scotland and the content is different based on
 
 {% endif %}
 ```
+
+{% endraw %}

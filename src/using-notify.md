@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Use GOV.UK Notify to prototype emails and text messages
 title: Use GOV.UK Notify
 redirects:

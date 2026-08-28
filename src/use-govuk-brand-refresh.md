@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Use the GOV.UK brand refresh in your prototype
 title: Use the GOV.UK brand refresh in your prototype
 redirects:

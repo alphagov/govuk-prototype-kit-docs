@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Create your first plugin
 title: Create your first plugin
 redirects:

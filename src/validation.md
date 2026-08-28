@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Use error messages in the kit 
 redirects:
   - /docs/validation

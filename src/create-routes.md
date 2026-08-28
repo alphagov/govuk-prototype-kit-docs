@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Create routes
 redirects:
   - /docs/create-routes

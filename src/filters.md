@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Use filters to change how answers appear
 redirects:
   - /docs/filters

@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Pass data from page to page
 redirects:
   - /docs/pass-data

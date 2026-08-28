@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Add or change Nunjucks components
 title: Add or change Nunjucks components
 redirects:

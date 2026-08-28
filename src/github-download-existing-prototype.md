@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Download an existing prototype from GitHub
 redirects:
   - /docs/github-download-existing-prototype

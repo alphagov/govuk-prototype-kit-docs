@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Set up Git using the terminal
 redirects:
   - /docs/setting-up-git

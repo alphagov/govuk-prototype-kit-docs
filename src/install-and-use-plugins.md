@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Install and use plugins
 title: Install and use plugins
 redirects:

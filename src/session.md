@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Store data in session
 redirects:
   - /docs/session

@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Use filters to add dates 
 redirects:
   - /docs/date-filters

@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Create pages from templates
 title: Create pages from templates
 redirects:

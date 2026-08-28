@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Branching (show different pages based on a user’s answers)
 redirects:
   - /docs/branching-journeys

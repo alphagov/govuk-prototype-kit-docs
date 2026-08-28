@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Branching journeys using checkboxes
 redirects:
   - /docs/branching-journeys-checkboxes

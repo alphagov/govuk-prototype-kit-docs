@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Update to the latest version of the Prototype Kit
 caption: Update to the latest version of the Kit
 redirects:

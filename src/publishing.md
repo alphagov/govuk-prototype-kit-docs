@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Publish your prototype online
 title: Publish your prototype online
 redirects:

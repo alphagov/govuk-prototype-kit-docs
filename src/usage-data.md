@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Share usage data
 redirects:
   - /docs/usage-data

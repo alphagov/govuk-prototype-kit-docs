@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Store your code online with GitHub and GitHub Desktop
 redirects:
   - /docs/github-desktop

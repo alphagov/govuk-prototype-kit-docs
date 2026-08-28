@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: How to use layouts
 title: How to use layouts
 redirects:

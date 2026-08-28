@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Branching using radios
 redirects:
   - /docs/branching-journeys-radios

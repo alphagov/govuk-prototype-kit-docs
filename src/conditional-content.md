@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Change the content within a page based on a user's answers
 redirects:
   - /docs/conditional-content

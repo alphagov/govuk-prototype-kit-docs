@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Configure your plugin
 title: Configure your plugin
 redirects:

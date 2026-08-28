@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Migrate an existing prototype to version 13
 title: Migrate an existing prototype to version 13
 redirects:

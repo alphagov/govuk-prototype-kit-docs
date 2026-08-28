@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Add CSS, JavaScript, images and other files
 redirects:
   - /docs/adding-css-javascript-and-images

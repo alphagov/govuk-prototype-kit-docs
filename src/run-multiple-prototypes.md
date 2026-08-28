@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Run multiple prototypes
 title: Run multiple prototypes
 redirects:

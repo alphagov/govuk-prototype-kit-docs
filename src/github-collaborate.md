@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Collaborate on prototypes using GitHub Desktop
 redirects:
   - /docs/github-collaborate

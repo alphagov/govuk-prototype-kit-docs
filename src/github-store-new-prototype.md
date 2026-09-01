@@ -1,6 +1,8 @@
 ---
 layout: tutorials_guides_template.html
 heading: Store your new prototype in GitHub
+redirects:
+  - /docs/github-store-new-prototype
 --- 
 >To store your new prototype in GitHub, you need to [set up GitHub Desktop](/github-desktop/).
 

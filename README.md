@@ -16,6 +16,8 @@ The original history from the spike is preserved in the `from-govuk-design-syste
 
 [Read issue #22 for more information](https://github.com/alphagov/govuk-prototype-kit-docs/issues/22#issuecomment-1162876785).
 
+In September 2026 [the documentation was converted to a static site](https://github.com/alphagov/govuk-prototype-kit-docs/pull/312).
+
 ### Security
 
 GDS is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.

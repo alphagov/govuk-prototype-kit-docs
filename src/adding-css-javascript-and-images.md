@@ -5,6 +5,8 @@ redirects:
   - /docs/adding-css-javascript-and-images
 ---
 
+{% raw %}
+
 The Prototype Kit comes with standard GOV.UK Frontend styles and components for you to use in your prototypes.
 
 If you need to add your own CSS (Cascading Style Sheets), JavaScript, images or other files (for example, documents or spreadsheets), use the `/app/assets` folder.
@@ -40,12 +42,10 @@ To add an existing CSS file, put it in `app/assets/css`. You can create the fold
 Then add a stylesheets block in `app/views/layout/main.html`:
 
 ```
-{% raw %}
 {% block stylesheets %}
   {{ super() }}
   <link href="/public/css/filename-here.css" rel="stylesheet" type="text/css" />
 {% endblock %}
-{% endraw %}
 ```
 
 Replace `file-name-here.css` with your file name.
@@ -67,22 +67,18 @@ To add a JavaScript file to your prototype, put it in `app/assets/javascripts`.
 If you need the JavaScript file on one page, add a `pageScripts` block at the end of the page. For example:
 
 ```
-{% raw %}
 {% block pageScripts %}
   <script src="/public/javascripts/filename-here.js"></script>
 {% endblock %}
-{% endraw %}
 ```
 
 If you need the JavaScript file on all pages, add it to the scripts block in `app/views/layouts/main.html`. For example:
 
 ```
-{% raw %}
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/filename-here.js"></script>
 {% endblock %}
-{% endraw %}
 ```
 
 Replace `file-name-here.js` with your file name.
@@ -115,3 +111,4 @@ Link to it like this:
 ```
 <a href="/public/downloads/report.odf">Download the report</a>
 ```
+{% endraw %}

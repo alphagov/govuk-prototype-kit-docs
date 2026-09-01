@@ -5,6 +5,9 @@ title: Add or change Nunjucks components
 redirects:
   - /docs/add-change-nunjucks-components
 ---
+
+{% raw %}
+
 You can use 2 coding languages in your prototype with the [GOV.UK Design System](https://design-system.service.gov.uk/), Nunjucks or HTML.
 
 HTML is the language used to create web pages. Nunjucks is another language we can run in the Prototype Kit, to make HTML for us. 
@@ -28,12 +31,11 @@ Each component has options that allow you to change how it looks or behaves. To 
 3. Select **Nunjucks macro options**.
 
 For example, you can use the `text` option to change the text on a [button](https://design-system.service.gov.uk/components/button/):
+
 ```
-{% raw %}
 {{ govukButton({
     text: "Example button text"
 }) }}
-{% endraw %}
 ```
 
 When adding another option, add a comma at the end of the previous option. 
@@ -41,12 +43,10 @@ When adding another option, add a comma at the end of the previous option.
 In this example, we've changed the button to a secondary grey button:
 
 ```
-{% raw %}
 {{ govukButton({
   text: "Find address",
   classes: "govuk-button--secondary"
 }) }}
-{% endraw %}
 ```
 
 ## Delete parts of a component
@@ -56,7 +56,6 @@ Some components are made up of multiple parts. For example, the checkboxes are `
 This is the radios component:
 
 ```
-{% raw %}
 {{ govukRadios({
   name: "where-do-you-live",
   fieldset: {
@@ -85,12 +84,11 @@ This is the radios component:
     }
   ]
 }) }}
-{% endraw %}
 ```
 
 To delete the last radio ‘Northern Ireland’, delete this `item` including the comma before:
 
- ```
+```
  ,
  {
      value: "northern-ireland",
@@ -113,7 +111,6 @@ It is important that you do not change or delete the closing brackets:
 
 Your code should look like this:
 ```
-{% raw %}
 {{ govukRadios({
   name: "where-do-you-live",
   fieldset: {
@@ -142,5 +139,5 @@ Your code should look like this:
     }
   ]
 }) }}
-{% endraw %}
 ```
+{% endraw %}

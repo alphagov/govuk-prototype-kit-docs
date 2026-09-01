@@ -5,6 +5,8 @@ redirects:
   - /docs/session
 ---
 
+{% raw %}
+
 When a user answers questions in your prototype, their answers are stored in session data.
 
 To clear session data you can either:
@@ -91,3 +93,6 @@ Or in views as:
 {{ data['claimant']['last-name'] }}
 {{ data['partner']['first-name'] }}
 {{ data['partner']['last-name'] }}
+```
+
+{% endraw %}

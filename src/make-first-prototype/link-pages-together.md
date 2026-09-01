@@ -7,6 +7,8 @@ redirects:
   - /docs/make-first-prototype/link-pages-together
 ---
 
+{% raw %}
+
 To take users from one page to another, you can use either:
 
 - a link (`<a>` tag)
@@ -15,7 +17,7 @@ To take users from one page to another, you can use either:
 ## Link your start page to question 1
 
 1. Open `start.html` in your `app/views` folder.
-2. Find the {% raw %}`{{ govukButton({`{% endraw %} component with 'Start now' inside.
+2. Find the `{{ govukButton({` component with 'Start now' inside.
 3. Change the `href` from `#` to `/juggling-balls`.
 
 [Go to http://localhost:3000/start](http://localhost:3000/start) and select the **Start now** button to check the link works.
@@ -41,3 +43,5 @@ This time it's a real HTML button, not a link. Buttons submit form data - the UR
 [Go to http://localhost:3000/juggling-trick](http://localhost:3000/juggling-trick) and select **Continue** to check the button works.
 
 The 'Check answers' page template links to the ‘Confirmation’ page by default. So you do not need to change the ‘Check answers’ page.
+
+{% endraw %}

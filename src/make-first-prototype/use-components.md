@@ -8,6 +8,8 @@ redirects:
   - /docs/make-first-prototype/add-questions
 ---
 
+{% raw %}
+
 You can copy example code from the GOV.UK Design System to add page elements like radios and text inputs - we call these ‘components’.
 
 ## HTML and Nunjucks
@@ -60,7 +62,6 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 Your component code should now look like this:
 
-{% raw %}
 ```
 {{ govukRadios({
   name: "how-many-balls",
@@ -87,7 +88,6 @@ Your component code should now look like this:
   ]
 }) }}
 ```
-{% endraw %}
 
 Your page should now look like this:
 
@@ -97,3 +97,5 @@ Your page should now look like this:
 
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
+
+{% endraw %}

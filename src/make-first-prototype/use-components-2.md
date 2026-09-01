@@ -7,6 +7,8 @@ redirects:
   - /docs/make-first-prototype/use-components-2
 ---
 
+{% raw %}
+
 1. Go to the <a href="https://design-system.service.gov.uk/components/textarea/" target="_blank">textarea component in the Design System (opens in a new tab)</a>.
 
 2. Select the **Nunjucks** tab, then **Copy code**.
@@ -33,7 +35,6 @@ redirects:
 
    Your Textarea code should now look like this:
 
-{% raw %}
 ```
 {{ govukTextarea({
   name: "most-impressive-trick",
@@ -45,7 +46,6 @@ redirects:
   }
 }) }}
 ```
-{% endraw %}
 
 Your page should now look like this:
 
@@ -55,3 +55,5 @@ Your page should now look like this:
 
 <figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
 </figure>
+
+{% endraw %}

@@ -6,6 +6,8 @@ redirects:
   - /docs/using-notify
 ---
 
+{% raw %}
+
 You can use GOV.UK Notify to send text messages or emails when users
 interact with your prototype. For example you could send users a
 confirmation email at the end of a journey.
@@ -74,6 +76,8 @@ do accidentally publish your key somewhere you will need to sign into Notify and
 section of <strong><a href="http://localhost:3000/manage-prototype">Manage your prototype</a></strong> (opens in a new tab).
 3. Install <strong>Notifications node client</strong> from the <strong>Available plugins</strong> list.
 
+{% endraw %}
+
 {% from "govuk/components/details/macro.njk" import govukDetails %}
 {{ govukDetails({
   summaryText: "If the Notifications node client plugin is not available",
@@ -82,6 +86,8 @@ section of <strong><a href="http://localhost:3000/manage-prototype">Manage your 
 `npm install notifications-node-client`
 "
 }) }}
+
+{% raw %}
 
 In your code editor, add this code to the top of routes.js:
 
@@ -94,7 +100,7 @@ var NotifyClient = require('notifications-node-client').NotifyClient,
 
 Make a page with a form to collect the user’s email address. For
 example:
-{% raw %}
+
 ```
 {% extends "layouts/main.html" %}
 
@@ -124,7 +130,6 @@ example:
   </div>
 {% endblock %}
 ```
-{% endraw %}
 
 Save this page as `email-address-page.html`.
 
@@ -167,3 +172,5 @@ get consent to use them before doing your research.
 ## More things you can do with GOV.UK Notify
 
 [Documentation for using the GOV.UK Notify API](https://docs.notifications.service.gov.uk/node.html)
+
+{% endraw %}

@@ -5,6 +5,8 @@ redirects:
   - /docs/branching-journeys-radios
 ---
 
+{% raw %}
+
 You can create branches from any form fields, including checkboxes and radios. In this example we will use radios.
 
 Our example question will ask the user where they live. We’re going to send them to an ‘ineligible’ page if they live in any country other than England.
@@ -18,7 +20,6 @@ Sending users to different pages based on their answers is called branching.
 Create a page that has a form with radio buttons, using this code:
 
 ```
-{% raw %}
 <form class="form" action="/country-answer" method="post">
 
 {{ govukRadios({
@@ -56,7 +57,6 @@ Create a page that has a form with radio buttons, using this code:
 }) }}
 
 </form>
-{% endraw %}
 ```
 
 In the radios component, the `name` is "country". The name is important - it is where the kit stores the answer to the question. Names cannot have spaces, so use hyphens instead and use lowercase for simplicity.
@@ -164,3 +164,5 @@ If the user's answer was not 'England', we use `else` to set a different respons
 Our `response` is to `redirect` them to `/ineligible-country` - they are not eligible to continue in the service.
 
 </div>
+
+{% endraw %}

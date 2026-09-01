@@ -8,6 +8,8 @@ redirects:
   - /docs/make-first-prototype/show-users-answers
 ---
 
+{% raw %}
+
 The Prototype Kit stores answers that users enter. This means you can make more realistic prototypes, for example by showing answers on the ‘Check answers’ page.
 
 We will change the text in the template to match the questions in your prototype and show the user’s answers. 
@@ -131,7 +133,6 @@ Delete the last row including the comma above it:
 
 Your code should now look like this:
 
-{% raw %}
 ```
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
@@ -199,4 +200,5 @@ Your code should now look like this:
     </div>
   </div>
 ```
+
 {% endraw %}

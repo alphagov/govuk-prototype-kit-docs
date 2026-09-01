@@ -7,6 +7,8 @@ redirects:
   - /docs/make-first-prototype/let-user-change-answers
 ---
 
+{% raw %}
+
 Next to each question on the Check answers page there’s a **Change** link, so that users can add or change the information. 
 
 ## Make the ‘Change’ links work
@@ -28,7 +30,6 @@ Open the `juggling-balls.html` file in your `app/views` folder.
 
 In the `govukRadios` component, add a `value` line, like this:
 
-{% raw %}
 ```
 {{ govukRadios({
   name: "how-many-balls",
@@ -36,7 +37,6 @@ In the `govukRadios` component, add a `value` line, like this:
   fieldset: {
   ...
 ```
-{% endraw %}
 
 Go to <a href="http://localhost:3000/juggling-balls" target="_blank">http://localhost:3000/juggling-balls (opens in a new tab)</a> and check the journey works by selecting an answer, continuing to the next page, then going back.
 
@@ -48,7 +48,6 @@ Open the `juggling-trick.html` file in your `app/views` folder.
 
 Add `value: data['most-impressive-trick']` like this:
 
-{% raw %}
 ```
 {{ govukTextarea({
     name: "most-impressive-trick",
@@ -61,6 +60,7 @@ Add `value: data['most-impressive-trick']` like this:
     value: data['most-impressive-trick']
 }) }}
 ```
-{% endraw %}
 
 Go to <a href="http://localhost:3000/juggling-trick" target="_blank">http://localhost:3000/juggling-trick (opens in a new tab)</a> and check it works by filling in an answer, continuing to the next page, going back, then refreshing your browser.
+
+{% endraw %}

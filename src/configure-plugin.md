@@ -6,6 +6,8 @@ redirects:
   - /docs/configure-plugin
 ---
 
+{% raw %}
+
 Plugins need a file called `govuk-prototype-kit.config.json` (also known as a config file). The config file tells the kit what’s included in the plugin. 
 
 ## Use a namespace
@@ -141,20 +143,16 @@ nunjucks/somePlugin/macros/text-input.njk
 With a Nunjucks macro like this:
 
 ```
-{% raw %}
 {% macro somePluginTextInput(value) %}
   <input type="text" class="somePlugin_text-input" value="{{ value }}">
 {% endmacro %}
-{% endraw %}
 ```
 
 [Find out more about macros in the Nunjucks documentation](https://mozilla.github.io/nunjucks/templating.html#macro).
 
 The kit normally imports Nunjucks macros for users. If they make their own layouts file, they can manually import your macro like this:
 
-{% raw %}
 `{% import somePluginTextInput from "somePlugin/macros/text-input.njk" %}`
-{% endraw %}
 
 ### nunjucksPaths
 
@@ -168,7 +166,7 @@ An array of paths for Nunjucks includes, layouts and macros. For example:
 }
 ```
 
-In this example, if you add `{% raw %}{% extends “somePlugin/layouts/main.njk” %}{% endraw %}` to a page then Nunjucks will search for a matching file inside the plugin folder (`/nunjucks/somePlugin/layouts/main.njk`).
+In this example, if you add `{% extends “somePlugin/layouts/main.njk” %}` to a page then Nunjucks will search for a matching file inside the plugin folder (`/nunjucks/somePlugin/layouts/main.njk`).
 
 Inside your Nunjucks path folder you need a folder named the same as your namespace (`somePlugin`). This lets users know which plugin they’re getting the include or layout from.
 
@@ -306,3 +304,5 @@ With a Nunjucks page like this:
   </body>
 </html>
 ```
+
+{% endraw %}

@@ -5,6 +5,8 @@ redirects:
   - /docs/branching-journeys-checkboxes
 ---
 
+{% raw %}
+
 You can create branches using any form fields, including checkboxes and radios. In this example we will use checkboxes.
 
 We will look at an example question to ask the user what they export. If the user:
@@ -19,7 +21,6 @@ Sending users to different pages based on their answers is called branching.
 Create a page that has a form with checkboxes, using this code:
 
 ```
-{% raw %}
 <form class="form" action="/exports-answer" method="post">
 
 {{ govukCheckboxes({
@@ -56,7 +57,6 @@ Create a page that has a form with checkboxes, using this code:
 }) }}
 
 </form>
-{% endraw %}
 ```
 
 In the checkboxes component, the `name` is "exports". The name is important - it is where the kit stores the answer to the question. Names cannot have spaces, so use hyphens instead and use lowercase for simplicity.
@@ -212,3 +212,5 @@ util.deepStrictEqual(exports, ['Fruit', 'Vegetables'])
 ```
 
 Note the order is the same as the checkboxes, that's important - checking `['Vegetables', 'Fruit']` will not work.
+
+{% endraw %}

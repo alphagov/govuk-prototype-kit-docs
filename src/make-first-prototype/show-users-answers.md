@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Show the user’s answers on the ‘Check answers’ page
 title: Show the user’s answers
 caption: Build a basic prototype

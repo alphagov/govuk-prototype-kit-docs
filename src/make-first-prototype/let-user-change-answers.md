@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Let the user change their answers
 caption: Build a basic prototype
 next: /make-first-prototype/branching/

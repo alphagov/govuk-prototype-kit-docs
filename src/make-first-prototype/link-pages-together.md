@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Link your pages together
 caption: Build a basic prototype
 next: /make-first-prototype/use-components/

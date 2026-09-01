@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Link your index page to your start page
 caption: Build a basic prototype
 redirects:

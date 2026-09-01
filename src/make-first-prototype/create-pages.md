@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Create pages
 caption: Build a basic prototype
 next: /make-first-prototype/html/

@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Build a basic prototype using the Prototype Kit
 title: Build a basic prototype
 next: /make-first-prototype/open-prototype-in-editor/

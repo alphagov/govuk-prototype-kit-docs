@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Add a textarea to question 2
 caption: Build a basic prototype
 next: /make-first-prototype/show-users-answers/

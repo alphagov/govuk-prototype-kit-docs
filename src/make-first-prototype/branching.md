@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Show different pages depending on user input (branching)
 caption: Build a basic prototype
 next: /make-first-prototype/link-index-page-start-page/

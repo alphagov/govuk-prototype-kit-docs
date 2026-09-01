@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Understand basic HTML
 caption: Build a basic prototype
 next: /make-first-prototype/link-pages-together/

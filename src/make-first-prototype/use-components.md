@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Use components from the Design System
 caption: Build a basic prototype
 next: /make-first-prototype/use-components-2/

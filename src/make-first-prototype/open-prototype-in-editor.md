@@ -1,4 +1,5 @@
 ---
+layout: tutorials_guides_template.html
 heading: Open your prototype in your editor
 caption: Build a basic prototype
 next: /make-first-prototype/create-pages/

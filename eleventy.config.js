@@ -39,6 +39,14 @@ export default function (eleventyConfig) {
 
   eleventyConfig.addGlobalData('layout', 'documentation_template.html')
 
+  eleventyConfig.amendLibrary('md', (mdLib) => {
+    // Auto-link URLs and email addresses...
+    mdLib.set({ linkify: true })
+
+    // ...but only where they start with http, so we don't autolink 'GOV.UK'
+    mdLib.linkify.set({ fuzzyLink: false })
+  })
+
   return {
     htmlTemplateEngine: 'njk',
     markdownTemplateEngine: 'njk',

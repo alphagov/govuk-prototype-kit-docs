@@ -1,4 +1,5 @@
 import Nunjucks from 'nunjucks'
+import markdownItAnchor from 'markdown-it-anchor'
 
 import { setupStylesheetCompilation } from './eleventy/stylesheets.js'
 
@@ -45,6 +46,9 @@ export default function (eleventyConfig) {
 
     // ...but only where they start with http, so we don't autolink 'GOV.UK'
     mdLib.linkify.set({ fuzzyLink: false })
+
+    // Add auto-generated IDs to headings for deep-linking
+    mdLib.use(markdownItAnchor)
   })
 
   return {

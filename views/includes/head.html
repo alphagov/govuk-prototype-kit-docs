@@ -1,0 +1,12 @@
+{#-
+Prevent search engine indexing in non-production contexts (e.g. deploy previews)
+https://docs.netlify.com/build/configure-builds/environment-variables/#build-metadata
+-#}
+{% if site.env.CONTEXT !== "production" %}
+<meta name="robots" content="noindex, nofollow">
+{% endif %}
+
+<meta name="description" content="Use the GOV.UK Prototype Kit to quickly make realistic HTML prototypes of GOV.UK services.">
+<meta name="google-site-verification" content="aKquocaMh1sxbLsNwlQpAzloSx0N0V9gQ9ExEaz4h6g" />
+
+<link href="/assets/docs.css" media="all" rel="stylesheet" type="text/css" />

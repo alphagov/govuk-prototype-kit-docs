@@ -1,0 +1,111 @@
+---
+layout: layout.html
+redirects:
+  - /docs
+  - /docs/about
+---
+
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"   import govukButton %}
+
+{% block content %}
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+
+      <h1 class="govuk-heading-xl">GOV.UK Prototype Kit</h1>
+
+      <p class="govuk-body-l">
+        Quickly make interactive, accessible and realistic prototypes of GOV.UK services.</p>
+
+        <p class="govuk-body">Use prototypes to get valuable feedback and insights from user research or the people you work with.</p> 
+
+        <h2 class="govuk-heading-m">Who the kit is for</h2>
+      <p class="govuk-body">The kit is used by teams across government. Anyone can use the kit, including:</p>
+      <ul class="govuk-list govuk-list--bullet">
+        <li>content, interaction and service designers</li>
+        <li>developers</li>
+        <li>user researchers</li>
+        <li>product owners</li>
+      </ul>
+  
+      <h2 class="govuk-heading-m"> Save time with templates and components</h2>
+      <p class="govuk-body">The kit comes with templates to create common page types.</p>
+      <p class="govuk-body">You can also copy example code from the <a class="govuk-link" href="https://design-system.service.gov.uk/">GOV.UK Design System</a> to add styles, components and patterns into your prototype. This means you can:</p> 
+      <ul class="govuk-list govuk-list--bullet">
+        <li>create prototypes quickly and easily</li>
+        <li>learn from the research and experience of other service teams</li>
+        <li>avoid repeating work that's already been done</li>
+      </ul>
+      
+      {{ govukButton({
+          text: "Get started",
+          href: "/create-new-prototype/",
+          isStartButton: true,
+          classes: "govuk-!-margin-top-4"
+      }) }}
+
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+      <h2 class="govuk-heading-m">Sign up to our mailing list</h2>
+      <p class="govuk-body">
+        Find out about key changes to the kit, training opportunities and get involved with user research.
+      </p>
+      <p class="govuk-body"><a class="govuk-link" href="https://mailchi.mp/707ce8dec373/get-updated-by-email-govuk-design-system">Sign up to the GOV.UK Prototype Kit mailing list</a></p>
+    </div>
+  </div>
+
+  <hr class="govuk-section-break govuk-section-break--visible">
+
+    <div class="govuk-grid-row">
+      <div class="govuk-grid-column-two-thirds govuk-!-margin-top-6">
+      
+    <h2 class="govuk-heading-m">Prototyping</h2>
+    <p class="govuk-body">
+     Learn about different prototyping methods, when to use them and the benefits of the GOV.UK Prototype Kit. 
+    </p>
+    <p class="govuk-body"><a class="govuk-link" href="/prototyping/">Find out more about prototyping</a></p>
+
+</div>
+</div>
+
+  <hr class="govuk-section-break govuk-section-break--visible">
+
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a class="govuk-link" href="/tutorials-and-guides/" data-htutorials="Tutorials and guides">Tutorials and guides</a></h2>
+      <p class="govuk-body">
+        Tutorials, examples and guides.
+      </p>
+
+    </div>
+  
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a class="govuk-link" href="/support/">Support</a></h2>
+      <p class="govuk-body">
+        Contact the team to get help and support.
+      </p>
+
+    </div>
+
+    <div class="govuk-grid-column-one-third govuk-!-margin-top-6">
+
+      <h2 class="govuk-heading-m"><a class="govuk-link" href="/whats-new/">What’s new in version 13</a></h2>
+      <p class="govuk-body">
+        Lots of big changes including new ways to create, run and manage your prototypes.
+
+      </p>
+
+    </div>
+
+  </div>
+
+
+{% endblock %}

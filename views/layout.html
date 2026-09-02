@@ -1,0 +1,118 @@
+{% extends "govuk/template.njk" %}
+
+{% from "govuk/components/back-link/macro.njk"     import govukBackLink %}
+{% from "govuk/components/breadcrumbs/macro.njk"   import govukBreadcrumbs %}
+{% from "govuk/components/button/macro.njk"        import govukButton %}
+{% from "govuk/components/checkboxes/macro.njk"    import govukCheckboxes %}
+{% from "govuk/components/date-input/macro.njk"    import govukDateInput %}
+{% from "govuk/components/details/macro.njk"       import govukDetails %}
+{% from "govuk/components/error-message/macro.njk" import govukErrorMessage %}
+{% from "govuk/components/error-summary/macro.njk" import govukErrorSummary %}
+{% from "govuk/components/fieldset/macro.njk"      import govukFieldset %}
+{% from "govuk/components/file-upload/macro.njk"   import govukFileUpload %}
+{% from "govuk/components/input/macro.njk"         import govukInput %}
+{% from "govuk/components/inset-text/macro.njk"    import govukInsetText %}
+{% from "govuk/components/notification-banner/macro.njk"  import govukNotificationBanner %}
+{% from "govuk/components/panel/macro.njk"         import govukPanel %}
+{% from "govuk/components/phase-banner/macro.njk"  import govukPhaseBanner %}
+{% from "govuk/components/radios/macro.njk"        import govukRadios %}
+{% from "govuk/components/select/macro.njk"        import govukSelect %}
+{% from "govuk/components/service-navigation/macro.njk"        import govukServiceNavigation %}
+{% from "govuk/components/skip-link/macro.njk"     import govukSkipLink %}
+{% from "govuk/components/table/macro.njk"         import govukTable %}
+{% from "govuk/components/tabs/macro.njk"          import govukTabs %}
+{% from "govuk/components/tag/macro.njk"           import govukTag %}
+{% from "govuk/components/textarea/macro.njk"      import govukTextarea %}
+{% from "govuk/components/warning-text/macro.njk"  import govukWarningText %}
+
+{% block head %}
+  {% include "includes/head.html" %}
+{% endblock %}
+
+{% block pageTitle %}
+{% if title %}{{ title }} – {% endif -%} GOV.UK Prototype Kit
+{% endblock %}
+
+{% block bodyStart %}
+  <a id="top"></a>
+{% endblock %}
+
+{% block header %}
+  {{ govukHeader({
+    homepageUrl: "/",
+    productName: "Prototype Kit"
+  }) }}
+  {{
+    govukServiceNavigation({
+      navigation: [
+        {
+          href: "/create-new-prototype/",
+          text: "Get started",
+          attributes: {
+            "data-get-started": "Get started"
+          }
+        },
+        {
+          href: "/tutorials-and-guides/",
+          text: "Tutorials and guides",
+          attributes: {
+            "data-tutorials": "Tutorials and guides"
+          }
+        },
+        {
+          href: "/support/",
+          text: "Support",
+          attributes: {
+            "data-about": "Support"
+          }
+        }
+      ]
+    })
+  }}
+{% endblock %}
+
+{% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
+
+{% block beforeContent %}
+  {% if breadcrumbs %}
+    {{ govukBreadcrumbs({
+      items: [
+        {
+          text: "GOV.UK Prototype Kit",
+          href: "/"
+        }
+      ]
+    }) }}
+  {% endif %}
+{% endblock %}
+
+{% block content %}{{ content | safe }}{% endblock %}
+
+{% block footer %}
+  {{ govukFooter({
+    meta: {
+      items: [
+        {
+          href: "/support/",
+          text: "Support"
+        },
+        {
+          href: "/accessibility/",
+          text: "Accessibility"
+        },
+        {
+          href: "/privacy-notice/",
+          text: "Privacy notice"
+        }
+      ]
+    }
+  }) }}
+{% endblock %}
+
+{% block bodyEnd %}
+<script type="module" src="/assets/govuk-frontend.min.js"></script>
+<script type="module">
+  import { initAll } from '/assets/govuk-frontend.min.js'
+  initAll()
+</script>
+{% endblock %}

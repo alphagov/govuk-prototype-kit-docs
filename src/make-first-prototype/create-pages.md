@@ -1,0 +1,90 @@
+---
+layout: tutorials_guides_template.html
+heading: Create pages
+caption: Build a basic prototype
+next: /make-first-prototype/html/
+redirects:
+  - /docs/make-first-prototype/create-pages
+  - /docs/making-pages
+---
+
+You can create pages by using the templates that come with the Prototype Kit.
+
+1. In your browser go to the **Manage your prototype** page: <a href="http://localhost:3000/manage-prototype" rel="noreferrer noopener" target="_blank">http://localhost:3000/manage-prototype (opens in new tab)</a>. 
+
+    There is also a link to this page in the footer of your prototype.
+
+2. In the navigation menu, go to the **Templates** section.
+
+### Create a Start page
+
+1. In the list of templates, find the **Start page** and select **Create**
+
+2. Enter `/start` in **Path for the new page**
+
+3. Select **Create page**
+
+
+The kit creates a page from the template in the `app/views` folder in your code editor.
+
+#### Change the service name
+
+You change the service name in the config file. This will change it on every page in your prototype.
+
+1. In your code editor, go to the `app` folder and open the `config.json` file.
+
+2. Change `serviceName` from **Service name goes here** to **Apply for a juggling licence**.
+
+3. Press Cmd+S on Mac or Ctrl+S on Windows to save your change.
+
+4. Refresh the page in your browser.
+
+You’ll need to save every time you make a change to a file.
+
+Usually your changes will automatically show in the browser without refreshing. We have made a change that applies to all pages in the prototype (called a config change), so you need to refresh the page.
+
+You should see your service name change on the Start page.
+
+### Question pages
+
+1. In your browser, go to the **Templates** section of **Manage your prototype**  
+<a href="http://localhost:3000/manage-prototype/templates" target="_blank">http://localhost:3000/manage-prototype/templates (opens in a new tab)</a>
+
+2. Create a page from the **Question page** template.
+
+3. Enter the path `/juggling-balls`
+
+4. Create another page from the **Question page** template.
+
+5. Enter the path `/juggling-trick`
+
+6. Go to the following URLs to check your pages:
+
+- http://localhost:3000/juggling-balls 
+- http://localhost:3000/juggling-trick 
+
+7. Go to your code editor.
+
+8. To create headings on a page we use heading tags, like `<h1>` for the page title, `<h2>` for a subheading and so on.
+
+   In the `juggling-balls.html` file, change the text inside the `h1` tag from `Heading or question goes here` to `How many balls can you juggle?`
+
+9. In the `juggling-trick.html` file, change the text inside the `h1` tag to `What is your most impressive juggling trick?`
+
+### Check answers page
+
+1. In your browser, go to the **Templates** section of **Manage your prototype**
+http://localhost:3000/manage-prototype/templates (opens in a new tab).
+
+2. Create a page from the **Check answers** template.
+
+3. Enter the path `/check-answers`
+
+### Confirmation page
+
+1. In your browser, go to the **Templates** section of **Manage your prototype**
+http://localhost:3000/manage-prototype/templates (opens in a new tab).
+
+2. Create a page from the **Confirmation** template.
+
+3. Enter the path `/confirmation`

@@ -1,0 +1,30 @@
+---
+layout: install_template.html
+heading: Getting started with the Prototype Kit
+caption: Create a prototype
+redirects:
+  - /docs/install/getting-started
+  - /docs/install/introduction
+  - /docs/install/node
+  - /docs/install/requirements
+---
+
+The GOV.UK Prototype Kit provides a simple way to make interactive prototypes that look and feel like pages on GOV.UK. These prototypes can be used to design and lay out pages and to use in user research.
+
+This guide will walk you through installing what you need and starting with the kit. If you get stuck, [contact the GOV.UK Prototype team](/support/) or if you have a developer on your team, they should be able to help.
+
+It takes up to 30 minutes depending on how much you need to set up.
+
+If you’re comfortable using Git and the terminal, you can [use the advanced guide](/install/getting-started-advanced/).
+
+The GOV.UK Prototype Kit runs on Mac, Windows and Linux. There are different requirements for each operating system.
+
+## Mac
+[Install guide for Mac ](/install/requirements-mac/)
+
+## Windows
+[Install guide for Windows](/install/requirements-windows/)
+
+## Linux
+[Install guide for Linux](/install/requirements-linux/)
+

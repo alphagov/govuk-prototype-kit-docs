@@ -1,0 +1,45 @@
+{% extends "layout.html" %}
+
+{% from "govuk/components/pagination/macro.njk" import govukPagination %}
+
+{% block pageTitle %}
+{{ (title or heading) or "Documentation" }} – GOV.UK Prototype Kit
+{% endblock %}
+
+{% block beforeContent %}
+  {{ govukBreadcrumbs({
+    items: [
+      {
+        text: "GOV.UK Prototype Kit",
+        href: "/"
+      }
+    ]
+  }) }}
+{% endblock %}
+
+{% block content %}
+  <div class="govuk-grid-row">
+    <div class="govuk-grid-column-two-thirds">
+      <h1 class="govuk-heading-xl">
+        {% if caption %}
+          <span class="govuk-caption-l">{{ caption }}</span>
+        {% endif %}
+        {{ heading }}
+      </h1>
+      <div class="app-prose-scope">
+        {{ content | safe }}
+      </div>
+
+      {% if next %}
+        {%- set nextPage = collections.all | findByUrl(next) -%}
+
+        {{ govukPagination({
+          next: {
+            href: next,
+            labelText: nextPage.data.title | default(nextPage.data.heading)
+          }
+        }) }}
+      {% endif %}
+    </div>
+  </div>
+{% endblock %}

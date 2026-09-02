@@ -1,0 +1,37 @@
+---
+layout: install_template.html
+heading: Install Node.js (Linux)
+caption: Create a prototype for new users
+next: /install/create-a-prototype/
+redirects:
+  - /docs/install/node-linux
+---
+
+The kit is designed to work with Node.js version 24 and above.
+
+### Check if you have Node.js
+
+In the terminal, enter:
+```
+node --version
+```
+If it says `command not found` you do not have Node and will need to download and install it.
+
+If the version number starts with 24 you have the correct version installed.
+
+If it starts with a number lower than 24, you need to download and install version 24.
+
+### Download and install Node.js
+
+[Follow the Linux instructions on the Node.js. website](https://nodejs.org/en/download/package-manager/#debian-and-ubuntu-based-linux-distributions). Make sure you get version 24.
+
+### Once Node is installed
+
+You’ll need to quit and restart the terminal to be able to use Node for the first time.
+
+To check it's installed correctly you can again run:
+```
+node --version
+```
+
+If it’s installed correctly it should show a number starting with 24.

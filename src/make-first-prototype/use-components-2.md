@@ -1,0 +1,59 @@
+---
+layout: tutorials_guides_template.html
+heading: Add a textarea to question 2
+caption: Build a basic prototype
+next: /make-first-prototype/show-users-answers/
+redirects:
+  - /docs/make-first-prototype/use-components-2
+---
+
+{% raw %}
+
+1. Go to the <a href="https://design-system.service.gov.uk/components/textarea/" target="_blank">textarea component in the Design System (opens in a new tab)</a>.
+
+2. Select the **Nunjucks** tab, then **Copy code**.
+
+3. Open `juggling-trick.html` in your `app/views` folder.
+
+4. Replace this paragraph with the code you copied:
+```
+<p>
+  [Insert question content here - see the
+  <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
+  for examples]
+</p>
+```
+5. Delete the old `<h1>` tag with "What is your most impressive juggling trick?" (again the example code comes with an accessible heading for the question).
+
+### Customise the example code
+
+1. Under `label`, change `text` from `"Can you provide more detail?"` to `"What is your most impressive juggling trick?"`.
+
+2. Change the `id` and `name` to `most-impressive-trick`.
+
+3. We do not need any hint text, so remove it and the comma just before it.
+
+   Your Textarea code should now look like this:
+
+```
+{{ govukTextarea({
+  name: "most-impressive-trick",
+  id: "most-impressive-trick",
+  label: {
+    text: "What is your most impressive juggling trick?",
+    classes: "govuk-label--l",
+    isPageHeading: true
+  }
+}) }}
+```
+
+Your page should now look like this:
+
+<figure>
+
+![Web page with the heading "What is your most impressive juggling trick", a textarea and continue button](/images/tutorial-textarea.png)
+
+<figcaption class="govuk-body">Screenshot of how your prototype should look.</figcaption>
+</figure>
+
+{% endraw %}

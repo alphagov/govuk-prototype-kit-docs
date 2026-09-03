@@ -4,7 +4,7 @@ This repository contains the code for the [GOV.UK Prototype Kit website](https:/
 
 The code for the Prototype Kit can be found at [alphagov/govuk-prototype-kit](https://github.com/alphagov/govuk-prototype-kit).
 
-### Security
+## Security
 
 GDS is an advocate of responsible vulnerability disclosure. If you’ve found a vulnerability, we would like to know so we can fix it.
 

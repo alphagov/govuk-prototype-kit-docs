@@ -14,24 +14,6 @@ figure {
   margin-right: inherit;
 }
 
-.app-code {
-  @include govuk-font($size: 19);
-  position: relative;
-  margin: 0;
-  padding: govuk-spacing(3);
-  overflow: auto;
-  border: $govuk-focus-width solid transparent;
-  outline: 1px solid $govuk-border-colour;
-  background-color: govuk-colour("black", $variant: "tint-95");
-  max-width: 38em;
-  @include govuk-responsive-margin(5, "bottom");
-
-  &:focus {
-    border: $govuk-focus-width solid $govuk-input-border-colour;
-    outline: $govuk-focus-width solid $govuk-focus-colour;
-  }
-}
-
 .app-prose-scope {
 
   h1 {
@@ -83,7 +65,21 @@ figure {
   }
 
   pre {
-    @extend .app-code;
+    @include govuk-font($size: 19);
+    position: relative;
+    margin: 0;
+    padding: govuk-spacing(3);
+    overflow: auto;
+    border: $govuk-focus-width solid transparent;
+    outline: 1px solid $govuk-border-colour;
+    background-color: govuk-colour("black", $variant: "tint-95");
+    max-width: 38em;
+    @include govuk-responsive-margin(5, "bottom");
+
+    &:focus {
+      border: $govuk-focus-width solid $govuk-input-border-colour;
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+    }
   }
 
   p code,

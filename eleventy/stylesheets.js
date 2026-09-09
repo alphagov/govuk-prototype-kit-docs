@@ -51,7 +51,6 @@ async function compileSassFile (file) {
     loadPaths: ['./node_modules/govuk-frontend/dist'],
     sourceMap: false,
     outputStyle: 'compressed',
-    silenceDeprecations: ['import'],
     quietDeps: true // silence warnings from govuk-frontend
   })
 

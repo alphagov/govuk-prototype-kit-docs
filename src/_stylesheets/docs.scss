@@ -1,10 +1,4 @@
-$govuk-new-link-styles: true;
-$govuk-new-typography-scale: true;
-$govuk-suppressed-warnings: (
-  'legacy-colour-param',
-);
-
-@import "govuk";
+@use "govuk" as *;
 
 img{
   max-width: 100%;
@@ -50,7 +44,7 @@ figure {
   overflow: auto;
   border: $govuk-focus-width solid transparent;
   outline: 1px solid $govuk-border-colour;
-  background-color: govuk-colour("light-grey");
+  background-color: govuk-colour("black", $variant: "tint-95");
   max-width: 38em;
   @include govuk-responsive-margin(5, "bottom");
 
@@ -117,7 +111,7 @@ figure {
   p code,
   li code {
     color: #d13118;
-    background-color: govuk-colour("light-grey");
+    background-color: govuk-colour("black", $variant: "tint-95");
     padding: 0 govuk-spacing(1);
   }
 

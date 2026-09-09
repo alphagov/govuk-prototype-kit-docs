@@ -20,22 +20,6 @@ figure {
   line-height: 25px;
 }
 
-.app-table--fixed {
-  table-layout: fixed;
-}
-
-.app-\!-db {
-  display: block !important;
-}
-
-.app-table--fixed {
-  table-layout: fixed;
-}
-
-.app-\!-db {
-  display: block !important;
-}
-
 .app-code {
   @include govuk-font($size: 19);
   position: relative;

@@ -94,13 +94,13 @@ figure {
     margin-left: 0;
     @extend .govuk-inset-text;
   }
-}
 
-.app-prose-scope ul + h2,
-.app-prose-scope ul + h3,
-.app-prose-scope ul + h4,
-.app-prose-scope pre + h2,
-.app-prose-scope pre + h3,
-.app-prose-scope pre + h4 {
-  @include govuk-responsive-margin(4, "top");
+  ul + h2,
+  ul + h3,
+  ul + h4,
+  pre + h2,
+  pre + h3,
+  pre + h4 {
+    @include govuk-responsive-margin(4, "top");
+  }
 }

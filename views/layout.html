@@ -37,7 +37,7 @@
   <a id="top"></a>
 {% endblock %}
 
-{% block header %}
+{% block govukHeader %}
   {{ govukHeader({
     homepageUrl: "/",
     productName: "Prototype Kit"
@@ -73,7 +73,7 @@
 
 {% set mainClasses = mainClasses | default("govuk-main-wrapper--auto-spacing") %}
 
-{% block beforeContent %}
+{% block containerStart %}
   {% if breadcrumbs %}
     {{ govukBreadcrumbs({
       items: [
@@ -88,7 +88,7 @@
 
 {% block content %}{{ content | safe }}{% endblock %}
 
-{% block footer %}
+{% block govukFooter %}
   {{ govukFooter({
     meta: {
       items: [

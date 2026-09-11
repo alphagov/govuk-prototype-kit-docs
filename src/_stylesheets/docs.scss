@@ -1,6 +1,6 @@
 @use "govuk" as *;
 
-img{
+img {
   max-width: 100%;
 }
 
@@ -12,46 +12,6 @@ figure {
   // Needed for Internet Explorer
   margin-left: inherit;
   margin-right: inherit;
-}
-
-// adjust code block font-size to 19px
-.hljs {
-  font-size: 19px;
-  line-height: 25px;
-}
-
-.app-table--fixed {
-  table-layout: fixed;
-}
-
-.app-\!-db {
-  display: block !important;
-}
-
-.app-table--fixed {
-  table-layout: fixed;
-}
-
-.app-\!-db {
-  display: block !important;
-}
-
-.app-code {
-  @include govuk-font($size: 19);
-  position: relative;
-  margin: 0;
-  padding: govuk-spacing(3);
-  overflow: auto;
-  border: $govuk-focus-width solid transparent;
-  outline: 1px solid $govuk-border-colour;
-  background-color: govuk-colour("black", $variant: "tint-95");
-  max-width: 38em;
-  @include govuk-responsive-margin(5, "bottom");
-
-  &:focus {
-    border: $govuk-focus-width solid $govuk-input-border-colour;
-    outline: $govuk-focus-width solid $govuk-focus-colour;
-  }
 }
 
 .app-prose-scope {
@@ -105,7 +65,21 @@ figure {
   }
 
   pre {
-    @extend .app-code;
+    @include govuk-font($size: 19);
+    position: relative;
+    margin: 0;
+    padding: govuk-spacing(3);
+    overflow: auto;
+    border: $govuk-focus-width solid transparent;
+    outline: 1px solid $govuk-border-colour;
+    background-color: govuk-colour("black", $variant: "tint-95");
+    max-width: 38em;
+    @include govuk-responsive-margin(5, "bottom");
+
+    &:focus {
+      border: $govuk-focus-width solid $govuk-input-border-colour;
+      outline: $govuk-focus-width solid $govuk-focus-colour;
+    }
   }
 
   p code,
@@ -120,13 +94,13 @@ figure {
     margin-left: 0;
     @extend .govuk-inset-text;
   }
-}
 
-.app-prose-scope ul + h2,
-.app-prose-scope ul + h3,
-.app-prose-scope ul + h4,
-.app-prose-scope pre + h2,
-.app-prose-scope pre + h3,
-.app-prose-scope pre + h4 {
-  @include govuk-responsive-margin(4, "top");
+  ul + h2,
+  ul + h3,
+  ul + h4,
+  pre + h2,
+  pre + h3,
+  pre + h4 {
+    @include govuk-responsive-margin(4, "top");
+  }
 }

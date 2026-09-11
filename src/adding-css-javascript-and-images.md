@@ -41,7 +41,7 @@ To add an existing CSS file, put it in `app/assets/css`. You can create the fold
 
 Then add a stylesheets block in `app/views/layout/main.html`:
 
-```html
+```nunjucks
 {% block stylesheets %}
   {{ super() }}
   <link href="/public/css/filename-here.css" rel="stylesheet" type="text/css" />

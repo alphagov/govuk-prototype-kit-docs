@@ -1,0 +1,113 @@
+@use "sass:color";
+@use "govuk" as *;
+
+// GOV.UK Prism theme
+
+// High level colours
+$text-colour: govuk-colour(black);
+$primary-colour: govuk-colour(blue);
+$comment-colour: govuk-colour(black, $variant: "tint-25");
+$key-colour: govuk-colour(green);
+$value-colour: govuk-colour(red);
+
+code[class*="language-"],
+pre[class*="language-"] {
+  text-align: left;
+  white-space: pre;
+  word-spacing: normal;
+  word-break: normal;
+  word-wrap: normal;
+  line-height: 1.5;
+  tab-size: 4;
+  hyphens: none;
+}
+
+// All languages
+.token {
+  &.punctuation {
+    color: $text-colour;
+  }
+  &.comment {
+    color: $comment-colour;
+  }
+  &.string {
+    color: $value-colour;
+  }
+}
+
+// Specific languages
+.language-css {
+  color: $value-colour;
+  .selector {
+    color: $primary-colour;
+  }
+  .property {
+    color: $key-colour;
+  }
+}
+
+.language-scss {
+  .keyword {
+    color: $primary-colour;
+  }
+}
+
+.language-html {
+  .doctype {
+    color: $comment-colour;
+  }
+  .tag {
+    color: $key-colour;
+  }
+  .attr-name {
+    color: $primary-colour;
+  }
+  .attr-value {
+    color: $value-colour;
+  }
+}
+
+.language-nunjucks {
+  .tag,
+  .variable {
+    color: $key-colour;
+  }
+  .tag + .variable,
+  .function {
+    color: $primary-colour;
+  }
+}
+
+.language-json {
+  .property {
+    color: $key-colour;
+  }
+  .boolean {
+    color: $value-colour;
+  }
+}
+
+.language-javascript {
+  .function {
+    color: $primary-colour;
+  }
+  .keyword {
+    color: $key-colour;
+  }
+  .constant {
+    color: $key-colour;
+  }
+}
+
+.language-shell {
+  .builtin,
+  .function {
+    color: $primary-colour;
+  }
+  .parameter {
+    color: $key-colour;
+  }
+  .variable {
+    color: $value-colour;
+  }
+}

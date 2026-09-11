@@ -1,3 +1,4 @@
+@use "./syntax-highlighting";
 @use "govuk" as *;
 
 img {
@@ -78,10 +79,8 @@ figure {
 
   pre {
     @include govuk-font-size(19);
-    position: relative;
     margin: 0;
     padding: govuk-spacing(3);
-    overflow: auto;
     border: $govuk-focus-width solid transparent;
     outline: 1px solid $govuk-border-colour;
     background-color: govuk-colour("black", $variant: "tint-95");

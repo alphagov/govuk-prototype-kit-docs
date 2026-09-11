@@ -78,6 +78,7 @@ figure {
 
   pre {
     @include govuk-font-size($size: 19, $line-height: 1.5);
+    box-sizing: border-box;
     position: relative;
     margin: 0;
     padding: govuk-spacing(3);
@@ -85,8 +86,10 @@ figure {
     border: $govuk-focus-width solid transparent;
     outline: 1px solid $govuk-border-colour;
     background-color: govuk-colour("black", $variant: "tint-95");
-    max-width: 38em;
-    @include govuk-responsive-margin(5, "bottom");
+    // Expand the code blocks so they're full width of the grid.
+    $page-gutter: $govuk-gutter * 2; // Both sides of the page
+    width: min(100vw - $page-gutter, $govuk-page-width);
+    @include govuk-responsive-margin(6, "bottom");
 
     &:focus {
       border: $govuk-focus-width solid $govuk-input-border-colour;

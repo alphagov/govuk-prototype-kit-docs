@@ -12,7 +12,7 @@ The kit is designed to work with Node.js version 24 and above.
 ### Check if you have Node.js
 
 In the terminal, enter:
-```
+```shell
 node --version
 ```
 If it says `command not found` you do not have Node and will need to download and install it.
@@ -30,7 +30,7 @@ If it starts with a number lower than 24, you need to download and install versi
 You’ll need to quit and restart the terminal to be able to use Node for the first time.
 
 To check it's installed correctly you can again run:
-```
+```shell
 node --version
 ```
 

@@ -18,7 +18,7 @@ If you add validation errors that behave in the same way as the live service, it
 To test your error messages in user research, you can create separate pages to show what happens when something goes wrong.
 
 For example, to show an error message for a name input:
-```
+```nunjucks
 {{ govukErrorSummary({
     titleText: "There is a problem",
     errorList: [

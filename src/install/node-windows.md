@@ -12,7 +12,7 @@ The kit is designed to work with Node.js version 24 and above.
 ### Check if you have Node.js
 
 In the terminal, enter:
-```
+```shell
 node --version
 ```
 If it says `command not found` or `Error 0x2 starting node.exe --version` you do not have Node and will need to download and install it.
@@ -32,7 +32,7 @@ Run the installer with all default options.
 You’ll need to quit and restart Git Bash to be able to use Node for the first time.
 
 To check it is installed correctly you can again run:
-```
+```shell
 node --version
 ```
 

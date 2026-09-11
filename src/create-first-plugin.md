@@ -72,7 +72,7 @@ Our example is for templates, but you can follow the same steps for other plugin
 
 2. In your config file add a ‘Hello World’ template using the `templates` option:
 
-```
+```json
 {
   "templates": [
     {
@@ -88,7 +88,7 @@ Our example is for templates, but you can follow the same steps for other plugin
 
 Create a file called `hello-world.html` and add HTML:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <body>

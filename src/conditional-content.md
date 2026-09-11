@@ -16,7 +16,7 @@ Branching is better when most of the content on the page is different.
 ## If statements
 
 We can use `if` statements to show conditional content, in the format: 
-```
+```nunjucks
 {% if (condition) %} 
     The content you want to appear 
 {% endif %}
@@ -25,7 +25,7 @@ The content will only appear when your `if` statement is true.
 
 For example, to show specific content when the user answers Scotland:
 
-```
+```nunjucks
 {% if (data['country'] == "Scotland") %}
     <div class="govuk-inset-text">
         This service is also available in Gaelic.
@@ -35,7 +35,7 @@ For example, to show specific content when the user answers Scotland:
 
 ### Conditional content for any other answer
 An example with conditional content when the answer is Scotland and different content for any other answer: 
-```
+```nunjucks
 {% if (data['country'] == "Scotland") %}
 
     <div class="govuk-inset-text">
@@ -54,7 +54,7 @@ An example with conditional content when the answer is Scotland and different co
 ### Conditional content for 2 specific answers
 An example with conditional content when the answer is Scotland and different content for Wales: 
 
-```
+```nunjucks
 {% if (data['country'] == "Scotland") %}
 
     <div class="govuk-inset-text">
@@ -72,7 +72,7 @@ An example with conditional content when the answer is Scotland and different co
 
 ### Combine conditions
 An example with the same conditional content for the answer Scotland or Northern Ireland:
-```
+```nunjucks
 {% if (data['country'] == "Scotland" or data['country'] == "Northern Ireland") %}
  
     <div class="govuk-inset-text">
@@ -83,7 +83,7 @@ An example with the same conditional content for the answer Scotland or Northern
 ```
 An example with conditional content when the answer for 'country' is Scotland and the answer for 'nationality' is French:
 
-```
+```nunjucks
 {% if (data['country'] == "Scotland" and data['nationality'] == "French") %}
 
     <div class="govuk-inset-text">
@@ -95,7 +95,7 @@ An example with conditional content when the answer for 'country' is Scotland an
 
 ### Multiple conditions
 An example where the 'country' is Scotland and the content is different based on the 'nationality':
-```
+```nunjucks
 {% if (data['country'] == "Scotland") %}
 
     <div class="govuk-inset-text">

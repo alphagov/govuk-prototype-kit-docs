@@ -24,7 +24,7 @@ Once you've done that, read below to get set up.
 Before using Git, it's best to set it up with your name and email address, this helps other people know who worked on what.
 
 In terminal:
-```
+```shell
 git config --global user.name "YOUR NAME"
 git config --global user.email "YOUR EMAIL ADDRESS"
 ```
@@ -38,14 +38,14 @@ If you have an account on GitHub, use the *same* email address for both.
 The first time you want to use Git on your prototype, you need to set up a new repository (also called 'initialising').
 
 In your prototype folder:
-```
+```shell
 git init
 ```
 
 This sets up Git to track the files in your prototype folder.
 
 The default branch created by the `git init` command is called `master`, which is a [potentially offensive term](https://sfconservancy.org/news/2020/jun/23/gitbranchname/). Rename the current branch to `main` instead:
-```
+```shell
 git branch -M main
 ```
 
@@ -54,7 +54,7 @@ git branch -M main
 It’s a good idea to run `git status` frequently. This tells you the current status - for example, if you made changes to files that haven’t been committed.
 
 In your prototype folder:
-```
+```shell
 git status
 ```
 
@@ -73,7 +73,7 @@ As this is our first commit, we want to add **all** files to ‘staging’
 #### Adding all files that have changes
 
 In terminal:
-```
+```shell
 git add .
 ```
 > You will usually enter a different command to only pick specific files with changes rather than all at once.
@@ -86,7 +86,7 @@ Run `git status` to check the files you’ve got in the stage. You will see a li
 ### Commit the files in ‘staging’
 
 Run:
-```
+```shell
 git commit -m "First commit"
 ```
 The message you put in the speech marks should be descriptive of the changes you are committing. This will help in the future if you or someone else needs to look back at your changes and know why you made them.

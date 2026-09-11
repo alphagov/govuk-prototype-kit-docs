@@ -26,7 +26,7 @@ You can control the response to any request by adding routes to the `app/routes.
 
 This is an example of a route:
 
-```js
+```javascript
 router.post('/live-in-uk-answer', function(request, response) {
 
     var liveInUK = request.session.data['live-in-uk']

@@ -43,7 +43,7 @@ Currently, the `juggling-balls` page sends the user directly to question 2. Inst
 
 3. Add this code to the end of the file:
 
-```
+```javascript
 // Run this code when a form is submitted to 'juggling-balls-answer'
 router.post('/juggling-balls-answer', function (req, res) {
 
@@ -69,7 +69,7 @@ router.post('/juggling-balls-answer', function (req, res) {
 If you do not get a page, check in the terminal to see if the kit has crashed. This is a common problem if there’s a typo in the JavaScript. If so, the kit will try to tell you the line number with the issue.
 
 If the kit crashes, you will see something like this on the terminal:
-```
+```shell
 /Users/name/projects/juggling-licence-prototype/app/routes.js:12
 });
 ^

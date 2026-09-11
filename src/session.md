@@ -29,7 +29,7 @@ For example, when submitting the following (simplified) HTML:
 
 You'll have a `req.session.data` object in your route function:
 
-```js
+```javascript
 {
     'first-name': 'Sarah',
     'last-name': 'Philips'
@@ -38,14 +38,14 @@ You'll have a `req.session.data` object in your route function:
 
 These 2 field values can be accessed in JavaScript as:
 
-```js
+```javascript
 req.session.data['first-name']
 req.session.data['last-name']
 ```
 
 Or in views as:
 
-```
+```nunjucks
 {{ data['first-name'] }}
 {{ data['last-name'] }}
 ```
@@ -64,7 +64,7 @@ Session data can also be nested for easy grouping. For example answers from mult
 
 You'll have a nested `req.session.data` object in your route function:
 
-```js
+```javascript
 {
     claimant: {
         'first-name': 'Sarah',
@@ -79,7 +79,7 @@ You'll have a nested `req.session.data` object in your route function:
 
 These 4 field values can be accessed in your route function as:
 
-```js
+```javascript
 req.session.data['claimant']['first-name']
 req.session.data['claimant']['last-name']
 req.session.data['partner']['first-name']
@@ -88,7 +88,7 @@ req.session.data['partner']['last-name']
 
 Or in views as:
 
-```
+```nunjucks
 {{ data['claimant']['first-name'] }}
 {{ data['claimant']['last-name'] }}
 {{ data['partner']['first-name'] }}

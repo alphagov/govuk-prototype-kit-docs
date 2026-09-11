@@ -20,7 +20,7 @@ You can set a port number when you start your prototype. Run:
 ## If you want to regularly run multiple prototypes
 You can set a port number for your prototype in `app/config.js`:
 
-```
+```json
 {
   "serviceName": "Service name goes here",
   "port": 3001

@@ -16,7 +16,7 @@ redirects:
 3. Open `juggling-trick.html` in your `app/views` folder.
 
 4. Replace this paragraph with the code you copied:
-```
+```html
 <p>
   [Insert question content here - see the
   <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
@@ -35,7 +35,7 @@ redirects:
 
    Your Textarea code should now look like this:
 
-```
+```nunjucks
 {{ govukTextarea({
   name: "most-impressive-trick",
   id: "most-impressive-trick",

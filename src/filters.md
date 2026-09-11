@@ -13,7 +13,7 @@ The kit stores data from all answers that users give in a prototype, so that you
 
 You can create your own filters or [use existing Nunjucks filters](https://mozilla.github.io/nunjucks/templating.html#builtin-filters) in the kit. For example, you can use the Nunjucks `upper` filter to change the format of text to upper case:
 
-```
+```nunjucks
 {{ data['name'] | upper }}
 ```
 
@@ -21,7 +21,7 @@ You can create your own filters or [use existing Nunjucks filters](https://mozil
 
 Add your own filters to the `app/filters.js` file. Filters are written in JavaScript.
 
-```
+```javascript
 const govukPrototypeKit = require('govuk-prototype-kit')
 const addFilter = govukPrototypeKit.views.addFilter
 
@@ -32,7 +32,7 @@ addFilter('uppercase', function (content) {
 
 Then use it on a page like this:
 
-```
+```nunjucks
 {{ data['name'] | uppercase }}
 ```
 
@@ -40,7 +40,7 @@ Then use it on a page like this:
 
 If you want to use HTML in a filter, use the `renderAsHTML` option like this:
 
-```
+```javascript
 addFilter('bold', function (content) {
   return '<strong>' + content + '</strong>'
 }, { renderAsHtml: true })
@@ -48,13 +48,13 @@ addFilter('bold', function (content) {
 
 Then use it on a page like this:
 
-```
+```nunjucks
 {{ data['name'] | bold }}
 ```
 
 You can also use these filters together:
 
-```
+```nunjucks
 {{ data['name'] | upper | bold }}
 ```
 

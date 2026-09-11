@@ -12,7 +12,7 @@ You can set a different service name to the rest of your prototype on one page.
 
 Use this code:
 
-```
+```nunjucks
 {% set serviceName %}
   Report a smokey vehicle
 {% endset%}

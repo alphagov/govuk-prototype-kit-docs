@@ -31,7 +31,7 @@ If you have a very long application.scss file, you can split it up into multiple
 
 Import this file into your `application.scss` file without the underscore:
 
-```
+```scss
 @import "admin";
 ```
 
@@ -41,7 +41,7 @@ To add an existing CSS file, put it in `app/assets/css`. You can create the fold
 
 Then add a stylesheets block in `app/views/layout/main.html`:
 
-```
+```html
 {% block stylesheets %}
   {{ super() }}
   <link href="/public/css/filename-here.css" rel="stylesheet" type="text/css" />
@@ -66,7 +66,7 @@ To add a JavaScript file to your prototype, put it in `app/assets/javascripts`.
 
 If you need the JavaScript file on one page, add a `pageScripts` block at the end of the page. For example:
 
-```
+```nunjucks
 {% block pageScripts %}
   <script src="/public/javascripts/filename-here.js"></script>
 {% endblock %}
@@ -74,7 +74,7 @@ If you need the JavaScript file on one page, add a `pageScripts` block at the en
 
 If you need the JavaScript file on all pages, add it to the scripts block in `app/views/layouts/main.html`. For example:
 
-```
+```nunjucks
 {% block scripts %}
   {{ super() }}
   <script src="/public/javascripts/filename-here.js"></script>
@@ -108,7 +108,7 @@ For example, if you add a document:
 
 Link to it like this:
 
-```
+```html
 <a href="/public/downloads/report.odf">Download the report</a>
 ```
 {% endraw %}

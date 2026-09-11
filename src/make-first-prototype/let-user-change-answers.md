@@ -30,7 +30,7 @@ Open the `juggling-balls.html` file in your `app/views` folder.
 
 In the `govukRadios` component, add a `value` line, like this:
 
-```
+```nunjucks
 {{ govukRadios({
   name: "how-many-balls",
   value: data['how-many-balls'],
@@ -48,7 +48,7 @@ Open the `juggling-trick.html` file in your `app/views` folder.
 
 Add `value: data['most-impressive-trick']` like this:
 
-```
+```nunjucks
 {{ govukTextarea({
     name: "most-impressive-trick",
     id: "most-impressive-trick",

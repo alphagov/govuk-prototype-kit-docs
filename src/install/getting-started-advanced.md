@@ -20,12 +20,16 @@ Node.js LTS version 24.x.x
 
 2.  In that folder run:
 
-`npx govuk-prototype-kit@latest create`
+```shell
+npx govuk-prototype-kit@latest create
+```
 
 ## Run the kit
 
 In your terminal run:
 
-`npm run dev`
+```shell
+npm run dev
+```
 
 [Go to localhost:3000](http://localhost:3000) in your browser.

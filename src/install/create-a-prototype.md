@@ -48,7 +48,9 @@ When you open the terminal it should look like this:
 
 To navigate to your prototype, type this command into the terminal and press enter:
 
-`cd ~/Documents/prototypes/juggling-licence`
+```shell
+cd ~/Documents/prototypes/juggling-licence
+```
 
 Your terminal should look like this:
 
@@ -58,10 +60,14 @@ Take note of what is upper or lower case - for example lower case 'd' for 'Docum
 
 If any of your folder names contain spaces, you must add quotation marks around everything after `~/`. For example:
 
-`cd ~/"a folder name with spaces/Documents/prototypes/juggling-licence"`
+```shell
+cd ~/"a folder name with spaces/Documents/prototypes/juggling-licence"
+```
 
 ## Create your prototype
 
 Run:
 
-`npx govuk-prototype-kit@latest create`
+```shell
+npx govuk-prototype-kit@latest create
+```

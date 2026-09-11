@@ -1,5 +1,10 @@
 {% extends "documentation_template.html" %}
 
+{% set parent = {
+	text: "Create a new prototype",
+	href: "/create-new-prototype/"
+} %}
+
 {% block containerStart %}
 	{{ govukBreadcrumbs({
 	  items: [
@@ -7,10 +12,7 @@
 	      text: "GOV.UK Prototype Kit",
 	      href: "/"
 	    },
-	    {
-	      text: "Create a new prototype",
-	      href: "/create-new-prototype/"
-	    }
+	    parent
 	  ]
 	}) }}
 {% endblock %}

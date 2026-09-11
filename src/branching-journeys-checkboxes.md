@@ -20,7 +20,7 @@ Sending users to different pages based on their answers is called branching.
 
 Create a page that has a form with checkboxes, using this code:
 
-```
+```nunjucks
 <form class="form" action="/exports-answer" method="post">
 
 {{ govukCheckboxes({
@@ -105,7 +105,7 @@ In `app/routes.js` we need to add a route to process the answer from the form.
 1. Open `/app/routes.js`
 2. Add this code to the end of the file (this is called a route):
 
-```
+```javascript
 router.post('/exports-answer', function(request, response) {
 
 	var exports = request.session.data['exports']
@@ -179,13 +179,13 @@ Our `response` is to `redirect` them to `/next-question` - skipping the page wit
 
 Add this line at the top of `routes.js`:
 
-```
+```javascript
 const util = require('util')
 ```
 
 Then add this route:
 
-```
+```javascript
 router.post('/exports-answer', function(request, response) {
 
 	var exports = request.session.data['exports']
@@ -199,7 +199,7 @@ router.post('/exports-answer', function(request, response) {
 
 This is all the same as our first example, but instead of `exports.includes` we have:
 
-```
+```javascript
 util.deepStrictEqual(exports, ['Fruit'])
 ```
 
@@ -207,7 +207,7 @@ This checks whether the array stored for exports only has the answer 'Fruit', an
 
 We could also check for 2 specific answers:
 
-```
+```javascript
 util.deepStrictEqual(exports, ['Fruit', 'Vegetables'])
 ```
 

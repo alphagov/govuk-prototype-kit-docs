@@ -34,7 +34,7 @@ Attributes are values you can add to opening tags to change the element.
 To make a heading look like a GOV.UK heading, we can add the `class` attribute `"govuk-heading-l"`:
 
 
-```
+```html
 <h1 class="govuk-heading-l">govuk-heading-l</h1>
 ```
 
@@ -42,11 +42,11 @@ To make a heading look like a GOV.UK heading, we can add the `class` attribute `
 ## HTML structure
 
 We can start to build a page with different elements:
-```
+```html
 <div>
   <h1 class="govuk-heading-l">Page heading</h1>
   <p>Some text for the heading.</p>
 </div>
-
 ```
+
 We use a `<div>` to create a page section, then include elements within it. In our first section we've included a `<h1>` and a `<p>`.

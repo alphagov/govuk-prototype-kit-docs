@@ -30,7 +30,7 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 4. Replace this paragraph with the code you copied:
 
-```
+```html
 <p>
   [Insert question content here - see the
   <a href="https://design-system.service.gov.uk">GOV.UK Design System</a>
@@ -47,7 +47,7 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 3. We only want 3 options not 4, so delete the last of the `items` including the comma from the previous item:
 
-```
+```nunjucks
     ,
     {
         value: "northern-ireland",
@@ -62,7 +62,7 @@ In the Design System, components have both Nunjucks and HTML example code. Eithe
 
 Your component code should now look like this:
 
-```
+```nunjucks
 {{ govukRadios({
   name: "how-many-balls",
   fieldset: {

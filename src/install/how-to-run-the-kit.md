@@ -15,7 +15,9 @@ If you're following the guide to getting started you'll already have the termina
 
 If you're coming back to work on a prototype, you'll need to navigate to the folder:
 
-`cd ~/Documents/prototypes/juggling-licence`
+```shell
+cd ~/Documents/prototypes/juggling-licence
+```
 
 Or replace 'juggling-licence' with the name of your prototype.
 
@@ -23,7 +25,9 @@ Or replace 'juggling-licence' with the name of your prototype.
 
 In the terminal, enter:
 
-`npm run dev`
+```shell
+npm run dev
+```
 
 The first time you run `npm run dev`, the kit will ask you whether you want to send anonymous data to help the team improve the service. Enter `y` or `n` to answer yes or no.
 

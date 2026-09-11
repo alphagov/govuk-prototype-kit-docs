@@ -57,7 +57,7 @@ Heroku.
 To save the key on Heroku, go to the settings page of your app, click
 ‘Reveal config vars’ and fill in the 2 textboxes like this (where
 xxxxxxx is the key you’ve copied from Notify):
-```
+```shell
 KEY          | VALUE
 -------------|----------
 NOTIFYAPIKEY | xxxxxxx
@@ -91,7 +91,7 @@ section of <strong><a href="http://localhost:3000/manage-prototype">Manage your 
 
 In your code editor, add this code to the top of routes.js:
 
-```
+```javascript
 var NotifyClient = require('notifications-node-client').NotifyClient,
     notify = new NotifyClient(process.env.NOTIFYAPIKEY);
 ```
@@ -101,7 +101,7 @@ var NotifyClient = require('notifications-node-client').NotifyClient,
 Make a page with a form to collect the user’s email address. For
 example:
 
-```
+```nunjucks
 {% extends "layouts/main.html" %}
 
 {% block content %}

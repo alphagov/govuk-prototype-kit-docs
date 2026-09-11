@@ -11,7 +11,7 @@ You can route users from your service's index page to your start page. The index
 1. Open the `index.html` file in your `app/views` folder.
 2. Add a link to the start of your service using the code:
 
-```
+```html
 <p>
     <a href="/start">
         Go to the start page

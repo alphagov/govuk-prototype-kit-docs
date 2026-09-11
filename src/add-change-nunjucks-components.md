@@ -32,7 +32,7 @@ Each component has options that allow you to change how it looks or behaves. To 
 
 For example, you can use the `text` option to change the text on a [button](https://design-system.service.gov.uk/components/button/):
 
-```
+```nunjucks
 {{ govukButton({
     text: "Example button text"
 }) }}
@@ -42,7 +42,7 @@ When adding another option, add a comma at the end of the previous option.
 
 In this example, we've changed the button to a secondary grey button:
 
-```
+```nunjucks
 {{ govukButton({
   text: "Find address",
   classes: "govuk-button--secondary"
@@ -55,7 +55,7 @@ Some components are made up of multiple parts. For example, the checkboxes are `
 
 This is the radios component:
 
-```
+```nunjucks
 {{ govukRadios({
   name: "where-do-you-live",
   fieldset: {
@@ -88,7 +88,7 @@ This is the radios component:
 
 To delete the last radio ‘Northern Ireland’, delete this `item` including the comma before:
 
-```
+```nunjucks
  ,
  {
      value: "northern-ireland",
@@ -96,7 +96,7 @@ To delete the last radio ‘Northern Ireland’, delete this `item` including th
  }
 ```
 You can add another country as a radio button, like Spain. Add this `item` including the comma:
-```
+```nunjucks
  ,
  {
      value: "spain",
@@ -104,13 +104,13 @@ You can add another country as a radio button, like Spain. Add this `item` inclu
  }
 ```
 It is important that you do not change or delete the closing brackets:
-```
+```nunjucks
  ]
 }) }}
 ```
 
 Your code should look like this:
-```
+```nunjucks
 {{ govukRadios({
   name: "where-do-you-live",
   fieldset: {

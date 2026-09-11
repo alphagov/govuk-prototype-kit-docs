@@ -64,8 +64,20 @@ figure {
     @extend %govuk-section-break--xl;
   }
 
+  pre,
+  code {
+    font-family: ui-monospace, menlo, "Cascadia Mono", "Segoe UI Mono", consolas, "Liberation Mono", monospace;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  code {
+    // Since the monospace fonts tend to be much larger than GDS transport re-size them to match.
+    font-size-adjust: cap-height 0.7;
+  }
+
   pre {
-    @include govuk-font($size: 19);
+    @include govuk-font-size(19);
     position: relative;
     margin: 0;
     padding: govuk-spacing(3);
@@ -73,8 +85,11 @@ figure {
     border: $govuk-focus-width solid transparent;
     outline: 1px solid $govuk-border-colour;
     background-color: govuk-colour("black", $variant: "tint-95");
-    max-width: 38em;
-    @include govuk-responsive-margin(5, "bottom");
+    width: calc(100% + 33.3%);
+    @media #{govuk-until-breakpoint(tablet)} {
+      width: auto;
+    }
+    @include govuk-responsive-margin(6, "bottom");
 
     &:focus {
       border: $govuk-focus-width solid $govuk-input-border-colour;
@@ -86,7 +101,8 @@ figure {
   li code {
     color: #d13118;
     background-color: govuk-colour("black", $variant: "tint-95");
-    padding: 0 govuk-spacing(1);
+    padding: .1ex .3ch;
+    margin: 0 .3ch;
   }
 
   // TODO: Blockquotes are likely the most semantic element to be using, update to use the inset component directly.

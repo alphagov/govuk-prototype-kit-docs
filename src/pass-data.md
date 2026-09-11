@@ -17,7 +17,7 @@ The kit stores data from answers that users give in a prototype using the `name`
 
 For example, when a user enters their first name you could have this input:
 
-```
+```nunjucks
 {{ govukInput({
     name: 'first-name'
 }) }}
@@ -25,14 +25,14 @@ For example, when a user enters their first name you could have this input:
 
 You can show what the user entered later on like this:
 
-```
+```nunjucks
 <p>
     {{ data['first-name'] }}
 </p>
 ```
 
 Answers from checkboxes will appear with commas, like 'a,b,c'. To show them as a list, use a for loop:
-```
+```nunjucks
 <ul>
 {% for country in data['countries'] %}
   <li>{{ country }}</li>
@@ -46,7 +46,7 @@ If a user goes back to a page where they entered data, they would expect to see 
 
 Most inputs use the `value` option:
 
-```
+```nunjucks
 {{ govukInput({
     name: 'first-name',
     value: data['first-name']
@@ -59,13 +59,13 @@ For checkboxes the option is `values`, since more than one can be selected.
 
 You can show content if data is currently blank using `or`, for example:
 
-```
+```nunjucks
 {{ data['first-name'] or "First name not given" }}
 ```
 
 You can also use this in a component. For example to show that a user has not answered an optional question on Check your answers:
 
-```
+```nunjucks
 {{ govukSummaryList({
   rows: [
     {
@@ -93,7 +93,7 @@ Add default data to your `app/data/session-data-defaults.js` file.
 
 For example, to set default data for inputs with the names `first-name` and `over-18`:
 
-```
+```javascript
 module.exports = {
 
   'first-name': 'Amina',
@@ -108,25 +108,25 @@ You can use links to set data. If you want to test different scenarios, you can 
 
 To set data from a link, add a `?` to the `href` followed by the data you want to set:
 
-```
+```html
 <a href="/start?first-name=Amina">
 ```
 
 To clear data from a link, as above without the equals sign and the value:
 
-```
+```html
 <a href="/start?first-name">
 ```
 
 To set more than one piece of data in a link, use an `&` between them:
 
-```
+```html
 <a href="/start?first-name=Amina&over-18=yes">
 ```
 
 To clear more than one piece of data in a link, as above without the equals sign and the value:
 
-```
+```html
 <a href="/start?first-name&over-18">
 ```
 
@@ -138,7 +138,7 @@ If the user changes this data in the prototype, their new answers will be saved.
 
 If you are using the HTML components instead of Nunjucks, you need to use the `checked` function for radios and checkboxes. For example:
 
-```
+```nunjucks
 <input class="govuk-checkboxes__input" id="waste-2" name="waste" type="checkbox" value="mines" {{ checked('waste','mines') }}>
 ```
 
@@ -148,7 +148,7 @@ You can access the data on the server in a route function.
 
 For example for an input with `name="first-name"`:
 
-```
+```javascript
 var firstName = req.session.data['first-name']
 ```
 
@@ -156,7 +156,7 @@ var firstName = req.session.data['first-name']
 
 For complex data you can use nested values, for example:
 
-```
+```nunjucks
 {{ govukInput({
     name: 'claimant[first-name]'
 }) }}
@@ -164,7 +164,7 @@ For complex data you can use nested values, for example:
 
 You can show what the user entered later on like this:
 
-```
+```nunjucks
 <p>
     {{ data['claimant']['first-name'] }}
 </p>
@@ -172,7 +172,7 @@ You can show what the user entered later on like this:
 
 You can set the value in an input like this:
 
-```
+```nunjucks
 {{ govukInput({
     name: 'first-name',
     value: data['claimant']['first-name']
@@ -181,7 +181,7 @@ You can set the value in an input like this:
 
 You can access the data on the server in a route function:
 
-```
+```javascript
 var firstName = req.session.data['claimant']['first-name']
 ```
 
@@ -189,7 +189,7 @@ var firstName = req.session.data['claimant']['first-name']
 
 To prevent an input being stored, use an underscore at the start of the name.
 
-```
+```nunjucks
 {{ govukInput({
     name: '_secret'
 }) }}

@@ -21,25 +21,25 @@ We will change the text in the template to match the questions in your prototype
 2. In your code editor, open `check-answers.html` in your `app/views` folder.
 
 3. You need to change the text 'Question 1' to 'Number of balls you can juggle'. Find this code:
-```
+```nunjucks
 key: {
   text: "Question 1"
 },
 ```
 4. Change it to:
-```
+```nunjucks
 key: {
   text: "Number of balls you can juggle"
 },
 ```
 5. You need to change the text 'Answer 1' to `data['how-many-balls']`. Find this code:
-```
+```nunjucks
 value: {
   text: "Answer 1"
 },
 ```
 6. Change it to:
-```
+```nunjucks
 value: {
   text: data['how-many-balls']
 },
@@ -52,11 +52,11 @@ Screen readers read out hidden text, but it will not appear on the page. For exa
 
 
 Update the screen reader text – change this:
-```
+```nunjucks
 visuallyHiddenText: "Question 1"
 ```
 to:
-```
+```nunjucks
 visuallyHiddenText: "number of balls you can juggle"
 ```
 
@@ -65,28 +65,28 @@ visuallyHiddenText: "number of balls you can juggle"
 
 1. You need to change the text 'Question 2' to 'Your most impressive juggling trick'. Find this code:
 
-```
+```nunjucks
 key: {
   text: "Question 2"
 },
 ```
 2. Change it to:
 
-```
+```nunjucks
 key: {
   text: "Your most impressive juggling trick"
 },
 ```
 3. You need to change the text 'Answer 2' to `data['most-impressive-trick']`. Find this code:
 
-```
+```nunjucks
 value: {
   text: "Answer 2"
 },
 ```
 4. Change it to:
 
-```
+```nunjucks
 value: {
   text: data['most-impressive-trick']
 },
@@ -94,12 +94,12 @@ value: {
 
 5. Update the screen reader text – find this code:
 
-```
+```nunjucks
 visuallyHiddenText: "Question 2"
 ```
 6. Change it to:
 
-```
+```nunjucks
 visuallyHiddenText: "your most impressive juggling trick"
 ```
 7. Go to <a href="http://localhost:3000/start" target="_blank">http://localhost:3000/start (opens in a new tab)</a> and answer the questions to check that your answers show up correctly.
@@ -110,7 +110,7 @@ The ‘Check answers’ template page has 3 example rows, each row represents a 
 
 Delete the last row including the comma above it: 
 
-```
+```nunjucks
 ,
 {
   key: {
@@ -133,7 +133,7 @@ Delete the last row including the comma above it:
 
 Your code should now look like this:
 
-```
+```nunjucks
   <div class="govuk-grid-row">
     <div class="govuk-grid-column-two-thirds-from-desktop">
 

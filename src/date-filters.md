@@ -24,17 +24,17 @@ You signed into your account at {{ "now" | govukTime }}.
 You can change how dates appear, so that you display the name of the month instead of a number. 
 
 To show the month 'March':
-```
+```nunjucks
 {{ 3 | monthName }}
 ```
 To shorten (or 'truncate') the month 'March' to 'Mar':
-```
+```nunjucks
 {{ 3 | monthName("truncate") }}
 ```
 ## Show how many days have passed
 To show how long it's been since a user submitted their application:
 
-```
+```nunjucks
 {% set dateSubmitted = '2023-09-18' %}
 
 <p>You submitted your application {{ dateSubmitted | daysAgo | plural("day") }} ago</p>
@@ -43,7 +43,7 @@ To show how long it's been since a user submitted their application:
 ## Show when a user is eligible
 You can use filters to show when someone is eligible to use your service. For example, if they must be 18 to apply:
 
-```
+```nunjucks
 {% set dateOfBirth = '2010-09-18' %}
 
 <p>You can apply for a juggling licence on {{ dateOfBirth | duration(18, 'years') | govukDate }}</p>

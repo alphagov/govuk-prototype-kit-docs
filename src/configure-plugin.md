@@ -37,7 +37,7 @@ There are multiple options you can use in the config file, depending on what you
 
 An array of paths for any files you want to make available in a prototype. For example:
 
-```
+```json
 {
   "assets": [
     "/assets/",
@@ -50,19 +50,19 @@ Paths can be folders or files. Files can be any type, for example images, PDFs a
 
 In the example above you would add a file at this path:
 
-```
+```shell
 /images/profile.png
 ```
 
 To use this in a page, the URL structure is:
 
-```
+```shell
 /plugin-assets/<your plugin name>/<asset path>
 ```
 
 In our example:
 
-```
+```html
 <img src="/plugin-assets/somePlugin/images/profile.png" alt="profile icon">
 ```
 
@@ -72,7 +72,7 @@ If you’re using asset paths in your Sass, use the variable `$govuk-plugins-url
 
 An array of layout files to import Nunjucks macros into. For example:
 
-```
+```json
 {
   "importNunjucksMacrosInto": [
     "/nunjucks/layouts/main.njk"
@@ -88,7 +88,7 @@ You can include [layout files](/how-to-use-layouts/) in your plugin, so that you
 
 An array of files for Nunjucks filters. For example:
 
-```
+```json
 {
   "nunjucksFilters": [
     "/filters.js"
@@ -100,7 +100,7 @@ Filters change the format of how a users answers appear in a prototype. We have 
 
 When creating filters for a plugin, use your namespace in your filter names. For example:
 
-```
+```javascript
 addFilter('somePlugin.uppercase', function (content) {
   return content.toUpperCase()
 })
@@ -116,7 +116,7 @@ It requires the [`nunjucksPaths`](#) option.
 
 For example:
 
-```
+```json
 {
   "nunjucksPaths": [
     "/nunjucks/
@@ -136,13 +136,13 @@ Use your namespace in your Nunjucks Macro names and paths, as in the example abo
 
 Do not include a `/` at the start of `importFrom`. The path is relative to any of the folders you’ve listed in `nunjucksPaths`. In the example above you would add a file at this path:
 
-```
+```shell
 nunjucks/somePlugin/macros/text-input.njk
 ```
 
 With a Nunjucks macro like this:
 
-```
+```nunjucks
 {% macro somePluginTextInput(value) %}
   <input type="text" class="somePlugin_text-input" value="{{ value }}">
 {% endmacro %}
@@ -158,7 +158,7 @@ The kit normally imports Nunjucks macros for users. If they make their own layou
 
 An array of paths for Nunjucks includes, layouts and macros. For example:
 
-```
+```json
 {
   "nunjucksPaths": [
     "/nunjucks"
@@ -176,7 +176,7 @@ You can add multiple `nunjucksPaths`, but it’s easier for users to find your i
 
 An array of plugins that your plugin depends on. For example:
 
-```
+```json
 {
   "pluginDependencies": ["govuk-frontend"]
 }
@@ -184,7 +184,7 @@ An array of plugins that your plugin depends on. For example:
 
 You can optionally add a minimum or maximum version:
 
-```
+```json
 {
   "pluginDependencies": [{
     "packageName": "govuk-frontend",
@@ -199,7 +199,7 @@ You can optionally add a minimum or maximum version:
 
 An array of Sass files. For example:
 
-```
+```json
 {
   "sass": [
     "/styles.scss"
@@ -211,7 +211,7 @@ Sass generates CSS which is loaded on every page.
 
 Use your namespace in your Sass naming, for example:
 
-```
+```css
 .somePlugin_highlight {
   background-color: yellow;
 }
@@ -223,7 +223,7 @@ Use your namespace in your Sass naming, for example:
 
 An array of JavaScript files. For example:
 
-```
+```json
 {
   "scripts": [
     "/scripts.js"
@@ -235,7 +235,7 @@ These files are loaded on every page.
 
 Use your namespace in your JavaScript naming, for example:
 
-```
+```javascript
 window.SOME_PLUGIN = window.SOME_PLUGIN || {}
 
 window.SOME_PLUGIN.log = function (whatToLog) {
@@ -247,7 +247,7 @@ window.SOME_PLUGIN.log = function (whatToLog) {
 
 An array of CSS files. For example:
 
-```
+```json
 {
   "stylesheets": [
     "/styles.css"
@@ -259,7 +259,7 @@ These stylesheets are loaded on every page.
 
 Use your namespace in your CSS naming, for example:
 
-```
+```css
 .somePlugin_highlight {
   background-color: yellow;
 }
@@ -274,7 +274,7 @@ An array of objects, consisting of:
 
  For example:
 
-```
+```json
 {
   "templates": [
     {
@@ -290,12 +290,12 @@ Templates let users create pages that are commonly used across government servic
 
 In the example above you would add a file at this path:
 
-```
+```shell
 /templates/hello-world.njk
 ```
 With a Nunjucks page like this:
 
-```
+```html
 <!DOCTYPE html>
 <html>
   <body>

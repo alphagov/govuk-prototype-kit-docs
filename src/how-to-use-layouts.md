@@ -24,7 +24,7 @@ In your code editor, open `app/views/layouts/main.html`.
 
 Note the line:
 
-```
+```nunjucks
 {% extends "govuk-prototype-kit/layouts/govuk-branded.html" %}
 ```
 
@@ -54,7 +54,7 @@ Your prototype will already include the [Service navigation component](https://d
 
 If you want to add additional links to your Service navigation, you'll need to use the `govukServiceNavigation` block to replace the default Service navigation component with your own:
 
-```
+```nunjucks
 {% block govukServiceNavigation %}
   {{ govukServiceNavigation({
     serviceName: serviceName,
@@ -81,7 +81,7 @@ If you want to add additional links to your Service navigation, you'll need to u
 
 You can make changes to the [GOV.UK footer](https://design-system.service.gov.uk/components/footer/) using the `govukFooter` block:
 
-```
+```nunjucks
 {% block govukFooter %}
  {{ govukFooter({
    meta: {

@@ -19,7 +19,7 @@ Sending users to different pages based on their answers is called branching.
 
 Create a page that has a form with radio buttons, using this code:
 
-```
+```nunjucks
 <form class="form" action="/country-answer" method="post">
 
 {{ govukRadios({
@@ -75,7 +75,7 @@ The route takes the answer the user gave to the question and either sends them t
 
 ### How we set the route from the page
 
-```
+```html
 <form class="form" action="/country-answer" method="post">
 ```
 
@@ -95,7 +95,7 @@ In `app/routes.js` we need to add a route to process the answer from the form.
 1. Open `app/routes.js`.
 2. Add this code to the end of the file (this is called a route):
 
-```
+```javascript
 router.post('/country-answer', function(request, response) {
 
 	var country = request.session.data['country']

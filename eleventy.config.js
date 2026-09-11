@@ -1,5 +1,6 @@
 import Nunjucks from 'nunjucks'
 import markdownItAnchor from 'markdown-it-anchor'
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 
 import { setupStylesheetCompilation } from './eleventy/stylesheets.js'
 
@@ -7,6 +8,8 @@ import { setupStylesheetCompilation } from './eleventy/stylesheets.js'
  *  @param {import("@11ty/eleventy/UserConfig")} eleventyConfig
  */
 export default function (eleventyConfig) {
+  eleventyConfig.addPlugin(syntaxHighlight);
+
   // Copy font and image assets from govuk-frontend to the project
   eleventyConfig.addPassthroughCopy({
     './node_modules/govuk-frontend/dist/govuk/assets': 'assets',

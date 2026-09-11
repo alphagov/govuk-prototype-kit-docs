@@ -46,6 +46,7 @@
     govukServiceNavigation({
       navigation: [
         {
+          current: (page.url === "/create-new-prototype/" or parent.href === "/create-new-prototype/"),
           href: "/create-new-prototype/",
           text: "Get started",
           attributes: {
@@ -53,6 +54,7 @@
           }
         },
         {
+          current: (page.url === "/tutorials-and-guides/" or parent.href === "/tutorials-and-guides/"),
           href: "/tutorials-and-guides/",
           text: "Tutorials and guides",
           attributes: {
@@ -60,6 +62,7 @@
           }
         },
         {
+          current: (page.url === "/support/" or parent.href === "/support/"),
           href: "/support/",
           text: "Support",
           attributes: {

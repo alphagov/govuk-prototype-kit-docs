@@ -23,7 +23,7 @@
     "nunjucks": "^3.2.1"
   },
   "devDependencies": {
-    "autoprefixer": "^10.5.4",
+    "autoprefixer": "^10.6.1",
     "cssnano": "^9.0.2",
     "glob": "^13.0.6",
     "postcss": "^8.5.26",

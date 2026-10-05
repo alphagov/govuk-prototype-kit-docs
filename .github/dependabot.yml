@@ -6,6 +6,18 @@ updates:
     directory: /
     open-pull-requests-limit: 15
 
+    groups:
+      markdown:
+        patterns:
+          - 'markdown-it'
+          - 'markdown-it-*'
+
+      css:
+        patterns:
+          - 'autoprefixer'
+          - 'cssnano'
+          - 'postcss'
+
     schedule:
       interval: monthly
       time: '10:30'

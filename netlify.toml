@@ -1,3 +1,9 @@
 [build]
 command = "npm run build"
 publish = "_site"
+
+# Cache fonts from GOV.UK Frontend with unique fingerprints as immutable
+[[headers]]
+  for = "/assets/fonts/*"
+  [headers.values]
+    Cache-Control = "public,max-age=2147483648,immutable"

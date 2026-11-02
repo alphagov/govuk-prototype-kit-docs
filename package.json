@@ -16,7 +16,7 @@
     "check-links": "linkinator _site --skip '^https?://(?!127.0.0.1|localhost)' --skip 'http://localhost:3000' --skip 'http://localhost:3001' --recurse --redirects \"error\" --check-fragments"
   },
   "dependencies": {
-    "@11ty/eleventy": "^3.1.6",
+    "@11ty/eleventy": "^3.1.7",
     "govuk-frontend": "^6.5.1",
     "linkinator": "^8.1.0",
     "markdown-it-anchor": "^10.0.0",

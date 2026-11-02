@@ -20,7 +20,7 @@
     "govuk-frontend": "^6.6.0",
     "linkinator": "^8.1.0",
     "markdown-it-anchor": "^10.0.0",
-    "nunjucks": "^3.2.1"
+    "nunjucks": "npm:@11ty/nunjucks@^3.3.0"
   },
   "devDependencies": {
     "autoprefixer": "^10.6.1",

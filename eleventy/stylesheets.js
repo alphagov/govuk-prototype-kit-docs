@@ -1,6 +1,5 @@
-import { mkdir, writeFile } from 'node:fs/promises'
+import { glob, mkdir, writeFile } from 'node:fs/promises'
 import { basename, join } from 'node:path'
-import { glob } from 'glob'
 import * as sass from 'sass'
 import postcss from 'postcss'
 import autoprefixer from 'autoprefixer'
@@ -18,17 +17,17 @@ export function setupStylesheetCompilation (eleventyConfig, { to }) {
   eleventyConfig.addWatchTarget(stylesheetsGlob)
   eleventyConfig.on('eleventy.before', async () => {
     // Get all Sass files in the source assets directory, excluding partials
-    const files = await glob(stylesheetsGlob, {
-      ignore: '**/_*'
+    const files = glob(stylesheetsGlob, {
+      exclude: ['**/_*.scss']
     })
 
-    compileStylesheets(files, assetsDir)
+    await compileStylesheets(files, assetsDir)
   })
 }
 
 async function compileStylesheets (files, outputDir) {
   // Loop through files
-  for (const file of files) {
+  for await (const file of files) {
     // Get the filename and replace .scss with .css
     const sourceFileName = basename(file)
     const filename = sourceFileName.replace('.scss', '.css')
